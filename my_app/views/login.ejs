@@ -70,25 +70,25 @@
                 <h1>Register Account</h1>
             </div>
             <div class="form-content">
-                <form>
+                <form action="http://localhost:3000/register" method="post" id="Register Submit">
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" name="username" required="required" />
+                        <label for="usernameRegister">Username</label>
+                        <input type="text" id="usernameRegister" name="usernameRegister" required="required" />
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required="required" />
+                        <label for="passwordRegister">Password</label>
+                        <input type="password" id="passwordRegister" name="passwordRegister" required="required" />
                     </div>
                     <div class="form-group">
                         <label for="cpassword">Confirm Password</label>
-                        <input type="password" id="cpassword" name="cpassword" required="required" />
+                        <input type="password" id="cpassword" name="cpasswordRegister" required="required" />
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required="required" />
+                        <input type="email" id="email" name="emailRegister" required="required" />
                     </div>
                     <div class="form-group">
-                        <button type="submit">Register</button>
+                        <button type="submit" id="Register Submit">Register</button>
                     </div>
                 </form>
             </div>

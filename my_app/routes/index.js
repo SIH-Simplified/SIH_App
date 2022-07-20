@@ -1,8 +1,12 @@
+require("dotenv").config();
+const Teacher = require("../models/teacher");
+const process = require("process");
 var express = require('express');
 var router = express.Router();
-
+const JWT = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 /* GET home page. */
-router.all("/", (req, res, next) => {
+const checkAuthMiddleWare = async (req, res, next) => {
   try {
     const cookies = req.cookies;
     if (cookies === null || cookies === undefined || Object.keys(cookies).length === 0)
@@ -12,13 +16,48 @@ router.all("/", (req, res, next) => {
     next(error);
   }
   next();
-})
+}
 
-router.get('/', function (req, res, next) {
+router.get('/', checkAuthMiddleWare, function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
 router.get("/login", (req, res) => {
   res.render("login");
+})
+
+router.post("/register", async (req, res, next) => {
+  try {
+    const { usernameRegister, emailRegister, passwordRegister, cpasswordRegister } = req.body;
+
+    const preUser = await Teacher.findOne({ email: emailRegister });
+    if (preUser) {
+      console.log("User is already registered");
+      res.redirect("login", 403, {
+        error: `User is already registered with this email id try logging in or register with a
+           differenet email id`
+      });
+    }
+
+    if (passwordRegister !== cpasswordRegister) {
+      res.redirect("/login", { error: "C_Password and password do not match" });
+    }
+
+    const hashedPassword = await bcrypt.hash(passwordRegister, 12);
+    const user = new Teacher({ name: usernameRegister, email: emailRegister, password: hashedPassword });
+    await user.save();
+    // Store the user in the database
+
+    const userJWT = JWT.sign({ emailRegister, msg: "I am logged in" }, process.env.SECRET, {
+      expiresIn: "2d",
+      subject: user.id
+    });
+
+    res.cookie("token", userJWT, { maxAge: 2 * 24 * 60 * 60, httpOnly: true, });
+    res.send(userJWT);
+  } catch (error) {
+    next(error);
+  }
+
 })
 module.exports = router;
