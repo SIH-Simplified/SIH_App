@@ -84,4 +84,17 @@ router.post("/register", async (req, res, next) => {
     next(error);
   }
 })
+
+router.post("/logout", (req, res, next) => {
+  try {
+    const { token } = req.cookies;
+
+    res.clearCookie("token");
+
+    res.redirect("login", 200, { status: "User logged out" });
+
+  } catch (error) {
+    next(error);
+  }
+})
 module.exports = router;
