@@ -18,12 +18,37 @@ const checkAuthMiddleWare = async (req, res, next) => {
   next();
 }
 
-router.get('/', checkAuthMiddleWare, function (req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get("/login", (req, res) => {
-  res.render("login");
+router.post("/login", async (req, res, next) => {
+  const { userEmailLogin, passwordLogin } = req.body;
+
+  try {
+    const user = await Teacher.findOne({ email: userEmailLogin });
+
+    if (!user) {
+      return res.status("login", 400, { error: "Email or password is wrong" });
+    }
+
+    const isValid = await bcrypt.compare(passwordLogin, user.password);
+
+    if (!isValid) {
+      return res.redirect("login", 400, { error: "Email or password is wrong" });
+    }
+
+    const userJWT = JWT.sign({ emailRegister, msg: "I am logged in" }, process.env.SECRET, {
+      expiresIn: "2d",
+      subject: user.id
+    });
+
+    res.cookie("token", userJWT, { maxAge: 2 * 24 * 60 * 60, httpOnly: true });
+
+    res.render("index");
+  } catch (error) {
+    next(error);
+  }
 })
 
 router.post("/register", async (req, res, next) => {
@@ -33,14 +58,14 @@ router.post("/register", async (req, res, next) => {
     const preUser = await Teacher.findOne({ email: emailRegister });
     if (preUser) {
       console.log("User is already registered");
-      res.redirect("login", 403, {
+      return res.redirect("login", 403, {
         error: `User is already registered with this email id try logging in or register with a
            differenet email id`
       });
     }
 
     if (passwordRegister !== cpasswordRegister) {
-      res.redirect("/login", { error: "C_Password and password do not match" });
+      return res.redirect("/login", { error: "C_Password and password do not match" });
     }
 
     const hashedPassword = await bcrypt.hash(passwordRegister, 12);
@@ -58,6 +83,5 @@ router.post("/register", async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-
 })
 module.exports = router;
