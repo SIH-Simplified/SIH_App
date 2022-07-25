@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script href="script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: #6d8c84;">
+    <form>
+        <h2>
+            Professional Experience
+        </h2>
+        <h3>
+            Enter your work experience here
+        </h3>
+        <div class="form-group">
+            <label for="job" name="job">Job 1</label>
+            <input type="text" id="job-1" name="job-1" placeholder="Enter your employer/job details">
+        </div>
+        <div class="form-date-group">
+            <div class="form-group">
+                <label for="job-1__start">Start Date</label>
+                <input type="date" name="job-1__start" id="job-1__start">
+            </div>
+            <div class="form-group">
+                <label for="job-1__end">End Date</label>
+                <input type="date" name="job-1__end" id="job-1__end">
+            </div>
+        </div>
+
+        <div class="form-group" id="jobcontainer">
+            <label for="job-1__details">Job Details</label>
+            <input type="text" placeholder="job details">
+        </div>
+        <div class="form-group">
+            <span id="addpoint">Add Point +</span>
+        </div>
+        <div id="newjobcontainer" style="width:100%;"></div>
+        <div class="form-group">
+            <span id="addskill">Add Jobs</span>
+        </div>
+        <div class="line-break"></div>
+        <h2>
+            Additional Information
+        </h2>
+        <div class="form-group" id="additionaldetails">
+            <label for="additional" name="additional"></label>
+            <input type="text" id="add-1" name="add-1" placeholder="Enter details">
+        </div>
+        <div class="form-group">
+            <span id="add-point">Add Point +</span>
+        </div>
+        <div class="line-break"></div>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+
+    <script>
+
+
+        var jobcnt = document.getElementById("jobcontainer");
+        var addpnt = document.getElementById("addpoint");
+        newclick = 2;
+        addpnt.addEventListener("click", () => {
+            if (newclick > 4) {
+                alert("Cannot add more points max limit is 4");
+                addpnt.style.pointerEvents = "none";
+            }
+            else {
+                var breakline2 = document.createElement("br");
+                var breakline3 = document.createElement("br");
+                var inpt2 = document.createElement("input");
+                inpt2.type = "text";
+                inpt2.name = "about" + newclick;
+                inpt2.placeholder = "job details";
+                jobcnt.appendChild(breakline2);
+                jobcnt.appendChild(breakline3);
+                jobcnt.appendChild(inpt2);
+                newclick++;
+                console.log(newclick);
+            }
+        })
+
+
+
+        click = 2;
+
+
+        var newjobcnt = document.getElementById("newjobcontainer");
+        var addjob = document.getElementById("addskill");
+        addjob.addEventListener("click", () => {
+            if (click >= 3) {
+                alert("Cannot add more job experience max limit is 2");
+                addskill.style.pointerEvents = "none";
+            }
+            else {
+                var formdiv1 = document.createElement("div");
+                formdiv1.className = "form-group";
+
+                var label1 = document.createElement("label");
+                label1.for = "job"
+                var text1 = document.createTextNode("Job " + click);
+                var inpt3 = document.createElement("input");
+                inpt3.type = "text";
+                inpt3.id = "job-" + click;
+                inpt3.name = "job-" + click;
+                inpt3.placeholder = "Enter your employer/job details";
+                var frmdate = document.createElement("div");
+                frmdate.className = "form-date-group";
+                var strtdate = document.createElement("div");
+                strtdate.className = "form-group";
+                var label2 = document.createElement("label");
+                label2.for = "job-" + click + "__start";
+                var text4 = document.createTextNode("Start Date");
+                var inpt4 = document.createElement("input");
+                inpt4.type = "date";
+                inpt4.name = "job-" + click + "__start";
+                inpt4.id = "job-" + click + "__start";
+
+                var enddate = document.createElement("div");
+                enddate.className = "form-group";
+                var label3 = document.createElement("label");
+                label3.for = "job-" + click + "__end";
+                var text5 = document.createTextNode("End Date");
+                var inpt5 = document.createElement("input");
+                inpt5.type = "date";
+                inpt5.name = "job-" + click + "__end";
+                inpt5.id = "job-" + click + "__end";
+
+
+                frmdate.appendChild(strtdate);
+                strtdate.appendChild(label2);
+                strtdate.appendChild(text4);
+                strtdate.appendChild(inpt4);
+                frmdate.appendChild(enddate);
+                enddate.appendChild(label3);
+                enddate.appendChild(text5);
+                enddate.appendChild(inpt5);
+
+
+                var jobdetails = document.createElement("div");
+                jobdetails.className = "form-group";
+                jobdetails.id = "jobcontainer3";
+                var label4 = document.createElement("label");
+                label4.for = "job-" + click + "__details";
+                var text6 = document.createTextNode("Job Details");
+                label4.appendChild(text6);
+                jobdetails.appendChild(label4);
+                var inpt6 = document.createElement("input");
+                inpt6.type = "text";
+                inpt6.placeholder = "job details";
+                jobdetails.appendChild(inpt6);
+
+                var addpnts = document.createElement("div");
+                addpnts.className = "form-group";
+                var spanadd = document.createElement("span");
+                spanadd.id = "addpoint2";
+
+                var text7 = document.createTextNode("Add Point +");
+                spanadd.appendChild(text7);
+                addpnts.appendChild(spanadd);
+
+
+                formdiv1.appendChild(label1);
+                label1.appendChild(text1);
+                formdiv1.appendChild(inpt3);
+                newjobcnt.appendChild(formdiv1);
+                newjobcnt.appendChild(frmdate);
+                newjobcnt.appendChild(jobdetails);
+                newjobcnt.appendChild(addpnts);
+
+
+                var container = document.getElementById("jobcontainer3");
+                var addpnt2 = document.getElementById("addpoint2");
+                newclick2 = 2;
+
+                addpnt2.addEventListener("click", () => {
+                    if (newclick2 > 4) {
+                        alert("Cannot add more points max limit is 4");
+                        addpnt2.style.pointerEvents = "none";
+                    }
+                    else {
+                        var breakline4 = document.createElement("br");
+                        var breakline5 = document.createElement("br");
+                        var inpt7 = document.createElement("input");
+                        inpt7.type = "text";
+                        inpt7.name = "about" + newclick2;
+                        inpt7.placeholder = "job details";
+                        container.appendChild(breakline4);
+                        container.appendChild(breakline5);
+                        container.appendChild(inpt7);
+                        newclick2++;
+                    }
+                })
+                click++;
+
+            }
+        })
+
+        var additionalcontainer = document.getElementById("additionaldetails");
+        var adddetails = document.getElementById("add-point");
+
+        click2 = 2;
+        adddetails.addEventListener("click", () => {
+            var breakline6 = document.createElement("br");
+            var breakline7 = document.createElement("br");
+            var inpt8 = document.createElement("input");
+            inpt8.type = "text";
+            inpt8.name = "add-" + click2;
+            inpt8.placeholder = "Tell us about yourself";
+            additionalcontainer.appendChild(breakline6);
+            additionalcontainer.appendChild(breakline7);
+            additionalcontainer.appendChild(inpt8);
+            click2++;
+
+
+        })
+
+    </script>
+
+</body>
+
+</html>

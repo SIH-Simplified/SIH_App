@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Resume -Form</title>
+</head>
+
+<body style="background-color: #6d8c84;">
+    <div></div>
+    <form>
+        <div class="form__header">
+            <h1>Build Your Resume</h1>
+            <p>Enter Your Personal Details here</p>
+        </div>
+        <h2>Personal Details</h2>
+        <div class="form-group">
+            <label for="name">Full Name <span>*</span></label>
+            <input type="text" name="name" id="name" placeholder="Ex. Elon Musk">
+            <div class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" name="address" id="address" placeholder="Delhi">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" placeholder="+1  123 456 7890">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email <span>*</span></label>
+            <input type="text" name="email" id="email" placeholder="example@mail.com">
+            <div id="email__error" class="error"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="about">Age</label>
+            <input type="text" id="age" name="age" placeholder="ex. 25">
+        </div>
+
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" placeholder="ex. Maths">
+        </div>
+
+        <div class="form-group">
+            <label for="education">Education</label>
+            <textarea name="education" id="education"
+                placeholder="List any completed high school, college, or other educational programs"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="status">Employment Status</label>
+            <select name="status" id="status">
+                <option value="Employeed">Employeed</option>
+                <option value="Unemployeed">Unemployeed</option>
+            </select>
+        </div>
+        <div class="line-break"></div>
+
+        <h2>Skills</h2>
+
+        <h3>Enter Your Skills</h3>
+
+        <div class="form-group">
+            <label>
+                Skill 1
+            </label>
+            <input type="text" id="skill-1" name="skills" placeholder="ex. Good Presentation skills">
+            <div class="slider">
+                <input type="range" min="0" max="100" onchange="rangevalue.value=value">
+                <br>
+                <p id="rangevalue">
+                    You are <output id="rangevalue">50</output> % effecient in this skill
+                </p>
+            </div>
+        </div>
+        <div id="skillcontainer" style="width:100%;"></div>
+        <div class="form-group">
+            <span id="addskill">Add Skill</span>
+        </div>
+
+        <div class="line-break"></div>
+        <div class="form-group" id="aboutcontainer">
+            <label for="about">About</label>
+            <input type="text" placeholder="Tell us about yourself" name="about1">
+        </div>
+
+        <div class="form-group">
+
+            <span id="add-about">Add +</span>
+        </div>
+        <div class="line-break"></div>
+        <button><a href="resume-3.html" style="text-decoration: none;">Next</a></button>
+    </form>
+</body>
+<script>
+    var click = 2;
+    var addskill = document.getElementById("addskill");
+    var skillcont = document.getElementById("skillcontainer");
+
+    addskill.addEventListener("click", () => {
+        console.log(click);
+        if (click > 6) {
+            alert("Cannot add more skills");
+            addskill.style.pointerEvents = "none";
+        }
+        else {
+            var frmgrp = document.createElement("div");
+            frmgrp.className = "form-group";
+            var lable = document.createElement("Label");
+            var text1 = document.createTextNode("Skill " + click);
+            var inpt = document.createElement("input");
+            inpt.type = "text";
+            inpt.id = "skill-" + click;
+            inpt.name = "skillname" + click;
+            inpt.placeholder = "ex. Good Presentation skills";
+
+            var sliderdiv = document.createElement("div");
+            sliderdiv.className = "slider";
+            var slideinpt = document.createElement("input");
+            slideinpt.type = "range";
+            slideinpt.min = 0;
+            slideinpt.max = 100;
+            slideinpt.onchange = "rangevalue.value=value";
+            var breakline = document.createElement("br");
+            var para = document.createElement("p");
+            para.id = "rangevalue" + click;
+            var opt = document.createElement("output");
+            opt.id = "rangevalue" + click;
+            var text2 = document.createTextNode("50");
+            opt.appendChild(text2);
+            var text3 = document.createTextNode(" You are 50 % effecient in this skill");
+            para.appendChild(text3);
+            lable.appendChild(text1);
+            frmgrp.appendChild(lable);
+            frmgrp.appendChild(inpt);
+            frmgrp.appendChild(sliderdiv);
+            sliderdiv.appendChild(slideinpt);
+            sliderdiv.appendChild(breakline);
+            sliderdiv.appendChild(para);
+            skillcont.appendChild(frmgrp);
+            click++;
+        }
+    })
+
+
+
+    var abtcnt = document.getElementById("aboutcontainer");
+    var addabt = document.getElementById("add-about");
+    newclick = 2;
+    addabt.addEventListener("click", () => {
+        var breakline2 = document.createElement("br");
+        var breakline3 = document.createElement("br");
+        var inpt2 = document.createElement("input");
+        inpt2.type = "text";
+        inpt2.name = "about" + newclick;
+        inpt2.placeholder = "Tell us about yourself";
+        abtcnt.appendChild(breakline2);
+        abtcnt.appendChild(breakline3);
+        abtcnt.appendChild(inpt2);
+        newclick++;
+        console.log(newclick);
+    })
+</script>
+
+</html>
