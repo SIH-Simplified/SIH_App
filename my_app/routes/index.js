@@ -45,7 +45,7 @@ router.post("/login", async (req, res, next) => {
 
     res.cookie("token", userJWT, { maxAge: 2 * 24 * 60 * 60, httpOnly: true });
 
-    res.render("index");m
+    res.render("index");
   } catch (error) {
     next(error);
   }
