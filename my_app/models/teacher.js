@@ -13,7 +13,26 @@ const teacherSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-    }
+    },
+    location: {
+        type: String
+    },
+    phone_number: {
+        type: String
+    },
+    age: {
+        type: Number
+    },
+    education: String,
+    skills: {
+        type: Array
+    },
+    about: {
+        type: String
+    },
+    documents: {
+        type: mongoose.ObjectId
+    },
 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);
