@@ -19,7 +19,7 @@ const checkAuthMiddleWare = async (req, res, next) => {
 }
 
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('login', { title: 'Express' });
 });
 
 router.post("/login", async (req, res, next) => {
@@ -45,7 +45,7 @@ router.post("/login", async (req, res, next) => {
 
     res.cookie("token", userJWT, { maxAge: 2 * 24 * 60 * 60, httpOnly: true });
 
-    res.render("index");
+    res.render("index");m
   } catch (error) {
     next(error);
   }
@@ -89,7 +89,7 @@ router.post("/logout", (req, res, next) => {
   try {
     const { token } = req.cookies;
 
-    res.clearCookie("token");
+    res.clearCookie("token", { maxAge: 2 * 24 * 60 * 60, httpOnly: true });
 
     res.redirect("login", 200, { status: "User logged out" });
 
