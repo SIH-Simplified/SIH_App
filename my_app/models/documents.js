@@ -4,12 +4,7 @@ const documentSchema = new mongoose.Schema({
     teacher_id: {
         type: mongoose.ObjectId
     },
-    resume: {
-        type: String
-    },
-    portfolio: {
-        type: String
-    }
+    document_url: String
 })
 
 // Not adding those ten documents
