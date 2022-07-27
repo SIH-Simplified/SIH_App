@@ -31,7 +31,7 @@ const teacherSchema = new mongoose.Schema({
         type: String
     },
     documents: {
-        type: mongoose.ObjectId
+        type: mongoose.Schema.Types.ObjectId
     },
 });
 
