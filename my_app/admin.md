@@ -43,7 +43,7 @@ Routes for admin
 - /admin/:id (this is a route for viewing admin profile in the app)
 
 
-### Previliges for admin users
+### Privileges for admin users
 - Add teachers
 - Remove teachers
 - Edit teacher's information and details
