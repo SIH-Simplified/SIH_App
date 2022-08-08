@@ -6,6 +6,11 @@ const router = express.Router();
 const checkAdmin = require("../middlewares/checkAdmin");
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
+const Email = require("../models/email");
+router.get("/", (req, res) => {
+    res.render("admin/index");
+})
+
 router.get("/login", (req, res) => {
     res.render("admin/login");
 })
@@ -77,6 +82,34 @@ router.post("/register", checkAdmin, [
 router.get("/logout", checkAdmin, (req, res) => {
     const token = req.cookies("adminToken");
     res.clearCookie("adminCookie", { httpOnly: true, maxAge: 2 * 24 * 60 * 60 * 1000 });
+    res.redirect("/index");
+})
+
+router.get("/email", (req, res) => {
+    res.render("admin/email");
+})
+
+router.post("/email/create", checkAdmin, [,
+    check("subject", "Please include a subject in the email").isLength({
+        min: 1
+    }),
+    check("message", "Please include a message in the email").isLength({
+        min: 1
+    })
+], async (req, res, next) => {
+    const { subject, message } = req.body;
+    const error = validationResult(req);
+
+    if (!error) {
+        return res.status(400).json({
+            error: error.array()
+        })
+    }
+
+    const email = new Email({
+        from: "Admin", subject, message
+    })
+    email.save();
     res.redirect("/index");
 })
 

@@ -20,6 +20,9 @@ However, if it's a server you install your own instance of it's common to have a
 Routes for admin
 - /admin/ (this will be something like a dashboard)
 - /admin/emails/ (this is for opening email section of the dashboard)
+- /admin/emails/create (this is for opening email section of the dashboard)
+- /admin/emails/delete (this is for opening email section of the dashboard)
+- /admin/emails/update (this is for opening email section of the dashboard)
 - /admin/teachers/ (this is the route for viewing all the teachers in the dashboard)
 - /admin/teachers/create (this is the route for adding teachers in the app database)
 - /admin/teachers/edit (this is a route for editing details of a teacher)
