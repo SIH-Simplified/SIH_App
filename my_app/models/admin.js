@@ -14,6 +14,10 @@ const adminSchema = new mongoose.Schema({
         min: [0, "Privilage cannot be lower than level 0"],
         max: [2, "Privilage level cannot be greater than level 2"],
         required: true
+    },
+    email: {
+        type: String,
+        required: [true, "Please provide a valid email id"]
     }
 })
 
