@@ -5,8 +5,9 @@ const express = require("express");
 const router = express.Router();
 const checkAdmin = require("../middlewares/checkAdmin");
 const bcrypt = require("bcryptjs");
-const { check, validationResult } = require("express-validator");
+const { check, validationResult, checkSchema } = require("express-validator");
 const Email = require("../models/email");
+const Teacher = require("../models/teacher");
 
 router.get("/", (req, res) => {
     res.render("admin/index");
@@ -113,5 +114,80 @@ router.post("/email/create", checkAdmin, [
     email.save();
     res.redirect("/index");
 })
+
+router.get("/teachers", checkAdmin, async (req, res, next) => {
+    try {
+        const teachers = await Teacher.find({});
+        res.json(teachers);
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.get("/teachers/create", checkAdmin, (req, res) => {
+    res.render("/admin/create");
+})
+
+router.post("/teachers/create", checkAdmin, [
+    check("teacher_id", "Please enter teacher_id").isLength({
+        min: 1
+    }),
+    check("email", "Please enter a valid email address").isEmail(),
+    check("username", "Please enter a valid username").notEmpty(),
+    check("password", "Please enter a valid password").notEmpty()
+], async (req, res, next) => {
+    try {
+        const { teacher_id, email, username, password } = req.body;
+        const teacher = new Teacher({
+            teacher_id, email, name: username, password
+        })
+        await teacher.save();
+
+        res.redirect("/index", { success: "Teacher was successfully registerd" });
+
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.delete("/teachers/delete", checkAdmin, [
+    check("teacher_id", "Please enter a valid teacher_id").isLength({
+        min: 1
+    })
+], async (req, res, next) => {
+    const { teacher_id } = req.body;
+    try {
+        const teacher = await Teacher.find({ teacher_id });
+        if (!teacher) {
+            return res.status(400).redirect("/index", { error: "Teacher is not registered" });
+        }
+
+        await Teacher.deleteOne({ teacher_id });
+
+        res.redirect("/index", { success: "Teacher is successfully removed" })
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.get("/teachers/edit/:id", checkAdmin, async (req, res, next) => {
+    const { id } = req.params;
+
+    const teacher = await Teacher.find({ teacher_id: id });
+
+    if (!teacher) {
+        return res.status(400).redirect("/index", { error: "Teacher of entered does not exist" });
+    }
+
+    res.json(teacher);
+})
+
+// router.patch("/teachers/edit/:id", async (req, res, next) => {
+//     const { id } = req.params;
+//     try {
+//     } catch (error) {
+
+//     }
+// })
 
 module.exports = router;

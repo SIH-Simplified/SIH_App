@@ -18,7 +18,7 @@ If it's a software platform (meaning one web address and database for all users 
 However, if it's a server you install your own instance of it's common to have a setup wizard, since each new install will need to go through this process, it's worth the effort to make something user friendly. You go to something like myapp.com/setup and then complete a few forms that sets up the first admin user and provides initial configuration and preferences. After this first admin user is setup this setup page would no longer be accessible, so that no other new admin users can be created that way.
 
 Routes for admin
-- [ ] /admin/ (this will be something like a dashboard)
+- [x] /admin/ (this will be something like a dashboard)
 - [ ] /admin/emails/ (this is for opening email section of the dashboard)
 - [ ] /admin/emails/create (this is for opening email section of the dashboard)
 - [ ] /admin/emails/delete (this is for opening email section of the dashboard)
@@ -40,9 +40,9 @@ Routes for admin
 - [ ] /admin/dailyUpdates/read (this is a route for adding daily updates for the teachers)
 - [ ] /admin/dailyUpdates/update (this is a route for updating daily updates for the teachers)
 - [ ] /admin/dailyUpdates/deleting (this is a route for deleting daily updates for the teachers)
-- [ ] /admin/add (this is route for adding a admin in the database)
-- [ ] /admin/delete (this is route for deleting a admin in the database)
-- [ ] /admin/updating (this is route for updating profile of a admin in the database)
+- [x] /admin/add (this is route for adding a admin in the database)
+- [x] /admin/delete (this is route for deleting a admin in the database)
+- [x] /admin/updating (this is route for updating profile of a admin in the database)
 - [ ] /admin/:id (this is a route for viewing admin profile in the app)
 
 
