@@ -7,6 +7,7 @@ const checkAdmin = require("../middlewares/checkAdmin");
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const Email = require("../models/email");
+
 router.get("/", (req, res) => {
     res.render("admin/index");
 })
@@ -89,7 +90,7 @@ router.get("/email", (req, res) => {
     res.render("admin/email");
 })
 
-router.post("/email/create", checkAdmin, [,
+router.post("/email/create", checkAdmin, [
     check("subject", "Please include a subject in the email").isLength({
         min: 1
     }),
