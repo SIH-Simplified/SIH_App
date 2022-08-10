@@ -23,29 +23,34 @@ router.get("/resigter", (req, res) => {
 
 router.post("/login", async (req, res, next) => {
     const { email, password } = req.body;
+    try {
+        const admin = await Admin.find({ email });
 
-    const admin = await Admin.find({ email });
+        if (!admin) {
+            return res.status(400).json({ error: "email or password is not correct" });
+        }
 
-    if (!admin) {
-        return res.status(400).json({ error: "email or password is not correct" });
+        const isValid = await bcrypt.compare(password, admin.password);
+
+        if (!isValid) {
+            return res.status(400).json({ error: "email or password is not correct" });
+        }
+
+        const token = JWT.sign({ email, msg: "I am admin level 1" }, process.env.AUTH_SECRET, {
+            expiresIn: "2 days"
+        })
+
+        res
+            .cookie("adminToken", token, { httpOnly: true, maxAge: 2 * 24 * 60 * 60 * 1000 })
+            .redirect(200, "/index")
+    } catch (error) {
+        next(error);
     }
 
-    const isValid = await bcrypt.compare(password, admin.password);
-
-    if (!isValid) {
-        return res.status(400).json({ error: "email or password is not correct" });
-    }
-
-    const token = JWT.sign({ email, msg: "I am admin level 1" }, process.env.AUTH_SECRET, {
-        expiresIn: "2 days"
-    })
-
-    res
-        .cookie("adminToken", token, { httpOnly: true, maxAge: 2 * 24 * 60 * 60 * 1000 })
-        .redirect(200, "/index")
 })
 
-router.post("/register", checkAdmin, [
+router.post("/register", [
+    check("username", "Please enter username for the user").notEmpty(),
     check("email", "Please enter a valid email").isEmail(),
     check("password", "Please enter a password which is more than five characters").isLength({
         min: 6
@@ -53,32 +58,36 @@ router.post("/register", checkAdmin, [
 ], async (req, res, next) => {
     const { username, password, email } = req.body;
     const errors = validationResult(req);
+    try {
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                errors: errors.array()
+            })
+        }
 
-    if (!errors.isEmpty()) {
-        return res.status(400).json({
-            errors: errors.array()
+        const adminUser = await Admin.find({ email });
+        console.log(adminUser);
+        if (adminUser && adminUser.length !== 0) {
+            return res.status(401).json({ error: "User is already registered as admin !" });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 12);
+
+        const newAdminUser = new Admin({ adminName: username, password: hashedPassword, email, isAdmin: 1 });
+        await newAdminUser.save();
+
+        const token = JWT.sign({ email, msg: "I am the admin level 1" }, process.env.AUTH_SECRET, {
+            expiresIn: "2 days"
         })
+
+        res.cookie("adminCookie", token, {
+            httpOnly: true,
+            maxAge: 2 * 24 * 60 * 60 * 1000
+        }).redirect(200, "/admin");
+    } catch (error) {
+        next(error);
     }
 
-    const adminUser = await Admin.find({ email });
-
-    if (adminUser) {
-        return res.status(401).json({ error: "User is already registered as admin !" });
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 12);
-
-    const newAdminUser = new Admin({ username, password: hashedPassword, email, isAdmin: 1 });
-    await newAdminUser.save();
-
-    const token = JWT.sign({ email, msg: "I am the admin level 1" }, process.env.AUTH_SECRET, {
-        expiresIn: "2 days"
-    })
-
-    res.cookie("adminCookie", token, {
-        httpOnly: true,
-        maxAge: 2 * 24 * 60 * 60 * 1000
-    }).redirect(200, "/index");
 })
 
 router.get("/:id", async (req, res, next) => {

@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const adminSchema = new mongoose.Schema({
     adminName: {
         type: String,
-        required: [true, "Please provide a admin username"]
+        required: [true, "Please provide a admin username"],
+        lowercase: true
     },
     password: {
         type: String,
@@ -13,7 +14,8 @@ const adminSchema = new mongoose.Schema({
         type: Number,
         min: [0, "Privilage cannot be lower than level 0"],
         max: [2, "Privilage level cannot be greater than level 2"],
-        required: true
+        required: true,
+        default: 1
     },
     email: {
         type: String,
