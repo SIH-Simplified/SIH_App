@@ -87,7 +87,6 @@ router.post("/register", [
     } catch (error) {
         next(error);
     }
-
 })
 
 router.get("/:id", async (req, res, next) => {
