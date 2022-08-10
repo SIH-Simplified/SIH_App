@@ -83,7 +83,7 @@ router.post("/register", [
         res.cookie("adminCookie", token, {
             httpOnly: true,
             maxAge: 2 * 24 * 60 * 60 * 1000
-        }).redirect(200, "/admin");
+        }).redirect("/admin");
     } catch (error) {
         next(error);
     }
