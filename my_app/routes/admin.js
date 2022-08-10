@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 const { check, validationResult, checkSchema } = require("express-validator");
 const Email = require("../models/email");
 const Teacher = require("../models/teacher");
-
+const cloudinary = require("../cloudinary/index");
 router.get("/", (req, res) => {
     res.render("admin/index");
 })
@@ -79,6 +79,13 @@ router.post("/register", checkAdmin, [
         httpOnly: true,
         maxAge: 2 * 24 * 60 * 60 * 1000
     }).redirect(200, "/index");
+})
+
+router.get("/:id", async (req, res, next) => {
+    const { id } = req.params;
+    const admin = await Admin.find({ _id: id });
+    if (!admin) { return res.status(400).redirect("/", { error: "Admin does not exist or is not registered" }); }
+    res.json(admin);
 })
 
 router.get("/logout", checkAdmin, (req, res) => {
@@ -189,5 +196,47 @@ router.get("/teachers/edit/:id", checkAdmin, async (req, res, next) => {
 
 //     }
 // })
+
+router.get("/study", checkAdmin, (req, res) => {
+    res.render("/admin/study");
+})
+
+router.post("/study/create", checkAdmin, async (req, res, next) => {
+    const { studyMaterial } = req.body;
+    try {
+        const url = await cloudinary.uploader.upload(studyMaterial, {
+            public_id: Math.random() * 54 * 456
+        }, function (error) {
+            next(error);
+        })
+
+        // Save this url in the database for future reference
+        res.redirect("/index");
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.delete("/study/delete/:id", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        if (!id) { return res.status(400).redirect("/index", { error: "Please specify file to be deleted" }); }
+
+        await cloudinary.uploader.destroy(id, function (error, result) {
+            if (error) {
+                next(error);
+            }
+            console.log(`File deleted ${result}`);
+            res.redirect("/study");
+        })
+
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.get("/study/read", (req, res) => {
+    // Fetch all files of study material and send to the template
+})
 
 module.exports = router;

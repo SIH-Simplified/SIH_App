@@ -19,20 +19,20 @@ However, if it's a server you install your own instance of it's common to have a
 
 Routes for admin
 - [x] /admin/ (this will be something like a dashboard)
-- [ ] /admin/emails/ (this is for opening email section of the dashboard)
-- [ ] /admin/emails/create (this is for opening email section of the dashboard)
-- [ ] /admin/emails/delete (this is for opening email section of the dashboard)
-- [ ] /admin/emails/update (this is for opening email section of the dashboard)
+- [x] /admin/emails/ (this is for opening email section of the dashboard)
+- [x] /admin/emails/create (this is for opening email section of the dashboard)
+- [x] /admin/emails/delete (this is for opening email section of the dashboard)
+- [x] /admin/emails/update (this is for opening email section of the dashboard)
 - [x] /admin/teachers/ (this is the route for viewing all the teachers in the dashboard)
 - [x] /admin/teachers/create (this is the route for adding teachers in the app database)
 - [ ] /admin/teachers/edit (this is a route for editing details of a teacher)
 - [x] /admin/teachers/delete (this route for deleting a teacher data or user from the app)
 - [ ] /admin/updates/create (this route is for creating updates for teachers)
 - [ ] /admin/updates/letters/ (this is a route for viewing and approving letters submitted by teachers)
-- [ ] /admin/study/create (this is a route for adding study material for teachers)
+- [x] /admin/study/create (this is a route for adding study material for teachers)
 - [ ] /admin/study/update (this is a route for updating study material for teachets)
-- [ ] /admin/study/delete (this is a route for deleting study material for teachers)
-- [ ] /admin/study/read (this is open the study material for the teachers on the admin side)
+- [x] /admin/study/delete (this is a route for deleting study material for teachers)
+- [x] /admin/study/read (this is open the study material for the teachers on the admin side)
 - [ ] /admin/exprenses/create (this is a route for adding total expenses spend by the managment in the school)
 - [ ] /admin/expenses/update (this is a route for updating total expenses spend by the managment in the school)
 - [ ] /admin/expenses/delete (this is a route for deleting total expenses spend by the managment in the school)
@@ -43,7 +43,7 @@ Routes for admin
 - [x] /admin/add (this is route for adding a admin in the database)
 - [x] /admin/delete (this is route for deleting a admin in the database)
 - [x] /admin/updating (this is route for updating profile of a admin in the database)
-- [ ] /admin/:id (this is a route for viewing admin profile in the app)
+- [x] /admin/:id (this is a route for viewing admin profile in the app)
 
 
 ### Previliges for admin users
