@@ -12,59 +12,65 @@
 <body>
 
     <div class="main">
-        <div class="alert alert-danger" role="alert">
-            A simple danger alert—check it out!
-        </div>
-        <div class="main_row">
-            <div class="col_left">
-                <form action="http://localhost:3000/admin/register" method="post">
-                    <div class="left_cont">
-                        <div class="left-nav">
-                            <img src="/images/Logo.png" height="60" width="60">
-                            <h6 class="nav-line"> Don't have any account? <button class="nav-button"> Log in </button>
-                            </h6>
-                        </div>
-                        <div class="left-head">
-                            <h1>Create your free account</h1>
-                        </div>
-                        <div class="left-box">
-                            <div class="left-box-line">
-                                <h6>Full name</h6>
-                                <input type="text" name="username" class="left-text" placeholder="Your name">
-                            </div>
-                            <div class="left-box-line">
-                                <h6>Email address</h6>
-                                <input type="text" name="email" class="left-text" placeholder="Example@gmail.com">
-                            </div>
-                            <div class="left-box-line">
-                                <h6>Password</h6>
-                                <input type="password" name="password" class="left-text" placeholder="Enter Password">
-                            </div>
-                        </div>
-                        <div class="left-button">
-                            <button class="left-buttAx">
-                                Create your account
-                            </button>
-                            <h5 class="left-or">OR</h5>
-                            <button class="left-buttAx">
-                                <i class="fa-brands fa-google"></i> Sign with google
-                            </button>
-                        </div>
-                        <div class="left-foot">
-                            <p class="left-foot-line">By signing up, you agree to our communications and usage
-                                terms. Already have an account? <a href="#">Sign in</a> </p>
-                        </div>
-                    </div>
-                </form>
+        <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                A simple danger alert—check it out!
+                <%= error %>
             </div>
-            <div class="col_right">
-                <div class="right_cont">
-                    <div class="extra"></div>
-                    <div class="right-img">
-                        <img src="/images/Loginbackground.png" width="685" height="600" class="img-Ax">
+            <% } %>
+                <div class="main_row">
+                    <div class="col_left">
+                        <form action="http://localhost:3000/admin/register" method="post">
+                            <div class="left_cont">
+                                <div class="left-nav">
+                                    <img src="/images/Logo.png" height="60" width="60">
+                                    <h6 class="nav-line"> Don't have any account? <button class="nav-button"> Log in
+                                        </button>
+                                    </h6>
+                                </div>
+                                <div class="left-head">
+                                    <h1>Create your free account</h1>
+                                </div>
+                                <div class="left-box">
+                                    <div class="left-box-line">
+                                        <h6>Full name</h6>
+                                        <input type="text" name="username" class="left-text" placeholder="Your name">
+                                    </div>
+                                    <div class="left-box-line">
+                                        <h6>Email address</h6>
+                                        <input type="text" name="email" class="left-text"
+                                            placeholder="Example@gmail.com">
+                                    </div>
+                                    <div class="left-box-line">
+                                        <h6>Password</h6>
+                                        <input type="password" name="password" class="left-text"
+                                            placeholder="Enter Password">
+                                    </div>
+                                </div>
+                                <div class="left-button">
+                                    <button class="left-buttAx">
+                                        Create your account
+                                    </button>
+                                    <h5 class="left-or">OR</h5>
+                                    <button class="left-buttAx">
+                                        <i class="fa-brands fa-google"></i> Sign with google
+                                    </button>
+                                </div>
+                                <div class="left-foot">
+                                    <p class="left-foot-line">By signing up, you agree to our communications and usage
+                                        terms. Already have an account? <a href="#">Sign in</a> </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col_right">
+                        <div class="right_cont">
+                            <div class="extra"></div>
+                            <div class="right-img">
+                                <img src="/images/Loginbackground.png" width="685" height="600" class="img-Ax">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </div>
     <%- include("../templates/footer") %>

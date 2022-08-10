@@ -68,7 +68,7 @@ router.post("/register", [
         const adminUser = await Admin.find({ email });
         console.log(adminUser);
         if (adminUser && adminUser.length !== 0) {
-            return res.status(401).json({ error: "User is already registered as admin !" });
+            return res.status(401).render("/admin/register", { error: "User is already registered as admin !" });
         }
 
         const hashedPassword = await bcrypt.hash(password, 12);
