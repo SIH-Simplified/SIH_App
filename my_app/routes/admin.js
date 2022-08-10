@@ -17,8 +17,8 @@ router.get("/login", (req, res) => {
     res.render("admin/login");
 })
 
-router.get("/resigter", (req, res) => {
-    res.render("admin/register");
+router.get("/register", (req, res) => {
+    res.render("admin/register",);
 })
 
 router.post("/login", async (req, res, next) => {
@@ -68,7 +68,7 @@ router.post("/register", [
         const adminUser = await Admin.find({ email });
         console.log(adminUser);
         if (adminUser && adminUser.length !== 0) {
-            return res.status(401).render("/admin/register", { error: "User is already registered as admin !" });
+            return res.status(401).render("admin/login", { error: "User is already registered as admin !" });
         }
 
         const hashedPassword = await bcrypt.hash(password, 12);

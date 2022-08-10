@@ -12,9 +12,8 @@
 <body>
 
     <div class="main">
-        <% if (error) { %>
+        <% if (typeof error !=='undefined' ) { %>
             <div class="alert alert-danger" role="alert">
-                A simple danger alert—check it out!
                 <%= error %>
             </div>
             <% } %>
