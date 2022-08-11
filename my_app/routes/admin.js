@@ -9,6 +9,7 @@ const { check, validationResult, checkSchema } = require("express-validator");
 const Email = require("../models/email");
 const Teacher = require("../models/teacher");
 const cloudinary = require("../cloudinary/index");
+const DailyUpdates = require("../models/admin/dailyUpdates");
 router.get("/", (req, res) => {
     res.render("admin/index");
 })
@@ -247,8 +248,77 @@ router.get("/study", (req, res) => {
     // Fetch all files of study material and send to the template
 })
 
-router.get("/dailyUpdates", (req, res) => {
-    
+router.get("/dailyUpdates", async (req, res, next) => {
+    try {
+        const updates = await DailyUpdates.find({});
+        res.json({ updates });
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.get("/dailyUpdates/:id", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const adminPost = await DailyPosts.find({ _id: id });
+        res.render("/admin/dailyUpdate", { post: adminPost });
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.post("/dailyUpdates/create", [
+    check("post", "Please provide content for the post").notEmpty().isLength({
+        min: 10
+    }).withMessage("Post content should be atleast 10 characters long")
+], async (req, res, next) => {
+    const { post } = req.body;
+    try {
+        const token = req.cookies["adminToken"];
+        try {
+            const payload = JWT.verify(token, process.env.AUTH_SECRET);
+        } catch (error) {
+            next(new Error("Invalid token"));
+        }
+        const admminId = payload.sub;
+        const admin = await Admin.find({ _id: adminId });
+        const adminPost = new DailyUpdates({ posterName: admin.adminName, post, postDate: Date.now() });
+        await adminPost.save();
+        res.redirect("/admin/index", { success: "Daily update added", postId: adminPost.id });
+    } catch (error) {
+        next(error);
+    }
+});
+
+router.get("/dailyUpdates/update/:id", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const adminPost = await DailyUpdates.find({ _id: id });
+        res.render("/admin/dailyUpdateCreate", { post: adminPost });
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.patch("/dailyUpdates/update/:id", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        const { post } = req.body;
+        const newPost = await DailyUpdates.findByIdAndUpdate({ _id: id }, { post }, { new: true });
+        res.redirect(`/admin/dailyUpdate/${id}`, { post: newPost });
+    } catch (error) {
+        next(error);
+    }
+})
+
+router.delete("/dailyUpdates/delete/:id", async (req, res, next) => {
+    const { id } = req.params;
+    try {
+        await DailyUpdates.findByIdAndDelete({ _id: id });
+        res.redirect("/admin/dailyUpdates");
+    } catch (error) {
+        next(error);
+    }
 })
 
 module.exports = router;
