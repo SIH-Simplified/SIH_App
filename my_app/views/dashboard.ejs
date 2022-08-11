@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/dashboardcss">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/577ae30e95.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Client Side Dashboard</title>
+</head>
+
+<body class="light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2 sidebar">
+                <img src="images/logo.png" width="180" height="180" class="logo">
+
+                <div class="dropdown">
+                    <div class="dropbtn">
+                        <h5 id="option_1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-house-door" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+                            </svg>
+                            Dashboard
+                        </h5>
+                    </div>
+
+                </div>
+
+                <h6 id="APP">APPS AND PAGES</h6>
+                <button class="icon_todo"><i class="fa-xl fa-regular fa-square-check"></i> <span
+                        class="nav-line">Todo</span>
+                </button>
+                <button class="icon_todo"><i class="fa-xl fa-regular fa-envelope"></i> <span
+                        class="nav-line">Email</span>
+                </button>
+                <button class="icon_todo"><i class="fa-regular fa-paper-plane"></i> <span class="nav-line">Transfer
+                        status</span>
+                </button>
+                <button class="icon_todo"><i class="fa-regular fa-calendar"></i> <span class="nav-line">Calender</span>
+                </button>
+                <button class="icon_todo"><i class="fa-regular fa-file"></i> <span class="nav-line">Study
+                        Martial</span>
+                </button>
+                <button class="icon_todo"> <i class="fa-regular fa-image"></i> <span class="nav-line">View
+                        Portfolio</span>
+                </button>
+                <button class="icon_todo"><i class="fa-regular fa-user"></i><span class="nav-line"> About</span>
+                </button>
+            </div>
+            <div class="col-sm-10 main">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="navbar">
+                            <div class="row-nav">
+                                <div class="nav-left">
+                                    <div class="icons">
+                                        <a href="#"><i class="fa-xl fa-regular fa-envelope"></i></a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#"> <i class="fa-xl fa-regular fa-message"></i></a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#"><i class="fa-xl fa-regular fa-calendar"></i></a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#"><i class="fa-xl fa-regular fa-square-check"></i></a>
+                                    </div>
+                                </div>
+                                <div class="nav-middle">
+                                </div>
+                                <div class="nav-right">
+                                    <div class="icons">
+                                        <a href="#"><i class="fa-xl fa-regular fa-bell"></i></a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#" onclick="toggleDarkMode()"><i
+                                                class="fa-xl fa-regular fa-moon"></i></a>
+                                    </div>
+                                    <div class="icons">
+                                        <a href="#"><i class="fa-xl fa-regular fa-sun"></i></a>
+                                    </div>
+                                    <div id="userName">
+                                        userName
+                                    </div>
+                                    <div class="icons">
+                                        <img src="images/pp.png" alt="pp" height="35px" width="35px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="group one">
+                                        <div class="one-row">
+                                            <div class="one-col-a">
+                                                <p class="Wel_text">Welcome ' Name</p>
+                                                <p class="Wel_text2">Primary Wing</p>
+                                            </div>
+                                            <div class="one-col-b">
+                                                <img src="images/image 9.png" alt="" width="89" height="150"
+                                                    class="medal">
+                                            </div>
+                                        </div>
+                                        <div class="row-one-A">
+                                            <div class="one-join">
+                                                <h6 class="one-line">
+                                                    JOINED FROM <span class="date"> JULY ,2022</span>
+                                                </h6>
+                                            </div>
+                                            <div class="one-end">
+                                                <h6 class="one-line">
+                                                    END OF TENURE <span class="date"> DEC,2029</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="group two">
+                                            <div class="two-line">
+
+                                                <h6 class="two-text-one">Service span</h6>
+                                                <h6 class="two-text-two">2.5Years</h6>
+                                                <img src="images/Group 2.png" width="150" height="55" class="two-img">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="group three">
+                                            <div class="three-line">
+                                                <h6 class="three-text-one">Current salary</h6>
+                                                <h6 class="three-text-two">43k</h6>
+                                                <img src="images/Group 1.png" class="three-img" width="180">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="group four">
+                                        <div class="four-title">
+                                            <h4 class="four-text"> UPCOMING TRAININGS</h4>
+                                        </div>
+                                        <div class="four-training">
+                                            <div class="four-training-cont">
+
+                                                <div class="four-training-text">
+                                                    <div class="four-left">
+                                                        <i class="fa-solid fa-file-lines"></i>
+
+                                                    </div>
+                                                    <div class="four-mid">
+                                                        <h6 class="four-mid-title">Technical law</h6>
+                                                        <p class="four-mid-text">17 October 2021 . View 17 people</p>
+                                                    </div>
+                                                    <div class="four-right">
+                                                        <p class="four-right-text-a">attend</p>
+                                                        <a href="#">
+                                                            <p class="four-right-text-b">view cources
+                                                                <i class="fa-solid fa-angle-right"></i>
+                                                            </p>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="four-training-cont">
+                                                <div class="four-training-text">
+                                                    <div class="four-left">
+                                                        <i class="fa-solid fa-square-poll-vertical"></i>
+
+                                                    </div>
+                                                    <div class="four-mid">
+                                                        <h6 class="four-mid-title">Marketing</h6>
+                                                        <p class="four-mid-text">22 September 2021 . View 24 people</p>
+                                                    </div>
+                                                    <div class="four-right">
+                                                        <p class="four-right-text-a">.</p>
+                                                        <a href="#">
+                                                            <p class="four-right-text-b"> view cources <i
+                                                                    class="fa-solid fa-angle-right"></i></p>
+                                                        </a>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                            <div class="four-training-cont">
+                                                <div class="four-training-text">
+                                                    <div class="four-left">
+                                                        <i class="fa-solid fa-flask-vial"></i>
+
+                                                    </div>
+                                                    <div class="four-mid">
+                                                        <h6 class="four-mid-title">Chemistry and its Element</h6>
+                                                        <p class="four-mid-text">25 September 2021 . View 8 people</p>
+                                                    </div>
+                                                    <div class="four-right">
+                                                        <p class="four-right-text-a">.</p>
+                                                        <a href="#">
+                                                            <p class="four-right-text-b"> view cources <i
+                                                                    class="fa-solid fa-angle-right"></i></p>
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="group five">
+                                        <div class="five-row-main">
+                                            <div class="five-col-a">
+                                                <div class="five-top">
+                                                    <h4> PROMOTION CREDITS </h4>
+                                                </div>
+                                                <div class="five-mid">
+                                                    <p>apply for qualification<br>
+                                                        exam</p>
+                                                </div>
+                                                <div class="five-bottom">
+                                                    <div class="five-circle-a"></div> experience
+                                                    <div class="five-circle-b"></div> qualification
+                                                    <div class="five-circle-c"></div>good practices
+                                                </div>
+                                            </div>
+                                            <div class="five-col-b" id="five-circle">
+                                                <script>var options = {
+                                                        series: [44, 55, 41, 17, 15],
+                                                        chart: {
+                                                            type: 'donut',
+                                                        },
+                                                        legend: {
+                                                            show: false
+                                                        },
+                                                        responsive: [{
+                                                            breakpoint: 480,
+                                                            options: {
+                                                                chart: {
+                                                                    width: 200
+                                                                },
+
+                                                            }
+                                                        }]
+                                                    };
+
+                                                    var chart = new ApexCharts(document.querySelector("#five-circle"), options);
+                                                    chart.render();</script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="group six">
+                                        <div class="six-row">
+                                            <div class="six-col-a">
+                                                <div class="six-line">Yearly
+                                                    planner</div>
+                                            </div>
+                                            <div class="six-col-b"> Calender</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="group seven">
+                                        <div class="seven-row-main">
+                                            <div class="seven-col-a">
+
+                                                <div style="height:70%;width:100%;background:white;margin-top:20%;display:flex;"
+                                                    id="attendencegraph">
+                                                    <div
+                                                        style="height:100%;width:4%;background:#aed8f0;border-radius:10px;margin-left:30%;">
+                                                        <div
+                                                            style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div
+                                                        style="height:100%;width:4%;background:#4d5c96;border-radius:10px;margin-left:15%;">
+                                                        <div
+                                                            style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div
+                                                        style="height:100%;width:4%;background:#f7726f;border-radius:10px;margin-left:15%;">
+
+                                                        <div
+                                                            style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                            </div>
+
+
+
+                                            <div class="seven-col-b">
+                                                <div class="seven-mid-row-a">
+                                                    <div class="seven-mid-col-aa">
+                                                        <h5 class="seven-text-a">2431</h5>
+                                                        <p class="seven-text-b">18-15</p>
+                                                    </div>
+                                                    <div class="seven-mid-col-ab">
+                                                        <h5 class="seven-text-a">892</h5>
+                                                        <p class="seven-text-b">36-55</p>
+                                                    </div>
+                                                    <div class="seven-mid-col-ac">
+                                                        <h5 class="seven-text-a">209</h5>
+                                                        <p class="seven-text-b">55</p>
+                                                    </div>
+                                                </div>
+                                                <div class="seven-mid-row-b">
+                                                    <div class="seven-mid-col-ba">
+                                                        <div class="seven-mid-col-ba-top">
+                                                            <h6>Cource</h6>
+                                                        </div>
+                                                        <div class="seven-mid-col-ba-bottom">
+                                                            <div class="seven-flex-a">
+                                                                <div class="seven-square-a"></div>
+                                                                <div class="Marketing">Marketing</div>
+                                                            </div>
+                                                            <div class="seven-flex-a">
+                                                                <div class="seven-square-b"></div>
+                                                                <div class="facebook">Facebook
+                                                                    Ads</div>
+                                                            </div>
+                                                            <div class="seven-flex-a">
+                                                                <div class="seven-square-c"></div>
+                                                                <div class="google"> Google Ads
+                                                                    Beginning</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="seven-mid-col-bb">
+                                                        <div class="seven-mid-col-ba-top-ax">
+                                                            <h6 class="seven-mid-col-ba-top-ax-text">changes</h6>
+                                                        </div>
+                                                        <div class="seven-mid-col-ba-bottom-bx">
+                                                            <div class="seven-bottom-mid-a"> 64% <i
+                                                                    class="fa-solid fa-arrow-right"></i> 94%</div>
+                                                            <div class="seven-bottom-mid-a"> 51% <i
+                                                                    class="fa-solid fa-arrow-right"></i> 42% </div>
+                                                            <div class="seven-bottom-mid-a"> 70% <i
+                                                                    class="fa-solid fa-arrow-right"></i> 73% </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="seven-mid-col-bc">
+                                                        <div class="seven-mid-col-bc-text-a">30%</div>
+                                                        <div class="seven-mid-col-bc-text-b">9%</div>
+                                                        <div class="seven-mid-col-bc-text-c">3%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="seven-col-c"> <img src="images/line.jpg"></div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="group eight">
+                                            <div class="eigth-main">
+                                                <div class="eight-title">
+                                                    <p class="eight-title-text">
+                                                        TEACHER’S TRANFER REQUEST
+                                                        PORTAL</p>
+                                                </div>
+                                                <button class="eight-button-a">NOTIFICATIONS <i
+                                                        class="fa-regular fa-bell"></i></button><br>
+                                                <button class="eight-button-b">CHECK ELIGIBILITY <i
+                                                        class="fa-regular fa-file"></i></button><br>
+                                                <button class="eight-button-c">REGISTER FOR TRANSFER <i
+                                                        class="fa-regular fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="group eight">
+                                            <img src="images/image 43.png" alt="" style="width:100%;height:30%;">
+                                            <h4 class="daily-title">DAILY SCHEDULE</h4>
+                                            <div class="Eight_Schedule">
+                                                <div class="Eight_row">
+                                                    <div class="Eight_col1">
+                                                        <p class="Eight_time1">8:30 AM <i
+                                                                class="fa-solid fa-turn-down"></i>
+                                                        </p>
+                                                        <p class="Eight_time2">Reporting timings</p>
+                                                    </div>
+
+                                                    <div class="Eight_col2">
+                                                        <p class="Eight_time1">45 M <i class="fa-solid fa-mug-hot"></i>
+                                                        </p>
+                                                        <p class="Eight_time2">Break Time</p>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="Eight_row2">
+                                                    <div class="Eight_col3">
+                                                        <p class="Eight_time1">4h 50m <i
+                                                                class="fa-solid fa-briefcase"></i>
+                                                        </p>
+                                                        <p class="Eight_time2">Working hours</p>
+                                                    </div>
+
+
+                                                    <div class="Eight_col4">
+                                                        <p class="Eight_time1">4/days <i
+                                                                class="fa-solid fa-arrow-right"></i> </p>
+                                                        <p class="Eight_time2">leatures per day</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="group nine">
+                                <h6 class="nine_Title"> Apply for leaves </h6>
+                                <p id="nine_Sub_title"> you are left <Span style="color: #7363EA ;">7.5 and 1
+                                        optional</Span> leave for this month </p>
+                                <br>
+                                <div class="nine-second-main">
+                                    <div class="nine_row1">
+                                        <div class="Seven_column_1">
+
+
+
+                                            <div>
+                                                <h6 id="nine_col1"> LEAVE TYPE</h6>
+                                                <label class="label-radio3" for="radio1">
+                                                    <input class="input-radio3" id="radio1" type="radio" name="choice"
+                                                        value="say-hi" checked="checked">
+                                                    LEAVE
+                                                </label>&nbsp;
+                                                <label class="label-radio3" for="radio2"></label>
+                                                <input class="input-radio3" id="radio2" type="radio" name="choice"
+                                                    value="get-quote">
+                                                OPTIONAL
+                                                </label>
+                                            </div>
+                                            <br>
+
+                                            <h6> FROM</h6>
+                                            <input type="text" name="Start date" placeholder="Select Date Start"
+                                                required>
+
+                                        </div>
+                                        <div class="nine_column_2">
+                                            <div>
+                                                <h6 id="nine_col1"> DAY TYPE</h6>
+                                                <label class="label-radio" for="radio1">
+                                                    <input class="input-radio3" id="radio1" type="radio" name="choice"
+                                                        value="say-hi" checked="checked">
+                                                    FULL
+                                                </label>&nbsp;
+                                                <label class="label-radio" for="radio2">
+                                                    <input class="input-radio3" id="radio2" type="radio" name="choice"
+                                                        value="get-quote">
+                                                    FIRST HALF
+                                                </label>&nbsp;
+                                                <label class="label-radio" for="radio3">
+                                                    <input class="input-radio3" id="radio3" type="radio" name="choice"
+                                                        value="get-quote">
+                                                    SECOND HALF
+                                                </label>
+                                            </div>
+                                            <br>
+
+                                            <h6> TO</h6>
+                                            <input type="text" name="Start date" placeholder="Select End Date "
+                                                required>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="nine_inform">
+                                        <h6>I want to inform</h6>
+                                        <div class="nine_row2">
+                                            <div class="nine_col11">Department <br>
+                                                Supervisor</div>
+                                            <div class="nine_col12">
+                                                <input type="text" name="Department" placeholder=" Primary "
+                                                    class="nine_text1" required><br>
+                                                <input type="text" name="Supervisor"
+                                                    placeholder="Type your supervisor’s name" class="nine_text1"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <h6>Reason</h6>
+                                        <textarea name="" id="" cols="52" rows="3"
+                                            placeholder="Type your reason here"></textarea>
+                                    </div>
+                                    <br>
+                                    <button id="nine_buton">Apply Leave</button> &nbsp;
+                                    <button id="nine_buton2">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="group eleven" id="application">
+                                <div class="eleven-title">YOUR APPLICATIONS</div>
+
+                                <div class="eleven-main">
+                                    <div class="eleven-cont">
+                                        <div class="elven-col-a">
+                                            <div class="eleven-top">Half day Application</div>
+                                            <div class="eleven-mid">Wed,16 Dec</div>
+                                            <div class="eleven-bottom"> Casual</div>
+                                        </div>
+                                        <div class="eleven-col-b">
+                                            <div class="eleven-ax">
+                                                Awaiting
+                                            </div>
+                                            <div class="eleven-bx"><i class="fa-solid fa-chevron-right"></i></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="eleven-date"> November 2022</div>
+
+                                    <div class="eleven-cont">
+                                        <div class="elven-col-a">
+                                            <div class="eleven-top-ax">Half day Application</div>
+                                            <div class="eleven-mid-bx">Wed,16 Dec</div>
+                                            <div class="eleven-bottom-cx"> Approved</div>
+                                        </div>
+                                        <div class="eleven-col-b">
+                                            <div class="eleven-ax">
+                                                Awaiting
+                                            </div>
+                                            <div class="eleven-bx"><i class="fa-solid fa-chevron-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="eleven-cont">
+                                        <div class="elven-col-a">
+                                            <div class="eleven-top-az">Half day Application</div>
+                                            <div class="eleven-mid-bz">Wed,16 Dec</div>
+                                            <div class="eleven-bottom-cz"> Casual</div>
+                                        </div>
+                                        <div class="eleven-col-b">
+                                            <div class="eleven-ax">
+                                                Awaiting
+                                            </div>
+                                            <div class="eleven-bx"><i class="fa-solid fa-chevron-right"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="eleven-cont">
+                                        <div class="elven-col-a">
+                                            <div class="eleven-top">Half day Application</div>
+                                            <div class="eleven-mid">Wed,16 Dec</div>
+                                            <div class="eleven-bottom"> Casual</div>
+                                        </div>
+                                        <div class="eleven-col-b">
+                                            <div class="eleven-ax">
+                                                Awaiting
+                                            </div>
+                                            <div class="eleven-bx"><i class="fa-solid fa-chevron-right"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="group ten" style="overflow:hidden;">
+                                <img src="images/image 38.jpg" alt="" style="width:100%;">
+                                <div style="width:100%;">
+                                    <marquee scrollamount="5" direction="up" id="marque">
+                                        <ul id="marqueecontent">
+
+
+
+
+
+                                        </ul>
+
+
+
+                                    </marquee>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var marqueecontent = document.getElementById("marqueecontent");
+        var application = document.getElementById("application");
+        var marque = document.getElementById("marque");
+        marque.style.height = application.offsetHeight + "px";
+        for (i = 1; i <= 100; i++) {
+            var list = document.createElement("li");
+            marqueecontent.appendChild(list);
+            var text = document.createTextNode(" No updates What you PPL are actually doing Need to work hard");
+            var font = document.createElement("font");
+            font.appendChild(text);
+            list.appendChild(font);
+
+        }
+
+    </script>
+</body>
+
+</html>
