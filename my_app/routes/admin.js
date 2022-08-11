@@ -1,5 +1,5 @@
 require("dotenv").config();
-const Admin = require("../models/admin");
+const Admin = require("../models/admin/admin");
 const JWT = require("jsonwebtoken");
 const express = require("express");
 const router = express.Router();
@@ -243,8 +243,12 @@ router.delete("/study/delete/:id", async (req, res, next) => {
     }
 })
 
-router.get("/study/read", (req, res) => {
+router.get("/study", (req, res) => {
     // Fetch all files of study material and send to the template
+})
+
+router.get("/dailyUpdates", (req, res) => {
+    
 })
 
 module.exports = router;

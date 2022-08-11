@@ -37,7 +37,7 @@ Routes for admin
 - [ ] /admin/expenses/update (this is a route for updating total expenses spend by the managment in the school)
 - [ ] /admin/expenses/delete (this is a route for deleting total expenses spend by the managment in the school)
 - [ ] /admin/dailyUpdates/create (this is a route for adding daily updates for the teachers)
-- [ ] /admin/dailyUpdates/read (this is a route for adding daily updates for the teachers)
+- [ ] /admin/dailyUpdates (this is a route for adding daily updates for the teachers)
 - [ ] /admin/dailyUpdates/update (this is a route for updating daily updates for the teachers)
 - [ ] /admin/dailyUpdates/deleting (this is a route for deleting daily updates for the teachers)
 - [x] /admin/add (this is route for adding a admin in the database)
