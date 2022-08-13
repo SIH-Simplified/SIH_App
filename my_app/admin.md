@@ -1,6 +1,7 @@
-# Admin 
+# Admin
 
 ## Admin Identification and creation
+
 You can do as below:
 
 - Step 1 : Create one superadmin manually give isAdmin = 2
@@ -18,6 +19,7 @@ If it's a software platform (meaning one web address and database for all users 
 However, if it's a server you install your own instance of it's common to have a setup wizard, since each new install will need to go through this process, it's worth the effort to make something user friendly. You go to something like myapp.com/setup and then complete a few forms that sets up the first admin user and provides initial configuration and preferences. After this first admin user is setup this setup page would no longer be accessible, so that no other new admin users can be created that way.
 
 Routes for admin
+
 - [x] /admin/ (this will be something like a dashboard)
 - [x] /admin/emails/ (this is for opening email section of the dashboard)
 - [x] /admin/emails/create (this is for opening email section of the dashboard)
@@ -47,6 +49,7 @@ Routes for admin
 
 
 ### Privileges for admin users
+
 - Add teachers
 - Remove teachers
 - Edit teacher's information and details
