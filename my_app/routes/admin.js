@@ -19,7 +19,7 @@ router.get("/login", (req, res) => {
 })
 
 router.get("/register", (req, res) => {
-    res.render("admin/register",);
+    res.render("admin/register");
 })
 
 router.post("/login", async (req, res, next) => {
@@ -28,13 +28,13 @@ router.post("/login", async (req, res, next) => {
         const admin = await Admin.find({ email });
 
         if (!admin) {
-            return res.status(400).json({ error: "email or password is not correct" });
+            return res.status(400).render("admin/login", { error: "email or password is not correct" });
         }
 
         const isValid = await bcrypt.compare(password, admin.password);
 
         if (!isValid) {
-            return res.status(400).json({ error: "email or password is not correct" });
+            return res.status(400).render("admin/login", { error: "email or password is not correct" });
         }
 
         const token = JWT.sign({ email, msg: "I am admin level 1" }, process.env.AUTH_SECRET, {
@@ -45,6 +45,7 @@ router.post("/login", async (req, res, next) => {
             .cookie("adminToken", token, { httpOnly: true, maxAge: 2 * 24 * 60 * 60 * 1000 })
             .redirect(200, "/index")
     } catch (error) {
+        res.status(400).render("admin/login", { error });
         next(error);
     }
 
@@ -86,6 +87,7 @@ router.post("/register", [
             maxAge: 2 * 24 * 60 * 60 * 1000
         }).redirect("/admin");
     } catch (error) {
+        res.status(400).render("admin/register", { error })
         next(error);
     }
 })

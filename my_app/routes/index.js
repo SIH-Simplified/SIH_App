@@ -1,8 +1,8 @@
 require("dotenv").config();
 const Teacher = require("../models/teacher");
 const process = require("process");
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const JWT = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 /* GET home page. */

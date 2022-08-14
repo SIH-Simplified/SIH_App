@@ -2,14 +2,1456 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&display=swap');
+
+        body {
+            background: #f5f5f5;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>I am the admin index page</h1>
+    <span class="glyphicon glyphicon-menu-hamburger"
+        style="color:black;position:fixed;top:12%;font-size:min(7vw,3rem);left:5%;visibility:hidden;z-index:16;"
+        id="burger"></span>
+    <div style="width:13%;height:100%;position:fixed;background:white;border-right:1px solid #f5f5f5;z-index:3;"
+        id="navbar">
+        <center><br><br>
+            <img src="adminassets/logo.svg" style="max-width:10vw;">
+            <br><br><br><br>
+            <span class="glyphicon glyphicon-envelope"
+                style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;  ;">&nbsp&nbsp&nbsp&nbspEmail</span><br><br>
+            <font
+                style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;">
+                <span class="glyphicon glyphicon-briefcase" id="send"></span>&nbsp&nbsp&nbsp&nbspTeachers</font><br><br>
+            <font
+                style="font-size:min(1vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp&nbsp&nbsp&nbspDepartments</font><br><br>
+
+            <font
+                style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                <span class="glyphicon glyphicon-calendar"></span>&nbsp&nbsp&nbsp&nbspCalendar</font><br><br>
+
+            <font
+                style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                <span class="	glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp&nbspLogout</font><br>
+
+        </center>
+    </div>
+    <div style="position:absolute;left:13%;width:87%;height:93%;top:0%;" id="maindiv">
+        <div style="width:98%;position:relative;left:1%;background:#7367f0;border-radius:5px;height:6.3%;font-family:'Poppins', sans-serif;margin-top:1.5%;"
+            id="container1">
+            <form
+                style="position:absolute;width:20%;border-radius:30px;background:white;display:flex;margin-top:1%;left :65%;">
+                <input type="text" placeholder="search"
+                    style="border-radius:30px;width:100%;background:none;border:none;">
+                <button type="submit" class="glyphicon glyphicon-search" style="background:none;border:none;"></button>
+            </form>
+            <font style='padding-top:1%;left:90%;position:absolute;font-size:min(3vw,1.5rem);color:white;;'>Jhonny
+            </font>
+            <img src="adminassets/usr.jpg" class="img-responsive" id="profile"
+                style="width:55px;border-radius:50%;float:right;margin-right:30px;max-width:3.5vw;">
+
+        </div>
+        <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;height:19.5%;" id="row1">
+            <span class="col-md-4" id="institute">
+                <div style="border-radius:7px;">
+                    <img src="adminassets/institute.svg" id="institute_child" style="width:105%;">
+                </div>
+            </span>
+
+            <span class="col-md-8" style="overflow:auto;height:100%;" id="teacherlistcont">
+                <div style="background:white;border-radius:7px;;color:#202020;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                    id="container2">
+                    <font
+                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2.5rem);color:#202020;border:none;padding-left:1%;border-radius:7px;">
+                        Teachers List</font>
+                    <hr>
+                    <br>
+                    <table style="width:95%;margin-left:2.5%;" id="teacherlist">
+                        <tr style="font-size:min(1vw,1.5rem)" id="teacherlistheading">
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Email</th>
+                            <th>Class</th>
+                            <th>Subject</th>
+                            <th>Rating</th>
+                            <th>Action</th>
+                        </tr>
+                    </table>
+                    <script>
+                        var teacherlist = document.getElementById("teacherlist");
+                        var cont2 = document.getElementById("container2");
+                        j = 10
+                        for (i = 1; i <= j; i++) {
+                            var row = document.createElement("tr");
+                            row.style.borderBottom = "1px solid #f5f5f5";
+                            teacherlist.appendChild(row);
+                            var img = document.createElement("img");
+                            img.src = "adminassets/emailusr.png";
+                            img.style.borderRadius = "50%";
+                            img.style.width = "40px";
+                            img.style.margin = 0;
+                            var rowimg = document.createElement("td");
+                            rowimg.appendChild(img);
+                            row.appendChild(rowimg);
+
+                            var tname = document.createTextNode("Danny Scoff");
+                            var namefont = document.createElement("font");
+                            namefont.id = "teacherlist1" + i;
+                            namefont.style.fontSize = "min(1vw,1.5rem)";
+
+                            namefont.appendChild(tname);
+                            var rowname = document.createElement("td");
+                            rowname.appendChild(namefont);
+                            row.appendChild(rowname);
+
+
+
+                            var deptname = document.createTextNode("Science");
+                            var deptfont = document.createElement("font");
+                            deptfont.id = "teacherlist2" + i;
+                            deptfont.style.fontSize = "min(1vw,1.5rem)";
+                            deptfont.appendChild(deptname);
+                            var rowdept = document.createElement("td");
+                            rowdept.appendChild(deptfont);
+                            row.appendChild(rowdept);
+
+
+
+                            var emailname = document.createTextNode("dannyscoff@edurecruit.in");
+                            var emailfont = document.createElement("font");
+                            emailfont.id = "teacherlist3" + i;
+                            emailfont.style.fontSize = "min(1vw,1.5rem)";
+                            emailfont.appendChild(emailname);
+                            var rowemail = document.createElement("td");
+                            rowemail.appendChild(emailfont);
+                            row.appendChild(rowemail);
+
+
+
+                            var classname = document.createTextNode("12");
+                            var classfont = document.createElement("font");
+                            classfont.id = "teacherlist4" + i;
+                            classfont.style.fontSize = "min(1vw,1.5rem)";
+                            classfont.appendChild(classname);
+                            var rowclass = document.createElement("td");
+                            rowclass.appendChild(classfont);
+                            row.appendChild(rowclass);
+
+
+
+                            var subname = document.createTextNode("Biology");
+                            var subfont = document.createElement("font");
+                            subfont.id = "teacherlist5" + i;
+                            subfont.style.fontSize = "min(1vw,1.5rem)";
+                            subfont.appendChild(subname);
+                            var rowsub = document.createElement("td");
+                            rowsub.appendChild(subfont);
+                            row.appendChild(rowsub);
+
+
+
+                            var rating = document.createTextNode("5");
+                            var ratingfont = document.createElement("font");
+                            ratingfont.id = "teacherlist6" + i;
+                            ratingfont.style.fontSize = "min(1vw,1.5rem)";
+                            ratingfont.appendChild(rating);
+                            var rowrating = document.createElement("td");
+                            rowrating.appendChild(ratingfont);
+                            row.appendChild(rowrating);
+
+
+
+
+                            var actionfont = document.createElement("font");
+                            actionfont.className = "glyphicon glyphicon-eye-open";
+                            actionfont.id = "teacherlist7" + i;
+                            actionfont.style.fontSize = "min(1vw,1.5rem)";
+
+                            var rowaction = document.createElement("td");
+                            rowaction.appendChild(actionfont);
+                            row.appendChild(rowaction);
+
+                        }
+
+
+
+                    </script>
+
+                </div>
+                <div style="width:100%;background-image:linear-gradient(rgb(0,0,0,0.1),rgb(0,0,0,0.5));top:0;position:absolute;"
+                    id="overlay">
+                    <center>
+                        <span class="glyphicon glyphicon-menu-down"
+                            style="font-size:min(2vw,3rem);color:white;position:absolute;top:90%;" id="arrow"></span>
+                    </center>
+
+                </div>
+            </span>
+        </span>
+        <script>
+            var overlay = document.getElementById("overlay");
+            overlay.style.height = cont2.offsetHeight + "px";
+
+
+        </script>
+
+
+
+
+        <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row2">
+            <span class="col-md-6">
+                <div style="background:white;border-radius:7px;;color:silver;font-family:'Poppins', sans-serif;width:100%;height:100%;"
+                    id="container3">
+                    <span class="row" style="height:100%;">
+                        <span class="col-md-4">
+                            `<br>
+                            <font
+                                style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;padding-left:20%;border-radius:7px;"
+                                id="attendencestats"> Attendence Stats</font>
+                            <div style="height:70%;width:100%;background:white;margin-top:10%;display:flex;"
+                                id="attendencegraph">
+                                <div
+                                    style="height:100%;width:4%;background:#aed8f0;border-radius:10px;margin-left:30%;">
+                                    <div
+                                        style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                    </div>
+
+
+                                </div>
+
+                                <div
+                                    style="height:100%;width:4%;background:#4d5c96;border-radius:10px;margin-left:15%;">
+                                    <div
+                                        style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                    </div>
+
+                                </div>
+
+
+                                <div
+                                    style="height:100%;width:4%;background:#f7726f;border-radius:10px;margin-left:15%;">
+
+                                    <div
+                                        style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </span>
+
+                        <span class="col-md-8 " id="attendencecontmain">
+                            <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                                id="container3_child1">
+                                <div style="width:100%;background:white;margin-top:10%;" id="attendencecontent">
+
+                                    <table style="width:100%;">
+                                        <tr>
+
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
+                                                        <b>2431</b></font>
+                                                </center>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
+                                                        <b>892</b></font>
+                                                </center>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
+                                                        <b> 209</b></font>
+                                                </center>
+                                            </td>
+
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
+                                                        18-35</font>
+                                                </center>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
+                                                        36-55</font>
+                                                </center>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
+                                                        55<< /font>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                    <table style="width:82%;margin-top:5%;">
+                                        <tr>
+
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;border-radius:7px;">
+                                                    Course</font>
+                                            </td>
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;border-radius:7px;">
+                                                    Changes</font>
+                                                </center>
+                                            </td>
+                                            <td>
+                                                <font style="float:right;font-size:min(1vw,2rem);">Inc/Dec</font>
+                                            </td>
+
+                                        </tr>
+
+
+                                        <tr style="font-size:min(1vw,1.5rem);" id="attendencerow1">
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;float:left;">
+                                                    <font style="color:#aed8f0;">o</font> Digital Marketing
+                                                </font>
+                                            </td>
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                    64% -> 94%</font>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                        30% </font>
+                                                </center>
+                                            </td>
+                                        </tr>
+
+
+                                        <tr style="font-size:min(1vw,1.5rem);" id="attendencerow2">
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                    <font style="color:#4d5c96;">o</font> Facebook Ads
+                                                </font>
+                                            </td>
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                    64% -> 94%</font>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                        30% </font>
+                                                </center>
+                                            </td>
+                                        </tr>
+
+
+
+                                        <tr style="font-size:min(1vw,1.5rem);" id="attendencerow3">
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                    <font style="color:#f7726f;">o</font> Google Ads for Beginners
+                                                </font>
+                                            </td>
+                                            <td>
+                                                <font
+                                                    style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                    64% -> 94%</font>
+                                            </td>
+                                            <td>
+                                                <center>
+                                                    <font
+                                                        style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                        30% </font>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+
+                            </div>
+
+                        </span>
+
+                    </span>
+
+
+
+                </div>
+            </span>
+            <script>
+                var width = window.screen.availWidth;
+                var attendencecontent = document.getElementById("attendencecontent");
+                var attendencegraph = document.getElementById("attendencegraph");
+                var attendencecontmain = document.getElementById("attendencecontmain");
+                if (width <= 800) {
+                    attendencecontmain.style.position = "relative;"
+                    attendencecontmain.style.top = attendencegraph.offsetTop + attendencegraph.offsetHeight + "px";
+                }
+
+            </script>
+            <span class="col-md-6" id="summary">
+                <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                    id="container4"><br><br>
+                    <font
+                        style="font-family:'Poppins', sans-serif;font-size:min(6vw,3rem);color:#202020;border:none;padding-left:10%;padding-right:20%;padding-top:10px;padding-bottom:10px;border-radius:7px;">
+                        Summary</font>
+                    <font
+                        style="font-family:'Poppins', sans-serif;font-size:min(3vw,1.7rem);color:white;background:#7367f0;border:none;padding-left:5%;padding-right:5%;padding-top:10px;padding-bottom:10px;border-radius:7px;float:right;margin-top:10px;margin-right:40px"
+                        id="compose">Export</font>
+                    <br><br>
+                    <span class="row">
+                        <span class="col-md-4">
+                            <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                <font
+                                    style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                    Total Employees</font><br>
+                                <font
+                                    style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                    1,409</font><br>
+                                <div
+                                    style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                    <br>
+                                    <font
+                                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
+                                        <center>13 applications need review</center>
+                                    </font>
+                                </div>
+                            </div>
+                        </span>
+
+                        <span class="col-md-4">
+
+                            <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                <font
+                                    style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                    Overtimes</font><br>
+                                <font
+                                    style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                    1,409</font><br>
+                                <div
+                                    style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                    <br>
+                                    <font
+                                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
+                                        <center>13 overtimes need review</center>
+                                    </font>
+                                </div>
+                            </div>
+
+                        </span>
+                        <span class="col-md-4">
+
+                            <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                <font
+                                    style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                    Leaves</font><br>
+                                <font
+                                    style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                    1,409</font><br>
+                                <div
+                                    style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                    <br>
+                                    <font
+                                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
+                                        <center>13 Leaves need review</center><br>
+                                    </font>
+                                </div>
+                            </div>
+
+
+                        </span>
+
+                    </span>
+
+                </div>
+            </span>
+
+
+        </span>
+
+
+        <span class="row" style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row3">
+            <span class="col-md-4" id="row3_child1">
+                <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                    id="container5">
+                    <center><br>
+                        <div
+                            style="background:#F4F7FE;font-size:min(1.5vw,2rem);border-radius:30px;padding:30px;width:80%;">
+                            TEACHER’S TRANFER REQUEST
+                            PORTAL</div>
+                        <br><br>
+                        <font style="font-size:min(1.5vw,2rem);color:#7363EA;">REQUESTED APPLICATIONS</font>
+                        <br><br><br>
+                        <font style="font-size:min(1.5vw,2rem);color:#7363EA;">MANAGE EMPLOYEES
+                            <br><br>
+
+                        </font>
+
+                </div>
+                </center>
+                <br>
+
+                <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                    id="container6">
+                    <center>
+                        <br>
+                        <font style="font-size:min(4vw,2rem);"> MANAGE LEAVE APPLICATIONS</font>
+                    </center>
+                    <br><br>
+                    <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
+                        <br>
+                        <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Business Trip</font><br>
+                        <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Kunal Kardam</font>
+                        <br><br>
+                    </div>
+                    <br><br>
+                    <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
+                        <br>
+                        <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Paid Leave</font><br>
+                        <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Simarpreet Singh</font>
+                        <br><br>
+                    </div>
+
+                    <div
+                        style="background:rgb(0,0,0,0.6);width:95%;height:25%;position:absolute;top:75%;border-radius:7px;">
+
+                        <center>
+                            <span class="glyphicon glyphicon-menu-right"
+                                style="font-size:min(3vw,6rem);color:white;position:absolute;top:50%;"
+                                id="arrow2"></span>
+                        </center>
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </span>
+
+            <span class="col-md-8" style="height:100%;overflow:auto;" id="row3_child2">
+                <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                    id="container7">
+                    <br>
+                    <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">Assign Task</font>
+                    <font
+                        style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;float:right;margin-right:40px;"
+                        id="assign2">Assign Now<br></font>
+                    <hr>
+                    <table style="width:90%;margin-left:5%;" id="tasks">
+
+                        <tr style="font-size:min(2vw,1.5rem);border-bottom : 1px solid  #f5f5f5 ">
+                            <th>#</th>
+                            <th>Task</th>
+                            <th>Assigned Teachers</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+
+                        </tr>
+                    </table>
+
+                    <script>
+                        var summary = document.getElementById("summary");
+                        if (width <= 800) {
+                            attendencecontmain.style.top = attendencecontmain.offsetTop + attendencecontmain.offsetHeight + "px";
+                        }
+
+
+
+                        var row3_child1 = document.getElementById("row3_child1");
+                        var row3_child2 = document.getElementById("row3_child2");
+                        row3_child2.style.height = row3_child1.offsetHeight + "px";
+                        var tasks = document.getElementById("tasks");
+                        for (x = 1; x <= 100; x++) {
+                            var taskrow = document.createElement("tr");
+                            taskrow.style.borderBottom = "1px solid  #f5f5f5 ";
+                            tasks.appendChild(taskrow);
+                            var sno = document.createTextNode(x);
+                            var snofont = document.createElement("font");
+                            snofont.style.fontSize = "min(2vw,1.5rem)";
+
+                            snofont.appendChild(sno);
+                            var snorow = document.createElement("td");
+                            snorow.style.paddingBottom = "10px";
+                            snorow.style.paddingTop = "10px";
+                            snorow.appendChild(snofont);
+                            taskrow.appendChild(snorow);
+
+
+
+                            var taskname = document.createTextNode("Prepration for cricket team");
+                            var taskfont = document.createElement("font");
+                            taskfont.style.fontSize = "min(2vw,1.5rem)";
+                            taskfont.appendChild(taskname);
+                            var tasknamerow = document.createElement("td");
+                            tasknamerow.appendChild(taskfont);
+                            taskrow.appendChild(tasknamerow);
+
+
+
+                            var teachername = document.createTextNode("Kaartik Shukla");
+                            var teacherfont = document.createElement("font");
+                            teacherfont.style.fontSize = "min(2vw,1.5rem)";
+                            teacherfont.appendChild(teachername);
+                            var teacherow = document.createElement("td");
+                            teacherow.appendChild(teacherfont);
+                            taskrow.appendChild(teacherow);
+
+
+
+                            var statusname = document.createTextNode("Done");
+                            var statusfont = document.createElement("font");
+                            statusfont.style.fontSize = "min(2vw,1.5rem)";
+                            statusfont.style.background = "#12dcc0";
+                            statusfont.style.borderRadius = "5px";
+                            statusfont.style.color = "white";
+                            statusfont.style.paddingLeft = "15px";
+
+                            statusfont.style.paddingRight = "15px";
+                            statusfont.appendChild(statusname);
+                            var rowstatus = document.createElement("td");
+                            rowstatus.appendChild(statusfont);
+                            taskrow.appendChild(rowstatus);
+
+
+
+
+                            var actionfont1 = document.createElement("font");
+                            actionfont1.className = "glyphicon glyphicon-check";
+                            var actionfont2 = document.createElement("font");
+                            actionfont2.className = "glyphicon glyphicon-trash";
+                            actionfont1.style.fontSize = "min(2vw,1.5rem)";
+                            actionfont2.style.fontSize = "min(2vw,1.5rem)";
+                            actionfont2.style.paddingLeft = "20px";
+                            var rowaction = document.createElement("td");
+                            rowaction.appendChild(actionfont1);
+                            rowaction.appendChild(actionfont2);
+                            taskrow.appendChild(rowaction);
+
+
+                        }
+
+                    </script>
+
+                </div>
+            </span>
+
+
+
+
+        </span>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script>
+        var institute = document.getElementById("institute");
+        var institute_child = document.getElementById("institute_child");
+
+        var teacherlistcon = document.getElementById("teacherlistcont");
+        console.log(institute);
+        institute.style.height = teacherlistcon.offsetHeight + "px";
+        institute_child.style.height = teacherlistcon.offsetHeight + "px";
+
+
+        if (width <= 1000) {
+            navigation = document.getElementById("navbar");
+            navigation.style.left = "-50%";
+            maindiv.style.left = 0;
+            maindiv.style.width = "100%";
+            var row1 = document.getElementById("row1");
+
+            var row2 = document.getElementById("row2");
+            row2.style.top = row1.offsetTop + row1.offsetHeight + "px";
+            row3.style.top = row2.offsetTop + "px";
+            for (z = 1; z <= j; z++) {
+                document.getElementById("teacherlist1" + z).style.fontSize = "min(2vw,1.5rem)";
+                document.getElementById("teacherlist2" + z).style.fontSize = "min(2vw,1.5rem)";
+                document.getElementById("teacherlist3" + z).style.fontSize = "min(2vw,1.5rem)";
+                document.getElementById("teacherlist4" + z).style.fontSize = "min(2vw,1.5rem)";
+                document.getElementById("teacherlist5" + z).style.fontSize = "min(2vw,1.5rem)";
+                document.getElementById("teacherlist6" + z).style.fontSize = "min(2vw,1.5rem)";
+                document.getElementById("teacherlist7" + z).style.fontSize = "min(2vw,1.5rem)";
+            }
+            document.getElementById("teacherlistheading").style.fontSize = "min(2vw,1.5rem)";
+
+            for (z = 1; z <= 3; z++) {
+                document.getElementById("attendencerow" + z).style.fontSize = "min(2.5vw,1.5rem)"
+            }
+            for (z = 1; z <= 2; z++) {
+                document.getElementById("assign" + z).style.fontSize = "min(4vw,1.5rem)"
+            }
+
+            var c = 0;
+            document.getElementById("burger").style.color = "black";
+            document.getElementById("burger").style.zIndex = 6;
+            document.getElementById("burger").style.visibility = "visible";
+            document.getElementById("burger").addEventListener("click", () => {
+                if (c % 2 == 0) {
+                    document.getElementById("navbar").style.left = 0;
+                    document.getElementById("navbar").style.width = "50%";
+                    burger.style.left = navigation.offsetWidth + 20 + "px";
+                }
+                else {
+                    document.getElementById("navbar").style.left = "-50%";
+                    document.getElementById("navbar").style.width = "15%";
+                    burger.style.left = "5%";
+                }
+                c++;
+            })
+
+        }
+    </script>
+    <div style="width:87%;height:100%;background:#f5f5f5;position:relative;left:13%;visibility:hidden;"
+        id="extendedteacherlist">
+        <div>
+            <br>
+            <font style="font-size:min(2vw,5rem);padding-left:40px;font-family:'Poppins', sans-serif;"><span
+                    class="glyphicon glyphicon-menu-left" id="extendedteacherlistback"></span></font>
+            <font style="font-size:min(2vw,5rem);padding-left:40px;font-family:'Poppins', sans-serif;">32 Employees
+            </font>
+            <font
+                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: grey;color:white;border-radius:5px;">
+                4 new hire</font>
+            <font
+                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #f5f5f5;color:#202020;border:2px solid #202020;border-radius:5px;float:right;margin-right:20px;margin-top:20px;">
+                + Add Candidates<br></font>
+            <font
+                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: white;color:#202020;border-radius:5px;float:right;margin-right:20px;margin-top:20px;">
+                <span class="glyphicon glyphicon-print"></span></font>
+
+            <font
+                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: white;color:#202020;border-radius:5px;float:right;margin-right:20px;margin-top:20px;">
+                <span class="glyphicon glyphicon-download"></span></font>
+
+        </div>
+        <br><br><br>
+        <span class="row" style="width:100%;position:relative;left:0.5%;">
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+
+            </span>
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+            </span>
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+            </span>
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+            </span>
+
+
+        </span>
+
+        <br><br><br>
+
+        <span class="row" style="width:100%;position:relative;left:0.5%;">
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+
+            </span>
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+            </span>
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+            </span>
+            <span class="col-md-3">
+
+                <div style="border-radius:7px;background:white;">
+                    <div style="display:flex;">
+                        <form style="padding-right:20px;padding-left:20px;">
+                            <input type="checkbox">
+
+                        </form>
+                        <font
+                            style="font-size:min(2vw,1.5rem);padding-right:20px;padding-left:20px;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                            Active</font>
+                    </div>
+                    <center>
+                        <img src="adminassets/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font><br>
+                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher</font>
+                        <br><br>
+                    </center>
+                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            <b>English Teacher</b></font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            <b>Date hired</b> </font><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                            English</font>
+                        <font
+                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                            17-04-2012</font><br><br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;"><span
+                                class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in</font>
+                        <br>
+                        <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">+91
+                            1234567890</font>
+
+                    </div>
+                    <br>
+                </div>
+            </span>
+
+
+        </span>
+        <div id="generateemployees">
+
+
+
+        </div>
+        <br><br><br>
+        <center>
+            <font
+                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #f5f5f5;color:lightgreen;border:2px solid lightgreen;border-radius:5px;"
+                id="load">Load more</font>
+        </center>
+        <br><br><br>
+    </div>
+    <script>
+        var more = document.getElementById("load");
+        var generateemployees = document.getElementById("generateemployees");
+        more.addEventListener("click", () => {
+            for (i = 1; i <= 2; i++) {
+                var br5 = document.createElement("br");
+                var br6 = document.createElement("br");
+                var br7 = document.createElement("br");
+                generateemployees.appendChild(br5);
+                generateemployees.appendChild(br6);
+                generateemployees.appendChild(br7);
+                var loadmorerow = document.createElement("span");
+                loadmorerow.className = "row";
+                loadmorerow.style.width = "100%";
+                loadmorerow.style.position = "relative";
+                loadmorerow.style.left = "0.5%";
+                generateemployees.appendChild(loadmorerow);
+
+                for (x = 1; x <= 4; x++) {
+                    var colum = document.createElement("span");
+                    colum.className = "col-md-3";
+                    loadmorerow.appendChild(colum);
+
+                    var divmain = document.createElement("div");
+                    divmain.style.borderRadius = "7px";
+                    divmain.style.background = "white";
+                    colum.appendChild(divmain);
+                    var subdivmain = document.createElement("div");
+                    subdivmain.style.display = "flex";
+                    var check_form1 = document.createElement("form");
+                    check_form1.style.paddingRight = "20px";
+                    check_form1.style.paddingLeft = "20px";
+                    var input_check1 = document.createElement("input");
+                    input_check1.type = "checkbox";
+                    check_form1.appendChild(input_check1);
+                    subdivmain.appendChild(check_form1);
+                    var status = document.createElement("font");
+                    text1 = document.createTextNode("Active")
+                    status.appendChild(text1);
+                    status.style.fontSize = "min(2vw,1.5rem)";
+                    status.style.paddingRight = "20px";
+                    status.style.paddingLeft = "20px";
+                    status.style.background = "lightgreen";
+                    status.style.color = "#202020";
+                    status.style.border = "2px solid green";
+                    status.style.borderRadius = "5px";
+                    status.style.position = "relative";
+                    status.style.left = "60%";
+                    status.style.marginTop = "10px";
+                    subdivmain.appendChild(status);
+                    divmain.appendChild(subdivmain);
+                    var empimg = document.createElement("img");
+
+                    var centre = document.createElement("center");
+                    var text2 = document.createTextNode("Danny Scoff");
+                    var teacher_name = document.createElement("font");
+                    teacher_name.appendChild(text2);
+                    teacher_name.style.fontSize = "min(6vw,4rem)";
+                    teacher_name.style.fontFamily = "'Poppins', sans-serif";
+                    empimg.src = "adminassets/emailusr.png";
+                    empimg.style.borderRadius = "50%";
+                    empimg.style.marginTop = "40px";
+                    empimg.style.width = "100px";
+                    centre.appendChild(empimg);
+                    var br = document.createElement("br");
+                    var br1 = document.createElement("br");
+                    centre.appendChild(br);
+                    centre.appendChild(teacher_name);
+                    centre.appendChild(br1);
+                    var text3 = document.createTextNode("English Teacher");
+                    var teacher_post = document.createElement("font");
+                    teacher_post.appendChild(text3);
+                    teacher_post.style.fontSize = "min(4vw,2rem)";
+                    teacher_post.style.fontFamily = "'Poppins', sans-serif";
+                    centre.appendChild(teacher_post);
+                    divmain.appendChild(centre);
+                    var br2 = document.createElement("br");
+                    var br3 = document.createElement("br");
+                    divmain.appendChild(br2);
+                    divmain.appendChild(br3);
+                    var subdivmain2 = document.createElement("div");
+                    subdivmain2.style.borderRadius = "7px";
+                    subdivmain2.style.background = "skyblue";
+                    subdivmain2.style.width = "90%";
+                    subdivmain2.style.marginLeft = "5%";
+                    divmain.appendChild(subdivmain2);
+                    var br4 = document.createElement("br");
+                    subdivmain2.appendChild(br4);
+                    var text4 = document.createTextNode("Department");
+                    var teacher_dept = document.createElement("font");
+                    var b = document.createElement("b");
+                    b.appendChild(text4);
+                    teacher_dept.style.fontSize = "min(2.5vw,1.5rem)";
+                    teacher_dept.style.fontFamily = "'Poppins', sans-serif";
+                    teacher_dept.style.marginLeft = "5%";
+                    teacher_dept.appendChild(b);
+                    subdivmain2.appendChild(teacher_dept);
+
+
+                    var text5 = document.createTextNode("Hire date");
+                    var teacher_hire = document.createElement("font");
+                    var b = document.createElement("b");
+                    b.appendChild(text5);
+                    teacher_hire.style.fontSize = "min(2.5vw,1.5rem)";
+                    teacher_hire.style.fontFamily = "'Poppins', sans-serif";
+                    teacher_hire.style.float = "right";
+                    teacher_hire.style.marginRight = "5%";
+                    teacher_hire.appendChild(b);
+                    subdivmain2.appendChild(teacher_hire);
+
+
+                    var br8 = document.createElement("br");
+                    subdivmain2.appendChild(br8);
+
+                    var text6 = document.createTextNode("English");
+                    var teacher_dept_sub = document.createElement("font");
+
+                    teacher_dept_sub.style.fontSize = "min(2.5vw,1.5rem)";
+                    teacher_dept_sub.style.fontFamily = "'Poppins', sans-serif";
+                    teacher_dept_sub.style.marginLeft = "5%";
+                    teacher_dept_sub.appendChild(text6);
+                    subdivmain2.appendChild(teacher_dept_sub);
+
+
+
+
+
+                    var text7 = document.createTextNode("17-04-2021");
+                    var teacher_hire_date = document.createElement("font");
+
+                    teacher_hire_date.style.fontSize = "min(2.5vw,1.5rem)";
+                    teacher_hire_date.style.fontFamily = "'Poppins', sans-serif";
+                    teacher_hire_date.style.float = "right";
+                    teacher_hire_date.style.marginRight = "5%";
+                    teacher_hire_date.appendChild(text7);
+                    subdivmain2.appendChild(teacher_hire_date);
+
+
+                    var br9 = document.createElement("br");
+                    var br10 = document.createElement("br");
+                    subdivmain2.appendChild(br9);
+                    subdivmain2.appendChild(br10);
+
+
+                    var text8 = document.createTextNode("\u00A0\u00A0dannyscoff@edurecruit.in");
+                    var teacher_mail = document.createElement("font");
+                    var teacher_mail_icon = document.createElement("span");
+                    teacher_mail_icon.className = "glyphicon glyphicon-envelope";
+                    teacher_mail.style.fontSize = "min(2.5vw,1.5rem)";
+                    teacher_mail.style.fontFamily = "'Poppins', sans-serif";
+                    teacher_mail_icon.style.marginLeft = "5%";
+                    teacher_mail.appendChild(text8);
+                    subdivmain2.appendChild(teacher_mail_icon);
+
+                    subdivmain2.appendChild(teacher_mail);
+
+
+                    var br11 = document.createElement("br");
+                    subdivmain2.appendChild(br11);
+
+
+                    var text9 = document.createTextNode("+91 1234567890");
+                    var teacher_no = document.createElement("font");
+
+                    teacher_no.style.fontSize = "min(2.5vw,1.5rem)";
+                    teacher_no.style.fontFamily = "'Poppins', sans-serif";
+                    teacher_no.style.marginLeft = "5%";
+                    teacher_no.appendChild(text9);
+
+                    subdivmain2.appendChild(teacher_no);
+
+                }
+            }
+
+
+
+        })
+        var extendedteacherlist = document.getElementById("extendedteacherlist");
+        var arrow = document.getElementById("arrow");
+        arrow.addEventListener("click", () => {
+
+            maindiv.style.visibility = "hidden";
+            extendedteacherlist.style.visibility = "visible";
+
+
+
+        })
+        var extendedteacherlistback = document.getElementById("extendedteacherlistback");
+        extendedteacherlistback.addEventListener("click", () => {
+
+            maindiv.style.visibility = "visible";
+            extendedteacherlist.style.visibility = "hidden";
+
+
+
+        })
+        if (width <= 1000) {
+            extendedteacherlist.style.left = 0;
+            extendedteacherlist.style.width = "100%";
+
+
+        }
+    </script>
+
+
+
+    <div style="width:87%;height:auto;background:#f5f5f5;position:absolute;left:13%;visibility:hidden;top:0;"
+        id="leaveapplication">
+        <div>
+            <br>
+            <font style="font-size:min(2vw,5rem);padding-left:40px;font-family:'Poppins', sans-serif;"><span
+                    class="glyphicon glyphicon-menu-left" id="leaveapplicationback"></span></font>
+            <font style="font-size:min(2vw,5rem);padding-left:40px;font-family:'Poppins', sans-serif;">Leave
+                Applications</font>
+
+            <font
+                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #f5f5f5;color:#202020;border-radius:5px;float:right;margin-right:20px;margin-top:20px;">
+                <form style="background:white;border-radius:30px;"><input type="text"
+                        style="border:none;background:none;" placeholder="search"><button type="submit"
+                        style="border:none;background:none;"><span class="glyphicon glyphicon-search"></span></button>
+                </form><br>
+            </font>
+
+
+        </div>
+        <br><br><br>
+
+        <table style="width:90%;margin-left:5%;" id="leave">
+
+            <tr style="font-size:min(2vw,1.5rem);border-bottom : 1px solid  lightgrey ">
+                <th>Name</th>
+                <th>Leave Type</th>
+                <th>Posting Date</th>
+                <th>Status</th>
+                <th>Action</th>
+
+            </tr>
+        </table>
+    </div>
+    <script>
+        var leaveapplication = document.getElementById("leaveapplication");
+        var arrow2 = document.getElementById("arrow2");
+        arrow2.addEventListener("click", () => {
+            j = 100;
+            for (x = 1; x <= j; x++) {
+                var taskrow = document.createElement("tr");
+                taskrow.style.borderBottom = "1px solid  lightgrey ";
+                taskrow.id = "leave" + x;
+                if (x % 2 != 0) {
+                    taskrow.style.background = "white";
+                }
+                leave.appendChild(taskrow);
+                var leavename = document.createTextNode("Kaartik Shukla");
+                var leavenamefont = document.createElement("font");
+                leavenamefont.style.fontSize = "min(2vw,1.5rem)";
+
+                leavenamefont.appendChild(leavename);
+                var leavenamerow = document.createElement("td");
+                leavenamerow.style.paddingBottom = "10px";
+                leavenamerow.style.paddingTop = "10px";
+                leavenamerow.appendChild(leavenamefont);
+                taskrow.appendChild(leavenamerow);
+
+
+
+                var taskname = document.createTextNode("Medical Leave");
+                var taskfont = document.createElement("font");
+                taskfont.style.fontSize = "min(2vw,1.5rem)";
+                taskfont.appendChild(taskname);
+                var tasknamerow = document.createElement("td");
+                tasknamerow.appendChild(taskfont);
+                taskrow.appendChild(tasknamerow);
+
+
+
+                var teachername = document.createTextNode("07-07-2022");
+                var teacherfont = document.createElement("font");
+                teacherfont.style.fontSize = "min(2vw,1.5rem)";
+                teacherfont.appendChild(teachername);
+                var teacherow = document.createElement("td");
+                teacherow.appendChild(teacherfont);
+                taskrow.appendChild(teacherow);
+
+
+
+                var statusname = document.createTextNode("Approved");
+                var statusfont = document.createElement("font");
+                statusfont.style.fontSize = "min(2vw,1.5rem)";
+                statusfont.style.background = "#12dcc0";
+                statusfont.style.borderRadius = "5px";
+                statusfont.style.color = "white";
+                statusfont.style.paddingLeft = "15px";
+
+                statusfont.style.paddingRight = "15px";
+                statusfont.appendChild(statusname);
+                var rowstatus = document.createElement("td");
+                rowstatus.appendChild(statusfont);
+                taskrow.appendChild(rowstatus);
+
+
+
+
+                var actionfont1 = document.createElement("font");
+                actionfont1.className = "glyphicon glyphicon-eye-open";
+
+                actionfont1.style.fontSize = "min(2vw,1.5rem)";
+
+                var rowaction = document.createElement("td");
+                rowaction.appendChild(actionfont1);
+
+                taskrow.appendChild(rowaction);
+
+
+            }
+
+            maindiv.style.visibility = "hidden";
+            leaveapplication.style.visibility = "visible";
+
+
+
+        })
+        var leaveapplicationback = document.getElementById("leaveapplicationback");
+        var leave = document.getElementById("leave");
+        leaveapplicationback.addEventListener("click", () => {
+
+            maindiv.style.visibility = "visible";
+            leaveapplication.style.visibility = "hidden";
+            leave.style.visibility = "hidden";
+            for (b = 1; b <= j; b++) {
+                console.log(document.getElementById("leave" + x));
+                document.getElementById("leave" + x).remove();
+
+
+            }
+        })
+
+    </script>
 </body>
 
 </html>
