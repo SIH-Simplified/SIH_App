@@ -9,7 +9,8 @@ const mongoose = require("mongoose");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
-mongoose.connect('mongodb://localhost:27017/Edu').then(() => {
+const mongo_connection_url = process.env.MONGO_DB_ATLAS_URL || "mongodb://localhost:27017/Edu"
+mongoose.connect(mongo_connection_url).then(() => {
   console.log("Connected to the mongo DB database")
 }).catch((err) => {
   console.log("Error occured while connected to the database = ", err);
