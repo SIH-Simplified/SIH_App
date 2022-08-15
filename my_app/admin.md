@@ -10,7 +10,7 @@ You can do as below:
 
 - Step 3: And last, from normal regostration, you can give isAdmin = 0
 
-- so isAdmin = 2 (superadmin), isAdmin = 1 (subadmin) and  isAdmin = 0 (normal user)
+- so isAdmin = 2 (superadmin), isAdmin = 1 (subadmin) and isAdmin = 0 (normal user)
 
 - Note: 2,1 value for isAdmin is my suggestion, you can change if you want as per your requirements.
 
@@ -46,7 +46,6 @@ Routes for admin
 - [x] /admin/delete (this is route for deleting a admin in the database)
 - [x] /admin/updating (this is route for updating profile of a admin in the database)
 - [x] /admin/:id (this is a route for viewing admin profile in the app)
-
 
 ### Privileges for admin users
 

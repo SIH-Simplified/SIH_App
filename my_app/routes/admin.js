@@ -6,12 +6,13 @@ const router = express.Router();
 const checkAdmin = require("../middlewares/checkAdmin");
 const bcrypt = require("bcryptjs");
 const { check, validationResult, checkSchema } = require("express-validator");
-const Email = require("../models/email");
+const Email = require("../models/admin/email");
 const Teacher = require("../models/teacher");
 const cloudinary = require("../cloudinary/index");
 const DailyUpdates = require("../models/admin/dailyUpdates");
-router.get("/", (req, res) => {
-    res.render("admin/index");
+router.get("/", async (req, res) => {
+    const countTeachers = await Teacher.find({}).count();
+    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0 });
 })
 
 router.get("/login", (req, res) => {
@@ -105,7 +106,7 @@ router.get("/logout", checkAdmin, (req, res) => {
     res.redirect("/index");
 })
 
-router.get("/email", (req, res) => {
+router.get("/email/all", (req, res) => {
     res.render("admin/email");
 })
 
@@ -133,7 +134,7 @@ router.post("/email/create", checkAdmin, [
     res.redirect("/index");
 })
 
-router.get("/teachers", checkAdmin, async (req, res, next) => {
+router.get("/teachers/details", async (req, res, next) => {
     try {
         const teachers = await Teacher.find({});
         res.json(teachers);

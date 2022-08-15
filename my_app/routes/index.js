@@ -19,7 +19,7 @@ const checkAuthMiddleWare = async (req, res, next) => {
 }
 
 router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('email', { title: 'Express' });
 });
 
 router.post("/login", async (req, res, next) => {

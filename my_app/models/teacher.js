@@ -29,13 +29,14 @@ const teacherSchema = new mongoose.Schema({
     },
     education: String,
     skills: {
-        type: Array
+        type: [String]
     },
     about: {
         type: String
     },
     documents: {
-        type: mongoose.Schema.Types.ObjectId
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Document"
     },
 });
 
