@@ -121,19 +121,19 @@ router.post('/email/create', checkAdmin, [
 router.get('/transfer/guidelines', (req, res) => {
     res.render('teacher/transfer/transfer')
 })
-router.get('/transfer/form',(req,res)=>{
+router.get('/transfer/form', (req, res) => {
     res.render('teacher/transfer/transfer-form')
 })
-router.get('/transfer/transfer-choices',(req,res)=>{
+router.get('/transfer/transfer-choices', (req, res) => {
     res.render('teacher/transfer/transfer-choices')
 })
-router.get('/transfer/preference-choices',(req,res)=>{
+router.get('/transfer/preference-choices', (req, res) => {
     res.render('teacher/transfer/transfer_preference_choices')
 })
-router.get('/transfer/ack', (req,res)=>{
+router.get('/transfer/ack', (req, res) => {
     res.render('teacher/transfer/transfer_ack')
 })
-router.get('/transfer/finished', (req,res)=>{
+router.get('/transfer/finished', (req, res) => {
     res.render('teacher/transfer/finished')
 })
 
@@ -159,7 +159,7 @@ router.get('/edit/:id', checkAdmin, async (req, res, next) => {
 
     const Teacher = await teacher.find({ teacher_id: id })
 
-    if (!teacher) {
+    if (!Teacher) {
         return res.status(400).redirect('/index', { error: 'Teacher credentials entered does not exit' })
     }
 
