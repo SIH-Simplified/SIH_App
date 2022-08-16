@@ -1,6 +1,11 @@
 const mongoose = require("mongoose");
 const email = require("./email");
 const adminSchema = new mongoose.Schema({
+    adminID: {
+        type: String,
+        required: [true, "Please enter admin ID"],
+        lowercase: true
+    },
     adminName: {
         type: String,
         required: [true, "Please provide a admin username"],

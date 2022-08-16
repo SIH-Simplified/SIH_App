@@ -35,17 +35,21 @@
                                 <img src="/images/logo.png" width="247" height="280" class="logo">
                                 <h5 class="logo_line">RECRUITMENT MADE SIMPLIFIED....</h5>
                             </div>
-                            <div class="right_text">
-                                <div class="right_text-box">
-                                    <input type="text" class="right_box" placeholder="   Enter your name or e-mail">
+                            <form action="http://localhost:4000/admin/login" method="post">
+                                <div class="right_text">
+                                    <div class="right_text-box">
+                                        <input type="text" name="email" class="right_box"
+                                            placeholder="Enter your name or e-mail" required>
+                                    </div>
+                                    <div class="right_text-box">
+                                        <input type="text" name="password" class="right_box" placeholder="   password"
+                                            required>
+                                    </div>
                                 </div>
-                                <div class="right_text-box">
-                                    <input type="text" class="right_box" placeholder="   password">
+                                <div class="right_button">
+                                    <button class="buton_bx" type="submit"> Login </button>
                                 </div>
-                            </div>
-                            <div class="right_button">
-                                <button class="buton_bx"> Login </button>
-                            </div>
+                            </form>
                             <div class="right-foot">
                                 <a href="#" class="foot">
                                     <h6>Having trouble logging in? &nbsp; <i class="fa-solid fa-bell"></i></h6>
