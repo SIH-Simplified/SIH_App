@@ -93,6 +93,9 @@ router.get('/logout', (req, res) => {
 router.get('/email', (req, res) => {
     res.render('teacher/email');
 })
+router.get('/email/email_content', (req,res)=>{
+    res.render('teacher/email_content')
+})
 
 router.post('/email/create', checkAdmin, [
     check('subject', 'Please include a subject in the email').isLength({
@@ -142,9 +145,11 @@ router.get('/study', (req, res) => {
 })
 
 router.get('/todo', (req, res) => {
-    res.render('/todo')
+    res.render('to_do')
 })
-
+router.get('/calendar', (req,res)=>{
+    res.render('teacher/calendar')
+})
 router.get('/:id', async (req, res, next) => {
     const { id } = req.params;
     const Teacher = await teacher.find({ _id: id });
