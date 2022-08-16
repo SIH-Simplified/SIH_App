@@ -106,8 +106,14 @@ router.get("/logout", checkAdmin, (req, res) => {
     res.redirect("/index");
 })
 
-router.get("/email/all", (req, res) => {
-    res.render("admin/email");
+router.get("/email/all", async (req, res, next) => {
+    try {
+        const emails = await Admin.find({ adminName: "youtube" }).populate("email");
+        console.log(...emails);
+        res.render("admin/email", { ...emails });
+    } catch (error) {
+        next(error);
+    }
 })
 
 router.post("/email/create", checkAdmin, [

@@ -17,11 +17,10 @@ const adminSchema = new mongoose.Schema({
         required: true,
         default: 1
     },
-    email: {
-        type: [mongoose.Schema.Types.ObjectId],
+    email: [{
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Email",
-        required: [true, "Please provide a valid email id"]
-    }
+    }]
 })
 
 // To know more about isAdmin feild look in the admin.md file in the root directory
