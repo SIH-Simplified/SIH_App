@@ -17,76 +17,11 @@
 <body class="light">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-2 sidebar">
-                <img src="images/logo.png" width="180" height="180" class="logo">
-                <div class="dropdown">
-                    <div class="dropbtn">
-                        <h5 id="option_1">
-                            Dashboard
-                        </h5>
-                    </div>
-
-                </div>
-
-                <h6 id="APP">APPS AND PAGES</h6>
-                <button class="icon_todo"><i class="fa-xl fa-regular fa-square-check"></i> <span
-                        class="nav-line"><a href="client/todo">Todo</a></span>
-                </button>
-                <button class="icon_todo"><i class="fa-xl fa-regular fa-envelope"></i> <span
-                        class="nav-line"><a href="client/email">email</a></span>
-                </button>
-                <button class="icon_todo"><i class="fa-regular fa-paper-plane"></i> <span class="nav-line"><a href="/client/transfer/guidelines">Transfer</a>
-                        </span>
-                </button>
-                <button class="icon_todo"><i class="fa-regular fa-calendar"></i> <span class="nav-line"><a href="/client/calendar">Calendar</a></span>
-                </button>
-                <button class="icon_todo"><i class="fa-regular fa-file"></i> <span class="nav-line"><a href="/client/study">Study Material</a></span>
-                </button>
-                <button class="icon_todo"> <i class="fa-regular fa-image"></i> <span class="nav-line"><a href="/client/view-portfolio">View Portfolio</a>
-                </span>
-                </button>
-            </div>
+           <%- include('../templates/sidebar.ejs')  %>
             <div class="col-sm-10 stats">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="navbar">
-                            <div class="row-nav">
-                                <div class="nav-left">
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-envelope"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"> <i class="fa-xl fa-regular fa-message"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-calendar"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-square-check"></i></a>
-                                    </div>
-                                </div>
-                                <div class="nav-middle">
-                                </div>
-                                <div class="nav-right">
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-bell"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#" onclick="toggleDarkMode()"><i
-                                                class="fa-xl fa-regular fa-moon"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-sun"></i></a>
-                                    </div>
-                                    <div id="userName">
-                                        userName
-                                    </div>
-                                    <div class="icons">
-                                        <img src="images/pp.png" alt="pp" height="35px" width="35px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%- include('../templates/navbar.ejs')%>
                     </div>
                     <div class="stats"></div>
                     <div class="row">
@@ -656,43 +591,6 @@
                         </div>
 
 
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="group twelve">
-                                <section class="foot">
-                                    <div class="footSp">
-                                    </div>
-                                    <div class="rowFk">
-                                        <div class="colFk">
-                                            <ul class="Ck">
-                                                <p class="HH">QUICK LINKS</p>
-                                                <p>COMPANY</p>
-                                                <p>OUR SERVICES</p>
-                                                <p>CONTACT US</p>
-                                                <p>PROJECT CREDENTIALS</p>
-                                            </ul>
-                                        </div>
-                                        <div class="colFk">
-                                            <ul class="Ck">
-                                                <p class="HH">CONTACK WITH US </p>
-                                                <p>FACEBOOK</p>
-                                                <p>INSTAGRAM</p>
-                                                <p>LINKIND</p>
-                                            </ul>
-                                        </div>
-                                        <div class="colFk">
-                                            <ul class="Ck">
-                                                <p class="HH">CONTACT INFO:</p>
-                                                <p>ADDRESS</p>
-                                                <p>PHONE NO.</p>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
