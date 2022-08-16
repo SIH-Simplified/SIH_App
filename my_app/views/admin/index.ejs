@@ -780,7 +780,7 @@
                         <center>
                             <img src="images/emailusr.png" style="border-radius:50%;margin-top:40px;width:100px;"><br>
                             <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff</font>
-                            <br>
+                            <!-- This is the teacher main div --> <br>
                             <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
                             </font>
                             <br><br>
@@ -1168,160 +1168,160 @@
                     loadmorerow.style.left = "0.5%";
                     generateemployees.appendChild(loadmorerow);
 
-                    for (x = 1; x <= 4; x++) {
-                        var colum = document.createElement("span");
-                        colum.className = "col-md-3";
-                        loadmorerow.appendChild(colum);
+                    // for (x = 1; x <= 4; x++) {
+                    //     var colum = document.createElement("span");
+                    //     colum.className = "col-md-3";
+                    //     loadmorerow.appendChild(colum);
 
-                        var divmain = document.createElement("div");
-                        divmain.style.borderRadius = "7px";
-                        divmain.style.background = "white";
-                        colum.appendChild(divmain);
-                        var subdivmain = document.createElement("div");
-                        subdivmain.style.display = "flex";
-                        var check_form1 = document.createElement("form");
-                        check_form1.style.paddingRight = "20px";
-                        check_form1.style.paddingLeft = "20px";
-                        var input_check1 = document.createElement("input");
-                        input_check1.type = "checkbox";
-                        check_form1.appendChild(input_check1);
-                        subdivmain.appendChild(check_form1);
-                        var status = document.createElement("font");
-                        text1 = document.createTextNode("Active")
-                        status.appendChild(text1);
-                        status.style.fontSize = "min(2vw,1.5rem)";
-                        status.style.paddingRight = "20px";
-                        status.style.paddingLeft = "20px";
-                        status.style.background = "lightgreen";
-                        status.style.color = "#202020";
-                        status.style.border = "2px solid green";
-                        status.style.borderRadius = "5px";
-                        status.style.position = "relative";
-                        status.style.left = "60%";
-                        status.style.marginTop = "10px";
-                        subdivmain.appendChild(status);
-                        divmain.appendChild(subdivmain);
-                        var empimg = document.createElement("img");
+                    //     var divmain = document.createElement("div");
+                    //     divmain.style.borderRadius = "7px";
+                    //     divmain.style.background = "white";
+                    //     colum.appendChild(divmain);
+                    //     var subdivmain = document.createElement("div");
+                    //     subdivmain.style.display = "flex";
+                    //     var check_form1 = document.createElement("form");
+                    //     check_form1.style.paddingRight = "20px";
+                    //     check_form1.style.paddingLeft = "20px";
+                    //     var input_check1 = document.createElement("input");
+                    //     input_check1.type = "checkbox";
+                    //     check_form1.appendChild(input_check1);
+                    //     subdivmain.appendChild(check_form1);
+                    //     var status = document.createElement("font");
+                    //     text1 = document.createTextNode("Active")
+                    //     status.appendChild(text1);
+                    //     status.style.fontSize = "min(2vw,1.5rem)";
+                    //     status.style.paddingRight = "20px";
+                    //     status.style.paddingLeft = "20px";
+                    //     status.style.background = "lightgreen";
+                    //     status.style.color = "#202020";
+                    //     status.style.border = "2px solid green";
+                    //     status.style.borderRadius = "5px";
+                    //     status.style.position = "relative";
+                    //     status.style.left = "60%";
+                    //     status.style.marginTop = "10px";
+                    //     subdivmain.appendChild(status);
+                    //     divmain.appendChild(subdivmain);
+                    //     var empimg = document.createElement("img");
 
-                        var centre = document.createElement("center");
-                        var text2 = document.createTextNode("Danny Scoff");
-                        var teacher_name = document.createElement("font");
-                        teacher_name.appendChild(text2);
-                        teacher_name.style.fontSize = "min(6vw,4rem)";
-                        teacher_name.style.fontFamily = "'Poppins', sans-serif";
-                        empimg.src = "images/emailusr.png";
-                        empimg.style.borderRadius = "50%";
-                        empimg.style.marginTop = "40px";
-                        empimg.style.width = "100px";
-                        centre.appendChild(empimg);
-                        var br = document.createElement("br");
-                        var br1 = document.createElement("br");
-                        centre.appendChild(br);
-                        centre.appendChild(teacher_name);
-                        centre.appendChild(br1);
-                        var text3 = document.createTextNode("English Teacher");
-                        var teacher_post = document.createElement("font");
-                        teacher_post.appendChild(text3);
-                        teacher_post.style.fontSize = "min(4vw,2rem)";
-                        teacher_post.style.fontFamily = "'Poppins', sans-serif";
-                        centre.appendChild(teacher_post);
-                        divmain.appendChild(centre);
-                        var br2 = document.createElement("br");
-                        var br3 = document.createElement("br");
-                        divmain.appendChild(br2);
-                        divmain.appendChild(br3);
-                        var subdivmain2 = document.createElement("div");
-                        subdivmain2.style.borderRadius = "7px";
-                        subdivmain2.style.background = "skyblue";
-                        subdivmain2.style.width = "90%";
-                        subdivmain2.style.marginLeft = "5%";
-                        divmain.appendChild(subdivmain2);
-                        var br4 = document.createElement("br");
-                        subdivmain2.appendChild(br4);
-                        var text4 = document.createTextNode("Department");
-                        var teacher_dept = document.createElement("font");
-                        var b = document.createElement("b");
-                        b.appendChild(text4);
-                        teacher_dept.style.fontSize = "min(2.5vw,1.5rem)";
-                        teacher_dept.style.fontFamily = "'Poppins', sans-serif";
-                        teacher_dept.style.marginLeft = "5%";
-                        teacher_dept.appendChild(b);
-                        subdivmain2.appendChild(teacher_dept);
-
-
-                        var text5 = document.createTextNode("Hire date");
-                        var teacher_hire = document.createElement("font");
-                        var b = document.createElement("b");
-                        b.appendChild(text5);
-                        teacher_hire.style.fontSize = "min(2.5vw,1.5rem)";
-                        teacher_hire.style.fontFamily = "'Poppins', sans-serif";
-                        teacher_hire.style.float = "right";
-                        teacher_hire.style.marginRight = "5%";
-                        teacher_hire.appendChild(b);
-                        subdivmain2.appendChild(teacher_hire);
+                    //     var centre = document.createElement("center");
+                    //     var text2 = document.createTextNode("Danny Scoff");
+                    //     var teacher_name = document.createElement("font");
+                    //     teacher_name.appendChild(text2);
+                    //     teacher_name.style.fontSize = "min(6vw,4rem)";
+                    //     teacher_name.style.fontFamily = "'Poppins', sans-serif";
+                    //     empimg.src = "images/emailusr.png";
+                    //     empimg.style.borderRadius = "50%";
+                    //     empimg.style.marginTop = "40px";
+                    //     empimg.style.width = "100px";
+                    //     centre.appendChild(empimg);
+                    //     var br = document.createElement("br");
+                    //     var br1 = document.createElement("br");
+                    //     centre.appendChild(br);
+                    //     centre.appendChild(teacher_name);
+                    //     centre.appendChild(br1);
+                    //     var text3 = document.createTextNode("English Teacher");
+                    //     var teacher_post = document.createElement("font");
+                    //     teacher_post.appendChild(text3);
+                    //     teacher_post.style.fontSize = "min(4vw,2rem)";
+                    //     teacher_post.style.fontFamily = "'Poppins', sans-serif";
+                    //     centre.appendChild(teacher_post);
+                    //     divmain.appendChild(centre);
+                    //     var br2 = document.createElement("br");
+                    //     var br3 = document.createElement("br");
+                    //     divmain.appendChild(br2);
+                    //     divmain.appendChild(br3);
+                    //     var subdivmain2 = document.createElement("div");
+                    //     subdivmain2.style.borderRadius = "7px";
+                    //     subdivmain2.style.background = "skyblue";
+                    //     subdivmain2.style.width = "90%";
+                    //     subdivmain2.style.marginLeft = "5%";
+                    //     divmain.appendChild(subdivmain2);
+                    //     var br4 = document.createElement("br");
+                    //     subdivmain2.appendChild(br4);
+                    //     var text4 = document.createTextNode("Department");
+                    //     var teacher_dept = document.createElement("font");
+                    //     var b = document.createElement("b");
+                    //     b.appendChild(text4);
+                    //     teacher_dept.style.fontSize = "min(2.5vw,1.5rem)";
+                    //     teacher_dept.style.fontFamily = "'Poppins', sans-serif";
+                    //     teacher_dept.style.marginLeft = "5%";
+                    //     teacher_dept.appendChild(b);
+                    //     subdivmain2.appendChild(teacher_dept);
 
 
-                        var br8 = document.createElement("br");
-                        subdivmain2.appendChild(br8);
+                    //     var text5 = document.createTextNode("Hire date");
+                    //     var teacher_hire = document.createElement("font");
+                    //     var b = document.createElement("b");
+                    //     b.appendChild(text5);
+                    //     teacher_hire.style.fontSize = "min(2.5vw,1.5rem)";
+                    //     teacher_hire.style.fontFamily = "'Poppins', sans-serif";
+                    //     teacher_hire.style.float = "right";
+                    //     teacher_hire.style.marginRight = "5%";
+                    //     teacher_hire.appendChild(b);
+                    //     subdivmain2.appendChild(teacher_hire);
 
-                        var text6 = document.createTextNode("English");
-                        var teacher_dept_sub = document.createElement("font");
 
-                        teacher_dept_sub.style.fontSize = "min(2.5vw,1.5rem)";
-                        teacher_dept_sub.style.fontFamily = "'Poppins', sans-serif";
-                        teacher_dept_sub.style.marginLeft = "5%";
-                        teacher_dept_sub.appendChild(text6);
-                        subdivmain2.appendChild(teacher_dept_sub);
+                    //     var br8 = document.createElement("br");
+                    //     subdivmain2.appendChild(br8);
 
+                    //     var text6 = document.createTextNode("English");
+                    //     var teacher_dept_sub = document.createElement("font");
 
+                    //     teacher_dept_sub.style.fontSize = "min(2.5vw,1.5rem)";
+                    //     teacher_dept_sub.style.fontFamily = "'Poppins', sans-serif";
+                    //     teacher_dept_sub.style.marginLeft = "5%";
+                    //     teacher_dept_sub.appendChild(text6);
+                    //     subdivmain2.appendChild(teacher_dept_sub);
 
 
 
-                        var text7 = document.createTextNode("17-04-2021");
-                        var teacher_hire_date = document.createElement("font");
-
-                        teacher_hire_date.style.fontSize = "min(2.5vw,1.5rem)";
-                        teacher_hire_date.style.fontFamily = "'Poppins', sans-serif";
-                        teacher_hire_date.style.float = "right";
-                        teacher_hire_date.style.marginRight = "5%";
-                        teacher_hire_date.appendChild(text7);
-                        subdivmain2.appendChild(teacher_hire_date);
 
 
-                        var br9 = document.createElement("br");
-                        var br10 = document.createElement("br");
-                        subdivmain2.appendChild(br9);
-                        subdivmain2.appendChild(br10);
+                    //     var text7 = document.createTextNode("17-04-2021");
+                    //     var teacher_hire_date = document.createElement("font");
+
+                    //     teacher_hire_date.style.fontSize = "min(2.5vw,1.5rem)";
+                    //     teacher_hire_date.style.fontFamily = "'Poppins', sans-serif";
+                    //     teacher_hire_date.style.float = "right";
+                    //     teacher_hire_date.style.marginRight = "5%";
+                    //     teacher_hire_date.appendChild(text7);
+                    //     subdivmain2.appendChild(teacher_hire_date);
 
 
-                        var text8 = document.createTextNode("\u00A0\u00A0dannyscoff@edurecruit.in");
-                        var teacher_mail = document.createElement("font");
-                        var teacher_mail_icon = document.createElement("span");
-                        teacher_mail_icon.className = "glyphicon glyphicon-envelope";
-                        teacher_mail.style.fontSize = "min(2.5vw,1.5rem)";
-                        teacher_mail.style.fontFamily = "'Poppins', sans-serif";
-                        teacher_mail_icon.style.marginLeft = "5%";
-                        teacher_mail.appendChild(text8);
-                        subdivmain2.appendChild(teacher_mail_icon);
-
-                        subdivmain2.appendChild(teacher_mail);
+                    //     var br9 = document.createElement("br");
+                    //     var br10 = document.createElement("br");
+                    //     subdivmain2.appendChild(br9);
+                    //     subdivmain2.appendChild(br10);
 
 
-                        var br11 = document.createElement("br");
-                        subdivmain2.appendChild(br11);
+                    //     var text8 = document.createTextNode("\u00A0\u00A0dannyscoff@edurecruit.in");
+                    //     var teacher_mail = document.createElement("font");
+                    //     var teacher_mail_icon = document.createElement("span");
+                    //     teacher_mail_icon.className = "glyphicon glyphicon-envelope";
+                    //     teacher_mail.style.fontSize = "min(2.5vw,1.5rem)";
+                    //     teacher_mail.style.fontFamily = "'Poppins', sans-serif";
+                    //     teacher_mail_icon.style.marginLeft = "5%";
+                    //     teacher_mail.appendChild(text8);
+                    //     subdivmain2.appendChild(teacher_mail_icon);
+
+                    //     subdivmain2.appendChild(teacher_mail);
 
 
-                        var text9 = document.createTextNode("+91 1234567890");
-                        var teacher_no = document.createElement("font");
+                    //     var br11 = document.createElement("br");
+                    //     subdivmain2.appendChild(br11);
 
-                        teacher_no.style.fontSize = "min(2.5vw,1.5rem)";
-                        teacher_no.style.fontFamily = "'Poppins', sans-serif";
-                        teacher_no.style.marginLeft = "5%";
-                        teacher_no.appendChild(text9);
 
-                        subdivmain2.appendChild(teacher_no);
+                    //     var text9 = document.createTextNode("+91 1234567890");
+                    //     var teacher_no = document.createElement("font");
 
-                    }
+                    //     teacher_no.style.fontSize = "min(2.5vw,1.5rem)";
+                    //     teacher_no.style.fontFamily = "'Poppins', sans-serif";
+                    //     teacher_no.style.marginLeft = "5%";
+                    //     teacher_no.appendChild(text9);
+
+                    //     subdivmain2.appendChild(teacher_no);
+
+                    // }
                 }
 
 
@@ -1403,7 +1403,7 @@
                         taskrow.style.background = "white";
                     }
                     leave.appendChild(taskrow);
-                    var leavename = document.createTextNode("Kaartik Shukla");
+                    var leavename = document.createTextNode("Simarpreet Singh");
                     var leavenamefont = document.createElement("font");
                     leavenamefont.style.fontSize = "min(2vw,1.5rem)";
 
