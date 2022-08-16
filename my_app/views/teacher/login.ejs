@@ -15,43 +15,48 @@
     <div class="main">
         <div class="main_row">
 
-            <!-- left col  -->
-            <div class="col_left">
-                <div class="left_cont">
-                    <img src="/images/image 19.png" />
+            <% if (typeof error !=='undefined' ) { %>
+                <div class="alert alert-danger" role="alert">
+                    <%= error %>
                 </div>
-            </div>
+                <% } %>
 
-
-            <!-- right col  -->
-            <div class="col_right">
-                <div class="right_cont">
-                    <div class="logo_cont">
-                        <img src="/images/logo.png" width="247" height="280" class="logo">
-                        <h5 class="logo_line">RECRUITMENT MADE SIMPLIFIED....</h5>
-                    </div>
-                    <div class="right_text">
-                        <div class="right_text-box">
-                            <input type="text" class="right_box" placeholder="   Enter your name or e-mail">
-                        </div>
-                        <div class="right_text-box">
-                            <input type="text" class="right_box" placeholder="   password">
+                    <div class="col_left">
+                        <div class="left_cont">
+                            <img src="/images/image 19.png" />
                         </div>
                     </div>
-                    <div class="right_button">
-                        <button class="buton_bx"> Login </button>
-                    </div>
-                    <div class="right-foot">
-                        <a href="#" class="foot">
-                            <h6>Having trouble logging in? &nbsp; <i class="fa-solid fa-bell"></i></h6>
-                        </a>
-                        <a href="#" class="foot">
-                            <h6> Sign up</h6>
-                        </a>
-                    </div>
-                </div>
 
-            </div>
+
+                    <!-- right col  -->
+                    <div class="col_right">
+                        <div class="right_cont">
+                            <div class="logo_cont">
+                                <img src="/images/logo.png" width="247" height="280" class="logo">
+                                <h5 class="logo_line">RECRUITMENT MADE SIMPLIFIED....</h5>
+                            </div>
+                            <div class="right_text">
+                                <div class="right_text-box">
+                                    <input type="text" class="right_box" placeholder="   Enter your name or e-mail">
+                                </div>
+                                <div class="right_text-box">
+                                    <input type="text" class="right_box" placeholder="   password">
+                                </div>
+                            </div>
+                            <div class="right_button">
+                                <button class="buton_bx"> Login </button>
+                            </div>
+                            <div class="right-foot">
+                                <a href="#" class="foot">
+                                    <h6>Having trouble logging in? &nbsp; <i class="fa-solid fa-bell"></i></h6>
+                                </a>
+                                <a href="#" class="foot">
+                                    <h6> Sign up</h6>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
         </div>
     </div>
 

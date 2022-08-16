@@ -26,15 +26,15 @@ router.get("/register", (req, res) => {
 router.post("/login", async (req, res, next) => {
     const { email, password } = req.body;
     try {
-        const admin = await Admin.find({ email });
-
-        if (!admin) {
+        const admin = await Admin.findOne({ email });
+        if (!admin && admin.length === 0) {
+            console.log("admin cannot be found");
             return res.status(400).render("admin/login", { error: "email or password is not correct" });
         }
-
         const isValid = await bcrypt.compare(password, admin.password);
 
         if (!isValid) {
+            console.log("Password is not correct");
             return res.status(400).render("admin/login", { error: "email or password is not correct" });
         }
 
@@ -42,12 +42,11 @@ router.post("/login", async (req, res, next) => {
             expiresIn: "2 days"
         })
 
-        res
-            .cookie("adminToken", token, { httpOnly: true, maxAge: 2 * 24 * 60 * 60 * 1000 })
-            .redirect(200, "/index")
+        res.cookie("adminToken", token, { httpOnly: true, maxAge: 2 * 24 * 60 * 60 * 1000 });
+        res.redirect("/admin");
     } catch (error) {
-        res.status(400).render("admin/login", { error });
-        next(error);
+        return res.status(400).render("admin/login", { error });
+        // next(error);
     }
 
 })
@@ -71,7 +70,7 @@ router.post("/register", [
         const adminUser = await Admin.find({ email });
         console.log(adminUser);
         if (adminUser && adminUser.length !== 0) {
-            return res.status(401).render("admin/login", { error: "User is already registered as admin !" });
+            return res.status(401).render("admin/register", { error: "User is already registered as admin !" });
         }
 
         const hashedPassword = await bcrypt.hash(password, 12);

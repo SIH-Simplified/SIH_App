@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const email = require("./email");
 const adminSchema = new mongoose.Schema({
-    adminID: {
+    email: {
         type: String,
-        required: [true, "Please enter admin ID"],
-        lowercase: true
+        required: [true, "Please provide email of admin"],
+        unique: true
     },
     adminName: {
         type: String,
@@ -22,7 +22,7 @@ const adminSchema = new mongoose.Schema({
         required: true,
         default: 1
     },
-    email: [{
+    sentEmails: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Email",
     }]

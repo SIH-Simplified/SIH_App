@@ -13,8 +13,9 @@
 
 <body>
     <% if (typeof error !=='undefined' ) { %>
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <%= error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <% } %>
             <div class="main">
@@ -35,14 +36,14 @@
                                 <img src="/images/logo.png" width="247" height="280" class="logo">
                                 <h5 class="logo_line">RECRUITMENT MADE SIMPLIFIED....</h5>
                             </div>
-                            <form action="http://localhost:4000/admin/login" method="post">
+                            <form action="http://localhost:3000/admin/login" method="post">
                                 <div class="right_text">
                                     <div class="right_text-box">
                                         <input type="text" name="email" class="right_box"
                                             placeholder="Enter your email id" required>
                                     </div>
                                     <div class="right_text-box">
-                                        <input type="text" name="password" class="right_box" placeholder="   password"
+                                        <input type="password" name="password" class="right_box" placeholder="password"
                                             required>
                                     </div>
                                 </div>
