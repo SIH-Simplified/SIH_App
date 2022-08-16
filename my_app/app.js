@@ -1,14 +1,15 @@
 require("dotenv").config();
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const adminRouter = require("./routes/admin");
 const mongoose = require("mongoose");
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var clientRouter = require("./routes/teacher")
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const clientRouter = require("./routes/teacher");
+const superAdminRouter = require("./routes/superAdmin");
 var app = express();
 const mongo_connection_url = process.env.MONGO_DB_ATLAS_URL || "mongodb://localhost:27017/Edu"
 mongoose.connect(mongo_connection_url).then(() => {
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/admin", adminRouter);
 app.use('/client', clientRouter);
+app.use("/superAdmin", superAdminRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
