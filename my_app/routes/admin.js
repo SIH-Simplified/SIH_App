@@ -28,13 +28,11 @@ router.post("/login", async (req, res, next) => {
     try {
         const admin = await Admin.findOne({ email });
         if (!admin && admin.length === 0) {
-            console.log("admin cannot be found");
             return res.status(400).render("admin/login", { error: "email or password is not correct" });
         }
         const isValid = await bcrypt.compare(password, admin.password);
 
         if (!isValid) {
-            console.log("Password is not correct");
             return res.status(400).render("admin/login", { error: "email or password is not correct" });
         }
 
@@ -48,7 +46,6 @@ router.post("/login", async (req, res, next) => {
         return res.status(400).render("admin/login", { error });
         // next(error);
     }
-
 })
 
 router.post("/register", [
