@@ -26,6 +26,16 @@ We are developing a centralized recruitment system for teachers to keep full tra
    npm start
    ```
 
+### Tech Stack
+
+- Node JS
+- Mongo DB
+- Express
+- HTML5
+- CSS3
+- ES2015
+- BootStrap
+
 ### Authors
 
 ---
