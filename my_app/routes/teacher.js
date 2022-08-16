@@ -5,7 +5,6 @@ const express = require('express')
 const bcrypt = require('bcryptjs')
 const checkAdmin = require('../middlewares/checkAdmin')
 const { check, validationResult, checkSchema } = require('express-validator')
-const Email = require('../models/email')
 const cloudinary = require('../cloudinary/index');
 
 const router = express.Router();
@@ -92,7 +91,7 @@ router.get('/logout', (req, res) => {
 })
 
 router.get('/email', (req, res) => {
-    res.render('/teacher/email');
+    res.render('teacher/email');
 })
 
 router.post('/email/create', checkAdmin, [
@@ -119,10 +118,24 @@ router.post('/email/create', checkAdmin, [
     res.redirect('/index')
 })
 
-router.get('/transfer', (req, res) => {
-    res.render('teacher/transfer')
+router.get('/transfer/guidelines', (req, res) => {
+    res.render('teacher/transfer/transfer')
 })
-
+router.get('/transfer/form',(req,res)=>{
+    res.render('teacher/transfer/transfer-form')
+})
+router.get('/transfer/transfer-choices',(req,res)=>{
+    res.render('teacher/transfer/transfer-choices')
+})
+router.get('/transfer/preference-choices',(req,res)=>{
+    res.render('teacher/transfer/transfer_preference_choices')
+})
+router.get('/transfer/ack', (req,res)=>{
+    res.render('teacher/transfer/transfer_ack')
+})
+router.get('/transfer/finished', (req,res)=>{
+    res.render('teacher/transfer/finished')
+})
 
 router.get('/study', (req, res) => {
     res.render('/teacher/study')
