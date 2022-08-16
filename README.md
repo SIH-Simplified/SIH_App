@@ -1,6 +1,6 @@
 <h1 style="text-align:center;">Edu Recruit</h1>
 
-<img src="https://github.com/SIH-Simplified/SIH_App/blob/main/my_app/public/images/logo%20(1).png" style="text-align:center;" alt="Edu Recruter"/>
+<img src="https://github.com/SIH-Simplified/SIH_App/blob/main/my_app/public/images/logo%20(1).png" style="margin: 0 auto;" alt="Edu Recruter"/>
 
 ## Developing 🧑🏻‍💻
 
