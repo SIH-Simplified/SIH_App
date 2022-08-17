@@ -13,9 +13,10 @@ const DailyUpdates = require("../models/admin/dailyUpdates");
 const adminEmail = require("../fakeDB");
 const teachers = require("../teacherDB");
 const tasks = require("../tasksDB");
+const leaveDB = require("../leaveDB");
 router.get("/", async (req, res) => {
     const countTeachers = await Teacher.find({}).count();
-    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0, teachers, tasks });
+    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0, teachers, tasks, leave: leaveDB });
 })
 
 router.get("/login", (req, res) => {
@@ -357,6 +358,17 @@ router.delete("/tasks/delete/:id", (req, res) => {
     console.log("Delete route for tasks");
     const { id } = req.params;
     tasks.splice(id, 1);
+    res.redirect("/admin");
+})
+
+router.get("/leaveApp/:id", (req, res) => {
+    const { id } = req.params;
+    res.render("/admin/leaveApplication", { leave: leaveDB[id] });
+})
+
+router.post("/leaveApp/approved/:id", (req, res) => {
+    const { id } = req.params;
+    leaveDB.splice(id, 1);
     res.redirect("/admin");
 })
 

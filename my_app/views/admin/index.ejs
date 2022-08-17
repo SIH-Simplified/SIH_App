@@ -595,35 +595,19 @@
                             <script>
                                 var summary = document.getElementById("summary");
                                 if (width <= 800) {
-                                    attendencecontmain.style.top = attendencecontmain.offsetTop + attendencecontmain.offsetHeight + "px";
+                                    attendencecontmain.style.top = attendencecontmain.offsetTop +
+                                        attendencecontmain.offsetHeight + "px";
                                 }
 
                                 var row3_child1 = document.getElementById("row3_child1");
                                 var row3_child2 = document.getElementById("row3_child2");
                                 row3_child2.style.height = row3_child1.offsetHeight + "px";
                                 var tasks = document.getElementById("tasks");
-
-
                             </script>
-
                         </div>
                     </span>
-
-
-
-
                 </span>
-
-
-
-
-
-
-
-
-
             </div>
-
             <script>
                 var institute = document.getElementById("institute");
                 var institute_child = document.getElementById("institute_child");
@@ -1000,30 +984,41 @@
                         <th>Action</th>
 
                     </tr>
-                    <tr style="border-bottom :1px solid  lightgrey; ">
-                        <td style="padding-bottom :10px;padding-top:10px;">
-                            <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">Kaartik Shukla</font>
-                        </td>
-                        <td style="padding-bottom :10px;padding-top:10px;">
-                            <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">Medical</font>
-                        </td>
-                        <td style="padding-bottom :10px;padding-top:10px;">
-                            <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">17 October 2021</font>
-                        </td>
-                        <td style="padding-bottom :10px;padding-top:10px;">
-                            <font
-                                style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
-                                Approved</font>
-                        </td>
-                        <td style="padding-bottom :10px;padding-top:10px;">
-                            <span class="glyphicon glyphicon-eye-open"></span>
+                    <% if (typeof leave !=="undefined" && leave.length !==0) {%>
+                        <% for(let i=0;i<leave.length;i++) {%>
+                            <tr style="border-bottom :1px solid  lightgrey; ">
+                                <td style="padding-bottom :10px;padding-top:10px;">
+                                    <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                        <%= leave[i].name %>
+                                    </font>
+                                </td>
+                                <td style="padding-bottom :10px;padding-top:10px;">
+                                    <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                        <%= leave[i].leaveType %>
+                                    </font>
+                                </td>
+                                <td style="padding-bottom :10px;padding-top:10px;">
+                                    <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                        <%= leave[i].postingDate %>
+                                    </font>
+                                </td>
+                                <td style="padding-bottom :10px;padding-top:10px;">
+                                    <font
+                                        style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
+                                        <%= leave[i].status %>
+                                    </font>
+                                </td>
+                                <td style="padding-bottom :10px;padding-top:10px;">
+                                    <form action="http://localhost:3000/admin/leaveApp/approved/<%= i  %>"
+                                        method="post">
+                                        <button type="submit" class="btn btn-info">Approve</button>
+                                    </form>
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </td>
+                                <% } %>
+                                    <% } %>
 
-                        </td>
-
-
-
-
-                    </tr>
+                            </tr>
                 </table>
             </div>
             <script>
