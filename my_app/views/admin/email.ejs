@@ -2,8 +2,15 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,18 +59,36 @@
         </center>
     </div>
     <div style="position:absolute;left:13%;width:87%;height:93%;top:5%;" id="maindiv">
-        <form action="http://localhost:3000/admin/emails/<%=  %>"
+        <form
             style="width:100%;border:1px solid lightgrey;padding:10px;position:fixed;top:0;background:white;z-index:2;"
             id="search">
             <button type="submit" name="search" style="border:none;background:white;"><span
                     class="glyphicon glyphicon-search"></span></button>
             <input type="text" placeholder="Search mail" style="width:97%;border:none;background:white;">
         </form>
-    </div>
+        <a href="email_content.html">
+            <div id="mail"
+                style="background:#f8f8f8;width:100%;height:12%;border:1px solid #f0f0f0;z-index:1;font-family:century gothic;font-size:min(3.5vw,1.5rem);">
+                <img src="emailusr.png"
+                    style="border-radius:50%;position:absolute;width:8rem;padding:1%;max-width:15vw;">
+                <br><br><br>
+                <span style="position:absolute;left :8rem;width:75%;overflow:hidden;top:2%;">
+                    <font>Dalila Ouldcott</font>
+                    <font style="float:right;">18:56</font><br>
+                    <font>User-friendly value-added application 😊</font>
+                    <font style="float:right;">07 August 2022</font><br>
+                    <font style="white-space:nowrap;">Hey John, wellish laminable ineunt popshop catalyte prismatize
+                        campimetrical lentisk excluding portlet coccinellid impestation Bangash Lollardist perameloid
+                        procerebrum</font>
+                </span>
+            </div>
+        </a>
+
     </div>
 
 
-    </div>
+
+
 
     <script>
         var search = document.getElementById("search");
@@ -72,83 +97,15 @@
         var maindiv = document.getElementById("maindiv");
         maindiv.style.top = search.offsetHeight + "px";
 
-        var j = 20;
-        for (i = 0; i <= j; i++) {
-            var ancor = document.createElement("a");
-            ancor.href = "email_content.html";
-            var div = document.createElement("div");
-            div.id = "mail" + i;
-            if (i % 2 == 0) {
-                div.style.background = "#f8f8f8";
-            }
-            else {
-                div.style.background = "white";
-            }
-            div.style.width = "100%";
-            div.style.height = "12%";
-            div.style.border = "1px solid #f0f0f0";
-            div.style.zIndex = 1;
-            maindiv.appendChild(ancor);
-            ancor.appendChild(div);
-            var img = document.createElement("img");
-            img.src = "emailusr.png";
-            img.style.borderRadius = "50%";
-            img.style.position = "absolute";
-            img.style.width = "8rem";
-            img.style.padding = "1%";
-            img.style.maxWidth = "15vw";
-            img.id = "img" + i;
-            var br = document.createElement("br");
-            var br2 = document.createElement("br");
-            var br3 = document.createElement("br");
 
-
-
-
-            var text1 = document.createTextNode("Dalila Ouldcott");
-
-            var text2 = document.createTextNode("User-friendly value-added application 😊");
-            var text3 = document.createTextNode("Hey John, wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet coccinellid impestation Bangash Lollardist perameloid procerebrum");
-            var text4 = document.createTextNode("18:56");
-            var text5 = document.createTextNode("07 August 2022");
-            var font1 = document.createElement("font");
-            var font2 = document.createElement("font");
-            var font3 = document.createElement("font");
-            var font4 = document.createElement("font");
-            var font5 = document.createElement("font");
-            font3.style.whiteSpace = "nowrap";
-
-            font4.style.float = "right";
-            font5.style.float = "right";
-
-            var span = document.createElement("div");
-            span.style.position = "absolute";
-            span.style.left = "8rem";
-            span.style.width = "75%";
-            span.style.overflow = "hidden";
-            font1.appendChild(text1);
-            font2.appendChild(text2);
-            font3.appendChild(text3);
-            font4.appendChild(text4);
-            font5.appendChild(text5);
-            span.appendChild(br3);
-            span.appendChild(font1);
-            span.appendChild(font4);
-            span.appendChild(br);
-            span.appendChild(font2);
-            span.appendChild(font5);
-            span.appendChild(br2);
-            span.appendChild(font3);
-            div.style.fontFamily = "century gothic";
-            div.style.fontSize = "min(3.5vw,1.5rem)";
-            div.appendChild(img);
-            div.appendChild(span);
-        }
 
         if (width <= 1000) {
             navigation.style.left = "-50%";
             maindiv.style.left = 0;
             maindiv.style.width = "100%";
+
+
+
         }
 
 
@@ -168,7 +125,8 @@
             <font style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;">Subject:</font>
             <input type="text" style="width:90%;border:none;border-bottom:1px solid lightgrey;">
 
-            <textarea name="blog" style="width:100%;height:200px;border:none;">Message
+            <textarea name="blog" style="width:100%;height:200px;border:none;">
+Message
   </textarea>
             <hr>
             <label for="attachment" class="custom-file-upload" id="choose">
@@ -218,4 +176,6 @@
 
     </div>
 
-    <%- include("../templates/footer") %>
+</body>
+
+</html>
