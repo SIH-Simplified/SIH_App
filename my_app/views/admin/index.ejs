@@ -27,6 +27,12 @@
 </head>
 
 <body>
+    <% if (typeof error !=='undefined' ) { %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= error %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% } %>
     <span class="glyphicon glyphicon-menu-hamburger"
         style="color:black;position:fixed;top:12%;font-size:min(7vw,3rem);left:5%;visibility:hidden;z-index:16;"
         id="burger"></span>
