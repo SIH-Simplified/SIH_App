@@ -52,7 +52,6 @@
                             style="font-size:min(1vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
                             <span class="glyphicon glyphicon-pencil"></span>&nbsp&nbsp&nbsp&nbspDepartments
                         </font><br><br>
-
                         <font
                             style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
                             <span class="glyphicon glyphicon-calendar"></span>&nbsp&nbsp&nbsp&nbspCalendar
@@ -62,7 +61,6 @@
                             style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
                             <span class="	glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp&nbspLogout
                         </font><br>
-
                     </center>
             </div>
             <div style="position:absolute;left:13%;width:87%;height:93%;top:0%;" id="maindiv">
@@ -531,15 +529,17 @@
 
                         </div>
 
-
-
                     </span>
 
                     <span class="col-md-8" style="height:100%;overflow:auto;" id="row3_child2">
                         <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
                             id="container7">
                             <br>
-                            <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">Assign Task</font>
+                            <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">
+                                <form action="http://localhost:3000/admin/tasks/create" method="get">
+                                    <button type="submit" class="btn btn-primary">Assign Task</button>
+                                </form>
+                            </font>
                             <font
                                 style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;float:right;margin-right:40px;"
                                 id="assign2">Assign Now<br></font>
@@ -552,45 +552,51 @@
                                     <th>Assigned Teachers</th>
                                     <th>Status</th>
                                     <th>Progress</th>
-
                                 </tr>
-                                <tr style="border-bottom :1px solid  #f5f5f5; ">
-                                    <td style="padding-bottom :10px;padding-top:10px;">
-                                        <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">1</font>
-                                    </td>
-                                    <td style="padding-bottom :10px;padding-top:10px;">
-                                        <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">Prepration for
-                                            cricket
-                                            team
-                                        </font>
-                                    </td>
-                                    <td style="padding-bottom :10px;padding-top:10px;">
-                                        <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">Kaartik Shukla
-                                        </font>
-                                    </td>
-                                    <td style="padding-bottom :10px;padding-top:10px;">
-                                        <font
-                                            style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
-                                            Done</font>
-                                    </td>
-                                    <td style="padding-bottom :10px;padding-top:10px;">
-                                        <span class="glyphicon glyphicon-check"></span>
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </td>
-
-
-
-
-                                </tr>
+                                <% if(typeof tasks !=="undefined" && tasks.length !==0) {%>
+                                    <% for(let i=0;i<tasks.length;i++) {%>
+                                        <tr style="border-bottom :1px solid  #f5f5f5; ">
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    <%= i+1 %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    <%= tasks[i].task %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    <%= tasks[i].assignedTeachers %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font
+                                                    style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;
+                                                    border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
+                                                    <%= tasks[i].status %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <form
+                                                    action="http://localhost:3000/admin/tasks/delete/<%= i %>?_method=DELETE"
+                                                    method="post">
+                                                    <button type="submit" class="btn btn-secondary"> Delete </button>
+                                                </form>
+                                                <button type="button" class="btn btn-secondary">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                            <% } %>
                             </table>
-
                             <script>
                                 var summary = document.getElementById("summary");
                                 if (width <= 800) {
                                     attendencecontmain.style.top = attendencecontmain.offsetTop + attendencecontmain.offsetHeight + "px";
                                 }
-
-
 
                                 var row3_child1 = document.getElementById("row3_child1");
                                 var row3_child2 = document.getElementById("row3_child2");
@@ -707,54 +713,62 @@
                     <span class="col-md-3">
 
                         <div style="border-radius:7px;background:white;">
-                            <div style="display:flex;">
-                                <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
-                                    <input type="checkbox">
+                            <%if (typeof teachers !=="undefined" && teachers.length !==0) { %>
+                                <% for( let i=0; i < teachers.length; i++ ) { %>
+                                    <div style="display:flex;">
+                                        <form style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;">
+                                            <input type="checkbox">
+                                        </form>
+                                        <font
+                                            style="font-size:min(2vw,1.5rem);padding-right:5%;padding-left:5%;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
+                                            Active</font>
+                                    </div>
+                                    <center>
+                                        <img src="images/emailusr.png"
+                                            style="border-radius:50%;margin-top:40px;width:100px;"><br>
+                                        <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">
+                                            <%= teachers[i].name %>
+                                        </font>
+                                        <br>
+                                        <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">
+                                            <% for( let j=0; j < teachers[i].skills.length; j++ ) { %>
+                                                <%= teachers[i].skills[j] %>
+                                                    <% } %>
+                                        </font>
+                                        <br><br>
+                                    </center>
+                                    <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
+                                        <!-- <font
+                                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                                            <b>English Teacher</b>
+                                        </font> -->
+                                        <font
+                                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                                            <b>Date Hired</b>
+                                        </font><br>
+                                        <font
+                                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                                            English</font>
+                                        <font
+                                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
+                                            <%= teachers[i].dateHired %>
+                                        </font><br><br>
+                                        <font
+                                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                                            <span class="glyphicon glyphicon-envelope"></span>&nbsp&nbsp
+                                            <%= teachers[i].email %>
+                                        </font>
+                                        <br>
+                                        <font
+                                            style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
+                                            <%= teachers[i].phone_number %>
+                                        </font>
 
-                                </form>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);padding-right:5%;padding-left:5%;background: lightgreen;color:#202020;border:2px solid green;border-radius:5px;float:right;position:relative;left:60%;margin-top:10px;">
-                                    Active</font>
-                            </div>
-                            <center>
-                                <img src="images/emailusr.png"
-                                    style="border-radius:50%;margin-top:40px;width:100px;"><br>
-                                <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
-                                </font>
-                                <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
-                                </font>
-                                <br><br>
-                            </center>
-                            <div style="border-radius:7px;background:skyblue;width:90%;margin-left:5%;"><br>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
-                                    <b>English Teacher</b>
-                                </font>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
-                                    <b>Date hired</b>
-                                </font><br>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
-                                    English</font>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;float:right;margin-right:5%;">
-                                    17-04-2012</font><br><br>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
-                                    <span class="glyphicon glyphicon-envelope"></span>&nbsp&nbspdannyscoff@edurecruit.in
-                                </font>
-                                <br>
-                                <font
-                                    style="font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;margin-left:5%;">
-                                    +91
-                                    1234567890</font>
-
-                            </div>
-                            <br>
+                                    </div>
+                                    <br>
+                                    <% } %>
+                                        <% } %>
                         </div>
-
                     </span>
                     <span class="col-md-3">
 

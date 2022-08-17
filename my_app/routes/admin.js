@@ -11,9 +11,11 @@ const Teacher = require("../models/teacher");
 const cloudinary = require("../cloudinary/index");
 const DailyUpdates = require("../models/admin/dailyUpdates");
 const adminEmail = require("../fakeDB");
+const teachers = require("../teacherDB");
+const tasks = require("../tasksDB");
 router.get("/", async (req, res) => {
     const countTeachers = await Teacher.find({}).count();
-    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0 });
+    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0, teachers, tasks });
 })
 
 router.get("/login", (req, res) => {
@@ -338,6 +340,24 @@ router.delete("/dailyUpdates/delete/:id", async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+})
+
+
+router.get("/tasks/create", (req, res) => {
+    res.render("admin/tasks");
+})
+
+router.post("/tasks/create", (req, res) => {
+    const { tasks, assigned, status = "pending" } = req.body;
+    tasks.push({ tasks, assigned, status });
+    res.redirect("/admin");
+})
+
+router.delete("/tasks/delete/:id", (req, res) => {
+    console.log("Delete route for tasks");
+    const { id } = req.params;
+    tasks.splice(id, 1);
+    res.redirect("/admin");
 })
 
 module.exports = router;
