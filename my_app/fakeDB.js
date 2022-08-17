@@ -1,35 +1,43 @@
 module.exports = [
     {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
     }, {
-        name: "Akane",
-        age: 21,
-        gender: "Female"
-    },
+        from: "Akane",
+        subject: "This is the subject",
+        message: "this is the message sent by the admin",
+        email: "sample@gmail.com"
+    }
 ]

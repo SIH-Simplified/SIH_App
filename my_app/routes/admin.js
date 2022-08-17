@@ -10,6 +10,7 @@ const Email = require("../models/admin/email");
 const Teacher = require("../models/teacher");
 const cloudinary = require("../cloudinary/index");
 const DailyUpdates = require("../models/admin/dailyUpdates");
+const adminEmail = require("../fakeDB");
 router.get("/", async (req, res) => {
     const countTeachers = await Teacher.find({}).count();
     res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0 });
@@ -105,11 +106,16 @@ router.get("/logout", checkAdmin, (req, res) => {
 router.get("/email/all", async (req, res, next) => {
     try {
         const emails = await Admin.find({ adminName: "youtube" }).populate("email");
-        console.log(...emails);
-        res.render("admin/email", { ...emails });
+        // console.log(...emails);
+        res.render("admin/email", { sentEmails: adminEmail });
     } catch (error) {
         next(error);
     }
+})
+
+router.get("/email/all/:id", (req, res) => {
+    const { id } = req.params;
+    res.render("admin/email_content", { sentEmails: adminEmail[id] });
 })
 
 router.post("/email/create", checkAdmin, [

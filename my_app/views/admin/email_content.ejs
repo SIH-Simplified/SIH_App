@@ -34,11 +34,12 @@
 
     <div style="width:100%;height:10rem;position:absolute;background:white;box-shadow: 15px 0 10px 10px lightgrey;"
         id="contentnavbar">
-        <a href="email.html"> <span class="glyphicon glyphicon-menu-left"
+        <a href="/admin/email/all"> <span class="glyphicon glyphicon-menu-left"
                 style="font-size:min(6vw,2rem);padding:2%;cursor:pointer;" id="back"></span></a>
         <font
             style="font-size:min(3.5vw,2rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;">
-            User-friendly value-added application 😊</font>
+            <%= sentEmails.subject %>
+        </font>
         <span class="glyphicon glyphicon-envelope"
             style="font-size:min(3.5vw,2rem);color:black;float:right;padding-right:3%;padding-top:60px;"
             id="envelope"></span>
@@ -51,10 +52,12 @@
             <div style="position:absolute;left:10rem;top:2.5rem;">
                 <font
                     style="font-size:min(3.5vw,2rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;">
-                    Dalila Ouldcott</font><br>
+                    <%= sentEmails.from %>
+                </font><br>
                 <font
                     style="font-size:min(3.5vw,1.5rem);color:lightgrey;font-family:'Poppins', sans-serif;border:none;border-radius:7px;">
-                    jatin65@edurecruit.in</font>
+                    <%= sentEmails.email %>
+                </font>
 
 
             </div>
@@ -63,66 +66,7 @@
                 <span class="col-md-12">
                     <font
                         style="font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;">
-                        Hey John,
-
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-                        wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet
-                        coccinellid impestation Bangash Lollardist perameloid procerebrum presume cashmerette washbasin
-                        nainsook Odontolcae Alea holcodont welted
-
-                        cibarious terrifical uploop naphthaleneacetic containable nonsailor Zwinglian blighty benchful
-                        guar porch fallectomy building coinvolve eidolism warmth unclericalize seismographic recongeal
-                        ethanethial clog regicidal regainment legific
-
-
+                        <%= sentEmails.message %>
                     </font>
                     <br><br>
 
@@ -132,7 +76,6 @@
                         style="font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;">
                         No file attached</font>
                     <br><br>
-
                 </span>
             </span>
         </div>

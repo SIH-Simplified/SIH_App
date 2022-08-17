@@ -66,23 +66,37 @@
                     class="glyphicon glyphicon-search"></span></button>
             <input type="text" placeholder="Search mail" style="width:97%;border:none;background:white;">
         </form>
-        <a href="email_content.html">
-            <div id="mail"
-                style="background:#f8f8f8;width:100%;height:12%;border:1px solid #f0f0f0;z-index:1;font-family:century gothic;font-size:min(3.5vw,1.5rem);">
-                <img src="emailusr.png"
-                    style="border-radius:50%;position:absolute;width:8rem;padding:1%;max-width:15vw;">
-                <br><br><br>
-                <span style="position:absolute;left :8rem;width:75%;overflow:hidden;top:2%;">
-                    <font>Dalila Ouldcott</font>
-                    <font style="float:right;">18:56</font><br>
-                    <font>User-friendly value-added application 😊</font>
-                    <font style="float:right;">07 August 2022</font><br>
-                    <font style="white-space:nowrap;">Hey John, wellish laminable ineunt popshop catalyte prismatize
-                        campimetrical lentisk excluding portlet coccinellid impestation Bangash Lollardist perameloid
-                        procerebrum</font>
-                </span>
-            </div>
-        </a>
+        <a href="admin/email_content"></a>
+        <div id="mail"
+            style="background:#f8f8f8;width:100%;height:12%;border:1px solid #f0f0f0;z-index:1;font-family:century gothic;font-size:min(3.5vw,1.5rem);">
+            <img src="images/emailusr.png"
+                style="border-radius:50%;position:absolute;width:8rem;padding:1%;max-width:15vw;">
+            <br><br><br>
+            <span style="position:absolute;left :8rem;width:75%;overflow:hidden;top:2%;">
+                <% if(typeof sentEmails !=='undefined' && sentEmails.length !==0) { %>
+                    <% for( let i=0; i < sentEmails.length; i++ ) { %>
+                        <a style="text-decoration: none;" href="http://localhost:3000/admin/email/all/<%= i %>">
+                            <font>
+                                <%= sentEmails[i].from %>
+                            </font>
+                            <font style="float:right;">18:56</font><br>
+                            <font>
+                                <%= sentEmails[i].subject %>
+                            </font>
+                            <font style="float:right;">07 August 2022</font><br>
+                            <font style="white-space:nowrap;">
+                                <%= sentEmails[i].message %>
+                            </font>
+                        </a>
+                        <div>
+                            <button type="button" class="btn btn-danger">Delete email</button>
+                        </div>
+                        <br>
+                        <% } %>
+                            <% } %>
+            </span>
+        </div>
+
 
     </div>
 
