@@ -10,9 +10,13 @@ const Email = require("../models/admin/email");
 const Teacher = require("../models/teacher");
 const cloudinary = require("../cloudinary/index");
 const DailyUpdates = require("../models/admin/dailyUpdates");
+const adminEmail = require("../fakeDB");
+const teachers = require("../teacherDB");
+const tasks = require("../tasksDB");
+const leaveDB = require("../leaveDB");
 router.get("/", async (req, res) => {
     const countTeachers = await Teacher.find({}).count();
-    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0 });
+    res.render("admin/index", { countTeachers, leaves: 0, overtimes: 0, teachers, tasks, leave: leaveDB });
 })
 
 router.get("/login", (req, res) => {
@@ -105,14 +109,25 @@ router.get("/logout", checkAdmin, (req, res) => {
 router.get("/email/all", async (req, res, next) => {
     try {
         const emails = await Admin.find({ adminName: "youtube" }).populate("email");
-        console.log(...emails);
-        res.render("admin/email", { ...emails });
+        // console.log(...emails);
+        res.render("admin/email", { sentEmails: adminEmail });
     } catch (error) {
         next(error);
     }
 })
 
-router.post("/email/create", checkAdmin, [
+router.delete("/email/all/delete/:id", (req, res) => {
+    const { id } = req.params;
+    adminEmail.splice(id, 1);
+    res.redirect("/admin/email/all");
+})
+
+router.get("/email/all/:id", (req, res) => {
+    const { id } = req.params;
+    res.render("admin/email_content", { sentEmails: adminEmail[id] });
+})
+
+router.post("/email/create", [
     check("subject", "Please include a subject in the email").isLength({
         min: 1
     }),
@@ -120,7 +135,7 @@ router.post("/email/create", checkAdmin, [
         min: 1
     })
 ], async (req, res, next) => {
-    const { subject, message } = req.body;
+    const { from, subject, message } = req.body;
     const error = validationResult(req);
 
     if (!error) {
@@ -128,12 +143,14 @@ router.post("/email/create", checkAdmin, [
             error: error.array()
         })
     }
-
     const email = new Email({
-        from: "Admin", subject, message
+        from, subject, message
     })
     email.save();
-    res.redirect("/index");
+    adminEmail.push({
+        from, subject, message, email: "sample@gamil.com"
+    })
+    res.redirect("/admin/email/all");
 })
 
 router.get("/teachers/details", async (req, res, next) => {
@@ -324,6 +341,35 @@ router.delete("/dailyUpdates/delete/:id", async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+})
+
+
+router.get("/tasks/create", (req, res) => {
+    res.render("admin/tasks");
+})
+
+router.post("/tasks/create", (req, res) => {
+    const { tasks, assigned, status = "pending" } = req.body;
+    tasks.push({ tasks, assigned, status });
+    res.redirect("/admin");
+})
+
+router.delete("/tasks/delete/:id", (req, res) => {
+    console.log("Delete route for tasks");
+    const { id } = req.params;
+    tasks.splice(id, 1);
+    res.redirect("/admin");
+})
+
+router.get("/leaveApp/:id", (req, res) => {
+    const { id } = req.params;
+    res.render("/admin/leaveApplication", { leave: leaveDB[id] });
+})
+
+router.post("/leaveApp/approved/:id", (req, res) => {
+    const { id } = req.params;
+    leaveDB.splice(id, 1);
+    res.redirect("/admin");
 })
 
 module.exports = router;

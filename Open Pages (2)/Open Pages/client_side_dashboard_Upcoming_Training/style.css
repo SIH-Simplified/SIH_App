@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+.light {
+    background-color: #f2f2f2 !important;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.dark {
+    background-color: #1b1b1b !important;
+}
+
+.container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.navbar {
+    width: 80%;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px !important;
+    overflow: hidden;
+    position: fixed;
+    top: 0%;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    height: auto;
+    margin-top: 20px !important;
+    border-radius: 10px;
+}
+
+.group {
+    background-color: #fff;
+    margin-top: 5px !important;
+    border-radius: 10px;
+    margin-top: 20px !important;
+}
+
+.one {
+    height: 270px;
+   
+}
+
+.two {
+    height: 270px;
+
+}
+
+.three {
+    height: 270px;
+}
+
+.four {
+    height: 270px;
+   
+}
+
+.five {
+    height: 260px;
+}
+
+.six {
+    height: 260px;
+    width: 40% !important;
+}
+
+
+/* Main nav  */
+.nav-middle {
+    width: 49vw;
+}
+
+.stats {
+    margin-top: 70px;
+
+}
+
+.icons {
+    padding: 10px;
+    display: inline-block;
+    color: #fff;
+}
+
+.right {
+    text-align: right;
+}
+
+.icons img {
+    border-radius: 30px;
+}
+
+#userName {
+    display: inline;
+}
+
+.row-nav {
+    display: flex;
+}
+
+/* Right nav  */
+.logo {
+    position: relative;
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
+}
+
+#option_1 {
+    position: relative;
+    margin-top: 1vw;
+    width: 13vw;
+}
+
+.dash {
+    position: relative;
+    margin-top: 2vh;
+    border: solid;
+    width: 10vw;
+    height: 12vh;
+}
+
+.dropbtn {
+    background-color: whitesmoke;
+    color: gray;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    text-align: left;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#APP {
+    color: gray;
+    padding: 16px;
+}
+
+.icon_todo {
+    background-color: #fff;
+    width: 13vw;
+    padding: 16px;
+    /* font-size: 16px; */
+    border: none;
+    font-weight: 200;
+    text-align: left;
+}
+
+.nav-line {
+    font-weight: 600;
+
+}
+
+/* one main  */
+
+.main-title{
+    padding-top: 20px;
+    display: flex;
+    
+}
+
+.main-b{
+    margin-left: 69%;
+    margin-top: 16px;
+}
+
+.img-one{
+    height: 120px;
+    border: solid 3px;
+    background-color: aqua;
+}
+
+.one-row{
+    display: flex;
+   
+    margin-left: 6px;
+}
+
+.col-one-a{
+
+}
+
+.col-one-b{
+    margin-left: 20px;
+    margin-top: 23px;
+}
+
+.col-one-c{
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 14px;
+    width: 70px;
+  font-size: small;
+  font-weight: 600;
+}
+
+.one-text-top{
+    font-weight: 600;
+}
+
+.one-link{
+    text-decoration: none;
+}
+
+.one-by{
+    margin-top: 9px;
+}
+
+.one-text-mid{
+    font-size: 0.70rem;
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+.one-text-bottom{
+    font-size: small;
+    margin-top: 22px;
+    color: #7363EA;
+}
+
+.one-cx{
+    background-color: #FCEFD0;
+    color: #E6B18F;
+    border-radius: 5px;
+}
+
+.one-cy{
+    margin-top: 6px;
+    background-color: #BAF3D8;
+    color: #4CB242;
+    border-radius: 5px;
+}
+
+.main-text{
+    margin-top: 20px;
+}
+
+/* Four  */
+
+.four-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    padding: 1px;
+}
+
+.four-text {
+    font-weight: 600;
+
+}
+
+.four-training {
+    margin-left: 23px;
+}
+
+
+.four-training-cont {
+    margin-top: 5px;
+    /* border: solid 5px; */
+    width: 410px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #fff;
+
+
+}
+
+.four-training-text {
+    display: flex;
+    padding: 6px;
+}
+
+.four-left {
+    height: 40px;
+    width: 30px;
+    padding: 5px;
+    color: #7363EA;
+}
+
+.four-mid {
+    width: 240px;
+}
+
+.four-mid-text {
+    font-size: 0.75rem;
+
+}
+
+.four-right {
+    height: 60px;
+    margin-left: 20px;
+    padding: 4px;
+}
+
+.four-right-text-a {
+    font-size: 0.6rem;
+    text-align: right;
+}
+
+.four-right-text-b {
+    position: relative;
+    top: -16px;
+    font-size: 0.85rem;
+    color: #7363EA;
+    text-decoration: none;
+}
+.row{
+    display: flex;
+}
+
+
+.six-top{
+    padding: 5px;
+    background-color: #FCEFD0;
+    color: #E6B18F;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    padding-bottom:  10px; ;
+    margin-top: 10px;
+
+}
+
+
+.container-six {
+    background-color: rgb(192, 192, 192);
+    width: 90%;
+        border-radius: 15px;
+}
+
+.progress-six {
+    background-color: rgb(116, 194, 92);
+    color: white;
+    padding: 1%;
+    text-align: right;
+    font-size: 8px;
+        border-radius: 15px;
+}
+
+.progress-six-meter {
+    width: 80%;
+}
+
+.six-bottom-text-a{
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+}
+
+.six-bottom-text-b{
+    color: gray;
+    font-size: 0.70rem;
+}
+
+.six-botton-text{
+    text-decoration: none;
+    text-align: center;
+}
+
+.six-mid{
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.six-main{
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.six-scale
+{
+padding-top: 15px;
+}
+.six-button{
+    margin-left: 25%;
+    margin-top: 15px;
+}
+@media screen and (max-width: 736px) 
+{
+    .six{
+        width: ;
+    }
+}
