@@ -141,7 +141,7 @@ router.get('/transfer/finished', (req, res) => {
 })
 
 router.get('/study', (req, res) => {
-    res.render('/teacher/study')
+    res.render('teacher/study/study')
 })
 
 router.get('/todo', (req, res) => {
@@ -149,6 +149,9 @@ router.get('/todo', (req, res) => {
 })
 router.get('/calendar', (req,res)=>{
     res.render('teacher/calendar')
+})
+router.get('/view-portfolio',(req,res)=>{
+    res.render('teacher/portfolio')
 })
 router.get('/:id', async (req, res, next) => {
     const { id } = req.params;
