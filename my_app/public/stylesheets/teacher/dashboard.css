@@ -92,10 +92,12 @@ a{
 
 .nine {
   height: 350px;
+  overflow: auto;
 }
 
 .ten {
   height: 350px;
+  overflow: auto;
 }
 .eleven {
   height: 350px;
