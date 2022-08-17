@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const clientRouter = require("./routes/teacher");
 const superAdminRouter = require("./routes/superAdmin");
+const methodOverride = require("method-override");
 var app = express();
 const mongo_connection_url = process.env.MONGO_DB_ATLAS_URL || "mongodb://localhost:27017/Edu"
 mongoose.connect(mongo_connection_url).then(() => {
@@ -21,7 +22,7 @@ mongoose.connect(mongo_connection_url).then(() => {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.use(methodOverride("_method"));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -113,10 +113,10 @@ router.get("/email/all", async (req, res, next) => {
     }
 })
 
-router.get("/email/all/delete/:id", (req, res) => {
+router.delete("/email/all/delete/:id", (req, res) => {
     const { id } = req.params;
     adminEmail.splice(id, 1);
-    res.redirect("/admin/email/all", { sentEmails: adminEmail });
+    res.redirect("/admin/email/all");
 })
 
 router.get("/email/all/:id", (req, res) => {
@@ -124,7 +124,7 @@ router.get("/email/all/:id", (req, res) => {
     res.render("admin/email_content", { sentEmails: adminEmail[id] });
 })
 
-router.post("/email/create", checkAdmin, [
+router.post("/email/create", [
     check("subject", "Please include a subject in the email").isLength({
         min: 1
     }),
@@ -132,7 +132,7 @@ router.post("/email/create", checkAdmin, [
         min: 1
     })
 ], async (req, res, next) => {
-    const { subject, message } = req.body;
+    const { from, subject, message } = req.body;
     const error = validationResult(req);
 
     if (!error) {
@@ -140,12 +140,14 @@ router.post("/email/create", checkAdmin, [
             error: error.array()
         })
     }
-
     const email = new Email({
-        from: "Admin", subject, message
+        from, subject, message
     })
     email.save();
-    res.redirect("/index");
+    adminEmail.push({
+        from, subject, message, email: "sample@gamil.com"
+    })
+    res.redirect("/admin/email/all");
 })
 
 router.get("/teachers/details", async (req, res, next) => {
