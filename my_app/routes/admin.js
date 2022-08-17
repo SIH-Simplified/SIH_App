@@ -113,6 +113,12 @@ router.get("/email/all", async (req, res, next) => {
     }
 })
 
+router.get("/email/all/delete/:id", (req, res) => {
+    const { id } = req.params;
+    adminEmail.splice(id, 1);
+    res.redirect("/admin/email/all", { sentEmails: adminEmail });
+})
+
 router.get("/email/all/:id", (req, res) => {
     const { id } = req.params;
     res.render("admin/email_content", { sentEmails: adminEmail[id] });

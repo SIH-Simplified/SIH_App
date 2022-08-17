@@ -35,7 +35,7 @@ module.exports = [
         message: "this is the message sent by the admin",
         email: "sample@gmail.com"
     }, {
-        from: "Akane",
+        from: "Simarpreet",
         subject: "This is the subject",
         message: "this is the message sent by the admin",
         email: "sample@gmail.com"
