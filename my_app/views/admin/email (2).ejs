@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&display=swap');
+
+    *{
+        margin:0;
+    }
+</style>
+</head>
+<body>
+    <span class = "glyphicon glyphicon-menu-hamburger" style = "color:grey;position:fixed;top:12%;font-size:min(7vw,3rem);left:5%;visibility:hidden;z-index:4;" id = "burger"></span>
+ <div style = "width:13%;height:100%;position:fixed;background:white;border-right:1px solid #f5f5f5;z-index:3;" id = "navbar">
+    <center><br><br>
+<font style = "font-family:'Poppins', sans-serif;font-size:min(3vw,1.7rem);color:white;background:#7367f0;border:none;padding-left:20%;padding-right:20%;padding-top:10px;padding-bottom:10px;border-radius:7px;" id = "compose">Compose</font><br><br><br><br>
+<span  class = "glyphicon glyphicon-envelope" style = "font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:30px;">&nbsp&nbsp&nbsp&nbspInbox</span><br><br>
+<font  style = "font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:30px;"><span  class="glyphicon glyphicon-send"  id = "send"></span>&nbsp&nbsp&nbsp&nbspSent</font><br><br>
+<font style = "font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:30px;"><span  class="glyphicon glyphicon-pencil"></span>&nbsp&nbsp&nbsp&nbspDraft</font><br><br>
+
+<font style = "font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:30px;"><span  class="glyphicon glyphicon-exclamation-sign"></span>&nbsp&nbsp&nbsp&nbspSpam</font><br><br>
+
+<font style = "font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:30px;"><span  class="	glyphicon glyphicon-trash"></span>&nbsp&nbsp&nbsp&nbspTrash</font><br>
+
+</center>
+ </div>  
+ <div style = "position:absolute;left:13%;width:87%;height:93%;top:5%;" id="maindiv">
+ <form style = "width:100%;border:1px solid lightgrey;padding:10px;position:fixed;top:0;background:white;z-index:2;" id = "search">
+    <button type="submit" name = "search" style = "border:none;background:white;"><span class = "glyphicon glyphicon-search"></span></button>
+    <input type="text" placeholder = "Search mail" style = "width:97%;border:none;background:white;">
+ </form>
+ <a href = "email_content.html">
+<div id = "mail" style = "background:#f8f8f8;width:100%;height:12%;border:1px solid #f0f0f0;z-index:1;font-family:century gothic;font-size:min(3.5vw,1.5rem);">
+<img src = "emailusr.png" style = "border-radius:50%;position:absolute;width:8rem;padding:1%;max-width:15vw;">
+<br><br><br>
+<span style = "position:absolute;left :8rem;width:75%;overflow:hidden;top:2%;">
+<font>Dalila Ouldcott</font>
+<font style = "float:right;">18:56</font><br>
+<font>User-friendly value-added application 😊</font>
+<font style = "float:right;">07 August 2022</font><br>
+<font style = "white-space:nowrap;">Hey John, wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet coccinellid impestation Bangash Lollardist perameloid procerebrum</font>
+</span>
+</div>
+</a>
+
+</div> 
+
+
+
+    
+
+<script>
+    var search = document.getElementById("search");
+    var navigation = document.getElementById("navbar");
+    var width = window.screen.availWidth;
+var maindiv = document.getElementById("maindiv");
+maindiv.style.top = search.offsetHeight+"px";
+
+
+
+if(width<=1000)
+{
+    navigation.style.left = "-50%";
+    maindiv.style.left = 0;
+    maindiv.style.width = "100%";
+   
+    
+   
+}
+
+
+</script>
+<div style = "border-radius:7px;background:white;width:40%;height:auto;position:fixed;bottom:5%;left:55%;box-shadow:0 0 5px 5px lightgrey;visibility:hidden;z-index:3;" id = "composediv">
+<div style = "background:#f8f8f8;font-size:min(3.5vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;padding:10px;">Compose mail 
+<font style = "float:right;padding-right:15px;text-decoration:none;cursor:default;" id = "close">x</font>
+</div>
+
+<form>
+    <font style = "font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;">  To:</font>
+<input type = "text" style="width:95%;border:none;border-bottom:1px solid lightgrey;">
+<div id = "cc"></div>
+<font style = "font-size:min(2vw,1.5rem);font-family:'Poppins', sans-serif;">Subject:</font>
+<input type = "text" style="width:90%;border:none;border-bottom:1px solid lightgrey;">
+
+<textarea    name="blog" style = "width:100%;height:200px;border:none;">
+Message
+  </textarea>
+  <hr>
+  <label for="attachment" class="custom-file-upload" id = "choose">
+    <span class = "glyphicon glyphicon-paperclip" style ="font-size:min(3vw,2.5rem);position:relative;left:20px;cursor:pointer;"></span>
+ </label>
+ 
+ <input type="file" id = "attachment" style ="visibility:hidden;">
+ <button type = "submit" style = "position:absolute;left:20px;bottom:0;border:none;font-size:min(3vw,2rem);font-family:'Poppins', sans-serif;background:#7367f0;color:white;border-radius:7px;padding-left:20px;padding-right:20px;cursor:default;">Send</button>
+</form>
+
+
+<script>
+    if(width<=1000){
+    document.getElementById("composediv").style.left = "5%";
+    document.getElementById("composediv").style.width = "90%";
+    document.getElementById("burger").style.visibility = "visible";
+    }
+ document.getElementById("compose").addEventListener("click",()=>{
+    document.getElementById("composediv").style.visibility = "visible";
+
+ }) 
+ 
+ document.getElementById("close").addEventListener("click",()=>{
+    document.getElementById("composediv").style.visibility = "hidden";
+
+ }) 
+var c = 0;
+ document.getElementById("burger").addEventListener("click",()=>{
+    if(c%2==0)
+    {
+    document.getElementById("navbar").style.left = 0;
+    document.getElementById("navbar").style.width = "50%";
+    burger.style.left = navigation.offsetWidth+20+"px";
+    }
+    else{
+        document.getElementById("navbar").style.left = "-50%";
+        document.getElementById("navbar").style.width = "15%";
+        burger.style.left = "5%";
+    }
+    c++;
+ }) 
+</script>
+
+
+
+
+</div>
+
+</body>
+</html>
