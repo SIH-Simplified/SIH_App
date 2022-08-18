@@ -6,98 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/teacher/dashboard.css">
-    <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/577ae30e95.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Client Side Dashboard</title>
+    <title>EduRecruit - Manage Your Data Here - Teacher Management System of Government Of Maharashtra</title>
 </head>
 
 <body class="light">
     <div class="container-fluid" id="maincont">
         <div class="row" id="content_row">
-            <div class="col-sm-2 sidebar" style="position:fixed;top:0;" id="navbar">
-                <img src="images/logo.png" width="180" height="180" class="logo">
-                <br>
-                <div class="dropdown" id="dropdn">
-                    <div class="dropbtn">
-                        <h5 id="option_1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-house-door" viewBox="0 0 16 16">
-                                <path
-                                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
-                            </svg>
-                            Dashboard
-                        </h5>
-                    </div>
-
-                </div>
-
-                <h6 id="APP">APPS AND PAGES</h6>
-                <button class="icon_todo" id="navbt1"><i class="fa-xl fa-regular fa-square-check"></i> <span
-                        class="nav-line">Todo</span>
-                </button> <br>
-                <button class="icon_todo" id="navbt2"><i class="fa-xl fa-regular fa-envelope"></i> <span
-                        class="nav-line">Email</span>
-                </button><br>
-                <button class="icon_todo" id="navbt3"><i class="fa-regular fa-paper-plane"></i> <span
-                        class="nav-line">Transfer
-                        status</span>
-                </button><br>
-                <button class="icon_todo" id="navbt4"><i class="fa-regular fa-calendar"></i> <span
-                        class="nav-line">Calender</span>
-                </button><br>
-                <button class="icon_todo" id="navbt5"><i class="fa-regular fa-file"></i> <span class="nav-line">Study
-                        Martial</span>
-                </button><br>
-                <button class="icon_todo" id="navbt6"> <i class="fa-regular fa-image"></i> <span class="nav-line">View
-                        Portfolio</span>
-                </button><br>
-                <button class="icon_todo" id="navbt7"><i class="fa-regular fa-user"></i><span class="nav-line">
-                        About</span>
-                </button><br>
-            </div>
-            <div class="col-sm-10 main" style="position:absolute;left:16.5%;" id="content">
+            <%- include('../templates/sidebar.ejs') %>
+            <div class="col-sm-10 stats" id="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="navbar">
-                            <div class="row-nav">
-                                <div class="nav-left">
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-envelope"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"> <i class="fa-xl fa-regular fa-message"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-calendar"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-square-check"></i></a>
-                                    </div>
-                                </div>
-                                <div class="nav-middle">
-                                </div>
-                                <div class="nav-right">
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-bell"></i></a>
-                                    </div>
-                                    <div class="icons">
-                                        <i class="fa-xl fa-regular fa-moon" id="theme" style="color:black;"></i>
-                                    </div>
-                                    <div class="icons">
-                                        <a href="#"><i class="fa-xl fa-regular fa-sun"></i></a>
-                                    </div>
-                                    <div id="userName">
-                                        userName
-                                    </div>
-                                    <div class="icons">
-                                        <img src="images/pp.png" alt="pp" height="35px" width="35px">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%- include('../templates/navbar.ejs') %>
                     </div>
                     <div class="main-cont">
                         <div class="row">
@@ -109,8 +32,6 @@
                                                 <div class="one-col-a">
                                                     <p class="Wel_text">Welcome ' Name</p>
                                                     <p class="Wel_text2">Primary Wing</p>
-
-
                                                 </div>
                                                 <div class="one-col-b">
                                                     <img src="images/image 9.png" alt="" width="89" height="150"

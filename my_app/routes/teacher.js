@@ -133,6 +133,18 @@ router.post('/transfer/form/send', [
     check('email', 'Please enter a valid email').isEmail()
 ], async (req,res,next)=>{
     const { email, mobile_number, state, school_type, dob, present_school, subject, marital_status } = req.body;
+    const error = validationResult(req)
+    if (!error) {
+        return res.status(400).json({
+             error : error.array()
+         })
+    }
+    const transfer = new Transfer({
+        email , mobile_number, state, school_type, dob, present_school, subject, marital_status
+    })
+    transfer.save();
+    console.log(transfer)
+    res.redirect('/transfer/transfer-choices')
     
 })
 
