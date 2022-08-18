@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+<button type="button" class="btn btn-primary">Primary</button>
+
 <head>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,406 +21,447 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&display=swap');
 
-body{
-    background:#f5f5f5;
-}
-.navigation-bt{
-    font-size:min(1.2vw,1.5rem);
-    color:black;
-    font-family:'Poppins', sans-serif;
-    border:none;
-    border-radius:7px;
-    float:left;
-    margin-left:20%;;
-}
-#burger{
-    color:black;
-    position:fixed;
-    top:12%;
-    font-size:min(7vw,3rem);
-    left:5%;
-    visibility:hidden;
-    z-index:16;
-}
-#navbar{
-    width:13%;
-    height:100%;
-    position:fixed;
-    background:white;
-    border-right:1px solid #f5f5f5;
-    z-index:3;
-}
-#maindiv{
-    position:absolute;
-    left:13%;
-    width:87%;
-    height:93%;
-    top:0%;
-}
-#container1{
-    width:98%;
-    position:relative;
-    left:1%;
-    background:white;
-    border-radius:5px;
-    padding:30px;
-    font-family:'Poppins', sans-serif;
-    margin-top:1.5%;
-    display:flex;
-}
-#logo{
-   position: relative;
-   left:15%;    
-}
-#title{
-    font-size: min(3vw,3rem);
-    font-weight: bold;
-}
-.row1_child{
-    background:white;
-    border-radius:7px;
-    box-shadow:2px 2px 3px 3px lightgrey;
-width:100%;
+        body {
+            background: #f5f5f5;
+        }
 
-}
-#row1{
-    width:98%;
-    margin-left:1%;
-}
-#row2{
-    width:98%;
-    margin-left:1%;
-    height:55%;
-}
-#row3{
-    width:98%;
-    margin-left:1%;
-    height:40%;
-}
-.row1_child_font1{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: bold;
-    font-size: min(3vw,2.5rem);
-    margin:10%;
-    
-    
-    color: #012A60;
-    
-}
-.row1_child_font2{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: bold;
-    font-size: min(3vw,5rem);
-    margin:10%;
-    position: relative;
-    left:55%;
-    color: #012A60;
-    
-}
+        .navigation-bt {
+            font-size: min(1.2vw, 1.5rem);
+            color: black;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            border-radius: 7px;
+            float: left;
+            margin-left: 20%;
+            ;
+        }
+
+        #burger {
+            color: black;
+            position: fixed;
+            top: 12%;
+            font-size: min(7vw, 3rem);
+            left: 5%;
+            visibility: hidden;
+            z-index: 16;
+        }
+
+        #navbar {
+            width: 13%;
+            height: 100%;
+            position: fixed;
+            background: white;
+            border-right: 1px solid #f5f5f5;
+            z-index: 3;
+        }
+
+        #maindiv {
+            position: absolute;
+            left: 13%;
+            width: 87%;
+            height: 93%;
+            top: 0%;
+        }
+
+        #container1 {
+            width: 98%;
+            position: relative;
+            left: 1%;
+            background: white;
+            border-radius: 5px;
+            padding: 30px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 1.5%;
+            display: flex;
+        }
+
+        #logo {
+            position: relative;
+            left: 15%;
+        }
+
+        #title {
+            font-size: min(3vw, 3rem);
+            font-weight: bold;
+        }
+
+        .row1_child {
+            background: white;
+            border-radius: 7px;
+            box-shadow: 2px 2px 3px 3px lightgrey;
+            width: 100%;
+
+        }
+
+        #row1 {
+            width: 98%;
+            margin-left: 1%;
+        }
+
+        #row2 {
+            width: 98%;
+            margin-left: 1%;
+            height: 55%;
+        }
+
+        #row3 {
+            width: 98%;
+            margin-left: 1%;
+            height: 40%;
+        }
+
+        .row1_child_font1 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: bold;
+            font-size: min(3vw, 2.5rem);
+            margin: 10%;
+
+
+            color: #012A60;
+
+        }
+
+        .row1_child_font2 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: bold;
+            font-size: min(3vw, 5rem);
+            margin: 10%;
+            position: relative;
+            left: 55%;
+            color: #012A60;
+
+        }
     </style>
 </head>
+
 <body>
-    <span class = "glyphicon glyphicon-menu-hamburger" id = "burger"></span>
-    <div id = "navbar">
+    <span class="glyphicon glyphicon-menu-hamburger" id="burger"></span>
+    <div id="navbar">
         <center><br><br>
-            
-            <font class = "navigation-bt">&nbsp&nbsp&nbsp&nbspExams</font><br><br>
-           
-            <font class = "navigation-bt">&nbsp&nbsp&nbsp&nbspView Portfolio</font><br>
-            
-            </center>
+
+            <font class="navigation-bt">&nbsp&nbsp&nbsp&nbsp
+                <button type="button" class="btn btn-primary">Exams</button>
+            </font><br><br>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">View Portfolio</button>
+            </font><br>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">View Portfolio</button>
+            </font><br>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">Exam list</button>
+            </font><br>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">Allot Admin rolls</button>
+            </font><br>
+
+        </center>
+    </div>
+    <div id="maindiv">
+        <div id="container1">
+            <span class="row" style="width:100%;">
+                <span class="col-md-2">
+                    <img src="images/govt.svg">
+                </span>
+
+                <span class="col-md-8">
+                    <center>
+                        <font id="title"><span style="color:orangered">MAHARASHTRA GOVERNMENT</span><br>
+                            Online recruitment management system</font>
+                    </center>
+                </span>
+                <span class="col-md-2">
+                    <img src="images/logo.svg" id="logo">
+                </span>
+            </span>
         </div>
-        <div id="maindiv">
-            <div id = "container1">
-                <span class = "row" style = "width:100%;">
-                    <span class = "col-md-2">
-               <img src = "govt.svg">
-            </span>
-           
-                <span class = "col-md-8">
-             <center>  <font id = "title"><span style = "color:orangered">MAHARASHTRA GOVERNMENT</span><br>
-                Online recruitment management system</font></center>
-             </span>
-             <span class = "col-md-2">
-               <img src = "logo.svg" id = "logo">
-            </span>
-               </span>
-            </div>
-            <br>
-<span class = "row" id = "row1">
-<span class="col-md-3">
-    <div class = "row1_child">
         <br>
-      <font class = "row1_child_font1">  Total affiliated<br></font>
-        <font class = "row1_child_font1"> schools</font>
-        <br><br>
-        <font class = "row1_child_font2"> 295</font>
-    </div>
-</span>
-<span class="col-md-3">
-    <div class = "row1_child">
-        <br>
-        <font class = "row1_child_font1">  Total recruited 
-           <br></font>
-          <font class = "row1_child_font1">  teachers</font>
-          <br><br>
-          <font class = "row1_child_font2"> 295</font>
-    </div>
-</span>
-<span class="col-md-3">
-    <div class = "row1_child">
-        <br>
-        <font class = "row1_child_font1">  Total examinations
-            <br></font>
-          <font class = "row1_child_font1"> offerred</font>
-          <br><br>
-          <font class = "row1_child_font2"> 295</font>
-    </div>
-</span>
-<span class="col-md-3">
-    <div class = "row1_child">
-        <br>
-        <font class = "row1_child_font1"> Total applicants
-           <br></font>
-          <font class = "row1_child_font1">  2022 </font>
-          <br><br>
-          <font class = "row1_child_font2"> 295</font>
-    </div>
-</span>
-</span>
-  
-<br>
-<span class = "row" id = "row2">
-    <span class="col-md-3">
-        <div class = "row1_child" style = "overflow:auto;height:48.5rem;">
-            <br>
-            <font class = "row1_child_font1">Manage Applications</font>
-            <div  style = "height:100%;" id="manageapplication">
-               
+        <span class="row" id="row1">
+            <span class="col-md-3">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total affiliated<br></font>
+                    <font class="row1_child_font1"> schools</font>
+                    <br><br>
+                    <font class="row1_child_font2"> 295</font>
                 </div>
-            </div>
+            </span>
+            <span class="col-md-3">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total recruited
+                        <br>
+                    </font>
+                    <font class="row1_child_font1"> teachers</font>
+                    <br><br>
+                    <font class="row1_child_font2"> 295</font>
+                </div>
+            </span>
+            <span class="col-md-3">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total examinations
+                        <br>
+                    </font>
+                    <font class="row1_child_font1"> offerred</font>
+                    <br><br>
+                    <font class="row1_child_font2"> 295</font>
+                </div>
+            </span>
+            <span class="col-md-3">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total applicants
+                        <br>
+                    </font>
+                    <font class="row1_child_font1"> 2022 </font>
+                    <br><br>
+                    <font class="row1_child_font2"> 295</font>
+                </div>
+            </span>
+        </span>
+
+        <br>
+        <span class="row" id="row2">
+            <span class="col-md-3">
+                <div class="row1_child" style="overflow:auto;height:48.5rem;">
+                    <br>
+                    <font class="row1_child_font1">Manage Applications</font>
+                    <div style="height:100%;" id="manageapplication">
+
+                    </div>
+                </div>
             </span>
 
 
-<span class="col-md-9">
-<span class = "row" style = "height:46%;">
-<span class = "col-md-4">
-    <div class = "row1_child" style = "height:25%;">
-        <br>
-        <center>
-        <font class = "row1_child_font1">     Allot admin roles</font><br><br>
-        <font class = "row1_child_font1" style = "border:1px solid grey;border-radius:7px;padding:10px;">   295 roles alloted</font>
-        <font class = "row1_child_font1" style = "border:1px solid grey;border-radius:7px;padding:10px;float:left;background:#6853F8;color:white;">   view school summary</font>
-    </center>
-    </div>
-<br>
-<div class = "row1_child" style = "height:25%;">
-    <br>
-    <center>
-    <font class = "row1_child_font1"> push updates </font><br><br>
-    <font class = "row1_child_font1" style = "border:1px solid grey;border-radius:7px;padding:10px;">   view updates</font><br><br><br><br>
-    <font class = "row1_child_font1" style = "border:1px solid grey;border-radius:7px;padding:10px;background:#6853F8;color:white;">add an update</font>
-</center>
-</div>
-</span>
+            <span class="col-md-9">
+                <span class="row" style="height:46%;">
+                    <span class="col-md-4">
+                        <div class="row1_child" style="height:25%;">
+                            <br>
+                            <center>
+                                <font class="row1_child_font1"> Allot admin roles</font><br><br>
+                                <font class="row1_child_font1"
+                                    style="border:1px solid grey;border-radius:7px;padding:10px;"> 295 roles alloted
+                                </font>
+                                <font class="row1_child_font1"
+                                    style="border:1px solid grey;border-radius:7px;padding:10px;float:left;background:#6853F8;color:white;">
+                                    view school summary</font>
+                            </center>
+                        </div>
+                        <br>
+                        <div class="row1_child" style="height:25%;">
+                            <br>
+                            <center>
+                                <font class="row1_child_font1"> push updates </font><br><br>
+                                <font class="row1_child_font1"
+                                    style="border:1px solid grey;border-radius:7px;padding:10px;"> view updates</font>
+                                <br><br><br><br>
+                                <font class="row1_child_font1"
+                                    style="border:1px solid grey;border-radius:7px;padding:10px;background:#6853F8;color:white;">
+                                    add an update</font>
+                            </center>
+                        </div>
+                    </span>
 
-<span class = "col-md-8">
-    <div class = "row1_child" style = "height:25%;overflow:auto;">
-        <br>
-        <font class = "row1_child_font1"> Schedule Trainings </font>
-        <font  style = "color:#6853F8;font-size:min(3vw,3rem); "> +</font><br>
-        <div style = "height:100%;" id="schedule">
+                    <span class="col-md-8">
+                        <div class="row1_child" style="height:25%;overflow:auto;">
+                            <br>
+                            <font class="row1_child_font1"> Schedule Trainings </font>
+                            <font style="color:#6853F8;font-size:min(3vw,3rem); "> +</font><br>
+                            <div style="height:100%;" id="schedule">
 
-        </div>
-</div>
-<br>
-<div class = "row1_child" style = "height:25%;">
-    <br>
-    <center>
-    <font class = "row1_child_font1">Manage  teacher’s transfer requests </font><br><br>
-    <font class = "row1_child_font1" style = "border:1px solid grey;border-radius:7px;padding:10px;">  27 pending </font><br><br><br><br>
-    <font class = "row1_child_font1" style = "border-radius:7px;padding-left:40px;padding-right:40px;padding-top:10px;padding-bottom:10px;background:orangered;color:white;">View Applications</font>
-</center>       
-</div>
-</span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row1_child" style="height:25%;">
+                            <br>
+                            <center>
+                                <font class="row1_child_font1">Manage teacher’s transfer requests </font><br><br>
+                                <font class="row1_child_font1"
+                                    style="border:1px solid grey;border-radius:7px;padding:10px;"> 27 pending </font>
+                                <br><br><br><br>
+                                <font class="row1_child_font1"
+                                    style="border-radius:7px;padding-left:40px;padding-right:40px;padding-top:10px;padding-bottom:10px;background:orangered;color:white;">
+                                    View Applications</font>
+                            </center>
+                        </div>
+                    </span>
 
-</span>
+                </span>
 
-
-    </span></span>
-    <br>
-    <span class = "row" id = "row3">
-        <span class="col-md-12">
-            <div class = "row1_child" style = "height:100%;" id = "chart">
-
-
-
-               
-            </div> 
 
             </span></span>
-</div>
-<script>
-var manageapplication = document.getElementById("manageapplication");
-for(i=1;i<=1000;i++)
-{
-var div = document.createElement("div");
-div.id = "manage"+i;
-div.style.border = "1px solif #f8f8f8";
-div.style.background = "white";
-if(i%2!=0)
-{
-    div.style.background = "#f8f8f8";
-}
-var br1 = document.createElement("br");
-var img = document.createElement("img");
-img.src = "emailusr.png";
-img.style.width = "40px";
-img.style.borderRadius = "50%";
-img.style.marginLeft = "20px";
-manageapplication.appendChild(div);
-div.appendChild(br1);
-div.appendChild(img);
-var appname = document.createTextNode("Danny Scoff");
-var namefont = document.createElement("font");
-namefont.appendChild(appname);
-namefont.style.fontFamily= 'Poppins';
-namefont.style.fontStyle= "normal";
-namefont.style.fontWeight= "bold";
-namefont.style.fontSize= "min(3vw,1.7rem)";
-namefont.style.margin="10%";
-namefont.style.color= "#012A60";
-div.appendChild(namefont);
-var br2 = document.createElement("br");
-div.appendChild(br2);
-var appdept = document.createTextNode("English Teacher");
-var deptfont = document.createElement("font");
-deptfont.appendChild(appdept);
-deptfont.style.fontFamily= 'Poppins';
-deptfont.style.fontStyle= "normal";
-
-deptfont.style.fontSize= "min(3vw,1.2rem)";
-deptfont.style.margin="27%";
-deptfont.style.color= "#012A60";
-div.appendChild(deptfont);
-
-
-var text3 = document.createTextNode("Hey John, wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet coccinellid impestation Bangash Lollardist perameloid procerebrum");
-var font3 = document.createElement("font")
-    font3.style.whiteSpace = "nowrap";
-    var span = document.createElement("div");
-    span.style.marginLeft="27%";
-    span.style.width = "73%";
-    span.style.overflow = "hidden";
-    font3.appendChild(text3);
-    span.appendChild(font3);  
-    div.appendChild(span);
-   
-}
+        <br>
+        <span class="row" id="row3">
+            <span class="col-md-12">
+                <div class="row1_child" style="height:100%;" id="chart">
 
 
 
 
+                </div>
+
+            </span></span>
+    </div>
+    <script>
+        var manageapplication = document.getElementById("manageapplication");
+        for (i = 1; i <= 1000; i++) {
+            var div = document.createElement("div");
+            div.id = "manage" + i;
+            div.style.border = "1px solif #f8f8f8";
+            div.style.background = "white";
+            if (i % 2 != 0) {
+                div.style.background = "#f8f8f8";
+            }
+            var br1 = document.createElement("br");
+            var img = document.createElement("img");
+            img.src = "images/emailusr.png";
+            img.style.width = "40px";
+            img.style.borderRadius = "50%";
+            img.style.marginLeft = "20px";
+            manageapplication.appendChild(div);
+            div.appendChild(br1);
+            div.appendChild(img);
+            var appname = document.createTextNode("Danny Scoff");
+            var namefont = document.createElement("font");
+            namefont.appendChild(appname);
+            namefont.style.fontFamily = 'Poppins';
+            namefont.style.fontStyle = "normal";
+            namefont.style.fontWeight = "bold";
+            namefont.style.fontSize = "min(3vw,1.7rem)";
+            namefont.style.margin = "10%";
+            namefont.style.color = "#012A60";
+            div.appendChild(namefont);
+            var br2 = document.createElement("br");
+            div.appendChild(br2);
+            var appdept = document.createTextNode("English Teacher");
+            var deptfont = document.createElement("font");
+            deptfont.appendChild(appdept);
+            deptfont.style.fontFamily = 'Poppins';
+            deptfont.style.fontStyle = "normal";
+
+            deptfont.style.fontSize = "min(3vw,1.2rem)";
+            deptfont.style.margin = "27%";
+            deptfont.style.color = "#012A60";
+            div.appendChild(deptfont);
 
 
-var schedule= document.getElementById("schedule");
-for(i=1;i<=10;i++)
-{
-var div2 = document.createElement("div");
-div2.id = "schedule"+i;
-div2.style.border = "1px solif #f8f8f8";
-div2.style.background = "white";
-div2.style.boxShadow = "2px 2px 3px 3px lightgrey";
-if(i%2!=0)
-{
-    div.style.background = "#f8f8f8";
-}
-var br3 = document.createElement("br");
+            var text3 = document.createTextNode("Hey John, wellish laminable ineunt popshop catalyte prismatize campimetrical lentisk excluding portlet coccinellid impestation Bangash Lollardist perameloid procerebrum");
+            var font3 = document.createElement("font")
+            font3.style.whiteSpace = "nowrap";
+            var span = document.createElement("div");
+            span.style.marginLeft = "27%";
+            span.style.width = "73%";
+            span.style.overflow = "hidden";
+            font3.appendChild(text3);
+            span.appendChild(font3);
+            div.appendChild(span);
 
-schedule.appendChild(div2);
-div2.appendChild(br3);
-var icon = document.createElement("span");
-icon.className = "glyphicon glyphicon-list";
-icon.style.marginLeft = "5%";
-div2.appendChild(icon);
-
-var schname = document.createTextNode("Business Communication");
-var schfont = document.createElement("font");
-schfont.appendChild(schname);
-schfont.style.fontFamily= 'Poppins';
-schfont.style.fontStyle= "normal";
-schfont.style.fontWeight= "bold";
-schfont.style.fontSize= "min(3vw,1.7rem)";
-schfont.style.margin="5%";
-schfont.style.color= "#012A60";
-div2.appendChild(schfont);
-
-var course = document.createTextNode("View Course >");
-var coursefont = document.createElement("font");
-coursefont.appendChild(course);
-coursefont.style.fontFamily= 'Poppins';
-coursefont.style.fontStyle= "normal";
-coursefont.style.color = "#6853F8";
-coursefont.style.fontSize= "min(3vw,1.2rem)";
-coursefont.style.marginLeft="27%";
-
-div2.appendChild(coursefont);
-
-var br4 = document.createElement("br");
-div2.appendChild(br4);
-var dttext3 = document.createTextNode("17 october 2021");
-var dtfont3 = document.createElement("font")
-    dtfont3.style.color = "lightgrey";
-    dtfont3.style.marginLeft = "12%";
-    dtfont3.appendChild(dttext3);
-   
-    div2.appendChild(dtfont3);
-   
-}
+        }
 
 
-//chart------------------------------------------------
-var options = {
-    series: [{
-    name: "State Employment",
-    data: [1000,12000,3000,9000,5000,10000,11000,7000,6000,12000,4000,8000,10000]
-  }],
-    chart: {
-    type: 'area',
-    height: 350,
-    zoom: {
-      enabled: false
-    }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  stroke: {
-    curve: 'straight'
-  },
-  
-  title: {
-    text: 'State Employment for last 12 years',
-    align: 'left'
-  },
-  
-  labels: [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022],
-  xaxis: {
-    
-  },
-  yaxis: {
-    opposite: true
-  },
-  legend: {
-    horizontalAlign: 'left'
-  }
-  };
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
 
-</script>
+
+
+        var schedule = document.getElementById("schedule");
+        for (i = 1; i <= 10; i++) {
+            var div2 = document.createElement("div");
+            div2.id = "schedule" + i;
+            div2.style.border = "1px solif #f8f8f8";
+            div2.style.background = "white";
+            div2.style.boxShadow = "2px 2px 3px 3px lightgrey";
+            if (i % 2 != 0) {
+                div.style.background = "#f8f8f8";
+            }
+            var br3 = document.createElement("br");
+
+            schedule.appendChild(div2);
+            div2.appendChild(br3);
+            var icon = document.createElement("span");
+            icon.className = "glyphicon glyphicon-list";
+            icon.style.marginLeft = "5%";
+            div2.appendChild(icon);
+
+            var schname = document.createTextNode("Business Communication");
+            var schfont = document.createElement("font");
+            schfont.appendChild(schname);
+            schfont.style.fontFamily = 'Poppins';
+            schfont.style.fontStyle = "normal";
+            schfont.style.fontWeight = "bold";
+            schfont.style.fontSize = "min(3vw,1.7rem)";
+            schfont.style.margin = "5%";
+            schfont.style.color = "#012A60";
+            div2.appendChild(schfont);
+
+            var course = document.createTextNode("View Course >");
+            var coursefont = document.createElement("font");
+            coursefont.appendChild(course);
+            coursefont.style.fontFamily = 'Poppins';
+            coursefont.style.fontStyle = "normal";
+            coursefont.style.color = "#6853F8";
+            coursefont.style.fontSize = "min(3vw,1.2rem)";
+            coursefont.style.marginLeft = "27%";
+
+            div2.appendChild(coursefont);
+
+            var br4 = document.createElement("br");
+            div2.appendChild(br4);
+            var dttext3 = document.createTextNode("17 october 2021");
+            var dtfont3 = document.createElement("font")
+            dtfont3.style.color = "lightgrey";
+            dtfont3.style.marginLeft = "12%";
+            dtfont3.appendChild(dttext3);
+
+            div2.appendChild(dtfont3);
+
+        }
+
+
+        //chart------------------------------------------------
+        var options = {
+            series: [{
+                name: "State Employment",
+                data: [1000, 12000, 3000, 9000, 5000, 10000, 11000, 7000, 6000, 12000, 4000, 8000, 10000]
+            }],
+            chart: {
+                type: 'area',
+                height: 350,
+                zoom: {
+                    enabled: false
+                }
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'straight'
+            },
+
+            title: {
+                text: 'State Employment for last 12 years',
+                align: 'left'
+            },
+
+            labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            xaxis: {
+
+            },
+            yaxis: {
+                opposite: true
+            },
+            legend: {
+                horizontalAlign: 'left'
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+
+    </script>
 </body>
+
 </html>
