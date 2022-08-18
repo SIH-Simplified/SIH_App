@@ -6,4 +6,8 @@ router.get("/", (req, res) => {
     res.render("superAdmin/index");
 })
 
+router.get("/pushUpdates", (req, res) => {
+    res.render("superAdmin/pushUpdates");
+})
+
 module.exports = router;

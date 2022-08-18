@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.main{
+    background-color: #FFFFFF;
+}
+
+.top {
+    display: flex;
+    margin: 20px;
+    font-size: 1.5rem;
+    gap: 30px;
+}
+
+
+/* .title{
+    border: solid #fff;
+    border-bottom: solid 3px #0070E2;
+} */
+.close-icon {
+    color: #5f6863;
+}
+
+.title-text {
+    width: 602px;
+}
+
+.top-button {
+    background-color: #0070e2;
+    color: #fff;
+    border: #fff;
+    border-radius: 5px;
+    height: 35px;
+    width: 60px;
+    
+}
+
+.select-date{
+    height: 40px;
+    background-color: #F1F3F4;
+}
+
+.to-text{
+    padding-top: 8px;
+    font-weight: 500;
+}
+
+.date-show{
+    padding-top: 9px;
+    font-weight: 500;
+}
+
+.date-attend{
+    height: 40px;
+    width: 315px;
+    background-color: #F1F3F4;
+    border: none;
+}
+
+.time{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 64px;
+}
+
+.date{
+    margin-left: 64px;
+    margin-top: 10px;
+}
+
+
+.main-row{
+    display: flex;
+    gap: 50px;
+}
+
+.left{
+    padding: 20px;
+    border-top: solid 1px #5f6863;
+    width: 54%;
+}
+
+.events-title{
+    /* margin-top: 20%; */
+    margin-top: 100px !important;
+    margin: 15px;
+    font-weight: 500;
+    color:#0070E2 ;
+    border-bottom: solid 3px;
+    width: 120px;
+    margin-left: 100px;
+    font-size: 1.25rem;
+}
+
+/* left  */
+
+.left-one{
+    display: flex;
+    gap: 30px ;
+   
+}
+
+
+.left-one-icons{
+    display: flex;
+    padding: 10px;
+    gap: 20px;
+  
+    font-size: 1.15rem;
+    
+    margin-left: 50%;
+}
+
+.left-one-button-main{
+    background-color:#0070E2 ;
+    color: #fff;
+    border: #fff;
+    border-radius: 5px;
+    height: 44px;
+    width: 200px;
+}
+
+
+
+
+ /* two  */
+
+.left-two{
+    display: flex;
+    gap: 30px ;
+    margin-top: 60px;
+}
+
+.left-two-icon{
+    padding: 10px;
+}
+
+
+.left-two-text-box{
+    width: 730px;
+    background-color: #F1F3F4;
+    margin-top: 10px;
+    border: solid 1px;
+}
+
+
+/* three  */
+
+.left-three{
+    display: flex;
+    /* gap: 10px ; */
+    margin-top: 20px;
+   
+   
+}
+
+.left-three-icon{
+    padding: 10px;
+}
+
+.left-three-text{
+    background-color: #F1F3F4;
+    height: 30px;
+    border: solid 1px;
+     margin-left: 28px !important;
+     margin: 10px;
+     
+    width: 110px;
+    /* padding: 0px; */
+    padding-left: 6px;
+font-weight: 400;
+
+}
+
+.left-three-text-{
+    margin: 10px;
+}
+
+.left-three-text-box{
+    width: 50px;
+    text-align: center;
+    background-color: #F1F3F4;
+    border: solid 1px;
+}
+
+.three-drop-down{
+    background-color: #F1F3F4;
+    
+}
+
+/* four  */
+
+.left-four{
+    display: flex;
+    gap: 23px ;
+    margin-top: 10px;
+}
+
+.left-four-img-main{
+    height: 20px;
+    width: 20px;
+}
+
+.left-one-img-main{
+    height: 40px;
+    width: 40px;
+}
+
+.left-four-img{
+    padding: 10px;
+}
+
+
+.four-drop-down{
+    margin-top: 10px;
+    background-color: #F1F3F4;
+}
+
+.four-target-text{
+    font-size: 1.10rem;
+    font-weight: 300;
+    color: #5f6863;
+}
+
+/* Right  */
+
+.right{
+    position: relative;
+    top: -30vh;
+    left: 12%;
+
+}
+
+
+.right-text{
+    text-align: center;
+}
