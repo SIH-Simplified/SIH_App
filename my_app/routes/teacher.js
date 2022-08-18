@@ -124,9 +124,18 @@ router.post('/email/create', checkAdmin, [
 router.get('/transfer/guidelines', (req, res) => {
     res.render('teacher/transfer/transfer')
 })
+
 router.get('/transfer/form', (req, res) => {
     res.render('teacher/transfer/transfer-form')
 })
+router.post('/transfer/form/send', [
+    check('mobile-no', 'Please enter a valid phone number').isLength({ min : 10 }).isMobilePhone(),
+    check('email', 'Please enter a valid email').isEmail()
+], async (req,res,next)=>{
+    const { email, mobile_number, state, school_type, dob, present_school, subject, marital_status } = req.body;
+    
+})
+
 router.get('/transfer/transfer-choices', (req, res) => {
     res.render('teacher/transfer/transfer-choices')
 })
@@ -159,18 +168,6 @@ router.get('/:id', async (req, res, next) => {
     if (!teacher) {
         return res.status(400).redirect('/', { error: 'Teacher does not exist or is not registered.' })
     }
-    res.json(teacher);
-})
-
-router.get('/edit/:id', checkAdmin, async (req, res, next) => {
-    const { id } = req.params;
-
-    const Teacher = await teacher.find({ teacher_id: id })
-
-    if (!Teacher) {
-        return res.status(400).redirect('/index', { error: 'Teacher credentials entered does not exit' })
-    }
-
     res.json(teacher);
 })
 
