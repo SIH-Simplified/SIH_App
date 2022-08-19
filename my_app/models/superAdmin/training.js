@@ -16,6 +16,10 @@ const tranningSchema = new mongoose.Schema({
     },
     location: {
         type: String
+    },
+    training_pdf: {
+        type: String,
+        required: [true, "Please provide the training document"]
     }
 })
 
