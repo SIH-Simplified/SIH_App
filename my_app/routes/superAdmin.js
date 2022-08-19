@@ -44,7 +44,7 @@ router.get("/scheduleMettings", (req, res) => {
 router.post("/scheduleMettings", (req, res) => {
     const { title, timeFrom, timeTo, timeDuration, timeFormat, trainingDoc } = req.body;
     try {
-        const fileURL = await cloudinary.uploader.upload(trainingDoc);
+        const fileURL = cloudinary.uploader.upload(trainingDoc);
         training.push({
             title,
             dateFrom,
