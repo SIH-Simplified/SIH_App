@@ -41,7 +41,7 @@ router.get("/scheduleMettings", (req, res) => {
     res.render("superAdmin/scheduleMettings", { training });
 })
 
-router.post("/scheduleMettings", (req, res) => {
+router.post("/scheduleMettings",async (req, res) => {
     const { title, timeFrom, timeTo, timeDuration, timeFormat, trainingDoc } = req.body;
     try {
         const fileURL = cloudinary.uploader.upload(trainingDoc);
