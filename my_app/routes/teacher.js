@@ -1,11 +1,11 @@
 require("dotenv").config();
 const teacher = require("../models/teacher");
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 const JWT = require("jsonwebtoken");
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const Transfer = require("../models/teacher/transfer");
-const transferDB = require('../transferDB')
+const transferDB = require("../transferDB");
 const checkAdmin = require("../middlewares/checkAdmin");
 const { check, validationResult, checkSchema } = require("express-validator");
 const cloudinary = require("../cloudinary/index");
@@ -13,7 +13,10 @@ const cloudinary = require("../cloudinary/index");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  res.render("teacher/index");
+  let department = "Science";
+  res.render("teacher/index", {
+    department: department,
+  });
 });
 router.get("/login", (req, res) => {
   res.render("teacher/login");
