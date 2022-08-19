@@ -17,7 +17,9 @@ router.get("/pushUpdates", (req, res) => {
 })
 
 router.post("/pushUpdates/create", async (req, res, next) => {
-    const { districtName, update } = req.body;
+    const { title, timeFrom, timeTo, timeDuration, timeFormat } = req.body;
+
+    
 })
 
 router.get("/scheduleMettings", (req, res) => {
