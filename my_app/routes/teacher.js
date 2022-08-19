@@ -283,8 +283,12 @@ router.get("/dailyUpdates", async (req, res, next) => {
     next(error);
   }
 });
-router.post('/leaves', (req, res) => {
-  const { leave_type, day_type, from, to, department, supervisor, reason } = req.body
-})
+router.post("/leaves", (req, res) => {
+  const { leave_type, day_type, from, to, department, supervisor, reason } =
+    req.body;
+});
+router.get("/trainings", (req, res) => {
+  res.render("/teacher/trainings");
+});
 
 module.exports = router;
