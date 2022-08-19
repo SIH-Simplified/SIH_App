@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
 
 a{
-  text-decoration: none;
-  color: #000;
+  text-decoration: none !important;
+  color: #000 !important;
 }
 
 .light {
@@ -22,10 +22,11 @@ a{
 }
 
 .navbar {
-  width: 80%;
+  width: 72% !important;
   height: 50px;
   background-color: #fff;
   border-radius: 10px;
+  margin-left:150px !important; 
   margin-top: 20px !important;
   overflow: hidden;
   position: fixed !important;
@@ -114,7 +115,7 @@ a{
 
 .stats {
   margin-top: 70px;
-  margin-left: 250px;
+  margin-left: 130px;
 }
 
 .icons {
@@ -166,7 +167,7 @@ a{
   padding: 16px;
   font-size: 16px;
   border: none;
-  text-align: left;
+  text-align: center;
 }
 
 .dropdown {
@@ -247,8 +248,7 @@ a{
 
 .one-join {
   width: 220px;
-  height: 40px;
-
+  height: 50px;
   background-color: #e9eeff;
   padding: 6px;
 }
@@ -258,8 +258,8 @@ a{
   width: 220px;
   height: 40px;
   padding: 4px;
-
   padding-top: 6px;
+  padding-bottom: 10px !important;
 }
 
 .one-line {
