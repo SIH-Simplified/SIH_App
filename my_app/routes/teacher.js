@@ -243,7 +243,11 @@ router.get("/transfer/transfer-choices", (req, res) => {
 });
 router.post("/transfer/transfer-choices/send", async (req, res, next) => {
   const { choice } = req.body;
-  console.log(choice);
+  const transfer = new Transfer({
+    choice,
+  });
+  transfer.save();
+  transferDB.push(choice);
   res.redirect("/client/transfer/preference-choices");
 });
 
