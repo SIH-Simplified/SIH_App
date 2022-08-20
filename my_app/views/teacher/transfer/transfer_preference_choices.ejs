@@ -7,7 +7,8 @@
 </head>
 
 <body>
-    <div class="main-title">Preference Choice</div>
+    <form action="/client/transfer/preference-choices/send" method="post">
+<div class="main-title">Preference Choice</div>
     <div class="container">
 
         <table class="table" style="width:100%;">
@@ -230,42 +231,13 @@
         </div>
     </div>
 
-    <div class="main">
-        <div class="row">
-            <div class="left">
-                <dix class="main-cont">
-                    <div class="cont-one">
-                        <div class="title-one"> ENTER MOBILE NUMBER</div>
-                        <div class="mid-one">Enter your mobile number to verify your credentials</div>
-                        <div class="one-bottom"> <input type="text" class="number" placeholder="mobile no."></div>
-                    </div>
-                    <div class="cont-two">
-                        <div class="title-two">ENTER RECIEVED VERIFICATION CODE</div>
-
-                        <div class="two-bottom"><input type="password" class="two-password"> <span class="eye"> <i
-                                    class="fa-regular fa-eye"></i></span></div>
-                    </div>
-                    <div class="button-main">
-                        <div class="button"> <button class="butt-a"> VERIFY </button></div>
-
-                        <div class="button"><button class="butt-c"> RESEND CODE</button></div>
-                    </div>
-                </dix>
-            </div>
-            <div class="right">
-                <div class="note">
-                    Note : <br>
-                    Mobile verification code is given above <br>
-                    by the system for security purposes. <br>
-                </div>
-                <br>
-
+   
                 <div class="button-right">
                     <button class="button-right-a"> CANCEL</button>
-                    <button class="button-right-b"><a href="/client/transfer/ack" style="color: white; text-decoration:none;">Next</a></button>
+                    <button class="button-right-b" type="submit">Next</button>
                 </div>
             </div>
-
+    </form>
         </div>
         <div class="foot">
             <div class="left-foot"> <a href="#">Back to home</a> </div>

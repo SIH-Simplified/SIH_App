@@ -243,17 +243,22 @@ router.get("/transfer/transfer-choices", (req, res) => {
 });
 router.post("/transfer/transfer-choices/send", async (req, res, next) => {
   const { choice } = req.body;
-  const transfer = new Transfer({
-    choice,
-  });
-  transfer.save();
-  transferDB.push(choice);
+  console.log(choice);
   res.redirect("/client/transfer/preference-choices");
 });
 
 router.get("/transfer/preference-choices", (req, res) => {
   res.render("teacher/transfer/transfer_preference_choices");
 });
+
+router.post(
+  "/transfer/preference-choices/send",
+  async (req, res, next) => {
+    (
+      
+      res.redirect("/client/transfer/ack"))
+  }
+);
 
 router.get("/transfer/ack", (req, res) => {
   res.render("teacher/transfer/transfer_ack");
