@@ -7,6 +7,7 @@ const training = require("../trainingDB");
 const pushUpdates = require("../pushUpdates");
 const school = require("../schoolDB");
 const transfer = require("../transferDB");
+const districtDB = require("../districtDB");
 router.get("/", async (req, res, next) => {
     try {
         const countOfTeachers = await Teacher.find({}).count();
@@ -18,19 +19,16 @@ router.get("/", async (req, res, next) => {
 })
 
 router.get("/pushUpdates", (req, res) => {
-    res.render("superAdmin/pushUpdates");
+    res.render("superAdmin/pushUpdates",{});
 })
 
 router.get("/pushUpdates/create", (req, res) => {
-    res.render("superAdmin/sendUpdate");
+    res.render("superAdmin/sendUpdate", { district: districtDB });
 })
 
 router.post("/pushUpdates/create", async (req, res, next) => {
     const { message, district } = req.body;
     const schools = school.filter((school) => school.district === district)
-    // const dailyUpdates = new DailyUpdates({
-    //     post: message,
-    // })
     schools.push({ message });
     res.redirect("/superAdmin/pushUpdates");
 })

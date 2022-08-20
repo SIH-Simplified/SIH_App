@@ -26,7 +26,7 @@
                     <select name="district" class="district">
                         <% if(typeof district !=="undefined" && district.length !==0) {%>
                             <% for(let i=0; i < district.length ; i++) {%>
-                                <option value="<%= district[i]  %> ">
+                                <option value="<%= district[i]  %>">
                                     <%= district[i] %>
                                 </option>
                                 <% } %>
@@ -35,7 +35,11 @@
                 </div>
 
                 <div class="text-box">
-                    <input type="text" class="update-text" placeholder="Push an update">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                            name="message"></textarea>
+                        <label for="floatingTextarea">Message</label>
+                    </div>
                 </div>
                 <div class="last">
                     <div class="icon">
