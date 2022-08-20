@@ -241,13 +241,16 @@ router.post(
 router.get("/transfer/transfer-choices", (req, res) => {
   res.render("teacher/transfer/transfer-choices");
 });
-router.post("transfer/transfer-choices/send", (req, res) => {
-  res.redirect("teacher/transfer/preference-choices");
+router.post("/transfer/transfer-choices/send", async (req, res, next) => {
+  const { choice } = req.body;
+  console.log(choice);
+  res.redirect("/client/transfer/preference-choices");
 });
 
 router.get("/transfer/preference-choices", (req, res) => {
   res.render("teacher/transfer/transfer_preference_choices");
 });
+
 router.get("/transfer/ack", (req, res) => {
   res.render("teacher/transfer/transfer_ack");
 });

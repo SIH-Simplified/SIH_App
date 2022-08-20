@@ -16,68 +16,64 @@
   <body>
     <div class="main-container">
       <div class="group-one">
-        <div class="one-row">
-          <div class="main-title">TRANSFER CATEGORY</div>
-          <div class="main-text">
-            <div class="left">
-              Mutual Transfer
-              <br />
-              Terminal Illness of self- under only one of the 8 allowed
-              categories
-              <br />
+        <form method="post" action="/client/transfer/transfer-choices/send">
+          <div class="one-row">
+            <div class="main-title">TRANSFER CATEGORY</div>
+            <div class="main-text">
+              <div class="left">
+                Mutual Transfer
+                <br />
+                Terminal Illness of self- under only one of the 8 allowed
+                categories
+                <br />
 
-              Person with disabilities
-              <br />
+                Person with disabilities
+                <br />
 
-              Widow / Widower
-              <br />
+                Widow / Widower
+                <br />
 
-              Divorcee
-              <br />
+                Divorcee
+                <br />
 
-              Working Couple (both in govt.)
-              <br />
+                Working Couple (both in govt.)
+                <br />
 
-              Spouse of Defence Personnel
-              <br />
+                Spouse of Defence Personnel
+                <br />
 
-              Normal Transfer - Male or Female teacher
+                Normal Transfer - Male or Female teacher
+              </div>
+              <div class="right">
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+
+                <input type="checkbox" class="tick" name="choice" />
+                <br />
+
+                <input type="checkbox" class="tick" name="choice" />
+              </div>
             </div>
-            <div class="right">
-              <input type="checkbox" class="tick" />
-              <br />
-              <input type="checkbox" class="tick" />
-              <br />
-              <input type="checkbox" class="tick" />
-              <br />
-
-              <input type="checkbox" class="tick" />
-              <br />
-              <input type="checkbox" class="tick" />
-              <br />
-
-              <input type="checkbox" class="tick" />
-              <br />
-
-              <input type="checkbox" class="tick" />
-              <br />
-
-              <input type="checkbox" class="tick" />
+            <div class="button">
+              <div class="button-a">
+                <button class="butt-a" type="submit">Next</button>
+              </div>
+              <div class="button-b"><button class="butt-b">Cancel</button></div>
             </div>
           </div>
-          <div class="button">
-            <div class="button-a">
-              <button class="butt-a">
-                <a
-                  href="/transfer-choices/send"
-                  style="color: white; text-decoration: none"
-                  >Next</a
-                >
-              </button>
-            </div>
-            <div class="button-b"><button class="butt-b">Cancel</button></div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
 
