@@ -26,7 +26,7 @@ const transferSchema = new mongoose.Schema({
   },
   dob: {
     type: Date,
-    required: true,
+  
   },
   present_school: {
     type: String,
