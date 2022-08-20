@@ -21,6 +21,10 @@ router.get("/pushUpdates", (req, res) => {
     res.render("superAdmin/pushUpdates");
 })
 
+router.get("/pushUpdates/create", (req, res) => {
+    res.render("superAdmin/sendUpdate");
+})
+
 router.post("/pushUpdates/create", async (req, res, next) => {
     const { message, district } = req.body;
     const schools = school.filter((school) => school.district === district)
@@ -41,7 +45,7 @@ router.get("/scheduleMettings", (req, res) => {
     res.render("superAdmin/scheduleMettings", { training });
 })
 
-router.post("/scheduleMettings",async (req, res) => {
+router.post("/scheduleMettings", async (req, res) => {
     const { title, timeFrom, timeTo, timeDuration, timeFormat, trainingDoc } = req.body;
     try {
         const fileURL = cloudinary.uploader.upload(trainingDoc);
@@ -85,7 +89,4 @@ router.delete("teacherTransfer/:id", (req, res) => {
     // Need to add extra logic for full filling transfer process
     res.redirect("/superAdmin/teacherTransfer");
 })
-
-
-
 module.exports = router;
