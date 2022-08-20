@@ -5,5 +5,4 @@ module.exports = [
         postDate: d.toDateString(),
         postName: "SUper admin"
     },
-
 ]
