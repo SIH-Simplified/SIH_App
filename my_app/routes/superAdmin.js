@@ -13,7 +13,8 @@ const dailyUpdatesDB = require("../dailyUpdatesDB");
 router.get("/", async (req, res, next) => {
     try {
         const countOfTeachers = await Teacher.find({}).count();
-        res.render("superAdmin/index", { countOfTeachers });
+        const countOfSchools = school.length;
+        res.render("superAdmin/index", { countOfTeachers, countOfSchools });
 
     } catch (error) {
         next(error);
@@ -96,4 +97,10 @@ router.delete("teacherTransfer/:id", (req, res) => {
     // Need to add extra logic for full filling transfer process
     res.redirect("/superAdmin/teacherTransfer");
 })
+
+router.get("/assignAdmin", (req, res) => {
+    res.render("/superAdmin/assignAdmin");
+})
+
+
 module.exports = router;
