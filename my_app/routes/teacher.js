@@ -176,7 +176,7 @@ router.get("/transfer/form", (req, res) => {
 router.post(
   "/transfer/form/send",
   [
-    check("mobile-no", "Please enter a valid phone number")
+    check("mobile_number", "Please enter a valid phone number")
       .isLength({ min: 10 })
       .isMobilePhone(),
     check("email", "Please enter a valid email").isEmail(),
