@@ -9,7 +9,6 @@ const resumeSchema = new mongoose.Schema({
   age: Number,
   education: String,
   employment_status: Boolean,
-  department: String,
   skills: {
     type: [String],
   },

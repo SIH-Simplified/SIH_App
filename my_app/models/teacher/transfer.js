@@ -4,7 +4,6 @@ const transferDB = require("../../transferDB");
 const transferSchema = new mongoose.Schema({
   school_type: {
     type: String,
-    required: true,
   },
   state: {
     type: String,
@@ -20,7 +19,6 @@ const transferSchema = new mongoose.Schema({
   },
   mobile_number: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
@@ -48,7 +46,6 @@ const transferSchema = new mongoose.Schema({
   },
   date_of_joining: {
     type: String,
-    required: true,
   },
   marital_status: {
     type: String,

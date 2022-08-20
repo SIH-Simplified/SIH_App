@@ -241,6 +241,10 @@ router.post(
 router.get("/transfer/transfer-choices", (req, res) => {
   res.render("teacher/transfer/transfer-choices");
 });
+router.post("transfer/transfer-choices/send", (req, res) => {
+  res.redirect("teacher/transfer/preference-choices");
+});
+
 router.get("/transfer/preference-choices", (req, res) => {
   res.render("teacher/transfer/transfer_preference_choices");
 });
@@ -283,10 +287,7 @@ router.get("/dailyUpdates", async (req, res, next) => {
     next(error);
   }
 });
-router.post("/leaves", (req, res) => {
-  const { leave_type, day_type, from, to, department, supervisor, reason } =
-    req.body;
-});
+
 router.get("/trainings", (req, res) => {
   res.render("/teacher/trainings");
 });
