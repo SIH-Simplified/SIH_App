@@ -251,14 +251,9 @@ router.get("/transfer/preference-choices", (req, res) => {
   res.render("teacher/transfer/transfer_preference_choices");
 });
 
-router.post(
-  "/transfer/preference-choices/send",
-  async (req, res, next) => {
-    (
-      
-      res.redirect("/client/transfer/ack"))
-  }
-);
+router.post("/transfer/preference-choices/send", async (req, res, next) => {
+  res.redirect("/client/transfer/ack");
+});
 
 router.get("/transfer/ack", (req, res) => {
   res.render("teacher/transfer/transfer_ack");
@@ -280,17 +275,6 @@ router.get("/calendar", (req, res) => {
 router.get("/view-portfolio", (req, res) => {
   res.render("teacher/portfolio");
 });
-router.get("/:id", async (req, res, next) => {
-  const { id } = req.params;
-  const Teacher = await teacher.find({ _id: id });
-  if (!teacher) {
-    return res
-      .status(400)
-      .redirect("/", { error: "Teacher does not exist or is not registered." });
-  }
-  res.json(teacher);
-});
-
 router.get("/dailyUpdates", async (req, res, next) => {
   try {
     const updates = await DailyUpdates.find({});
@@ -299,9 +283,13 @@ router.get("/dailyUpdates", async (req, res, next) => {
     next(error);
   }
 });
+router.post("/leaves", (req, res, next) => {
+  const { email } = req.body;
+  res.redirect("/client");
+});
 
 router.get("/trainings", (req, res) => {
-  res.render("/teacher/trainings");
+  res.render("teacher/trainings");
 });
 
 module.exports = router;
