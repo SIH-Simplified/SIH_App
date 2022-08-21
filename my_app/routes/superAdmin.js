@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
 })
 
 router.get("/pushUpdates", (req, res) => {
-    res.render("superAdmin/pushUpdates", { pushUpdatesDB });
+    res.render("superAdmin/pushUpdates", { pushUpdates: pushUpdatesDB });
 })
 
 router.get("/pushUpdates/create", (req, res) => {
@@ -34,6 +34,7 @@ router.post("/pushUpdates/create", async (req, res, next) => {
     const schools = school.filter((school) => school.district === district);
     schools.push({ message });
     pushUpdatesDB.push(message);
+    dailyUpdatesDB.push(message);
     res.redirect("/superAdmin/pushUpdates");
 })
 
