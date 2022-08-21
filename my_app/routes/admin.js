@@ -23,6 +23,8 @@ router.get("/login", (req, res) => {
     res.render("admin/login");
 })
 
+
+// jhflkjdslfdlkfsdlf
 router.get("/register", (req, res) => {
     res.render("admin/register");
 })
