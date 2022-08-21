@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
 
+
 a{
   text-decoration: none !important;
   color: #000 !important;
@@ -102,6 +103,7 @@ a{
 }
 .eleven {
   height: 350px;
+  overflow: auto;
 }
 
 .twelve {
@@ -278,7 +280,7 @@ a{
 
 .two-img {
   position: relative;
-  left: 66px;
+  left: 20px;
 }
 
 .two-text-one {
@@ -296,7 +298,7 @@ a{
 .three-img {
   position: relative;
   top: -15px;
-  left: 22px;
+  left: 0px;
 }
 .three-line {
   margin-left: 5px;
