@@ -47,6 +47,7 @@
                 style="border:none;color:blue;padding:10px;;font-size:min(2vw,4rem);height:10%;background:none;">+</button>
         </div>
         <table style="width:100%;font-family:'Poppins';font-size:min(2vw,2rem);">
+
             <tr style="border-bottom:1px solid lightgrey;">
                 <th>
                     <form><input type="checkbox"></form>
@@ -56,29 +57,46 @@
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Start Year</th>
-                <th>Student Capacity</th>
                 <th>Actions</th>
             </tr>
-            <tr style="border-bottom:1px solid lightgrey;">
-                <td>
-                    <form><input type="checkbox"></form>
-                </td>
-                <td>Mechanical</td>
-                <td>Pooja Sharma</td>
-                <td>1234567890</td>
-                <td>xyz@edurecruit.in</td>
-                <td>1987</td>
-                <td>200</td>
-                <td>
-                    <form action="http://localhost:3000/superAdmin/" method="get"></form>
-                    <button type="button" class="btn btn-light">
-                        <span class="glyphicon glyphicon-edit" style="color:blue;"></span>
-                    </button>
-                    <button type="button" class="btn btn-light">
-                        <span class="glyphicon glyphicon-trash" style="color:orangered"></span>
-                    </button>
-                </td>
-            </tr>
+
+            <% if(typeof assignAdmin !=="undefined" && assignAdmin.length !==0) {%>
+                <% for(let i=0;i<assignAdmin.length;i++) {%>
+                    <tr style="border-bottom:1px solid lightgrey;">
+                        <td>
+                            <form><input type="checkbox"></form>
+                        </td>
+                        <td>
+                            <%= assignAdmin[i].department %>
+                        </td>
+                        <td>
+                            <%= assignAdmin[i].HeadOfDepartment %>
+                        </td>
+                        <td>
+                            <%= assignAdmin[i].phone %>
+                        </td>
+                        <td>
+                            <%= assignAdmin[i].email %>
+                        </td>
+                        <td>
+                            <%= assignAdmin[i].startYear %>
+                        </td>
+                        <td>
+                            <form action="http://localhost:3000/superAdmin/assignAdmin" method="get">
+                                <button type="submit" class="btn btn-light">
+                                    <span class="glyphicon glyphicon-edit" style="color:blue;"></span>
+                                </button>
+                            </form>
+                            <form action="http://localhost:3000/superAdmin/assignAdmin/<%= i %>?_method=DELETE"
+                                method="post">
+                                <button type="submit" class="btn btn-light">
+                                    <span class="glyphicon glyphicon-trash" style="color:orangered"></span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                        <% } %>
         </table>
     </div>
 

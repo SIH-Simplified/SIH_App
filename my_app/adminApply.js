@@ -5,6 +5,7 @@ module.exports = [
         phone: 9874566334,
         email: "xyz@edurecruit.in",
         startYear: 2005,
+        isAdmin: 0
     },
     {
         department: "Technical",
@@ -12,6 +13,7 @@ module.exports = [
         phone: 9874566334,
         email: "xyz@edurecruit.in",
         startYear: 2005,
+        isAdmin: 0
     },
     {
         department: "Technical",
@@ -19,6 +21,7 @@ module.exports = [
         phone: 9874566334,
         email: "xyz@edurecruit.in",
         startYear: 2005,
+        isAdmin: 0
     },
     {
         department: "Technical",
@@ -26,5 +29,6 @@ module.exports = [
         phone: 9874566334,
         email: "xyz@edurecruit.in",
         startYear: 2005,
+        isAdmin: 0
     }
 ]

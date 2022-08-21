@@ -13,6 +13,7 @@ const dailyUpdatesDB = require("../dailyUpdatesDB");
 const transferDB = require("../transferDB");
 const application = require("../applicationSuperAdminDB");
 const trainingDB = require("../trainingDB");
+const assignAdmin = require("../adminApply");
 router.get("/", async (req, res, next) => {
     try {
         const countOfTeachers = await Teacher.find({}).count();
@@ -108,14 +109,20 @@ router.delete("teacherTransfer/:id", (req, res) => {
 })
 
 router.get("/assignAdmin", (req, res) => {
-    res.render("superAdmin/assignAdmin");
+    res.render("superAdmin/assignAdmin", { assignAdmin });
 })
 
 router.post("/assignAdmin", (req, res) => {
     const { id } = req.body;
-
-    
+    // assignAdmin.splice(id, 1);
+    assignAdmin[id].isAdmin = 1;
+    res.redirect("/superAdmin/assignAdmin")
 })
 
+router.delete("/assignAdmin/:id", (req, res) => {
+    const { id } = req.params;
+    assignAdmin.splice(id, 1);
+    res.redirect("/superAdmin/assignAdmin");
+})
 
 module.exports = router;
