@@ -9,6 +9,7 @@ const transferDB = require("../transferDB");
 const checkAdmin = require("../middlewares/checkAdmin");
 const { check, validationResult, checkSchema } = require("express-validator");
 const cloudinary = require("../cloudinary/index");
+const leaveDB = require('../leaveDB')
 
 const router = express.Router();
 
@@ -284,7 +285,8 @@ router.get("/dailyUpdates", async (req, res, next) => {
   }
 });
 router.post("/leaves", (req, res, next) => {
-  const { email } = req.body;
+  const { leaveType, dayType, from, to, department, supervisor, reason } = req.body;
+  leaveDB.push(leaveType, dayType, from, to, department, supervisor, reason);
   res.redirect("/client");
 });
 
