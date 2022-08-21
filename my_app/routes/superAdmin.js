@@ -10,6 +10,7 @@ const transfer = require("../transferDB");
 const districtDB = require("../districtDB");
 const pushUpdatesDB = require("../pushUpdates");
 const dailyUpdatesDB = require("../dailyUpdatesDB");
+const transferDB = require("../transferDB");
 router.get("/", async (req, res, next) => {
     try {
         const countOfTeachers = await Teacher.find({}).count();
@@ -60,10 +61,10 @@ router.post("/scheduleMettings", async (req, res) => {
         const fileURL = cloudinary.uploader.upload(trainingDoc);
         training.push({
             title,
-            dateFrom,
-            dateTo,
+            dateFrom: timeFrom,
+            dateTo: timeTo,
             location,
-            training_pdf
+            training_pdf: fileURL
         })
         res.redirect("/superAdmin/scheduleMettings");
     } catch (error) {
@@ -83,6 +84,11 @@ router.get("/schools", (req, res) => {
 
 router.get("/teacherTransfer", (req, res) => {
     res.render("superAdmin/teacherTransfer");
+})
+
+router.get("/teacherTransfer/:id", (req, res) => {
+    const { id } = req.params;
+    res.render("superAdmin/acknowledgement", { transfer: transferDB[id], id });
 })
 
 router.post("/teacherTransfer/:id", (req, res) => {
