@@ -26,7 +26,7 @@ ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: #eee;
+    background: rgb(89, 89, 89);
     font-size: 18px;
     transition: 0.2s;
     /* make the list items unselectable */
@@ -88,10 +88,11 @@ ul li.checked::before {
 /* Style the header */
 
 .header {
-    background-color: #3b62e1;
+    background-color: #b94bfd;
     padding: 30px 40px;
     color: white;
     text-align: center;
+    border-radius: 20px;
 }
 
 /* Clear floats after the header */
