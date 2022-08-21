@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+body {
+    background: #f2f2f2;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.dark {
+    background-color: #1b1b1b !important;
+}
+
+.container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+
+
+.sidebar {
+    width: 20%;
+    background-color: #fff;
+    height: 74rem;
+    margin-top: 20px !important;
+    border-radius: 10px;
+}
+
+.group {
+    background-color: #fff;
+    margin-top: 5px !important;
+    border-radius: 10px;
+    margin-top: 20px !important;
+}
+
+.one {
+    height: auto;
+    margin-right: 10px !important;
+}
+
+.two {
+    height: auto;
+    background-color: #1b1b1b;
+}
+
+
+/* Main nav  */
+.nav-middle {
+    width: 49vw;
+}
+
+.stats {
+    margin-top: 70px;
+
+}
+
+.icons {
+    padding: 10px;
+    display: inline-block;
+    color: #fff;
+}
+
+.right {
+    text-align: right;
+}
+
+.icons img {
+    border-radius: 30px;
+}
+
+#userName {
+    display: inline;
+}
+
+.row-nav {
+    display: flex;
+}
+
+/* Right nav  */
+.logo {
+    position: relative;
+    margin-left: 1.5vw;
+    margin-top: 1.5vw;
+}
+
+#option_1 {
+    position: relative;
+    margin-top: 1vw;
+    width: 13vw;
+}
+
+.dash {
+    position: relative;
+    margin-top: 2vh;
+    border: solid;
+    width: 10vw;
+    height: 12vh;
+}
+
+.dropbtn {
+    background-color: whitesmoke;
+    color: gray;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    text-align: left;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#APP {
+    color: gray;
+    padding: 16px;
+}
+
+.icon_todo {
+    background-color: #fff;
+    width: 13vw;
+    padding: 16px;
+    /* font-size: 16px; */
+    border: none;
+    font-weight: 200;
+    text-align: left;
+}
+
+.nav-line {
+    font-weight: 600;
+
+}
+
+.header {
+    /* padding: 30px; */
+    text-align: center;
+    display: flex;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-top: 15px;
+
+}
+
+/* Top  */
+.top {
+    padding: 2px;
+    font-size: small;
+    text-align: right;
+}
+
+.link-top {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Main    */
+.main-tile {
+    margin-left: 100px;
+    padding: 20px;
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+.main-head {
+    color: #FF5C00;
+}
+
+.edu-logo {
+    margin-left: 100px;
+    font-size: 0.80rem;
+    font-weight: 500;
+}
+
+.govt-logo {
+    margin-left: 50px;
+    margin-top: 15px;
+}
+
+.search-text {
+    font-size: 1rem;
+}
+
+.search-button {
+    height: 10px;
+}
+
+
+/* Navbar */
+.navbar {
+    overflow: hidden;
+    background-color: #7363EA;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.space {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 60px;
+}
+
+.bottom-cont {
+    background-color: #fff;
+    height: 35%;
+}
+
+.flex-cont {
+    display: flex;
+    gap: 30px;
+    margin-left: 35px;
+    box-shadow: 50px;
+}
+
+.cont {
+    width: 30%;
+    background-color: #fff;
+    height: 350px;
+    box-shadow: 0px 5px 5px 1px grey;
+    position: relative;
+    top: -20px;
+}
+
+.cont-main {
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
+.flex-title {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.flex-link {
+    text-decoration: none;
+}
+
+.flex-text-a {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.mid-cont {
+    height: 80px;
+    background-color: #C8ECF4;
+    margin-top: 10px;
+    width: 92%;
+    margin-left: 9px;
+    padding: 15px;
+}
+
+.text-right {
+    border-bottom: solid gray 1px;
+    ;
+    font-size: 0.85rem;
+}
+
+.flex-text-right {
+    padding: 5px;
+    padding-right: 30px;
+    margin-top: 10px;
+}
+
+/* foot  */
+
+.rowFk {
+    display: flex;
+    font-size: 1.25rem;
+
+}
+
+.colFk {
+    margin-left: 100px;
+    color: #fff;
+}
+
+.foot {
+    padding: 30px;
+
+}

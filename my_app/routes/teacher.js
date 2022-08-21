@@ -9,16 +9,16 @@ const transferDB = require("../transferDB");
 const checkAdmin = require("../middlewares/checkAdmin");
 const { check, validationResult, checkSchema } = require("express-validator");
 const cloudinary = require("../cloudinary/index");
-const leaveDB = require('../leaveDB')
+const leaveDB = require("../leaveDB");
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  let department = "Science";
-  let userName = 'Kunal Kumar'
+  let department = "Primary";
+  let userName = "Kunal Kumar";
   res.render("teacher/index", {
     department: department,
-    userName : userName
+    userName: userName,
   });
 });
 router.get("/login", (req, res) => {
@@ -287,7 +287,8 @@ router.get("/dailyUpdates", async (req, res, next) => {
   }
 });
 router.post("/leaves", (req, res, next) => {
-  const { leaveType, dayType, from, to, department, supervisor, reason } = req.body;
+  const { leaveType, dayType, from, to, department, supervisor, reason } =
+    req.body;
   leaveDB.push(leaveType, dayType, from, to, department, supervisor, reason);
   res.redirect("/client");
 });

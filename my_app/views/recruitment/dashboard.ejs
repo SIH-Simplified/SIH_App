@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/recruitment/dashboard.css">
+    <script src="https://kit.fontawesome.com/577ae30e95.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Client Side Dashboard</title>
+</head>
+
+<body style = "background: #f2f2f2 ;font-family: 'Poppins', sans-serif;">
+    <div class="container-fluid">
+        <div class="row">
+            <%- include('../templates/sidebar.ejs') %>
+            <div class="col-sm-10 main">
+                <div class="container-fluid">
+                    <div class="row">
+                   </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="container-fluid">
+                                <div class="row" >
+                                    <div class="group one"id = "maincontentcont">
+                                       
+                                        <div class="top"> 
+                                           <i class="fa-xl fa-regular fa-moon" id = "theme"></i>
+                                            
+                                        </div>
+                                        <div class="header">
+                                            <div class="govt-logo">
+                                                <img src="/images/image 38.png" width=" 143px" height="130px">
+                                            </div>
+                                            <div class="main-tile">
+                                                <span class="main-head"> MAHARASHTRA GOVERNMENT </span> <br>
+                                                online recruitment management system
+                                                <div class="search">
+                                                    <input type="search" class="search-text" placeholder="browse exams">
+                                                    <!-- <button class="search-button"><i
+                                                            class="fa-solid fa-magnifying-glass"></i></button> -->
+                                                </div>
+                                            </div>
+                                            <div class="edu-logo">
+                                                <img src="/images/logo.png"> <br>
+                                                powered by edurectuit
+                                            </div>
+                                        </div>
+
+                                        <div class="navbarc">
+                                            <a href="#"> HOME </a>
+                                          
+
+                                            <a href="#">EXAM LIST</a>
+                                            <a href="#">RECRUITMENT</a>
+                                            <a href="#">APPLY ONLINE </a>
+                                            <a href="#">FILL FORMS</a>
+                                            <a href="#" class="right">IMPORTANT LINKS</a>
+                                        </div>
+                                        <div class="mid-img">
+                                            <img src="/images/image 44.png" width="100%">
+                                        </div>
+
+                                        <div class="space"></div>
+
+                                        <div class="bottom-cont" id = "bottom_cont">
+                                            <div class="flex-cont">
+                                                <div class="cont" id = "cont1">
+                                                    <div class="cont-main">
+                                                        <div class="flex-title">
+                                                            <i class="fa-solid fa-link"></i>
+                                                            Forms and FAQ’s
+                                                        </div>
+                                                        <div class="flex-text-a">
+                                                            <p class="text-a"><a href="#" class="flex-link" id = "link1">ctet 2022 application form
+                                                               </a>
+                                                        </p>
+                                                            <p class="text-a"><a href="#" class="flex-link" id = "link2">how to apply
+                                                                    for ctet correction window</a>
+                                                            </p>
+                                                            <p class="text-a"><a href="#" class="flex-link" id = "link3">ctet
+                                                                    important dates</a></p>
+                                                            <p class="text-a"><a href="#" class="flex-link" id = "link4">xyz 2022
+                                                                    application form</a></p>
+                                                            <p class="text-a"><a href="#" class="flex-link" id = "link5">xyz
+                                                                    important details</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="cont" id = "cont2">
+                                                    <div class="cont-main">
+                                                        <div class="flex-title">
+                                                            <i class="fa-solid fa-link"></i>
+                                                            Latest Exam Notifications
+                                                        </div>
+                                                        <div class="mid-flex">
+                                                            <div class="mid-cont" id = "notification1">
+                                                                NIMHANS Research Fellows <br> Recruitment | 7 Posts
+                                                            </div>
+                                                            <div class="mid-cont" id = "notification2">
+                                                                IISER Maharashtra Junior <br> Research Fellows | Apply
+                                                                Now
+                                                            </div>
+                                                            <div class="mid-cont" id = "notification3">
+                                                                Jadavpur University Junior <br> Research Fellowship
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="cont" id = "cont3">
+                                                    <div class="cont-main">
+                                                        <div class="flex-title">
+                                                            <i class="fa-solid fa-link"></i>
+                                                            Important Links
+                                                        </div>
+                                                        <div class="flex-text-right">
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link6">
+                                                                Notifications
+                                                            </a>
+                                                            </p>
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link7">
+                                                                Apply Online</a></p>
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link8">
+                                                                Hall Ticket Download</a></p>
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link9">
+                                                                Lastest result / result declaration schedule</a></p>
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link10">xyz
+                                                                    CV / OT (interviews)</a></p>
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link11">xyz
+                                                                    OMR Answer Sheet -Sample / Instructions</a></p>
+                                                            <p class="text-right"><a href="#" class="flex-link" id = "link12">xyz
+                                                                    Counselling Selection</a></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-----
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="group two">
+                                <section class="foot">
+                                    <div class="footSp">
+                                    </div>
+                                    <div class="rowFk" >
+                                        <div class="colFk">
+                                            <ul class="Ck">
+                                                <p class="HH">QUICK LINKS</p>
+                                                <p>COMPANY</p>
+                                                <p>OUR SERVICES</p>
+                                                <p>CONTACT US</p>
+                                                <p>PROJECT CREDENTIALS</p>
+                                                </ul>
+                                        </div>
+                                        <div class="colFk">
+                                            <ul class="Ck">
+                                                <p class="HH">CONTACK WITH US </p>
+                                                <p>FACEBOOK</p>
+                                                <p>INSTAGRAM</p>
+                                                <p>LINKIND</p>
+                                                </ul>
+                                        </div>
+                                        <div class="colFk">
+                                            <ul class="Ck">
+                                                <p class="HH">CONTACT INFO:</p>
+                                                <p>ADDRESS</p>
+                                                <p>PHONE NO.</p>
+                                                
+                                                </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                -------->
+<script>
+var theme = document.getElementById("theme");
+var maincontentcont= document.getElementById("maincontentcont");
+var navbar = document.getElementById("navbar");
+var dropbtn = document.getElementById("dropbtn");
+var a  =0;
+theme.addEventListener("click",()=>{
+    if(a%2==0)
+    {
+    dropbtn.style.background = "#161d30";
+for(i = 1;i<=3;i++)
+{
+    document.getElementById("cont"+i).style.background = "#303751";
+    document.getElementById("cont"+i).style.color = "white";
+    document.getElementById("cont"+i).style.boxShadow= "0px 5px 5px 1px #161d30";
+}
+document.getElementById("navbar").style.background = "#292f45";
+    document.getElementById("navbar").style.color = "white";
+    document.body.style.backgroundColor  = "#161d30";
+maincontentcont.style.background = "#292f45";
+maincontentcont.style.color = "white";
+document.getElementById("bottom_cont").style.background = "#292f45";
+for(i = 1;i<=3;i++)
+{
+    document.getElementById("notification"+i).style.background = "#5c699b";
+    document.getElementById("notification"+i).style.color = "white";
+}
+for(i = 1;i<=12;i++)
+{
+    
+    document.getElementById("link"+i).style.color = "white";
+}
+for(x = 1;x<=6;x++)
+{
+document.getElementById("navbt"+x).style.background = "#292f45";
+document.getElementById("navbt"+x).style.color = "white";
+}}
+else{
+    dropbtn.style.background = "lightgrey";
+    for(i = 1;i<=3;i++)
+    {
+        document.getElementById("cont"+i).style.background = "white";
+        document.getElementById("cont"+i).style.color = "#202020";
+        document.getElementById("cont"+i).style.boxShadow= "0px 5px 5px 1px lightgrey";
+    }
+    document.getElementById("navbar").style.background = "white";
+        document.getElementById("navbar").style.color = "#202020";
+        document.body.style.backgroundColor  = "#f2f2f2";
+    maincontentcont.style.background = "white";
+    maincontentcont.style.color = "#202020";
+    document.getElementById("bottom_cont").style.background = "white";
+    for(i = 1;i<=3;i++)
+    {
+        document.getElementById("notification"+i).style.background = "#C8ECF4";
+        document.getElementById("notification"+i).style.color = "#202020";
+    }
+    for(i = 1;i<=12;i++)
+    {
+        
+        document.getElementById("link"+i).style.color = "#202020";
+    }
+    for(x = 1;x<=6;x++)
+    {
+    document.getElementById("navbt"+x).style.background = "white";
+    document.getElementById("navbt"+x).style.color = "#202020";
+    }
+
+
+
+
+
+}
+a++;
+})
+
+
+</script>
+
+</body>
+
+</html>
