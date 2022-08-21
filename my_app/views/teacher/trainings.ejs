@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheets/teacher/dashboard" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="/stylesheets/teacher/dashboard.css" />
     <script
       src="https://kit.fontawesome.com/577ae30e95.js"
       crossorigin="anonymous"
@@ -26,56 +25,8 @@
         <%- include('../templates/sidebar') %>
         <div class="col-sm-10 main">
           <div class="container-fluid">
-            <div class="row">
-              <div class="navbar">
-                <div class="row-nav">
-                  <div class="nav-left">
-                    <div class="icons">
-                      <a href="#"
-                        ><i class="fa-xl fa-regular fa-envelope"></i
-                      ></a>
-                    </div>
-                    <div class="icons">
-                      <a href="#">
-                        <i class="fa-xl fa-regular fa-message"></i
-                      ></a>
-                    </div>
-                    <div class="icons">
-                      <a href="#"
-                        ><i class="fa-xl fa-regular fa-calendar"></i
-                      ></a>
-                    </div>
-                    <div class="icons">
-                      <a href="#"
-                        ><i class="fa-xl fa-regular fa-square-check"></i
-                      ></a>
-                    </div>
-                  </div>
-                  <div class="nav-middle"></div>
-                  <div class="nav-right">
-                    <div class="icons">
-                      <a href="#"><i class="fa-xl fa-regular fa-bell"></i></a>
-                    </div>
-                    <div class="icons">
-                      <a href="#" onclick="toggleDarkMode()"
-                        ><i class="fa-xl fa-regular fa-moon"></i
-                      ></a>
-                    </div>
-                    <div class="icons">
-                      <a href="#"><i class="fa-xl fa-regular fa-sun"></i></a>
-                    </div>
-                    <div id="userName">userName</div>
-                    <div class="icons">
-                      <img
-                        src="images/pp.png"
-                        alt="pp"
-                        height="35px"
-                        width="35px"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="row" style="margin-left: 100px">
+              <%- include('../templates/navbar.ejs') %>
             </div>
             <div class="main-title">
               <div class="main-a"><h3>UPCOMING TRAININGS</h3></div>
@@ -86,7 +37,11 @@
                 <div class="container-fluid">
                   <div class="group one">
                     <div class="img-one">
-                      <img src="image 10.png" width="260px" height="120px" />
+                      <img
+                        src="/images/image 10.png"
+                        width="260px"
+                        height="120px"
+                      />
                     </div>
                     <br />
                     <div class="main-text">

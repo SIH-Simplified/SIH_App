@@ -15,8 +15,10 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   let department = "Science";
+  let userName = 'Kunal Kumar'
   res.render("teacher/index", {
     department: department,
+    userName : userName
   });
 });
 router.get("/login", (req, res) => {
