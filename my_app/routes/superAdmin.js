@@ -11,11 +11,12 @@ const districtDB = require("../districtDB");
 const pushUpdatesDB = require("../pushUpdates");
 const dailyUpdatesDB = require("../dailyUpdatesDB");
 const transferDB = require("../transferDB");
+const application = require("../applicationSuperAdminDB");
 router.get("/", async (req, res, next) => {
     try {
         const countOfTeachers = await Teacher.find({}).count();
         const countOfSchools = school.length;
-        res.render("superAdmin/index", { countOfTeachers, countOfSchools });
+        res.render("superAdmin/index", { countOfTeachers, countOfSchools, application });
 
     } catch (error) {
         next(error);

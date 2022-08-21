@@ -229,9 +229,21 @@
                 <div class="row1_child" style="overflow:auto;height:48.5rem;">
                     <br>
                     <font class="row1_child_font1">Manage Applications</font>
-                    <div style="height:100%;" id="manageapplication">
-
-                    </div>
+                    <% if(typeof application !=="undefined" && application.length !==0) {%>
+                        <% for(let i=0;i<application.length;i++) {%>
+                            <div style="height:100%;" id="manageapplication">
+                                <h2>
+                                    <%= application[i].teacher_name %>
+                                </h2>
+                                <h3 class="h5">
+                                    <%= application[i].subject %>
+                                </h3>
+                                <p>
+                                    <%= application[i].message %>
+                                </p>
+                            </div>
+                            <% } %>
+                                <% } %>
                 </div>
             </span>
 
