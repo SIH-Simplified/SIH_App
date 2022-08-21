@@ -1,23 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 body {
     margin: 0;
     min-width: 250px;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 10%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
 }
-
 /* Include the padding and border in an element's total width and height */
 
 * {
     box-sizing: border-box;
 }
 
-/* Remove margins and padding from the list */
-
-ul {
-    margin: 0;
-    padding: 0;
-}
 
 /* Style the list items */
 
@@ -26,8 +22,9 @@ ul li {
     position: relative;
     padding: 12px 8px 12px 40px;
     list-style-type: none;
-    background: rgb(89, 89, 89);
+    background: #c539f8;
     font-size: 18px;
+    border-radius: 20px;
     transition: 0.2s;
     /* make the list items unselectable */
     -webkit-user-select: none;
@@ -51,7 +48,7 @@ ul li:hover {
 /* When clicked on, add a background color and strike out text */
 
 ul li.checked {
-    background: #888;
+    background: rgb(21, 211, 0);
     color: #fff;
     text-decoration: line-through;
 }
@@ -78,14 +75,19 @@ ul li.checked::before {
     right: 0;
     top: 0;
     padding: 12px 16px 12px 16px;
+    border-radius: 10px;
 }
 
 .close:hover {
-    background-color: #3b62e1;
+    background-color: #f4444a;
     color: white;
 }
 
 /* Style the header */
+
+input{
+    border-radius: 10px !important;
+}
 
 .header {
     background-color: #b94bfd;
@@ -109,10 +111,16 @@ input {
     margin: 0;
     border: none;
     border-radius: 0;
-    width: 75%;
+    width: 50%;
     padding: 10px;
+    padding-left: 30px;
     float: left;
+    color: #555;
     font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.one{
+    margin-left: 120px;
 }
 
 /* Style the "Add" button */
@@ -120,14 +128,14 @@ input {
 .addBtn {
     padding: 10px;
     width: 25%;
-    background: #d9d9d9;
+    border-radius: 10px !important;
+    background: #ececec;
     color: #555;
     float: left;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
-    border-radius: 0;
 }
 
 .addBtn:hover {
