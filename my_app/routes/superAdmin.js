@@ -112,11 +112,11 @@ router.get("/assignAdmin", (req, res) => {
     res.render("superAdmin/assignAdmin", { assignAdmin });
 })
 
-router.post("/assignAdmin", (req, res) => {
-    const { id } = req.body;
-    // assignAdmin.splice(id, 1);
-    assignAdmin[id].isAdmin = 1;
-    res.redirect("/superAdmin/assignAdmin")
+router.patch("/assignAdmin/:id", (req, res) => {
+    const { id } = req.params;
+    assignAdmin[id].isAdmin = 1; // update postion of teacher to admin in the backend
+    assignAdmin.splice(id, 1);
+    res.redirect("/superAdmin/assignAdmin");
 })
 
 router.delete("/assignAdmin/:id", (req, res) => {
