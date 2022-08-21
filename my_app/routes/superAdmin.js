@@ -108,7 +108,7 @@ router.delete("teacherTransfer/:id", (req, res) => {
 })
 
 router.get("/assignAdmin", (req, res) => {
-    res.render("/superAdmin/assignAdmin");
+    res.render("superAdmin/assignAdmin");
 })
 
 
