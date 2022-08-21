@@ -111,5 +111,11 @@ router.get("/assignAdmin", (req, res) => {
     res.render("superAdmin/assignAdmin");
 })
 
+router.post("/assignAdmin", (req, res) => {
+    const { id } = req.body;
+
+    
+})
+
 
 module.exports = router;
