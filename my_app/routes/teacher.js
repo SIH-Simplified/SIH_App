@@ -294,7 +294,10 @@ router.post("/leaves", (req, res, next) => {
 });
 
 router.get("/trainings", (req, res) => {
-  res.render("teacher/trainings");
+  const userName = "Kunal Kumar";
+  res.render("teacher/trainings", {
+    userName : userName
+  });
 });
 
 module.exports = router;
