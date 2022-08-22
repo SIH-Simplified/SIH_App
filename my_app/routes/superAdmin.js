@@ -125,4 +125,9 @@ router.delete("/assignAdmin/:id", (req, res) => {
     res.redirect("/superAdmin/assignAdmin");
 })
 
+router.get("/manageApplication/:id", (req, res) => {
+    const { id } = req.params;
+    res.render("superAdmin/application", { application: application[id] });
+})
+
 module.exports = router;
