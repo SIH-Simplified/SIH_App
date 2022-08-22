@@ -277,9 +277,17 @@
                         <div class="row1_child" style="height:54%;">
                             <center>
                                 <font class="row1_child_font1"> push updates </font>
-                                <font class="row1_child_font1"
-                                    style="border:1px solid grey;border-radius:7px;padding:10px;"> view updates</font>
 
+                                <form action="http://localhost:3000/superAdmin/pushUpdates">
+                                    <button type="submit" class="btn btn-info"
+                                        style="border:1px solid grey;border-radius:7px;padding:10px;">
+                                        View updates</button>
+                                </form>
+                                <form action="http://localhost:3000/superAdmin/pushUpdates/create">
+                                    <button type="submit" class="btn btn-info"
+                                        style="border:1px solid grey;border-radius:7px;padding:10px;">
+                                        Push Updates</button>
+                                </form>
                                 <br><br><br><br>
                                 <font class="row1_child_font1"
                                     style="border:1px solid grey;border-radius:7px;padding:10px;background:#6853F8;color:white;">
@@ -291,7 +299,7 @@
                         <div class="row1_child" style="height:54%;overflow:auto;">
                             <br>
                             <font class="row1_child_font1"> Schedule Trainings </font>
-                            <font style="color:#6853F8;font-size:min(3vw,3rem); "> +</font><br>
+                            <!-- <font style="color:#6853F8;font-size:min(3vw,3rem); "> +</font><br> -->
                             <div style="height:100%;" id="schedule">
                                 <font style="color:#6853F8;font-size:min(3vw,3rem); ">
                                     <a class="btn btn-primary" href="http://localhost:3000/superAdmin/scheduleMettings"
@@ -392,8 +400,3 @@
 </body>
 
 </html>
-
-<form action="http://localhost:3000/superAdmin/pushUpdates/create">
-    <button type="submit" class="btn btn-info" style="border:1px solid grey;border-radius:7px;padding:10px;">
-        Push Updates</button>
-</form>
