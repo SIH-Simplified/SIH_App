@@ -230,37 +230,34 @@
                 <div class="row1_child" style="overflow:auto;height:48.5rem;">
                     <br>
                     <font class="row1_child_font1">Manage Applications</font>
-                    <% if(typeof application !=="undefined" && application.length !==0) {%>
-                        <% for(let i=0;i<application.length;i++) {%>
-                            <div style="height:100%;" id="manageapplication">
-                            </div>
-
-
-                            <div style="height:100%;" id="manageapplication">
-                                <div id="manage" style="border :1px solid #f8f8f8;background :#f8f8f8;">
-                                    <br>
-                                    <img src="images/emailusr.png" style="width:40px;border-radius:50%;margin-left:5%;">
-                                    <font
-                                        style="font-family:Poppins;font-style:normal;font-weight:bold;font-size:min(3vw,1.7rem);margin:10%;color:#012A60;">
-                                        <%= application[i].teacher_name %>
-                                    </font><br>
-                                    <font style="margin-left:27%;font-family:Poppins;font-style:normal;color:#012A60;">
-                                        <%= application[i].subject %>
-                                    </font>
-                                    <div style="margin-left:27%;width:70%;overflow:hidden;">
-                                        <font style="white-space:nowrap;">
-                                            <%= application[i].message %>
+                    <div style="height:100%;" id="manageapplication">
+                        <div style="height:100%;" id="manageapplication">
+                            <% if(typeof application !=="undefined" && application.length !==0) {%>
+                                <% for(let i=0;i<application.length;i++) {%>
+                                    <div id="manage" style="border :1px solid #f8f8f8;background :#f8f8f8;">
+                                        <br>
+                                        <img src="images/emailusr.png"
+                                            style="width:40px;border-radius:50%;margin-left:5%;">
+                                        <font
+                                            style="font-family:Poppins;font-style:normal;font-weight:bold;font-size:min(3vw,1.7rem);margin:10%;color:#012A60;">
+                                            <%= application[i].teacher_name %>
+                                        </font><br>
+                                        <font
+                                            style="margin-left:27%;font-family:Poppins;font-style:normal;color:#012A60;">
+                                            <%= application[i].subject %>
                                         </font>
+                                        <div style="margin-left:27%;width:70%;overflow:hidden;">
+                                            <font style="white-space:nowrap;">
+                                                <%= application[i].message %>
+                                            </font>
+                                        </div>
                                     </div>
-
-                                </div>
-                            </div>
-                            <% } %>
-                                <% } %>
+                                    <% } %>
+                                        <% } %>
+                        </div>
+                    </div>
                 </div>
             </span>
-
-
             <span class="col-md-9">
                 <span class="row" style="height:46%;">
                     <span class="col-md-4">
@@ -295,7 +292,6 @@
                             </center>
                         </div>
                     </span>
-
                     <span class="col-md-8">
                         <div class="row1_child" style="height:54%;overflow:auto;">
                             <br>
@@ -327,7 +323,6 @@
                                             <br>
                                             <font style="color:lightgrey;margin-left:12%;">
                                                 <%= training[i].dataFrom %>
-
                                             </font>
                                             <font style="color:lightgrey;margin-left:12%;">
                                                 <%= training[i].dateTo %>
@@ -335,8 +330,6 @@
                                         </div>
                                         <% } %>
                                             <% } %>
-
-
                             </div>
                         </div>
                         <br>
@@ -348,41 +341,22 @@
                                     style="border:1px solid grey;border-radius:7px;padding:10px;"> 27 pending </font>
                                 <br><br><br><br>
                                 <a class="btn btn-danger" href="http://localhost:3000/superAdmin/teacherTransfer"
-                                role="button">
-                                View Applications
-                            </a>
+                                    role="button">
+                                    View Applications
+                                </a>
                             </center>
                         </div>
                     </span>
-
                 </span>
-
-
             </span></span>
         <br>
         <span class="row" id="row3">
             <span class="col-md-12">
                 <div class="row1_child" style="height:100%;" id="chart">
-
-
-
-
                 </div>
-
             </span></span>
     </div>
     <script>
-
-
-
-
-
-
-
-
-
-
-
         //chart------------------------------------------------
         var options = {
             series: [{
@@ -402,15 +376,12 @@
             stroke: {
                 curve: 'straight'
             },
-
             title: {
                 text: 'State Employment for last 12 years',
                 align: 'left'
             },
-
             labels: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
             xaxis: {
-
             },
             yaxis: {
                 opposite: true
@@ -422,7 +393,6 @@
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-
     </script>
 </body>
 
