@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    <!-- <%- include("../templates/sidebar") %> -->
 
     <% if (typeof error !=='undefined' ) { %>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -39,30 +40,29 @@
                 id="burger"></span>
             <div style="width:13%;height:100%;position:fixed;background:white;border-right:1px solid #f5f5f5;z-index:3;"
                 id="navbar">
-                <%- include("../templates/adminNavbar") %>
-                    <center><br><br>
-                        <img src="images/logo.svg" style="max-width:10vw;">
-                        <br><br><br><br>
-                        <span class="glyphicon glyphicon-envelope"
-                            style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;  ;">&nbsp&nbsp&nbsp&nbspEmail</span><br><br>
-                        <font
-                            style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;">
-                            <span class="glyphicon glyphicon-briefcase" id="send"></span>&nbsp&nbsp&nbsp&nbspTeachers
-                        </font><br><br>
-                        <font
-                            style="font-size:min(1vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp&nbsp&nbsp&nbspDepartments
-                        </font><br><br>
-                        <font
-                            style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
-                            <span class="glyphicon glyphicon-calendar"></span>&nbsp&nbsp&nbsp&nbspCalendar
-                        </font><br><br>
+                <center><br><br>
+                    <img src="images/logo.svg" style="max-width:10vw;">
+                    <br><br><br><br>
+                    <span class="glyphicon glyphicon-envelope"
+                        style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;  ;">&nbsp&nbsp&nbsp&nbspEmail</span><br><br>
+                    <font
+                        style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;">
+                        <span class="glyphicon glyphicon-briefcase" id="send"></span>&nbsp&nbsp&nbsp&nbspTeachers
+                    </font><br><br>
+                    <font
+                        style="font-size:min(1vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp&nbsp&nbsp&nbspDepartments
+                    </font><br><br>
+                    <font
+                        style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                        <span class="glyphicon glyphicon-calendar"></span>&nbsp&nbsp&nbsp&nbspCalendar
+                    </font><br><br>
 
-                        <font
-                            style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
-                            <span class="	glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp&nbspLogout
-                        </font><br>
-                    </center>
+                    <font
+                        style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                        <span class="	glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp&nbspLogout
+                    </font><br>
+                </center>
             </div>
             <div style="position:absolute;left:13%;width:87%;height:93%;top:0%;" id="maindiv">
                 <div style="width:98%;position:relative;left:1%;background:#7367f0;border-radius:5px;height:6.3%;font-family:'Poppins', sans-serif;margin-top:1.5%;"
@@ -509,7 +509,8 @@
                             <br><br>
                             <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
                                 <br>
-                                <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Paid Leave</font>
+                                <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Paid Leave
+                                </font>
                                 <br>
                                 <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Simarpreet Singh</font>
                                 <br><br>
@@ -583,7 +584,8 @@
                                                 <form
                                                     action="http://localhost:3000/admin/tasks/delete/<%= i %>?_method=DELETE"
                                                     method="post">
-                                                    <button type="submit" class="btn btn-secondary"> Delete </button>
+                                                    <button type="submit" class="btn btn-secondary"> Delete
+                                                    </button>
                                                 </form>
                                                 <button type="button" class="btn btn-secondary">
                                                     <span class="glyphicon glyphicon-trash"></span>
@@ -773,7 +775,8 @@
                                 <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
                                 </font>
                                 <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
+                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English
+                                    Teacher
                                 </font>
                                 <br><br>
                             </center>
@@ -824,7 +827,8 @@
                                 <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
                                 </font>
                                 <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
+                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English
+                                    Teacher
                                 </font>
                                 <br><br>
                             </center>
@@ -875,7 +879,8 @@
                                 <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
                                 </font>
                                 <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
+                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English
+                                    Teacher
                                 </font>
                                 <br><br>
                             </center>
