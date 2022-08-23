@@ -10,6 +10,8 @@ const checkAdmin = require("../middlewares/checkAdmin");
 const { check, validationResult, checkSchema } = require("express-validator");
 const cloudinary = require("../cloudinary/index");
 const leaveDB = require("../leaveDB");
+const promotionDB = require("../promotion");
+const promotion = require("../models/teacher/promotion");
 
 const router = express.Router();
 
@@ -245,14 +247,19 @@ router.get("/promotion", (req, res) => {
   res.render("teacher/promotion.ejs");
 });
 
-router.post("/promotion/send", [
-  check('name', 'Please fill this field'),
-  check('email', 'Please enter a valid email').isEmail()
-], async (req, res, next) => {
-  
-  res.redirect('/client')
-});
-
+router.post(
+  "/promotion/send",
+  [
+    check("name", "Please fill this field"),
+    check("email", "Please enter a valid email").isEmail(),
+  ],
+  async (req, res, next) => {
+    const { name, email, dept, current_designation } = req.body;
+    const promotion = new promotion({});
+    console.log(req.body);
+    res.redirect("/client");
+  }
+);
 
 router.get("/transfer/transfer-choices", (req, res) => {
   res.render("teacher/transfer/transfer-choices");

@@ -49,18 +49,20 @@
                     style="color:#2652f9;font-family:'poppins';font-size:min(2vw,4rem);margin-left:5%;font-weight:bold;">
                     Apply for promotional exam</font>
                 <hr>
-                <form style="width:100%;margin-left:5%;">
+                <form style="width:100%;margin-left:5%;" action="promotion/send" method="post">
                     <span class="row">
                         <span class="col-md-6">
                             <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">Enter Name</font>
                             <br>
-                            <input type="text" style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
+                            <input type="text" name="name"
+                                style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
                                 placeholder="Enter name">
 
                             <br><br>
                             <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">Registered email
                             </font><br>
-                            <input type="text" style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
+                            <input type="text" name="email"
+                                style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
                                 placeholder="Enter email">
 
 
