@@ -241,6 +241,19 @@ router.post(
   }
 );
 
+router.get("/promotion", (req, res) => {
+  res.render("teacher/promotion.ejs");
+});
+
+router.post("/promotion/send", [
+  check('name', 'Please fill this field'),
+  check('email', 'Please enter a valid email').isEmail()
+], async (req, res, next) => {
+  
+  res.redirect('/client')
+});
+
+
 router.get("/transfer/transfer-choices", (req, res) => {
   res.render("teacher/transfer/transfer-choices");
 });
@@ -296,7 +309,7 @@ router.post("/leaves", (req, res, next) => {
 router.get("/trainings", (req, res) => {
   const userName = "Kunal Kumar";
   res.render("teacher/trainings", {
-    userName : userName
+    userName: userName,
   });
 });
 
