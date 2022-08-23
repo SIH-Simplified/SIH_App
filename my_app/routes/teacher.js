@@ -12,7 +12,7 @@ const cloudinary = require("../cloudinary/index");
 const leaveDB = require("../leaveDB");
 const promotionDB = require("../promotion");
 const promotion = require("../models/teacher/promotion");
-
+const teacherDB = require("../teacherDB");
 const router = express.Router();
 
 router.get("/", (req, res) => {
