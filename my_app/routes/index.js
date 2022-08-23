@@ -22,7 +22,11 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post("/login", async (req, res, next) => {
+router.get('/index/login', (req,res)=>{
+  res.render('teacher/login')
+})
+
+router.post("/login/send", async (req, res, next) => {
   const { userEmailLogin, passwordLogin } = req.body;
 
   try {
@@ -51,7 +55,11 @@ router.post("/login", async (req, res, next) => {
   }
 })
 
-router.post("/register", async (req, res, next) => {
+router.get('/register', (req,res)=>{
+  res.render('teacher/register')
+})
+
+router.post("/register/send", async (req, res, next) => {
   try {
     const { usernameRegister, emailRegister, passwordRegister, cpasswordRegister } = req.body;
 
