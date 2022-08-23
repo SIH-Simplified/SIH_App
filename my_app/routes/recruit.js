@@ -7,4 +7,7 @@ router.get("/", (req, res) => {
   res.render("recruitment/dashboard");
 });
 
+router.get("/introduction", (req, res) => {
+  res.render("/recruitment/into");
+});
 module.exports = router;
