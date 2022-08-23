@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheets/teacher/dashboard.css" />
-    <script
-      src="https://kit.fontawesome.com/577ae30e95.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="icon" href="/images/logo.png" />
-    <title>
-      EduRecruit - Manage Your Data Here - Teacher Management System of
-      Government Of Maharashtra
-    </title>
-  </head>
-  <body class="light">
-    <div class="container-fluid">
-      <div class="row" id="content_row">
-        <%- include('../templates/sidebar.ejs') %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="stylesheets/teacher/dashboard.css" />
+  <script src="https://kit.fontawesome.com/577ae30e95.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="icon" href="/images/logo.png" />
+  <title>
+    EduRecruit - Manage Your Data Here - Teacher Management System of
+    Government Of Maharashtra
+  </title>
+</head>
+
+<body class="light">
+  <div class="container-fluid">
+    <div class="row" id="content_row">
+      <%- include('../templates/sidebar.ejs') %>
         <div class="col-sm-10 stats">
           <div class="container-fluid">
-            <div class="row"><%- include('../templates/navbar.ejs') %></div>
+            <div class="row">
+              <%- include('../templates/navbar.ejs') %>
+            </div>
             <div class="main-cont stats">
               <div class="row">
                 <div class="col-sm-5">
@@ -38,16 +35,12 @@
                         <div class="one-row">
                           <div class="one-col-a">
                             <p class="Wel_text">Department</p>
-                            <p class="Wel_text2"><%= department %> Wing</p>
+                            <p class="Wel_text2">
+                              <%= department %> Wing
+                            </p>
                           </div>
                           <div class="one-col-b">
-                            <img
-                              src="images/image 9.png"
-                              alt=""
-                              width="89"
-                              height="150"
-                              class="medal"
-                            />
+                            <img src="images/image 9.png" alt="" width="89" height="150" class="medal" />
                           </div>
                         </div>
                         <div class="row-one-A">
@@ -70,12 +63,7 @@
                           <div class="two-line">
                             <h6 class="two-text-one">Service span</h6>
                             <h6 class="two-text-two">2.5Years</h6>
-                            <img
-                              src="images/Group 2.png"
-                              width="140"
-                              height="55"
-                              class="two-img"
-                            />
+                            <img src="images/Group 2.png" width="140" height="55" class="two-img" />
                           </div>
                         </div>
                       </div>
@@ -84,11 +72,7 @@
                           <div class="three-line">
                             <h6 class="three-text-one">Current salary</h6>
                             <h6 class="three-text-two">43k</h6>
-                            <img
-                              src="images/Group 1.png"
-                              class="three-img"
-                              width="180"
-                            />
+                            <img src="images/Group 1.png" class="three-img" width="180" />
                           </div>
                         </div>
                       </div>
@@ -290,27 +274,21 @@
                       <div class="group seven" id="div7">
                         <div class="seven-row-main">
                           <div class="seven-col-a">
-                            <div
-                              style="
+                            <div style="
                                 height: 70%;
                                 width: 100%;
                                 background: white;
                                 margin-top: 20%;
                                 display: flex;
-                              "
-                              id="attendencegraph"
-                            >
-                              <div
-                                style="
+                              " id="attendencegraph">
+                              <div style="
                                   height: 100%;
                                   width: 4%;
                                   background: #aed8f0;
                                   border-radius: 10px;
                                   margin-left: 30%;
-                                "
-                              >
-                                <div
-                                  style="
+                                ">
+                                <div style="
                                     height: 60%;
                                     width: 100%;
                                     background: lightgrey;
@@ -318,21 +296,17 @@
                                     border-top-left-radius: 10px;
                                     position: relative;
                                     bottom: 0;
-                                  "
-                                ></div>
+                                  "></div>
                               </div>
 
-                              <div
-                                style="
+                              <div style="
                                   height: 100%;
                                   width: 4%;
                                   background: #4d5c96;
                                   border-radius: 10px;
                                   margin-left: 15%;
-                                "
-                              >
-                                <div
-                                  style="
+                                ">
+                                <div style="
                                     height: 60%;
                                     width: 100%;
                                     background: lightgrey;
@@ -340,21 +314,17 @@
                                     border-top-left-radius: 10px;
                                     position: relative;
                                     bottom: 0;
-                                  "
-                                ></div>
+                                  "></div>
                               </div>
 
-                              <div
-                                style="
+                              <div style="
                                   height: 100%;
                                   width: 4%;
                                   background: #f7726f;
                                   border-radius: 10px;
                                   margin-left: 15%;
-                                "
-                              >
-                                <div
-                                  style="
+                                ">
+                                <div style="
                                     height: 60%;
                                     width: 100%;
                                     background: lightgrey;
@@ -362,8 +332,7 @@
                                     border-top-left-radius: 10px;
                                     position: relative;
                                     bottom: 0;
-                                  "
-                                ></div>
+                                  "></div>
                               </div>
                             </div>
                           </div>
@@ -451,18 +420,12 @@
                             </div>
                             <button class="eight-button-a" id="transferbt1">
                               NOTIFICATIONS
-                              <i class="fa-regular fa-bell"></i></button
-                            ><br />
+                              <i class="fa-regular fa-bell"></i></button><br />
                             <button class="eight-button-b" id="transferbt2">
-                              <a href="/client/transfer/guidelines"
-                                >CHECK ELIGIBILITY</a
-                              >
-                              <i class="fa-regular fa-file"></i></button
-                            ><br />
+                              <a href="/client/transfer/guidelines">CHECK ELIGIBILITY</a>
+                              <i class="fa-regular fa-file"></i></button><br />
                             <button class="eight-button-c" id="transferbt3">
-                              <a href="/client/transfer/form"
-                                >REGISTER FOR TRANSFER</a
-                              >
+                              <a href="/client/transfer/form">REGISTER FOR TRANSFER</a>
                               <i class="fa-regular fa-paper-plane"></i>
                             </button>
                           </div>
@@ -470,11 +433,7 @@
                       </div>
                       <div class="col-sm-6">
                         <div class="group eight" id="div9">
-                          <img
-                            src="images/image 43.png"
-                            alt=""
-                            style="width: 100%; height: 30%"
-                          />
+                          <img src="images/image 43.png" alt="" style="width: 100%; height: 30%" />
                           <h4 class="daily-title">DAILY SCHEDULE</h4>
                           <div class="Eight_Schedule">
                             <div class="Eight_row">
@@ -516,7 +475,9 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-sm-6"><%- include('./leave.ejs') %></div>
+                <div class="col-sm-6">
+                  <%- include('./leave.ejs') %>
+                </div>
                 <div class="col-sm-3">
                   <div class="group eleven" id="application">
                     <div class="eleven-title">YOUR APPLICATIONS</div>
@@ -594,103 +555,105 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
-    <br />
-    <br />
-    <script>
-      var marqueecontent = document.getElementById("marqueecontent");
-      var application = document.getElementById("application");
-      var marque = document.getElementById("marque");
-      marque.style.height = application.offsetHeight + "px";
-      for (i = 1; i <= 100; i++) {
-        var list = document.createElement("li");
-        marqueecontent.appendChild(list);
-        var text = document.createTextNode(
-          " No updates What you PPL are actually doing Need to work hard"
-        );
-        var font = document.createElement("font");
-        font.id = "update" + i;
-        font.appendChild(text);
-        list.appendChild(font);
-      }
+  </div>
+  <br />
+  <br />
+  <script>
+    var marqueecontent = document.getElementById("marqueecontent");
+    var application = document.getElementById("application");
+    var marque = document.getElementById("marque");
+    marque.style.height = application.offsetHeight + "px";
+    for (i = 1; i <= 100; i++) {
+      var list = document.createElement("li");
+      marqueecontent.appendChild(list);
+      var text = document.createTextNode(
+        " No updates What you PPL are actually doing Need to work hard"
+      );
+      var font = document.createElement("font");
+      font.id = "update" + i;
+      font.appendChild(text);
+      list.appendChild(font);
+    }
 
-      var width = window.screen.availWidth;
-      var navbar = document.getElementById("navbar");
-      var content = document.getElementById("content");
-      var maincont = document.getElementById("maincont");
-      var content_row = document.getElementById("content_row");
-      if (width <= 1000) {
-        navbar.style.left = "-50%";
-        content.style.width = "100%";
-        content.style.left = 0;
-      }
+    var width = window.screen.availWidth;
+    var navbar = document.getElementById("navbar");
 
-      var theme = document.getElementById("theme");
-      var a = 0;
-      theme.addEventListener("click", () => {
-        if (a % 2 == 0) {
-          theme.style.color = "white";
-          navbar.style.backgroundColor = "#292f45";
-          content.style.backgroundColor = "#161d30";
-          content_row.style.backgroundColor = "#161d30";
-          for (i = 1; i <= 12; i++) {
-            document.getElementById("div" + i).style.background = "#292f45";
-            document.getElementById("div" + i).style.color = "white";
-          }
-          for (x = 1; x <= 7; x++) {
-            document.getElementById("navbt" + x).style.background = "#292f45";
-            document.getElementById("transfer_title").style.background =
-              "#38405e";
-          }
-          document.getElementById("attendencegraph").style.background =
-            "#292f45";
-          for (x = 1; x <= 3; x++) {
-            document.getElementById("transferbt" + x).style.background =
-              "#292f45";
-            document.getElementById("training" + x).style.background =
-              "#38405e";
-            document.getElementById("training" + x).style.border =
-              "1px solid #7363EA";
-            document.getElementById("training" + x).style.color = "white";
-          }
-          document.getElementById("calender").style.color = "white";
-          document.getElementById("calender_dt").style.color = "white";
-          for (x = 1; x <= 100; x++) {
-            document.getElementById("update" + x).style.color = "white";
-          }
-        } else {
-          theme.style.color = "black";
-          navbar.style.backgroundColor = "white";
-          content.style.backgroundColor = "#f2f2f2";
-          content_row.style.backgroundColor = "none";
-          for (i = 1; i <= 12; i++) {
-            document.getElementById("div" + i).style.background = "white";
-            document.getElementById("div" + i).style.color = "black";
-          }
-          for (x = 1; x <= 7; x++) {
-            document.getElementById("navbt" + x).style.background = "white";
-            document.getElementById("transfer_title").style.background =
-              "#f5f5f5";
-          }
-          document.getElementById("attendencegraph").style.background = "white";
-          for (x = 1; x <= 3; x++) {
-            document.getElementById("transferbt1").style.background = "white";
-            document.getElementById("transferbt2").style.background = "white";
-            document.getElementById("transferbt3").style.background = "#FF3A3A";
-            document.getElementById("training" + x).style.background =
-              "#f5f5f5";
-            document.getElementById("training" + x).style.border = "none";
-            document.getElementById("training" + x).style.color = "black";
-          }
-          document.getElementById("calender").style.color = "black";
-          document.getElementById("calender_dt").style.color = "black";
-          for (x = 1; x <= 100; x++) {
-            document.getElementById("update" + x).style.color = "black";
-          }
+    var content = document.getElementById("content");
+    var maincont = document.getElementById("maincont");
+    var content_row = document.getElementById("content_row");
+    if (width <= 1000) {
+      navbar.style.left = "-50%";
+      content.style.width = "100%";
+      content.style.left = 0;
+    }
+
+    var theme = document.getElementById("theme");
+    var a = 0;
+    theme.addEventListener("click", () => {
+      if (a % 2 == 0) {
+        theme.style.color = "white";
+        navbar.style.backgroundColor = "#292f45";
+        content.style.backgroundColor = "#161d30";
+        content_row.style.backgroundColor = "#161d30";
+        for (i = 1; i <= 12; i++) {
+          document.getElementById("div" + i).style.background = "#292f45";
+          document.getElementById("div" + i).style.color = "white";
         }
-        a++;
-      });
-    </script>
-  </body>
+        for (x = 1; x <= 7; x++) {
+          document.getElementById("navbt" + x).style.background = "#292f45";
+          document.getElementById("transfer_title").style.background =
+            "#38405e";
+        }
+        document.getElementById("attendencegraph").style.background =
+          "#292f45";
+        for (x = 1; x <= 3; x++) {
+          document.getElementById("transferbt" + x).style.background =
+            "#292f45";
+          document.getElementById("training" + x).style.background =
+            "#38405e";
+          document.getElementById("training" + x).style.border =
+            "1px solid #7363EA";
+          document.getElementById("training" + x).style.color = "white";
+        }
+        document.getElementById("calender").style.color = "white";
+        document.getElementById("calender_dt").style.color = "white";
+        for (x = 1; x <= 100; x++) {
+          document.getElementById("update" + x).style.color = "white";
+        }
+      } else {
+        theme.style.color = "black";
+        navbar.style.backgroundColor = "white";
+        content.style.backgroundColor = "#f2f2f2";
+        content_row.style.backgroundColor = "none";
+        for (i = 1; i <= 12; i++) {
+          document.getElementById("div" + i).style.background = "white";
+          document.getElementById("div" + i).style.color = "black";
+        }
+        for (x = 1; x <= 7; x++) {
+          document.getElementById("navbt" + x).style.background = "white";
+          document.getElementById("transfer_title").style.background =
+            "#f5f5f5";
+        }
+        document.getElementById("attendencegraph").style.background = "white";
+        for (x = 1; x <= 3; x++) {
+          document.getElementById("transferbt1").style.background = "white";
+          document.getElementById("transferbt2").style.background = "white";
+          document.getElementById("transferbt3").style.background = "#FF3A3A";
+          document.getElementById("training" + x).style.background =
+            "#f5f5f5";
+          document.getElementById("training" + x).style.border = "none";
+          document.getElementById("training" + x).style.color = "black";
+        }
+        document.getElementById("calender").style.color = "black";
+        document.getElementById("calender_dt").style.color = "black";
+        for (x = 1; x <= 100; x++) {
+          document.getElementById("update" + x).style.color = "black";
+        }
+      }
+      a++;
+    });
+  </script>
+</body>
+
 </html>

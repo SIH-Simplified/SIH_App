@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins:wght@300&display=swap');
+
+        * {
+            margin: 0;
+        }
+
+        body {
+            background: #f8f8f8;
+        }
+
+        .row1_child_font1 {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: bold;
+            font-size: min(2vw, 3rem);
+            margin: 10%;
+
+
+            color: #012A60;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background:white;border-radius:7px;width:90%;margin-left:5%;position:absolute;top:5%;height:auto;">
+        <span class="row">
+            <span class="col-md-8">
+                <br>
+                <font
+                    style="color:#2652f9;font-family:'poppins';font-size:min(2vw,4rem);margin-left:5%;font-weight:bold;">
+                    Apply for promotional exam</font>
+                <hr>
+                <form style="width:100%;margin-left:5%;">
+                    <span class="row">
+                        <span class="col-md-6">
+                            <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">Enter Name</font>
+                            <br>
+                            <input type="text" style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
+                                placeholder="Enter name">
+
+                            <br><br>
+                            <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">Registered email
+                            </font><br>
+                            <input type="text" style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
+                                placeholder="Enter email">
+
+
+                            <br><br>
+                            <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">School id</font>
+                            <br>
+                            <input type="file"
+                                style="border-radius:5px;border:1px solid black;width:90%;padding:1%;background:lightgrey"
+                                placeholder="Enter name">
+                            <br><br>
+
+                            <input type="checkbox"
+                                style="border-radius:5px;border:1px solid black;background:lightgrey;">
+                            <font
+                                style="color:#202020;font-family:'poppins';font-size:min(2vw,1.5rem);font-weight:bold;">
+                                I declare that data entered is correct</font>
+
+                        </span>
+                        <span class="col-md-6">
+                            <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">Enter Current
+                                Department</font><br>
+                            <span style="display:flex;margin:0;">
+                                <input type="radio" style="border-radius:5px;border:1px solid black;" id="elementary"
+                                    value="ele" name="dept"> <label
+                                    style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);margin-left:20px;"
+                                    for="elementary">Elementary</label>
+                                <input type="radio" style="border-radius:5px;border:1px solid black;margin-left:20px;"
+                                    id="secondary" value="sec" name="dept"> <label
+                                    style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);margin-left:20px;"
+                                    for="secondary">Secondary</label>
+                                <input type="radio" style="border-radius:5px;border:1px solid black;margin-left:20px;"
+                                    id="primary" value="pri" name="dept"> <label
+                                    style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);margin-left:20px;"
+                                    for="primary">Primary</label>
+                            </span>
+                            <br><br>
+                            <font style="color:#202020;font-family:'poppins';font-size:min(2vw,2rem);">Current
+                                designation</font><br>
+                            <input type="text" style="border-radius:5px;border:1px solid black;width:90%;padding:1%;"
+                                placeholder="Enter role">
+
+
+                            <br><br><br><br><br><br><br>
+                            <p></p>
+
+                            <input type="checkbox"
+                                style="border-radius:5px;border:1px solid black;background:lightgrey;">
+                            <font
+                                style="color:#202020;font-family:'poppins';font-size:min(2vw,1.5rem);font-weight:bold;">
+                                I declare that data entered is correct</font>
+                        </span>
+                    </span>
+                    <br><br>
+                    <center>
+                        <button type="submit"
+                            style="color:white;border:none;border-radius:5px;background:#6853F8;padding:10px;margin-right:20px;">Submit</button>
+                        <button type="reset"
+                            style="color:orangered;border:none;border-radius:5px;background:lightgrey;padding:10px;margin-left:20px;">Cancel</button>
+                    </center>
+                </form>
+
+            </span>
+            <span class="col-md-4">
+                <div class="row1_child" style="height:100%;overflow:auto;">
+                    <br>
+                    <font class="row1_child_font1">UPCOMING EXAMINATION</font>
+                    <br><br><br>
+                    <div style="height:100%; width:90%;margin-left:5%;" id="schedule">
+                        <div style="border:1px solif #f8f8f8;background:#f8f8f8;box-shadow :2px 2px 3px 3px lightgrey;">
+                            <br>
+                            <span class="glyphicon glyphicon-list" style="margin-left:5%;"></span>
+                            <font
+                                style="font-family:Poppins;font-style:normal;font-weight:bold;font-size:min(3vw,1.7rem);margin:5%;color:#012A60;"
+                                ;>
+                                Business Communication
+                            </font>
+                            <font
+                                style="font-family:Poppins;font-style:normal;color:#6853F8;font-size:min(3vw,1.2rem);margin-left:17%;">
+                                View Course ></font>
+                            <br>
+                            <font style="color:lightgrey;margin-left:12%;">17 october 2021</font>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </span>
+        </span>
+        <br><br><br><br>
+    </div>
+
+
+
+</body>
+
+</html>
