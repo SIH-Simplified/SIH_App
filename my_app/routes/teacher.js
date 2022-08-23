@@ -249,7 +249,7 @@ router.post("/promotion/send", [
   check('name', 'Please fill this field'),
   check('email', 'Please enter a valid email').isEmail()
 ], async (req, res, next) => {
-  
+
   res.redirect('/client')
 });
 
