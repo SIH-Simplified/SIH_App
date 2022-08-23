@@ -24,7 +24,7 @@ router.get("/", (req, res) => {
     department: department,
     userName: userName,
     serviceSpan: serviceSpan,
-    salary : salary
+    salary: salary
   });
 });
 router.get("/login", (req, res) => {
@@ -227,7 +227,7 @@ router.post(
       present_district,
       current_designation,
     });
-    transfer.save();
+    // transfer.save();
     transferDB.push({
       email,
       mobile_number,
