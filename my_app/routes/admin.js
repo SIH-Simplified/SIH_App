@@ -24,7 +24,6 @@ router.get("/login", (req, res) => {
 })
 
 
-// jhflkjdslfdlkfsdlf
 router.get("/register", (req, res) => {
     res.render("admin/register");
 })
