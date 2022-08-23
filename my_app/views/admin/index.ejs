@@ -23,11 +23,17 @@
         body {
             background: #f5f5f5;
         }
+
+
+
+
+        #icon_img {
+            border-radius: 30px;
+        }
     </style>
 </head>
 
 <body>
-    <!-- <%- include("../templates/sidebar") %> -->
     <% if (typeof error !=='undefined' ) { %>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <%= error %>
@@ -39,6 +45,7 @@
                 id="burger"></span>
             <div style="width:13%;height:100%;position:fixed;background:white;border-right:1px solid #f5f5f5;z-index:3;"
                 id="navbar">
+
                 <center><br><br>
                     <img src="images/logo.svg" style="max-width:10vw;">
                     <br><br><br><br>
@@ -64,551 +71,557 @@
                 </center>
             </div>
             <div style="position:absolute;left:13%;width:87%;height:93%;top:0%;" id="maindiv">
-                <!-- <div style="width:98%;position:relative;left:1%;background:#7367f0;border-radius:5px;height:6.3%;font-family:'Poppins', sans-serif;margin-top:1.5%;"
-                        id="container1"> -->
-                <form
-                    style="position:absolute;width:20%;border-radius:30px;background:white;display:flex;margin-top:1%;left :65%;">
-                    <input type="text" placeholder="search"
-                        style="border-radius:30px;width:100%;background:none;border:none;">
-                    <button type="submit" class="glyphicon glyphicon-search"
-                        style="background:none;border:none;"></button>
-                </form>
-                <font style='padding-top:1%;left:90%;position:absolute;font-size:min(3vw,1.5rem);color:white;;'>
-                    Danny
-                    Scoff
-                </font>
-                <img src="images/emailusr.png" class="img-responsive" id="profile"
-                    style="width:55px;border-radius:50%;float:right;margin-right:30px;max-width:3.5vw;">
 
-            </div>
-            <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;height:19.5%;" id="row1">
-                <span class="col-md-4" id="institute">
-                    <div style="border-radius:7px;">
-                        <img src="images/institute.svg" id="institute_child" style="width:105%;">
+                <div class="navbar"
+                    style=" width: 97% ;height: 50px;background-color: #fff;border-radius: 10px;margin-left:1.5%; margin-top: 20px !important;overflow: hidden;background: rgba(255, 255, 255, 0.25);box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);backdrop-filter: blur(4px);-webkit-backdrop-filter: blur(4px);border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.18);">
+
+                    <div style="position: relative;left:0%;width:50%;">
+                        <a href="/client/email" style="color:black;font-size:min(2vw,2rem);padding-left:20px;"><i
+                                class="glyphicon glyphicon-envelope"></i></a>
+
+
+                        <a href="client/calendar" style="color:black;font-size:min(2vw,2rem);padding-left:20px;"><i
+                                class="glyphicon glyphicon-calendar"></i></a>
+
+                        <a href="client/todo" style="color:black;font-size:min(2vw,2rem);padding-left:20px;"><i
+                                class="glyphicon glyphicon-check"></i></a>
+
+                        <a href="#" style="color:black;font-size:min(2vw,2rem);padding-left:20px;"><i
+                                class="glyphicon glyphicon-bell"></i></a>
                     </div>
-                </span>
+                    <div style="position: relative;left:40%;width:50%;">
+                        <i class="glyphicon glyphicon-adjust" id="theme"
+                            style="color: black;font-size:min(2vw,2rem);padding-right:20px;"></i>
 
-                <span class="col-md-8" style="overflow:auto;height:100%;" id="teacherlistcont">
-                    <div style="background:white;border-radius:7px;;color:#202020;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                        id="container2">
-                        <font
-                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2.5rem);color:#202020;border:none;padding-left:1%;border-radius:7px;">
-                            Teachers List</font>
-                        <hr>
-                        <br>
-                        <table style="width:95%;margin-left:2.5%;" id="teacherlist">
-                            <tr style="font-size:min(1vw,1.5rem)" id="teacherlistheading">
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Department</th>
-                                <th>Email</th>
-                                <th>Class</th>
-                                <th>Subject</th>
-                                <th>Rating</th>
-                                <th>Action</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/emailusr.png" style="border-radius:50%;width:40px;margin:0;">
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)">Danny Scoff</font>
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)">Science</font>
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)">DannyScoff@edurecruit.in</font>
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)">12</font>
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)">Biology</font>
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)">5</font>
-                                </td>
-                                <td>
-                                    <font style="font-size:min(1vw,1.5rem)" class="glyphicon glyphicon-eye-open">
-                                    </font>
-                                </td>
-
-
-
-                            </tr>
-                        </table>
-                        <script>
-                            var teacherlist = document.getElementById("teacherlist");
-                            var cont2 = document.getElementById("container2");
-
-
-
-
-                        </script>
-
+                        <img src="images/pp.png" alt="pp" height="35px" width="35px" id="icon_img">
                     </div>
-                    <div style="width:100%;background-image:linear-gradient(rgb(0,0,0,0.1),rgb(0,0,0,0.5));top:0;position:absolute;"
-                        id="overlay">
+                </div>
+
+                <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;height:19.5%;" id="row1">
+                    <span class="col-md-4" id="institute">
+                        <div style="border-radius:7px;">
+                            <img src="images/institute.svg" id="institute_child" style="width:105%;">
+                        </div>
+                    </span>
+
+                    <span class="col-md-8" style="overflow:auto;height:100%;" id="teacherlistcont">
+                        <div style="background:white;border-radius:7px;;color:#202020;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                            id="container2">
+                            <font
+                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2.5rem);color:#202020;border:none;padding-left:1%;border-radius:7px;">
+                                Teachers List</font>
+                            <hr>
+                            <br>
+                            <table style="width:95%;margin-left:2.5%;" id="teacherlist">
+                                <tr style="font-size:min(1vw,1.5rem)" id="teacherlistheading">
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Email</th>
+                                    <th>Class</th>
+                                    <th>Subject</th>
+                                    <th>Rating</th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/emailusr.png" style="border-radius:50%;width:40px;margin:0;">
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)">Danny Scoff</font>
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)">Science</font>
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)">DannyScoff@edurecruit.in</font>
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)">12</font>
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)">Biology</font>
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)">5</font>
+                                    </td>
+                                    <td>
+                                        <font style="font-size:min(1vw,1.5rem)" class="glyphicon glyphicon-eye-open">
+                                        </font>
+                                    </td>
+
+
+
+                                </tr>
+                            </table>
+                            <script>
+                                var teacherlist = document.getElementById("teacherlist");
+                                var cont2 = document.getElementById("container2");
+
+
+
+
+                            </script>
+
+                        </div>
+
                         <center>
                             <span class="glyphicon glyphicon-menu-down"
-                                style="font-size:min(2vw,3rem);color:white;position:absolute;top:90%;"
+                                style="font-size:min(2vw,3rem);color:#202020;position:absolute;top:90%;"
                                 id="arrow"></span>
                         </center>
 
-                    </div>
-                </span>
-            </span>
-            <script>
-                var overlay = document.getElementById("overlay");
-                overlay.style.height = cont2.offsetHeight + "px";
 
-
-            </script>
-
-
-
-
-            <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row2">
-                <span class="col-md-6">
-                    <div style="background:white;border-radius:7px;;color:silver;font-family:'Poppins', sans-serif;width:100%;height:100%;"
-                        id="container3">
-                        <span class="row" style="height:100%;">
-                            <span class="col-md-4">
-                                `<br>
-                                <font
-                                    style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;padding-left:20%;border-radius:7px;"
-                                    id="attendencestats"> Attendence Stats</font>
-                                <div style="height:70%;width:100%;background:white;margin-top:10%;display:flex;"
-                                    id="attendencegraph">
-                                    <div
-                                        style="height:100%;width:4%;background:#aed8f0;border-radius:10px;margin-left:30%;">
-                                        <div
-                                            style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
-                                        </div>
-
-
-                                    </div>
-
-                                    <div
-                                        style="height:100%;width:4%;background:#4d5c96;border-radius:10px;margin-left:15%;">
-                                        <div
-                                            style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
-                                        </div>
-
-                                    </div>
-
-
-                                    <div
-                                        style="height:100%;width:4%;background:#f7726f;border-radius:10px;margin-left:15%;">
-
-                                        <div
-                                            style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
-
-                            </span>
-
-                            <span class="col-md-8 " id="attendencecontmain">
-                                <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                                    id="container3_child1">
-                                    <div style="width:100%;background:white;margin-top:10%;" id="attendencecontent">
-
-                                        <table style="width:100%;">
-                                            <tr>
-
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
-                                                            <b>2431</b>
-                                                        </font>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
-                                                            <b>892</b>
-                                                        </font>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
-                                                            <b> 209</b>
-                                                        </font>
-                                                    </center>
-                                                </td>
-
-                                            </tr>
-
-
-                                            <tr>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
-                                                            18-35</font>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
-                                                            36-55</font>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
-                                                            55<< /font>
-                                                    </center>
-                                                </td>
-                                            </tr>
-                                        </table>
-
-
-                                        <table style="width:82%;margin-top:5%;">
-                                            <tr>
-
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;border-radius:7px;">
-                                                        Course</font>
-                                                </td>
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;border-radius:7px;">
-                                                        Changes</font>
-                                                    </center>
-                                                </td>
-                                                <td>
-                                                    <font style="float:right;font-size:min(1vw,2rem);">Inc/Dec
-                                                    </font>
-                                                </td>
-
-                                            </tr>
-
-
-                                            <tr style="font-size:min(1vw,1.5rem);" id="attendencerow1">
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;float:left;">
-                                                        <font style="color:#aed8f0;">o</font> Digital Marketing
-                                                    </font>
-                                                </td>
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                        64% -> 94%</font>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            30% </font>
-                                                    </center>
-                                                </td>
-                                            </tr>
-
-
-                                            <tr style="font-size:min(1vw,1.5rem);" id="attendencerow2">
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                        <font style="color:#4d5c96;">o</font> Facebook Ads
-                                                    </font>
-                                                </td>
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                        64% -> 94%</font>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            30% </font>
-                                                    </center>
-                                                </td>
-                                            </tr>
-
-
-
-                                            <tr style="font-size:min(1vw,1.5rem);" id="attendencerow3">
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                        <font style="color:#f7726f;">o</font> Google Ads for
-                                                        Beginners
-                                                    </font>
-                                                </td>
-                                                <td>
-                                                    <font
-                                                        style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                        64% -> 94%</font>
-                                                </td>
-                                                <td>
-                                                    <center>
-                                                        <font
-                                                            style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            30% </font>
-                                                    </center>
-                                                </td>
-                                            </tr>
-                                        </table>
-
-                                    </div>
-
-                                </div>
-
-                            </span>
-
-                        </span>
-
-
-
-                    </div>
+                    </span>
                 </span>
                 <script>
-                    var width = window.screen.availWidth;
-                    var attendencecontent = document.getElementById("attendencecontent");
-                    var attendencegraph = document.getElementById("attendencegraph");
-                    var attendencecontmain = document.getElementById("attendencecontmain");
-                    if (width <= 800) {
-                        attendencecontmain.style.position = "relative;"
-                        attendencecontmain.style.top = attendencegraph.offsetTop + attendencegraph.offsetHeight + "px";
-                    }
+                    var overlay = document.getElementById("overlay");
+                    overlay.style.height = cont2.offsetHeight + "px";
+
 
                 </script>
-                <span class="col-md-6" id="summary">
-                    <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                        id="container4"><br><br>
-                        <font
-                            style="font-family:'Poppins', sans-serif;font-size:min(6vw,3rem);color:#202020;border:none;padding-left:10%;padding-right:20%;padding-top:10px;padding-bottom:10px;border-radius:7px;">
-                            Summary</font>
-                        <font
-                            style="font-family:'Poppins', sans-serif;font-size:min(3vw,1.7rem);color:white;background:#7367f0;border:none;padding-left:5%;padding-right:5%;padding-top:10px;padding-bottom:10px;border-radius:7px;float:right;margin-top:10px;margin-right:40px"
-                            id="compose">Export</font>
-                        <br><br>
-                        <span class="row">
-                            <span class="col-md-4">
-                                <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+
+
+
+
+                <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row2">
+                    <span class="col-md-6">
+                        <div style="background:white;border-radius:7px;;color:silver;font-family:'Poppins', sans-serif;width:100%;height:100%;"
+                            id="container3">
+                            <span class="row" style="height:100%;">
+                                <span class="col-md-4">
+                                    `<br>
                                     <font
-                                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                        Total Employees</font><br>
-                                    <font
-                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                        1,409</font><br>
-                                    <div
-                                        style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
-                                        <br>
-                                        <font
-                                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
-                                            <center>13 applications need review</center>
-                                        </font>
+                                        style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;padding-left:20%;border-radius:7px;"
+                                        id="attendencestats"> Attendence Stats</font>
+                                    <div style="height:70%;width:100%;background:white;margin-top:10%;display:flex;"
+                                        id="attendencegraph">
+                                        <div
+                                            style="height:100%;width:4%;background:#aed8f0;border-radius:10px;margin-left:30%;">
+                                            <div
+                                                style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                            </div>
+
+
+                                        </div>
+
+                                        <div
+                                            style="height:100%;width:4%;background:#4d5c96;border-radius:10px;margin-left:15%;">
+                                            <div
+                                                style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div
+                                            style="height:100%;width:4%;background:#f7726f;border-radius:10px;margin-left:15%;">
+
+                                            <div
+                                                style="height:60%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                            </div>
+                                        </div>
+
+
                                     </div>
-                                </div>
+
+
+                                </span>
+
+                                <span class="col-md-8 " id="attendencecontmain">
+                                    <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                                        id="container3_child1">
+                                        <div style="width:100%;background:white;margin-top:10%;" id="attendencecontent">
+
+                                            <table style="width:100%;">
+                                                <tr>
+
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
+                                                                <b>2431</b>
+                                                            </font>
+                                                        </center>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
+                                                                <b>892</b>
+                                                            </font>
+                                                        </center>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
+                                                                <b> 209</b>
+                                                            </font>
+                                                        </center>
+                                                    </td>
+
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
+                                                                18-35</font>
+                                                        </center>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
+                                                                36-55</font>
+                                                        </center>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
+                                                                55<< /font>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+
+                                            <table style="width:82%;margin-top:5%;">
+                                                <tr>
+
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;border-radius:7px;">
+                                                            Course</font>
+                                                    </td>
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;border-radius:7px;">
+                                                            Changes</font>
+                                                        </center>
+                                                    </td>
+                                                    <td>
+                                                        <font style="float:right;font-size:min(1vw,2rem);">Inc/Dec
+                                                        </font>
+                                                    </td>
+
+                                                </tr>
+
+
+                                                <tr style="font-size:min(1vw,1.5rem);" id="attendencerow1">
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;float:left;">
+                                                            <font style="color:#aed8f0;">o</font> Digital Marketing
+                                                        </font>
+                                                    </td>
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            64% -> 94%</font>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                                30% </font>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr style="font-size:min(1vw,1.5rem);" id="attendencerow2">
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            <font style="color:#4d5c96;">o</font> Facebook Ads
+                                                        </font>
+                                                    </td>
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            64% -> 94%</font>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                                30% </font>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+
+
+
+                                                <tr style="font-size:min(1vw,1.5rem);" id="attendencerow3">
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            <font style="color:#f7726f;">o</font> Google Ads for
+                                                            Beginners
+                                                        </font>
+                                                    </td>
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            64% -> 94%</font>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                                30% </font>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+
+                                </span>
+
                             </span>
 
-                            <span class="col-md-4">
 
-                                <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
-                                    <font
-                                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                        Overtimes</font><br>
-                                    <font
-                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                        1,409</font><br>
-                                    <div
-                                        style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
-                                        <br>
+
+                        </div>
+                    </span>
+                    <script>
+                        var width = window.screen.availWidth;
+                        var attendencecontent = document.getElementById("attendencecontent");
+                        var attendencegraph = document.getElementById("attendencegraph");
+                        var attendencecontmain = document.getElementById("attendencecontmain");
+                        if (width <= 800) {
+                            attendencecontmain.style.position = "relative;"
+                            attendencecontmain.style.top = attendencegraph.offsetTop + attendencegraph.offsetHeight + "px";
+                        }
+
+                    </script>
+                    <span class="col-md-6" id="summary">
+                        <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                            id="container4"><br><br>
+                            <font
+                                style="font-family:'Poppins', sans-serif;font-size:min(6vw,3rem);color:#202020;border:none;padding-left:10%;padding-right:20%;padding-top:10px;padding-bottom:10px;border-radius:7px;">
+                                Summary</font>
+                            <font
+                                style="font-family:'Poppins', sans-serif;font-size:min(3vw,1.7rem);color:white;background:#7367f0;border:none;padding-left:5%;padding-right:5%;padding-top:10px;padding-bottom:10px;border-radius:7px;float:right;margin-top:10px;margin-right:40px"
+                                id="compose">Export</font>
+                            <br><br>
+                            <span class="row">
+                                <span class="col-md-4">
+                                    <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
                                         <font
-                                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
-                                            <center>13 overtimes need review</center>
-                                        </font>
-                                    </div>
-                                </div>
-
-                            </span>
-                            <span class="col-md-4">
-
-                                <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
-                                    <font
-                                        style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                        Leaves</font><br>
-                                    <font
-                                        style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                        1,409</font><br>
-                                    <div
-                                        style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
-                                        <br>
+                                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                            Total Employees</font><br>
                                         <font
-                                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
-                                            <center>13 Leaves need review</center><br>
-                                        </font>
-                                    </div>
-                                </div>
-
-
-                            </span>
-
-                        </span>
-
-                    </div>
-                </span>
-
-
-            </span>
-
-
-            <span class="row" style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row3">
-                <span class="col-md-4" id="row3_child1">
-                    <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                        id="container5">
-                        <center><br>
-                            <div
-                                style="background:#F4F7FE;font-size:min(1.5vw,2rem);border-radius:30px;padding:30px;width:80%;">
-                                TEACHER’S TRANFER REQUEST
-                                PORTAL</div>
-                            <br><br>
-                            <font style="font-size:min(1.5vw,2rem);color:#7363EA;">REQUESTED APPLICATIONS</font>
-                            <br><br><br>
-                            <font style="font-size:min(1.5vw,2rem);color:#7363EA;">MANAGE EMPLOYEES
-                                <br><br>
-
-                            </font>
-
-                    </div>
-                    </center>
-                    <br>
-
-                    <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                        id="container6">
-                        <center>
-                            <br>
-                            <font style="font-size:min(4vw,2rem);"> MANAGE LEAVE APPLICATIONS</font>
-                        </center>
-                        <br><br>
-                        <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
-                            <br>
-                            <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Business Trip
-                            </font>
-                            <br>
-                            <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Kunal Kardam</font>
-                            <br><br>
-                        </div>
-                        <br><br>
-                        <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
-                            <br>
-                            <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Paid Leave
-                            </font>
-                            <br>
-                            <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Simarpreet Singh</font>
-                            <br><br>
-                        </div>
-
-                        <div
-                            style="background:rgb(0,0,0,0.6);width:95%;height:25%;position:absolute;top:75%;border-radius:7px;">
-
-                            <center>
-                                <span class="glyphicon glyphicon-menu-right"
-                                    style="font-size:min(3vw,6rem);color:white;position:absolute;top:50%;"
-                                    id="arrow2"></span>
-                            </center>
-
-                        </div>
-
-
-
-                    </div>
-
-                </span>
-
-                <span class="col-md-8" style="height:100%;overflow:auto;" id="row3_child2">
-                    <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                        id="container7">
-                        <br>
-                        <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">
-                            <form action="http://localhost:3000/admin/tasks/create" method="get">
-                                <button type="submit" class="btn btn-primary">Assign Task</button>
-                            </form>
-                        </font>
-                        <font
-                            style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;float:right;margin-right:40px;"
-                            id="assign2">Assign Now<br></font>
-                        <hr>
-                        <table style="width:90%;margin-left:5%;" id="tasks">
-
-                            <tr style="font-size:min(2vw,1.5rem);border-bottom : 1px solid  #f5f5f5 ">
-                                <th>#</th>
-                                <th>Task</th>
-                                <th>Assigned Teachers</th>
-                                <th>Status</th>
-                                <th>Progress</th>
-                            </tr>
-                            <% if(typeof tasks !=="undefined" && tasks.length !==0) {%>
-                                <% for(let i=0;i<tasks.length;i++) {%>
-                                    <tr style="border-bottom :1px solid  #f5f5f5; ">
-                                        <td style="padding-bottom :10px;padding-top:10px;">
-                                            <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
-                                                <%= i+1 %>
-                                            </font>
-                                        </td>
-                                        <td style="padding-bottom :10px;padding-top:10px;">
-                                            <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
-                                                <%= tasks[i].task %>
-                                            </font>
-                                        </td>
-                                        <td style="padding-bottom :10px;padding-top:10px;">
-                                            <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
-                                                <%= tasks[i].assignedTeachers %>
-                                            </font>
-                                        </td>
-                                        <td style="padding-bottom :10px;padding-top:10px;">
+                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                            1,409</font><br>
+                                        <div
+                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                            <br>
                                             <font
-                                                style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;
-                                                    border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
-                                                <%= tasks[i].status %>
+                                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
+                                                <center>13 applications need review</center>
                                             </font>
-                                        </td>
-                                        <td style="padding-bottom :10px;padding-top:10px;">
-                                            <form
-                                                action="http://localhost:3000/admin/tasks/delete/<%= i %>?_method=DELETE"
-                                                method="post">
-                                                <button type="submit" class="btn btn-secondary"> Delete
-                                                </button>
-                                            </form>
-                                            <button type="button" class="btn btn-secondary">
-                                                <span class="glyphicon glyphicon-trash"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <% } %>
-                                        <% } %>
-                        </table>
-                        <script>
-                            var summary = document.getElementById("summary");
-                            if (width <= 800) {
-                                attendencecontmain.style.top = attendencecontmain.offsetTop +
-                                    attendencecontmain.offsetHeight + "px";
-                            }
+                                        </div>
+                                    </div>
+                                </span>
 
-                            var row3_child1 = document.getElementById("row3_child1");
-                            var row3_child2 = document.getElementById("row3_child2");
-                            row3_child2.style.height = row3_child1.offsetHeight + "px";
-                            var tasks = document.getElementById("tasks");
-                        </script>
-                    </div>
+                                <span class="col-md-4">
+
+                                    <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                        <font
+                                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                            Overtimes</font><br>
+                                        <font
+                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                            1,409</font><br>
+                                        <div
+                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                            <br>
+                                            <font
+                                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
+                                                <center>13 overtimes need review</center>
+                                            </font>
+                                        </div>
+                                    </div>
+
+                                </span>
+                                <span class="col-md-4">
+
+                                    <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                        <font
+                                            style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                            Leaves</font><br>
+                                        <font
+                                            style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
+                                            1,409</font><br>
+                                        <div
+                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                            <br>
+                                            <font
+                                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
+                                                <center>13 Leaves need review</center><br>
+                                            </font>
+                                        </div>
+                                    </div>
+
+
+                                </span>
+
+                            </span>
+
+                        </div>
+                    </span>
+
+
                 </span>
-            </span>
+
+
+                <span class="row" style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row3">
+                    <span class="col-md-4" id="row3_child1">
+                        <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                            id="container5">
+                            <center><br>
+                                <div
+                                    style="background:#F4F7FE;font-size:min(1.5vw,2rem);border-radius:30px;padding:30px;width:80%;">
+                                    TEACHER’S TRANFER REQUEST
+                                    PORTAL</div>
+                                <br><br>
+                                <font style="font-size:min(1.5vw,2rem);color:#7363EA;">REQUESTED APPLICATIONS</font>
+                                <br><br><br>
+                                <font style="font-size:min(1.5vw,2rem);color:#7363EA;">MANAGE EMPLOYEES
+                                    <br><br>
+
+                                </font>
+
+                        </div>
+                        </center>
+                        <br>
+
+                        <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                            id="container6">
+                            <center>
+                                <br>
+                                <font style="font-size:min(4vw,2rem);"> MANAGE LEAVE APPLICATIONS</font>
+                            </center>
+                            <br><br>
+                            <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
+                                <br>
+                                <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Business Trip
+                                </font>
+                                <br>
+                                <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Kunal Kardam</font>
+                                <br><br>
+                            </div>
+                            <br><br>
+                            <div style="border:1px solid black;width:80%;border-radius:10px;margin-left:10%;">
+                                <br>
+                                <font style="font-size:min(2vw,2rem);padding-left:40px;color:#b3e1ee;">Paid Leave</font>
+                                <br>
+                                <font style="font-size:min(1.5vw,2rem);padding-left:40px;">Simarpreet Singh</font>
+                                <br><br>
+                            </div>
+
+                            <div
+                                style="background:rgb(0,0,0,0.6);width:95%;height:25%;position:absolute;top:75%;border-radius:7px;">
+
+                                <center>
+                                    <span class="glyphicon glyphicon-menu-right"
+                                        style="font-size:min(3vw,6rem);color:white;position:absolute;top:50%;"
+                                        id="arrow2"></span>
+                                </center>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </span>
+
+                    <span class="col-md-8" style="height:100%;overflow:auto;" id="row3_child2">
+                        <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                            id="container7">
+                            <br>
+                            <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">
+                                <form action="http://localhost:3000/admin/tasks/create" method="get">
+                                    <button type="submit" class="btn btn-primary">Assign Task</button>
+                                </form>
+                            </font>
+                            <font
+                                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;float:right;margin-right:40px;"
+                                id="assign2">Assign Now<br></font>
+                            <hr>
+                            <table style="width:90%;margin-left:5%;" id="tasks">
+
+                                <tr style="font-size:min(2vw,1.5rem);border-bottom : 1px solid  #f5f5f5 ">
+                                    <th>#</th>
+                                    <th>Task</th>
+                                    <th>Assigned Teachers</th>
+                                    <th>Status</th>
+                                    <th>Progress</th>
+                                </tr>
+                                <% if(typeof tasks !=="undefined" && tasks.length !==0) {%>
+                                    <% for(let i=0;i<tasks.length;i++) {%>
+                                        <tr style="border-bottom :1px solid  #f5f5f5; ">
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    <%= i+1 %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    <%= tasks[i].task %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    <%= tasks[i].assignedTeachers %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font
+                                                    style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;
+                                                    border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
+                                                    <%= tasks[i].status %>
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <form
+                                                    action="http://localhost:3000/admin/tasks/delete/<%= i %>?_method=DELETE"
+                                                    method="post">
+                                                    <button type="submit" class="btn btn-secondary"> Delete </button>
+                                                </form>
+                                                <button type="button" class="btn btn-secondary">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <% } %>
+                                            <% } %>
+                            </table>
+                            <script>
+                                var summary = document.getElementById("summary");
+                                if (width <= 800) {
+                                    attendencecontmain.style.top = attendencecontmain.offsetTop +
+                                        attendencecontmain.offsetHeight + "px";
+                                }
+
+                                var row3_child1 = document.getElementById("row3_child1");
+                                var row3_child2 = document.getElementById("row3_child2");
+                                row3_child2.style.height = row3_child1.offsetHeight + "px";
+                                var tasks = document.getElementById("tasks");
+                            </script>
+                        </div>
+                    </span>
+                </span>
             </div>
             <script>
                 var institute = document.getElementById("institute");
@@ -774,8 +787,7 @@
                                 <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
                                 </font>
                                 <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English
-                                    Teacher
+                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
                                 </font>
                                 <br><br>
                             </center>
@@ -826,8 +838,7 @@
                                 <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
                                 </font>
                                 <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English
-                                    Teacher
+                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
                                 </font>
                                 <br><br>
                             </center>
@@ -878,8 +889,7 @@
                                 <font style="font-size:min(2vw,4rem);font-family:'Poppins', sans-serif;">Danny Scoff
                                 </font>
                                 <br>
-                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English
-                                    Teacher
+                                <font style="font-size:min(2vw,2rem);font-family:'Poppins', sans-serif;">English Teacher
                                 </font>
                                 <br><br>
                             </center>

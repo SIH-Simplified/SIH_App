@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
 
-
-a{
+a {
   text-decoration: none !important;
   color: #000 !important;
 }
@@ -27,7 +26,7 @@ a{
   height: 50px;
   background-color: #fff;
   border-radius: 10px;
-  margin-left:150px !important; 
+  margin-left: 150px !important;
   margin-top: 20px !important;
   overflow: hidden;
   position: fixed !important;
@@ -423,7 +422,6 @@ a{
   border-radius: 20px;
   background-color: #00cbff;
 }
-
 
 .six-link {
   text-decoration: none;
