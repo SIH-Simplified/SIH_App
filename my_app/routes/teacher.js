@@ -18,9 +18,13 @@ const router = express.Router();
 router.get("/", (req, res) => {
   let department = "Primary";
   let userName = "Kunal Kumar";
+  let serviceSpan = '1.4 years';
+  let salary = '75k'
   res.render("teacher/index", {
     department: department,
     userName: userName,
+    serviceSpan: serviceSpan,
+    salary : salary
   });
 });
 router.get("/login", (req, res) => {
