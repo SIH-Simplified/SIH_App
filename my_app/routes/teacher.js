@@ -12,15 +12,19 @@ const cloudinary = require("../cloudinary/index");
 const leaveDB = require("../leaveDB");
 const promotionDB = require("../promotion");
 const promotion = require("../models/teacher/promotion");
-
+const teacherDB = require("../teacherDB");
 const router = express.Router();
 
 router.get("/", (req, res) => {
   let department = "Primary";
   let userName = "Kunal Kumar";
+  let serviceSpan = '1.4 years';
+  let salary = '75k'
   res.render("teacher/index", {
     department: department,
     userName: userName,
+    serviceSpan: serviceSpan,
+    salary: salary
   });
 });
 router.get("/login", (req, res) => {
@@ -223,7 +227,7 @@ router.post(
       present_district,
       current_designation,
     });
-    transfer.save();
+    // transfer.save();
     transferDB.push({
       email,
       mobile_number,

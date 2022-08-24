@@ -62,7 +62,9 @@
                         <div class="group two" id="div2">
                           <div class="two-line">
                             <h6 class="two-text-one">Service span</h6>
-                            <h6 class="two-text-two">2.5Years</h6>
+                            <h6 class="two-text-two">
+                              <%= serviceSpan %>
+                            </h6>
                             <img src="images/Group 2.png" width="140" height="55" class="two-img" />
                           </div>
                         </div>
@@ -71,7 +73,9 @@
                         <div class="group three" id="div3">
                           <div class="three-line">
                             <h6 class="three-text-one">Current salary</h6>
-                            <h6 class="three-text-two">43k</h6>
+                            <h6 class="three-text-two">
+                              <%= salary %>
+                            </h6>
                             <img src="images/Group 1.png" class="three-img" width="180" />
                           </div>
                         </div>
@@ -160,58 +164,61 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="group five" id="div5">
-                        <div class="five-row-main">
-                          <div class="five-col-a">
-                            <div class="five-top">
-                              <h4>PROMOTION CREDITS</h4>
+                      <a href="/client/promotion">
+                        <div class="group five" id="div5">
+                          <div class="five-row-main">
+                            <div class="five-col-a">
+                              <div class="five-top">
+
+                                <h4>PROMOTION CREDITS</h4>
+                              </div>
+                              <div class="five-mid">
+                                <p>
+                                  apply for qualification<br />
+                                  exam
+                                </p>
+                              </div>
+                              <div class="five-bottom">
+                                <div class="five-circle-a"></div>
+                                experience
+                                <div class="five-circle-b"></div>
+                                qualification
+                                <div class="five-circle-c"></div>
+                                good practices
+                              </div>
                             </div>
-                            <div class="five-mid">
-                              <p>
-                                apply for qualification<br />
-                                exam
-                              </p>
-                            </div>
-                            <div class="five-bottom">
-                              <div class="five-circle-a"></div>
-                              experience
-                              <div class="five-circle-b"></div>
-                              qualification
-                              <div class="five-circle-c"></div>
-                              good practices
-                            </div>
-                          </div>
-                          <div class="five-col-b" id="five-circle">
-                            <script>
-                              var options = {
-                                series: [44, 55, 41, 17, 15],
-                                chart: {
-                                  type: "donut",
-                                },
-                                legend: {
-                                  show: false,
-                                },
-                                responsive: [
-                                  {
-                                    breakpoint: 480,
-                                    options: {
-                                      chart: {
-                                        width: 200,
+                            <div class="five-col-b" id="five-circle">
+                              <script>
+                                var options = {
+                                  series: [44, 55, 41, 17, 15],
+                                  chart: {
+                                    type: "donut",
+                                  },
+                                  legend: {
+                                    show: false,
+                                  },
+                                  responsive: [
+                                    {
+                                      breakpoint: 480,
+                                      options: {
+                                        chart: {
+                                          width: 200,
+                                        },
                                       },
                                     },
-                                  },
-                                ],
-                              };
+                                  ],
+                                };
 
-                              var chart = new ApexCharts(
-                                document.querySelector("#five-circle"),
-                                options
-                              );
-                              chart.render();
-                            </script>
+                                var chart = new ApexCharts(
+                                  document.querySelector("#five-circle"),
+                                  options
+                                );
+                                chart.render();
+                              </script>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -422,7 +429,7 @@
                               </p>
                             </div>
                             <button class="eight-button-a" id="transferbt1">
-                              NOTIFICATIONS
+                              <a href="/client/email">NOTIFICATIONS</a>
                               <i class="fa-regular fa-bell"></i></button><br />
                             <button class="eight-button-b" id="transferbt2">
                               <a href="/client/transfer/guidelines">CHECK ELIGIBILITY</a>

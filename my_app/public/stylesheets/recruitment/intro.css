@@ -1,0 +1,43 @@
+.main-row {
+  display: flex;
+  gap: 600px;
+}
+.file {
+  border: solid 1px;
+  width: 250px;
+  height: 40px;
+  padding: 4px;
+  border-radius: 10px;
+}
+.cheak-main {
+  margin-top: 10px;
+}
+
+.tems {
+  display: flex;
+  margin-top: 5px;
+}
+
+.input.largerCheckbox {
+  width: 1.9em;
+  height: 1.9em;
+}
+.largerCheckbox {
+  margin-right: 6px;
+  background-color: #f5365c;
+}
+
+.sub-row {
+  display: flex;
+}
+.col-2 {
+  margin-left: 50%;
+  width: 30% !important;
+}
+
+.col-left {
+  width: 50%;
+}
+.col-right {
+  width: 50%;
+}
