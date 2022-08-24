@@ -231,14 +231,17 @@
 
         <br>
         <span class="row" id="row2">
-            <span class="col-md-3">
-                <div class="row1_child" style="overflow:auto;height:48.5rem;">
+            <span class="col-md-3" id  = "manageapplication_col">
+                <div class="row1_child" style="overflow:auto;height:47rem;">
                     <br>
-                    <font class="row1_child_font1">Manage Applications</font>
+                    <font class="row1_child_font1" style = "font-size:min(3vw,2rem);">Manage Applications</font>
                     <div style="height:100%;" id="manageapplication">
                         <div style="height:100%;" id="manageapplication">
                             <% if(typeof application !=="undefined" && application.length !==0) {%>
                                 <% for(let i=0;i<application.length;i++) {%>
+                                    <a style = "text-decoration:none;"
+                                        href="http://localhost:3000/superAdmin/manageApplication/<%= i %>"
+                                        role="button">
                                     <div id="manage" style="border :1px solid #f8f8f8;background :#f8f8f8;">
                                         <br>
                                         <img src="images/emailusr.png"
@@ -252,14 +255,15 @@
                                             <%= application[i].subject %>
                                         </font>
                                         <div style="margin-left:27%;width:70%;overflow:hidden;">
-                                            <font style="white-space:nowrap;">
+                                            <font style="white-space:nowrap;color:#202020;">
                                                 <%= application[i].message %>
                                             </font>
+                                        
                                         </div>
+                                   
                                     </div>
-                                    <a class="btn btn-secondary"
-                                        href="http://localhost:3000/superAdmin/manageApplication/<%= i %>"
-                                        role="button">View</a>
+                                </a>
+                                   
                                     <% } %>
                                         <% } %>
                         </div>
@@ -269,7 +273,7 @@
             <span class="col-md-9">
                 <span class="row" style="height:46%;">
                     <span class="col-md-4">
-                        <div class="row1_child" style="height:54%;">
+                        <div class="row1_child" style="height:44%;">
                             <br>
                             <center>
                                 <font class="row1_child_font1"> Allot admin roles</font><br><br>
@@ -277,42 +281,48 @@
                                     style="border:1px solid grey;border-radius:7px;padding:10px;"> 295 roles alloted
                                 </font>
                                 <form action="http://localhost:3000/superAdmin/admins" method=" get">
-                                    <button type="button" class="btn btn-primary"> View school summary</button>
+                                    
+                                    <button type="submit" class = "row1_child_font1" style = "background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);">
+                                        View school summary</button>
                                 </form>
                             </center>
                         </div>
                         <br>
-                        <div class="row1_child" style="height:54%;">
+                        <div class="row1_child" style="height:46%;">
                             <center>
                                 <font class="row1_child_font1"> push updates </font>
 
                                 <form action="http://localhost:3000/superAdmin/pushUpdates">
-                                    <button type="submit" class="btn btn-info"
-                                        style="border:1px solid grey;border-radius:7px;padding:10px;">
+                                   
+                                    
+                                        <button type="submit" class = "row1_child_font1" style = "background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);">
+    
                                         View updates</button>
                                 </form>
+                                
+                                      
+                              
                                 <form action="http://localhost:3000/superAdmin/pushUpdates/create">
-                                    <button type="submit" class="btn btn-info"
-                                        style="border:1px solid grey;border-radius:7px;padding:10px;">
-                                        Push Updates</button>
+                                    <button type="submit" class = "row1_child_font1" style = "background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);">
+
+                                        Add an update
+                                    </button>
+                                       
                                 </form>
-                                <br><br><br><br>
-                                <font class="row1_child_font1"
-                                    style="border:1px solid grey;border-radius:7px;padding:10px;background:#6853F8;color:white;">
-                                    add an update</font>
                             </center>
                         </div>
                     </span>
                     <span class="col-md-8">
-                        <div class="row1_child" style="height:54%;overflow:auto;">
+                        <div class="row1_child" style="height:44%;overflow:auto;">
                             <br>
                             <font class="row1_child_font1"> Schedule Trainings </font>
+                            <font style="color:#6853F8;font-size:min(3vw,3rem); ">
+                                <a class="btn btn-primary" href="http://localhost:3000/superAdmin/scheduleMettings"
+                                    role="button">+</a>
+                            </font>
                             <!-- <font style="color:#6853F8;font-size:min(3vw,3rem); "> +</font><br> -->
                             <div style="height:100%;" id="schedule">
-                                <font style="color:#6853F8;font-size:min(3vw,3rem); ">
-                                    <a class="btn btn-primary" href="http://localhost:3000/superAdmin/scheduleMettings"
-                                        role="button">+</a>
-                                </font><br>
+                                <br>
                                 <% if(typeof training !=="undefined" && training.length !==0) {%>
                                     <% for(let i=0;i<training.length;i++) {%>
                                         <div
@@ -326,7 +336,7 @@
                                             </font>
                                             <font
                                                 style="font-family:Poppins;font-style:normal;color:#6853F8;font-size:min(3vw,1.2rem);margin-left:27%;">
-                                                <a class="btn btn-primary" href="<%= training[i].training_pdf %>"
+                                                <a class="btn btn-primary" href="<%= training[i].training_pdf %>" style = "border:none;border-radius:5px;padding:5px;font-size:min(2vw,1.3rem);"
                                                     role="button">
                                                     Training Doc
                                                 </a>
@@ -344,7 +354,7 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row1_child" style="height:54%;">
+                        <div class="row1_child" style="height:46%;" id = "transfer_request">
                             <br>
                             <center>
                                 <font class="row1_child_font1">Manage teacher’s transfer requests </font><br><br>
@@ -352,7 +362,7 @@
                                     style="border:1px solid grey;border-radius:7px;padding:10px;"> 27 pending
                                 </font>
                                 <br><br><br><br>
-                                <a class="btn btn-danger" href="http://localhost:3000/superAdmin/teacherTransfer"
+                                <a  class = "row1_child_font1" href="http://localhost:3000/superAdmin/teacherTransfer" style = "background-color:red;color:white;text-decoration:none;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);;"
                                     role="button">
                                     View Applications
                                 </a>
@@ -362,7 +372,7 @@
                 </span>
             </span>
             <br>
-            <span class="row" id="row3">
+            <span class="row" id="row3" style = "position: absolute;left:0%;">
                 <span class="col-md-12">
                     <div class="row1_child" style="height:100%;" id="chart">
                     </div>
@@ -405,6 +415,14 @@
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
+
+
+        var row3 = document.getElementById("row3");
+        var manageapplication_col = document.getElementById("manageapplication_col");
+        var transfer_request = document.getElementById("transfer_request");
+        console.log(transfer_request.offsetHeight+transfer_request.offsetTop);
+        row3.style.top = transfer_request.offsetHeight*3+transfer_request.offsetTop+"px";
+        manageapplication_col.style.height = transfer_request.offsetHeight*2.1+"px";
     </script>
 </body>
 
