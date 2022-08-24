@@ -36,3 +36,24 @@
 ### Other pages
 
 - [ ] Add commen button in the navbar for all dashboards like navigating to the home page
+
+        <!-- <center>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">Exams</button>
+            </font><br><br>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">View Portfolio</button>
+            </font><br>
+            <font class="navigation-bt">
+                <a class="btn btn-primary" href="http://localhost:3000/superAdmin/scheduleMettings"
+                    role="button">Schedule Mettings</a>
+            </font><br>
+            <font class="navigation-bt">
+                <button type="button" class="btn btn-primary">Exam list</button>
+            </font><br>
+            <font class="navigation-bt">
+                <a class="btn btn-primary" href="http://localhost:3000/superAdmin/assignAdmin" role="button">
+                    Allot Admin roll
+                </a>
+            </font><br>
+        </center> -->

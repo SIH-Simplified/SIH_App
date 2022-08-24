@@ -16,9 +16,9 @@ const trainingDB = require("../trainingDB");
 const assignAdmin = require("../adminApply");
 router.get("/", async (req, res, next) => {
     try {
-        const countOfTeachers = await Teacher.find({}).count();
+        // const countOfTeachers = await Teacher.find({}).count();
         const countOfSchools = school.length;
-        res.render("superAdmin/index", { countOfTeachers, countOfSchools, application, training: trainingDB });
+        res.render("superAdmin/index", { countOfTeachers: 1, countOfSchools, application, training: trainingDB });
 
     } catch (error) {
         next(error);
