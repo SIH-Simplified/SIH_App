@@ -31,7 +31,7 @@ router.get("/", async (req, res, next) => {
 });
 
 router.get("/email", (req, res) => {
-  res.render("client/email");
+  res.render("teacher/email");
 });
 
 router.get("/pushUpdates", (req, res) => {
