@@ -34,6 +34,20 @@ router.get("/email", (req, res) => {
   res.render("teacher/email");
 });
 
+router.get("/departments", (req, res) => {
+  res.render("superAdmin/departments");
+});
+
+router.get("/teachers", (req, res) => {
+  res.render("superAdmin/teachers");
+});
+router.get("/tasks", (req, res) => {
+  res.render("to_do");
+});
+router.get("/calendar", (req, res) => {
+  res.render("teacher/calendar");
+});
+
 router.get("/pushUpdates", (req, res) => {
   res.render("superAdmin/pushUpdates", { pushUpdates: pushUpdatesDB });
 });
