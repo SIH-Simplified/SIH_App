@@ -5,7 +5,8 @@ const express = require('express');
 const router = express.Router();
 const JWT = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-/* GET home page. */
+
+
 const checkAuthMiddleWare = async (req, res, next) => {
   try {
     const cookies = req.cookies;
