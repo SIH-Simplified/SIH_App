@@ -8,6 +8,6 @@ router.get("/", (req, res) => {
 });
 
 router.get("/introduction", (req, res) => {
-  res.render("/recruitment/into");
+  res.render("/recruitment/intro");
 });
 module.exports = router;
