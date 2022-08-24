@@ -21,12 +21,17 @@
                     <div class="dot"> <a href="#" class="dot-link"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" cl ass="form-label">Email address</label>
+                    <input type="title" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
                 <div class="drop-down">
-
-                    <select name="district" class="district">
+                    <select name="district" class="form-select district" aria-label="Default select example">
+                        <option selected>District</option>
                         <% if(typeof district !=="undefined" && district.length !==0) {%>
                             <% for(let i=0; i < district.length ; i++) {%>
-                                <option value="<%= district[i]  %>">
+                                <option value="<%= district[i]%>">
                                     <%= district[i] %>
                                 </option>
                                 <% } %>
