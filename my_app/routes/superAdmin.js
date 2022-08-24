@@ -14,120 +14,144 @@ const transferDB = require("../transferDB");
 const application = require("../applicationSuperAdminDB");
 const trainingDB = require("../trainingDB");
 const assignAdmin = require("../adminApply");
-router.get("/", async (req, res, next) => {
-    try {
-        const countOfTeachers = await Teacher.find({}).count();
-        const countOfSchools = school.length;
-        res.render("superAdmin/index", { countOfTeachers, countOfSchools, application, training: trainingDB });
 
-    } catch (error) {
-        next(error);
-    }
-})
+router.get("/", async (req, res, next) => {
+  try {
+    const countOfTeachers = await Teacher.find({}).count();
+    const countOfSchools = school.length;
+    res.render("superAdmin/index", {
+      countOfTeachers,
+      countOfSchools,
+      application,
+      training: trainingDB,
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/email", (req, res) => {
+  res.render("teacher/email");
+});
+
+router.get("/departments", (req, res) => {
+  res.render("superAdmin/departments");
+});
+
+router.get("/teachers", (req, res) => {
+  res.render("superAdmin/teachers");
+});
+router.get("/tasks", (req, res) => {
+  res.render("to_do");
+});
+router.get("/calendar", (req, res) => {
+  res.render("teacher/calendar");
+});
 
 router.get("/pushUpdates", (req, res) => {
-    res.render("superAdmin/pushUpdates", { pushUpdates: pushUpdatesDB });
-})
+  res.render("superAdmin/pushUpdates", { pushUpdates: pushUpdatesDB });
+});
 
 router.get("/pushUpdates/create", (req, res) => {
-    res.render("superAdmin/sendUpdate", { district: districtDB });
-})
+  res.render("superAdmin/sendUpdate", { district: districtDB });
+});
 
 router.post("/pushUpdates/create", async (req, res, next) => {
-    const { message, district } = req.body;
-    const schools = school.filter((school) => school.district === district);
-    schools.push({ message });
-    pushUpdatesDB.push(message);
-    dailyUpdatesDB.push(message);
-    res.redirect("/superAdmin/pushUpdates");
-})
+  const { message, district } = req.body;
+  const schools = school.filter((school) => school.district === district);
+  schools.push({ message });
+  pushUpdatesDB.push(message);
+  dailyUpdatesDB.push(message);
+  res.redirect("/superAdmin/pushUpdates");
+});
 
 router.delete("/pushUpdates/delete/:id", (req, res) => {
-    const { id } = req.params;
-    pushUpdatesDB.splice(id, 1);
-    res.redirect("/superAdmin/pushUpdates");
-})
+  const { id } = req.params;
+  pushUpdatesDB.splice(id, 1);
+  res.redirect("/superAdmin/pushUpdates");
+});
 
 router.delete("/pushUpdates/:id", (req, res) => {
-    const { id } = req.params;
-    pushUpdates.splice(id, 1);
-    res.redirect("/superAdmin");
-})
+  const { id } = req.params;
+  pushUpdates.splice(id, 1);
+  res.redirect("/superAdmin");
+});
 
 router.get("/scheduleMettings", (req, res) => {
-    res.render("superAdmin/scheduleMettings", { training });
-})
+  res.render("superAdmin/scheduleMettings", { training });
+});
 
 router.post("/scheduleMettings", async (req, res) => {
-    const { title, timeFrom, timeTo, timeDuration, timeFormat, trainingDoc } = req.body;
-    try {
-        const fileURL = cloudinary.uploader.upload(trainingDoc);
-        training.push({
-            title,
-            dateFrom: timeFrom,
-            dateTo: timeTo,
-            location,
-            training_pdf: fileURL
-        })
-        res.redirect("/superAdmin/scheduleMettings");
-    } catch (error) {
-        next(error);
-    }
-})
+  const { title, timeFrom, timeTo, timeDuration, timeFormat, trainingDoc } =
+    req.body;
+  try {
+    const fileURL = cloudinary.uploader.upload(trainingDoc);
+    training.push({
+      title,
+      dateFrom: timeFrom,
+      dateTo: timeTo,
+      location,
+      training_pdf: fileURL,
+    });
+    res.redirect("/superAdmin/scheduleMettings");
+  } catch (error) {
+    next(error);
+  }
+});
 
 router.delete("/scheduleMettings/:id", (req, res) => {
-    const { id } = req.params;
-    training.splice(id, 1);
-    res.redirect("/superAdmin/scheduleMetttings");
-})
+  const { id } = req.params;
+  training.splice(id, 1);
+  res.redirect("/superAdmin/scheduleMetttings");
+});
 
 router.get("/schools", (req, res) => {
-    res.render("superAdmin/schools", { school });
-})
+  res.render("superAdmin/schools", { school });
+});
 
 router.get("/teacherTransfer", (req, res) => {
-    res.render("superAdmin/teacherTransfer");
-})
+  res.render("superAdmin/teacherTransfer");
+});
 
 router.get("/teacherTransfer/:id", (req, res) => {
-    const { id } = req.params;
-    res.render("superAdmin/acknowledgement", { transfer: transferDB[id], id });
-})
+  const { id } = req.params;
+  res.render("superAdmin/acknowledgement", { transfer: transferDB[id], id });
+});
 
 router.post("/teacherTransfer/:id", (req, res) => {
-    const { id } = req.params;
-    transfer.splice(id, 1);
-    // Need to add extra logic for full filling transfer process
-    res.redirect("/superAdmin/teacherTransfer");
-})
+  const { id } = req.params;
+  transfer.splice(id, 1);
+  // Need to add extra logic for full filling transfer process
+  res.redirect("/superAdmin/teacherTransfer");
+});
 
 router.delete("teacherTransfer/:id", (req, res) => {
-    const { id } = req.params;
-    transfer.splice(id, 1);
-    // Need to add extra logic for full filling transfer process
-    res.redirect("/superAdmin/teacherTransfer");
-})
+  const { id } = req.params;
+  transfer.splice(id, 1);
+  // Need to add extra logic for full filling transfer process
+  res.redirect("/superAdmin/teacherTransfer");
+});
 
 router.get("/assignAdmin", (req, res) => {
-    res.render("superAdmin/assignAdmin", { assignAdmin });
-})
+  res.render("superAdmin/assignAdmin", { assignAdmin });
+});
 
 router.patch("/assignAdmin/:id", (req, res) => {
-    const { id } = req.params;
-    assignAdmin[id].isAdmin = 1; // update postion of teacher to admin in the backend
-    assignAdmin.splice(id, 1);
-    res.redirect("/superAdmin/assignAdmin");
-})
+  const { id } = req.params;
+  assignAdmin[id].isAdmin = 1; // update postion of teacher to admin in the backend
+  assignAdmin.splice(id, 1);
+  res.redirect("/superAdmin/assignAdmin");
+});
 
 router.delete("/assignAdmin/:id", (req, res) => {
-    const { id } = req.params;
-    assignAdmin.splice(id, 1);
-    res.redirect("/superAdmin/assignAdmin");
-})
+  const { id } = req.params;
+  assignAdmin.splice(id, 1);
+  res.redirect("/superAdmin/assignAdmin");
+});
 
 router.get("/manageApplication/:id", (req, res) => {
-    const { id } = req.params;
-    res.render("superAdmin/application", { application: application[id] });
-})
+  const { id } = req.params;
+  res.render("superAdmin/application", { application: application[id] });
+});
 
 module.exports = router;
