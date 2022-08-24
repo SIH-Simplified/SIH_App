@@ -316,7 +316,7 @@
                                                     <td>
                                                         <font
                                                             style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;float:left;">
-                                                            <font style="color:#aed8f0;">o</font> Digital Marketing
+                                                            <font style="color:#aed8f0;">o</font> Days attended
                                                         </font>
                                                     </td>
                                                     <td>
@@ -338,7 +338,7 @@
                                                     <td>
                                                         <font
                                                             style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            <font style="color:#4d5c96;">o</font> Facebook Ads
+                                                            <font style="color:#4d5c96;">o</font> Overtime
                                                         </font>
                                                     </td>
                                                     <td>
@@ -361,8 +361,8 @@
                                                     <td>
                                                         <font
                                                             style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            <font style="color:#f7726f;">o</font> Google Ads for
-                                                            Beginners
+                                                            <font style="color:#f7726f;">o</font> Leaves Taken
+                                                          
                                                         </font>
                                                     </td>
                                                     <td>
@@ -415,7 +415,7 @@
                             <br><br>
                             <span class="row">
                                 <span class="col-md-4">
-                                    <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                    <div style="border-radius:7px;background:white;border:1px solid #303030;" id = "summary_child1"><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             Total Employees</font><br>
@@ -423,7 +423,7 @@
                                             style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             1,409</font><br>
                                         <div
-                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;" id = "summary_sub_child1">
                                             <br>
                                             <font
                                                 style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
@@ -435,7 +435,7 @@
 
                                 <span class="col-md-4">
 
-                                    <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                    <div style="border-radius:7px;background:white;border:1px solid #303030;" id = "summary_child2"><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             Overtimes</font><br>
@@ -443,7 +443,7 @@
                                             style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             1,409</font><br>
                                         <div
-                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;" id = "summary_sub_child2">
                                             <br>
                                             <font
                                                 style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
@@ -455,7 +455,7 @@
                                 </span>
                                 <span class="col-md-4">
 
-                                    <div style="border-radius:7px;background:white;border:1px solid #303030;"><br>
+                                    <div style="border-radius:7px;background:white;border:1px solid #303030;" id = "summary_child3"><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             Leaves</font><br>
@@ -463,7 +463,7 @@
                                             style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             1,409</font><br>
                                         <div
-                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;">
+                                            style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;" id = "summary_sub_child3">
                                             <br>
                                             <font
                                                 style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
@@ -482,7 +482,20 @@
 
 
                 </span>
+<script>
+var summary_child1 = document.getElementById("summary_child1");
+var summary_child2 = document.getElementById("summary_child2");
+var summary_child3 = document.getElementById("summary_child3");
+var summary_sub_child1 = document.getElementById("summary_sub_child1");
+var summary_sub_child2 = document.getElementById("summary_sub_child2");
+var summary_sub_child3 = document.getElementById("summary_sub_child3");
+summary_child2.style.height = summary_child1.offsetHeight+"px";
+summary_child3.style.height = summary_child1.offsetHeight+"px";
+summary_sub_child2.style.height = summary_sub_child1.offsetHeight+"px";
+summary_sub_child3.style.height = summary_sub_child1.offsetHeight+"px";
 
+
+</script>
 
                 <span class="row" style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row3">
                     <span class="col-md-4" id="row3_child1">
