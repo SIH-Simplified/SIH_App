@@ -78,6 +78,7 @@ a {
   height: 270px;
   width: 96%;
   background-color: #f4f7fe;
+  margin-left: 14px;
 }
 
 .five {
@@ -96,7 +97,7 @@ a {
 }
 
 .eight {
-  height: 300px;
+  height: 336px;
 }
 
 .nine {
@@ -618,7 +619,7 @@ t
 
 .daily-title {
   position: relative;
-  top: -99px;
+  top: -83px;
   left: 10px;
   font-weight: 600;
 }
@@ -638,7 +639,7 @@ t
 }
 
 .Eight_Schedule {
-  padding: 5px;
+  padding: 13px;
   margin: 10px;
   position: relative;
   top: -25px;
@@ -836,4 +837,9 @@ height: 53px; */
 
 .foot {
   padding: 30px;
+}
+
+
+.eight-butt-main{
+  margin-left: 23px;
 }
