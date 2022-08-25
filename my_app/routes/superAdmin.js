@@ -14,6 +14,7 @@ const transferDB = require("../transferDB");
 const application = require("../applicationSuperAdminDB");
 const trainingDB = require("../trainingDB");
 const assignAdmin = require("../adminApply");
+
 router.get("/", async (req, res, next) => {
   try {
     // const countOfTeachers = await Teacher.find({}).count();
