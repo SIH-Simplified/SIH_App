@@ -260,7 +260,7 @@
            
                     
                     <span class="col-md-3" id="manageapplication_col">
-                        <div class="row1_child" style="overflow:auto;height:56rem;">
+                        <div class="row1_child" style="overflow:auto;height:55rem;">
                             <br>
                             <!---47% is orginal height-->
                             <font class="row1_child_font1" style="font-size:min(3vw,2rem);">Manage Applications</font>
@@ -319,16 +319,13 @@
                                                 Allot admin roles</button>
                                             <form action="http://localhost:3000/superAdmin/schools" method=" get">
 
-                                                <button type="submit" class="row1_child_font1"
-                                                    style="background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);margin-top:1%;">
-                                                    View school summary</button>
                                                 
                                             </form>
                                     </center>
                                     <br>
                                 </div>
                                 <br>
-                                <div class="row1_child" style="height:40%;">
+                                <div class="row1_child" style="height:47%;">
                                     <center>
                                         <font class="row1_child_font1"> Push Updates </font>
 
@@ -345,7 +342,7 @@
 
                                         <form action="http://localhost:3000/superAdmin/pushUpdates/create">
                                             <button type="submit" class="row1_child_font1"
-                                                style="background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);margin-top:1%;">
+                                                style="background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);">
 
                                                 Add an update
                                             </button>
@@ -403,7 +400,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="row1_child" style="height:40%;" id="transfer_request">
+                                <div class="row1_child" style="height:47%;" id="transfer_request">
                                     <br>
                                     <center>
                                         <font class="row1_child_font1">Manage teacher’s transfer requests </font>
@@ -473,7 +470,7 @@
                     var manageapplication_col = document.getElementById("manageapplication_col");
                     var transfer_request = document.getElementById("transfer_request");
                     console.log(transfer_request.offsetHeight + transfer_request.offsetTop);
-                    row3.style.top = transfer_request.offsetHeight * 2.85 + transfer_request.offsetTop + "px";
+                    row3.style.top = transfer_request.offsetHeight * 2.8 + transfer_request.offsetTop + "px";
                     manageapplication_col.style.height = transfer_request.offsetHeight * 2.1 + "px";
                 </script>
 </body>
