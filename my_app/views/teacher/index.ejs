@@ -558,9 +558,20 @@
                   <div class="group ten" style="overflow: hidden">
                     <img src="images/image 38.jpg" alt="" style="width: 100%" />
                     <div style="width: 100%" id="div11">
-                      <marquee scrollamount="5" direction="up" id="marque">
-                        <ul id="marqueecontent"></ul>
-                      </marquee>
+                      <ul>
+                        <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -573,21 +584,7 @@
   <br />
   <br />
   <script>
-    var marqueecontent = document.getElementById("marqueecontent");
-    var application = document.getElementById("application");
-    var marque = document.getElementById("marque");
-    marque.style.height = application.offsetHeight + "px";
-    for (i = 1; i <= 100; i++) {
-      var list = document.createElement("li");
-      marqueecontent.appendChild(list);
-      var text = document.createTextNode(
-        " No updates What you PPL are actually doing Need to work hard"
-      );
-      var font = document.createElement("font");
-      font.id = "update" + i;
-      font.appendChild(text);
-      list.appendChild(font);
-    }
+
 
     var width = window.screen.availWidth;
     var navbar = document.getElementById("navbar");
