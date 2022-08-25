@@ -19,7 +19,10 @@ router.get("/", async (req, res, next) => {
     // const countOfTeachers = await Teacher.find({}).count();
     const countOfSchools = school.length;
     res.render("superAdmin/index", {
+<<<<<<< HEAD
+=======
       countOfTeachers: 1,
+>>>>>>> 3c76afbce1fb2950dc76a8f6762c53e042064e6d
       countOfSchools,
       application,
       training: trainingDB,
