@@ -11,20 +11,20 @@ const { check, validationResult, checkSchema } = require("express-validator");
 const cloudinary = require("../cloudinary/index");
 const leaveDB = require("../leaveDB");
 const promotionDB = require("../promotion");
-const promotion = require("../models/teacher/promotion");
+const Promotion = require("../models/teacher/promotion");
 const teacherDB = require("../teacherDB");
 const router = express.Router();
 
 router.get("/", (req, res) => {
   let department = "Primary";
   let userName = "Kunal Kumar";
-  let serviceSpan = '1.4 years';
-  let salary = '75k'
+  let serviceSpan = "1.4 years";
+  let salary = "75k";
   res.render("teacher/index", {
     department: department,
     userName: userName,
     serviceSpan: serviceSpan,
-    salary: salary
+    salary: salary,
   });
 });
 router.get("/login", (req, res) => {
@@ -259,8 +259,19 @@ router.post(
   ],
   async (req, res, next) => {
     const { name, email, dept, current_designation } = req.body;
-    const promotion = new promotion({});
-    console.log(req.body);
+    const promotion = new Promotion({
+      name,
+      email,
+      dept,
+      current_designation,
+    });
+    promotionDB.push({
+      name,
+      email,
+      dept,
+      current_designation,
+    });
+    console.log(promotionDB);
     res.redirect("/client");
   }
 );
