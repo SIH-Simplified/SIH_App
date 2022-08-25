@@ -38,12 +38,6 @@ router.post(
       skillThree,
       experience,
     } = req.body;
-    const error = validatorResult(req);
-    if (!error) {
-      res.status(400).json({
-        error: error.array(),
-      });
-    }
     const portfolio = new Resume({
       Fullname,
       city,
@@ -71,9 +65,13 @@ router.post(
       experience
     );
     console.log(portfolioDB);
-    res.redirect("recruit/dashboard");
+    res.redirect("/recruit/dashboard");
   }
 );
+
+router.get("/dashboard", (req, res) => {
+  res.render("recruitment/dashboard");
+});
 
 router.get("/introduction", (req, res) => {
   res.render("/recruitment/intro");
