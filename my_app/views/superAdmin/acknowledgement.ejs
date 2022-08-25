@@ -13,42 +13,61 @@
         </h2>
         <table class="one-table">
             <tr>
-                <th style="Background-color:rgb(201, 15, 15); text-align: left; color: white;" colspan="4">Personal
+                <th style="Background-color:rgb(201, 15, 15); text-align: left; color: white;" colspan="4">
+                    Personal
                     Information</th>
             </tr>
             <tr>
                 <td>Application ID</td>
-                <td colspan="3">OP3201800391 (Please Note Your Application ID) </td>
+                <td colspan="3">
+                    <%= transfer.application_no %>
+                </td>
             </tr>
             <TR>
                 <td>Name of the Teacher</td>
-                <td>PURNIMA DASH</td>
+                <td>
+                    <%= transfer.name %>
+                </td>
                 <td>DOB</td>
-                <td>02/07/1992</td>
+                <td>
+                    <%= transfer.dob %>
+                </td>
             </TR>
             <tr>
                 <td>Gender</td>
-                <td>Female</td>
+                <td>
+                    <%= transfer.gender %>
+                </td>
                 <td>Marital Status</td>
-                <td>Married</td>
+                <td>
+                    <%= transfer.maritalStatus %>
+                </td>
             </tr>
             <tr>
                 <td>Mobile No</td>
-                <td>9556826540</td>
+                <td>
+                    <%= transfer.mobileNo %>
+                </td>
                 <td>Email Id</td>
                 <td>NA</td>
             </tr>
             <tr>
                 <td>State</td>
-                <td>Maharashtra</td>
+                <td>
+                    <%= transfer.state %>
+                </td>
                 <td>District</td>
-                <td>Bandra</td>
+                <td>
+                    <%= transfer.district %>
+                </td>
             </tr>
             <tr>
                 <td>Block/ULB</td>
                 <td>ATTABIRA</td>
                 <td>School</td>
-                <td></td>
+                <td>
+                    <%= transfer.presentSchool %>
+                </td>
             </tr>
             <tr>
                 <td>Post Held</td>
