@@ -25,77 +25,45 @@
             <tr class="Table_heading" style="Background-color:#B0C4DE;; text-align: left; color: white;">
                 <th>Application no.</th>
                 <th>Date of Submission</th>
-                <th>Name</th>
                 <th>School</th>
                 <th>Category</th>
 
                 <th>View Applications</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                <td style="background: #CED5FC;">123654654686</td>
-                <TD>08/02/02220</TD>
-                <td>jatin sharma </td>
-                <td>paramount public school</td>
-                <td>divorcee</td>
+            <% if(teacherTransfer !=="undefined" && teacherTransfer.length> 0) {%>
+                <% for(let i=0;i<teacherTransfer.length;i++) {%>
 
-                <td><i class="glyphicon glyphicon-eye-open"></i></td>
-                <td>
-                    <div CLASS="inline">
-                        <button class="green">Approved</button>
+                    <tr>
+                        <td style="background: #CED5FC;">
+                            <%= teacherTransfer[i].application_no %>
+                        </td>
+                        <td>
+                            <%= teacherTransfer[i].dob %>
+                        </td>
+                        <td>
+                            <%= teacherTransfer[i].presentSchool %>
+                        </td>
+                        <td>
+                            <%= teacherTransfer[i].maritalStatus %>
+                        </td>
+                        <td>
+                            <a class="btn btn-primary" href="http://localhost:3000/superAdmin/teacherTransfer/<%= i %>">
+                                View
+                            </a>
+                        </td>
+                       
+                        
+                        <td>
+                            <div CLASS="inline">
+                                <button class="green">Approved</button>
+                                <button class="Red">Reject</button>
+                            </div>
+                        </td>
+                    </tr>
 
-                        <button class="Red">Reject</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="background: #CED5FC;">123654654686</td>
-                <TD>08/02/02220</TD>
-                <td>jatin sharma </td>
-                <td>paramount public school</td>
-                <td>divorcee</td>
-
-                <td><i class="glyphicon glyphicon-eye-open"></i></td>
-                <td>
-                    <div CLASS="inline">
-                        <button class="green">Approved</button>
-
-                        <button class="Red">Reject</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="background: #CED5FC;">123654654686</td>
-                <TD>08/02/02220</TD>
-                <td>jatin sharma </td>
-                <td>paramount public school</td>
-                <td>divorcee</td>
-
-                <td><i class="glyphicon glyphicon-eye-open"></i></td>
-                <td>
-                    <div CLASS="inline">
-                        <button class="green">Approved</button>
-
-                        <button class="Red">Reject</button>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td style="background: #CED5FC;">123654654686</td>
-                <TD>08/02/02220</TD>
-                <td>jatin sharma </td>
-                <td>paramount public school</td>
-                <td>divorcee</td>
-
-                <td><i class="glyphicon glyphicon-eye-open"></i></td>
-                <td>
-                    <div CLASS="inline">
-                        <button class="green">Approved</button>
-
-                        <button class="Red">Reject</button>
-                    </div>
-                </td>
-            </tr>
+                    <% } %>
+                        <% } %>
         </table>
 
     </div>
