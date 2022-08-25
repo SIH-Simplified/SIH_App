@@ -17,18 +17,15 @@ a {
 }
 
 .container-fluid {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  position: relative;
-  top: -18px;
+  padding-right: 0px !important;
 }
 
 .navbar {
-  width: 72% !important;
+  width: 78%!important;
   height: 50px;
   background-color: #fff;
   border-radius: 10px;
-  margin-left: 185px !important;
+  margin-left: 170px !important;
   margin-top: 20px !important;
   overflow: hidden;
   position: fixed !important;
@@ -42,7 +39,7 @@ a {
 }
 
 .sidebar {
-  width: 20%;
+  width: 17.5%;
   background-color: #fff;
   height: 100%;
   margin-top: 20px !important;
@@ -71,11 +68,17 @@ a {
 
 .three {
   height: 130px;
+  
+  padding: 8px;
+  width: 103%;
+
 }
 
 .four {
   height: 270px;
+  width: 96%;
   background-color: #f4f7fe;
+  margin-left: 14px;
 }
 
 .five {
@@ -84,19 +87,24 @@ a {
 
 .six {
   height: 200px;
+  width: 97%;
 }
+
 
 .seven {
   height: 250px;
+  width: 97.7%;
 }
 
 .eight {
-  height: 300px;
+  height: 336px;
 }
 
 .nine {
   height: 350px;
   overflow: auto;
+  width: 95%;
+  margin-left: 23px;
 }
 
 .ten {
@@ -114,12 +122,13 @@ t
 }
 /* Main nav  */
 .nav-middle {
-  width: 55vw;
+  width: 58vw;
 }
 
 .stats {
-  margin-top: 70px;
-  margin-left: 185px;
+  margin-top: 40px;
+  margin-left: 140px;
+  width: 91%;
 }
 
 .icons {
@@ -246,10 +255,9 @@ t
 
 .row-one-A {
   display: flex;
-  gap: 20px;
+  gap: 50px;
   padding: 10px;
-  position: relative;
-  top: -25px;
+ 
 
 }
 
@@ -286,7 +294,7 @@ t
 .two-img {
   position: relative;
 
-  left: 52px;
+  left: 90px;
 }
 
 .two-text-one {
@@ -302,9 +310,11 @@ t
 
 /* Group three */
 .three-img {
+ 
   position: relative;
-  top: -15px;
-  left: 18px;
+  top: -26px;
+  left: 50px;
+
 
 }
 .three-line {
@@ -335,7 +345,7 @@ t
 }
 
 .four-training {
-  margin-left: 23px;
+  margin-left: 40px;
 }
 
 .four-training-cont {
@@ -392,7 +402,10 @@ t
 }
 
 .five-col-a {
-  padding: 7px;
+  
+  padding: 8px;
+  width: 60%;
+
 }
 
 .five-mid {
@@ -608,7 +621,7 @@ t
 
 .daily-title {
   position: relative;
-  top: -99px;
+  top: -83px;
   left: 10px;
   font-weight: 600;
 }
@@ -628,7 +641,7 @@ t
 }
 
 .Eight_Schedule {
-  padding: 5px;
+  padding: 13px;
   margin: 10px;
   position: relative;
   top: -25px;
@@ -826,4 +839,13 @@ height: 53px; */
 
 .foot {
   padding: 30px;
+}
+
+
+.eight-butt-main{
+  margin-left: 23px;
+}
+
+.td-mar{
+  font-size: 1.25rem;
 }
