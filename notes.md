@@ -33,3 +33,7 @@ Start managing teachers
 - Provide study material
 - View portfolia
 - Search employees
+
+## superAdmin side
+
+- 
