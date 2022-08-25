@@ -180,7 +180,7 @@
             <a href="superAdmin/assignAdmin">
                 <font
                     style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
-                    <span class="glyphicon glyphicon-check"></span>&nbsp&nbsp&nbsp&nbspAllot Admin Role
+                    <span class="glyphicon glyphicon-check"></span>&nbsp&nbsp&nbsp&nbspView school summary
                 </font><br><br>
             </a>
             <a href="superAdmin/logout">
@@ -309,14 +309,14 @@
                                 <form action="http://localhost:3000/superAdmin/admins" method=" get">
                                     
                                     <button type="submit" class = "row1_child_font1" style = "background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);">
-                                        View school summary</button>
+                                        Allot admin roles</button>
                                 </form>
                             </center>
                         </div>
                         <br>
                         <div class="row1_child" style="height:46%;">
                             <center>
-                                <font class="row1_child_font1"> push updates </font>
+                                <font class="row1_child_font1"> Push Updates </font>
 
                                 <form action="http://localhost:3000/superAdmin/pushUpdates">
                                    
@@ -365,14 +365,17 @@
                                                 style="font-family:Poppins;font-style:normal;color:#6853F8;font-size:min(3vw,1.2rem);margin-left:27%;">
                                                 <a class="btn btn-primary" href="<%= training[i].training_pdf %>" style = "border:none;border-radius:5px;padding:5px;font-size:min(2vw,1.3rem);"
                                                     role="button">
-                                                    Training Doc
+                                                    View here
                                                 </a>
                                             </font>
                                             <br>
                                             <font style="color:lightgrey;margin-left:12%;">
                                                 <%= training[i].dataFrom %>
                                             </font>
-                                            <font style="color:lightgrey;margin-left:12%;">
+                                            <font style="color:lightgrey;margin-left:0%;">
+                                                <%= training[i].dateTo %>
+                                            </font>
+                                            <font style="color:lightgrey;margin-left:10%;">
                                                 <%= training[i].dateTo %>
                                             </font>
                                         </div>
