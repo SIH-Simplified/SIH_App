@@ -1,0 +1,43 @@
+body{
+    background:#f5f5f5;
+    }
+    
+    .container {
+       margin:10%;
+        width: 80%;
+        height: 60%;
+        background: white;
+        
+    border-radius:7px;
+    }
+    
+    .h1 {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 45px;
+        line-height: 68px;
+    }
+    
+    table,
+    th,
+    td {
+        
+        font-family: 'Poppins', sans-serif;
+        height: 15%;
+    padding:15px;
+    }
+    
+    .green {
+        border-radius: 5px;
+        background-color: rgb(13, 240, 13);
+        border: 2px solid rgb(13, 240, 13);
+    }
+    
+    
+    
+    .red {
+        border-radius: 5px;
+        background-color: rgb(248, 47, 47);
+        border: 2px solid rgb(248, 47, 47);
+    }
