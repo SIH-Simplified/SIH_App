@@ -103,6 +103,8 @@ a {
 .nine {
   height: 350px;
   overflow: auto;
+  width: 95%;
+  margin-left: 10px;
 }
 
 .ten {
