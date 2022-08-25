@@ -50,48 +50,33 @@
 
             <tr style="border-bottom:1px solid lightgrey;">
                 <th> School Name </th>
-                <th>Department Name</th>
                 <th>Head of Department</th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Start Year</th>
-                <th>Actions</th>
+                <th>District</th>
             </tr>
 
-            <% if(typeof assignAdmin !=="undefined" && assignAdmin.length !==0) {%>
-                <% for(let i=0;i<assignAdmin.length;i++) {%>
+            <% if(typeof school !=="undefined" && school.length !==0) {%>
+                <% for(let i=0;i<school.length;i++) {%>
                     <tr style="border-bottom:1px solid lightgrey;">
                         <td>
-                            <form><input type="checkbox"></form>
+                            <%= school[i].school %>
                         </td>
                         <td>
-                            <%= assignAdmin[i].department %>
+                            <%= school[i].name %>
                         </td>
                         <td>
-                            <%= assignAdmin[i].HeadOfDepartment %>
+                            <%= school[i].phone %>
                         </td>
                         <td>
-                            <%= assignAdmin[i].phone %>
+                            <%= school[i].email %>
                         </td>
                         <td>
-                            <%= assignAdmin[i].email %>
+                            <%= school[i].startYear %>
                         </td>
                         <td>
-                            <%= assignAdmin[i].startYear %>
-                        </td>
-                        <td>
-                            <form action="http://localhost:3000/superAdmin/assignAdmin/<%= i %>?_method=PATCH"
-                                method="post">
-                                <button type="submit" class="btn btn-light">
-                                    <span class="glyphicon glyphicon-edit" style="color:blue;"></span>
-                                </button>
-                            </form>
-                            <form action="http://localhost:3000/superAdmin/assignAdmin/<%= i %>?_method=DELETE"
-                                method="post">
-                                <button type="submit" class="btn btn-light">
-                                    <span class="glyphicon glyphicon-trash" style="color:orangered"></span>
-                                </button>
-                            </form>
+                            <%= school[i].district %>
                         </td>
                     </tr>
                     <% } %>
