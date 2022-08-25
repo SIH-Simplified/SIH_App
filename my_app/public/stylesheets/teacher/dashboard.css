@@ -17,14 +17,11 @@ a {
 }
 
 .container-fluid {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  position: relative;
-  top: -18px;
+  padding-right: 0px !important;
 }
 
 .navbar {
-  width: 72% !important;
+  width: 78%!important;
   height: 50px;
   background-color: #fff;
   border-radius: 10px;
@@ -42,7 +39,7 @@ a {
 }
 
 .sidebar {
-  width: 20%;
+  width: 17.5%;
   background-color: #fff;
   height: 100%;
   margin-top: 20px !important;
@@ -84,10 +81,13 @@ a {
 
 .six {
   height: 200px;
+  width: 98%;
 }
+
 
 .seven {
   height: 250px;
+  width: 97.7%;
 }
 
 .eight {
@@ -114,12 +114,13 @@ t
 }
 /* Main nav  */
 .nav-middle {
-  width: 55vw;
+  width: 61.1vw;
 }
 
 .stats {
-  margin-top: 70px;
-  margin-left: 185px;
+  margin-top: 40px;
+  margin-left: 140px;
+  width: 90%;
 }
 
 .icons {
