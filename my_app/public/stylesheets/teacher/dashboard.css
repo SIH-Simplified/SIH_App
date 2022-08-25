@@ -68,6 +68,10 @@ a {
 
 .three {
   height: 130px;
+  
+  padding: 8px;
+  width: 60%;
+
 }
 
 .four {
