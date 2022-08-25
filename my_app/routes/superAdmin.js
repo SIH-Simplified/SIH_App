@@ -105,7 +105,7 @@ router.delete("/scheduleMettings/:id", (req, res) => {
 });
 
 router.get("/schools", (req, res) => {
-  res.render("superAdmin/schools", { school });
+  res.render("superAdmin/school", { school });
 });
 
 router.get("/teacherTransfer", (req, res) => {
