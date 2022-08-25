@@ -25,7 +25,7 @@ a {
   height: 50px;
   background-color: #fff;
   border-radius: 10px;
-  margin-left: 185px !important;
+  margin-left: 170px !important;
   margin-top: 20px !important;
   overflow: hidden;
   position: fixed !important;
@@ -72,6 +72,7 @@ a {
 
 .four {
   height: 270px;
+  width: 96%;
   background-color: #f4f7fe;
 }
 
@@ -81,7 +82,7 @@ a {
 
 .six {
   height: 200px;
-  width: 98%;
+  width: 97%;
 }
 
 
@@ -120,7 +121,7 @@ t
 .stats {
   margin-top: 40px;
   margin-left: 140px;
-  width: 90%;
+  width: 91%;
 }
 
 .icons {
@@ -247,10 +248,9 @@ t
 
 .row-one-A {
   display: flex;
-  gap: 20px;
+  gap: 50px;
   padding: 10px;
-  position: relative;
-  top: -25px;
+ 
 
 }
 
@@ -336,7 +336,7 @@ t
 }
 
 .four-training {
-  margin-left: 23px;
+  margin-left: 40px;
 }
 
 .four-training-cont {
@@ -393,7 +393,10 @@ t
 }
 
 .five-col-a {
-  padding: 7px;
+  
+  padding: 8px;
+  width: 60%;
+
 }
 
 .five-mid {
