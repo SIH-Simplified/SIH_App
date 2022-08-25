@@ -48,7 +48,7 @@ module.exports = [
     district: "dwarka",
     subject: "maths",
     currentDesignation: "HOD",
-    dateOfJoining: "12/112/2008",
+    dateOfJoining: "12/12/2008",
     maritalStatus: "married",
     reason: "divorcee",
     preferences: ["dwarka", "Ujjain"],
