@@ -70,7 +70,7 @@ a {
   height: 130px;
   
   padding: 8px;
-  width: 60%;
+  width: 103%;
 
 }
 
@@ -291,7 +291,7 @@ t
 .two-img {
   position: relative;
 
-  left: 52px;
+  left: 90px;
 }
 
 .two-text-one {
@@ -307,9 +307,11 @@ t
 
 /* Group three */
 .three-img {
+ 
   position: relative;
-  top: -15px;
-  left: 18px;
+  top: -26px;
+  left: 50px;
+
 
 }
 .three-line {
