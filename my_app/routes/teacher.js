@@ -157,7 +157,7 @@ router.post(
   ],
   async (req, res, next) => {
     const { subject, message } = req.body;
-    const error = validatorResult(req);
+    const error = validationResult(req);
 
     if (!error) {
       return res.status(400).json({
