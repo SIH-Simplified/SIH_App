@@ -2,6 +2,8 @@ module.exports = [
   {
     application_no: "2911556b-038a-42f1-9f8c-771df9e5578b",
     school_type: "Elementary",
+    name: "Kunal Kumar",
+    gender: "Male",
     state: "Delhi",
     mobileNo: "1234578976",
     dob: "15/11/1999",
@@ -18,6 +20,8 @@ module.exports = [
   {
     application_no: "2911556b-038a-42f1-9f8c-771df9e5578b",
     school_type: "Elementary",
+    name: "Kunal Kumar",
+    gender: "Male",
     state: "Delhi",
     mobileNo: "1234578976",
     dob: "15/11/1999",
@@ -34,6 +38,8 @@ module.exports = [
   {
     application_no: "2911556b-038a-42f1-9f8c-771df9e5578b",
     school_type: "Elementary",
+    name: "Kunal Kumar",
+    gender: "Male",
     state: "Delhi",
     mobileNo: "1234578976",
     dob: "15/11/1999",
