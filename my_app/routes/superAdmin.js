@@ -20,6 +20,7 @@ router.get("/", async (req, res, next) => {
     // const countOfTeachers = await Teacher.find({}).count();
     const countOfSchools = school.length;
     res.render("superAdmin/index", {
+      countOfTeachers: 1,
       countOfSchools,
       application,
       training: trainingDB,
@@ -105,7 +106,7 @@ router.delete("/scheduleMettings/:id", (req, res) => {
 });
 
 router.get("/schools", (req, res) => {
-  res.render("superAdmin/schools", { school });
+  res.render("superAdmin/school", { school });
 });
 
 router.get("/teacherTransfer", (req, res) => {
