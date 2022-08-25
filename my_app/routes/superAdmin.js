@@ -110,7 +110,7 @@ router.get("/schools", (req, res) => {
 });
 
 router.get("/teacherTransfer", (req, res) => {
-  res.render("superAdmin/teacherTransferList");
+  res.render("superAdmin/");
 });
 
 router.get("/teacherTransfer/:id", (req, res) => {
