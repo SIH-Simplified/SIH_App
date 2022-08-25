@@ -1,6 +1,7 @@
 module.exports = [
     {
         department: "Technical",
+        schoolName:"Central Maharastra school",
         HeadOfDepartment: "Pooja Sharma",
         phone: 9874566334,
         email: "xyz@edurecruit.in",
@@ -9,6 +10,7 @@ module.exports = [
     },
     {
         department: "Technical",
+        schoolName:"Central Maharastra school",
         HeadOfDepartment: "Pooja Sharma",
         phone: 9874566334,
         email: "xyz@edurecruit.in",
@@ -17,6 +19,7 @@ module.exports = [
     },
     {
         department: "Technical",
+        schoolName:"Central Maharastra school",
         HeadOfDepartment: "Pooja Sharma",
         phone: 9874566334,
         email: "xyz@edurecruit.in",
@@ -25,6 +28,7 @@ module.exports = [
     },
     {
         department: "Technical",
+        schoolName:"Central Maharastra school",
         HeadOfDepartment: "Pooja Sharma",
         phone: 9874566334,
         email: "xyz@edurecruit.in",

@@ -14,7 +14,7 @@
 
 <body style="background-color: #6d8c84;">
     <div></div>
-    <form>
+    <form action="portfolio-2/send" method="post">
         <div class="form__header">
             <h1>Build Your Resume</h1>
             <p>Enter Your Personal Details here</p>
@@ -22,13 +22,13 @@
         <h2>Personal Details</h2>
         <div class="form-group">
             <label for="name">Full Name <span>*</span></label>
-            <input type="text" name="name" id="name" placeholder="Ex. Elon Musk">
+            <input type="text" name="Fullname" id="name" placeholder="Ex. Elon Musk">
             <div class="error"></div>
         </div>
 
         <div class="form-group">
             <label for="city">City</label>
-            <input type="text" name="address" id="address" placeholder="Delhi">
+            <input type="text" name="city" id="address" placeholder="Delhi">
         </div>
 
         <div class="form-group">
@@ -53,20 +53,18 @@
         </div>
 
         <div class="form-group">
-            <label for="education">Education</label>
-            <textarea name="education" id="education"
-                placeholder="List any completed high school, college, or other educational programs"></textarea>
+            <label for="age">Experience ( in months )</label>
+            <input type="text" name="experience" id="subject" placeholder="ex. 2 years means 24 months">
         </div>
+
         <div class="form-group">
-            <label for="status">Employment Status</label>
-            <select name="status" id="status">
-                <option value="Employeed">Employeed</option>
-                <option value="Unemployeed">Unemployeed</option>
-            </select>
+            <label for="education">Education</label>
+            <textarea name="education" id="education" placeholder="Enter your highest qualification"></textarea>
         </div>
+
         <div class="line-break"></div>
 
-        <h2>Skills</h2>
+        <h2>Technological Skills</h2>
 
         <h3>Enter Your Skills</h3>
 
@@ -99,7 +97,7 @@
             <span id="add-about">Add +</span>
         </div>
         <div class="line-break"></div>
-        <button><a href="/users/resume-3" style="text-decoration: none;">Next</a></button>
+        <button type="submit"><a style="text-decoration: none;">Next</a></button>
     </form>
 </body>
 <script>

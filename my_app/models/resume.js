@@ -5,16 +5,16 @@ const resumeSchema = new mongoose.Schema({
   Fullname: String,
   city: String,
   phone: String,
+  subject: String,
   email: String,
   age: Number,
   education: String,
-  employment_status: Boolean,
-  skills: {
-    type: [String],
-  },
-  additional_info: String,
+  skillOne: String,
+  skillTwo: String,
+  skillThree: String,
+  about: String,
   URL: String,
-  professional_exp: [mongoose.Schema.Types.ObjectId],
+  experience: String,
 });
 
 const Resume = mongoose.model("Resume", resumeSchema);

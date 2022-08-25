@@ -177,10 +177,10 @@
                         style="display: inline;"></span>&nbsp&nbspSchedule&nbspMeetings
                 </font><br><br>
             </a>
-            <a href="superAdmin/assignAdmin">
-                <font
-                    style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
-                    <span class="glyphicon glyphicon-check"></span>&nbsp&nbsp&nbsp&nbspAllot Admin Role
+            <a href="http://localhost:3000/superAdmin/schools">
+                <font style=" font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins',
+                sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
+                    <span class="glyphicon glyphicon-check"></span>&nbsp&nbsp&nbsp&nbspView school summary
                 </font><br><br>
             </a>
             <a href="superAdmin/logout">
@@ -212,13 +212,16 @@
         <br>
         <span class="row" id="row1">
             <span class="col-md-3">
-                <div class="row1_child">
-                    <br>
-                    <font class="row1_child_font1"> Total affiliated<br></font>
-                    <font class="row1_child_font1"> schools</font>
-                    <br><br>
-                    <font class="row1_child_font2"> 295</font>
-                </div>
+                <a href="http://localhost:3000/superAdmin/schoolList" style="width: 100%; text-decoration: none;"
+                    role="button">
+                    <div class="row1_child">
+                        <br>
+                        <font class="row1_child_font1"> Total affiliated<br></font>
+                        <font class="row1_child_font1"> schools</font>
+                        <br><br>
+                        <font class="row1_child_font2"> 295</font>
+                    </div>
+                </a>
             </span>
             <span class="col-md-3">
                 <div class="row1_child">
@@ -257,17 +260,14 @@
 
         <br>
         <span class="row" id="row2">
-<<<<<<< HEAD
+
+
             <span class="col-md-3" id="manageapplication_col">
-                <div class="row1_child" style="overflow:auto;height:47rem;">
+                <div class="row1_child" style="overflow:auto;height:55rem;">
                     <br>
+                    <!---47% is orginal height-->
                     <font class="row1_child_font1" style="font-size:min(3vw,2rem);">Manage Applications</font>
-=======
-            <span class="col-md-3" id  = "manageapplication_col">
-                <div class="row1_child" style="overflow:auto;height:51rem;">
-                    <br><!---47% is orginal height-->
-                    <font class="row1_child_font1" style = "font-size:min(3vw,2rem);">Manage Applications</font>
->>>>>>> 020ef737c917eb25d6efeee4ae5b7483c64548bd
+
                     <div style="height:100%;" id="manageapplication">
                         <div style="height:100%;" id="manageapplication">
                             <% if(typeof application !=="undefined" && application.length !==0) {%>
@@ -306,25 +306,26 @@
             <span class="col-md-9">
                 <span class="row" style="height:46%;">
                     <span class="col-md-4">
-                        <div class="row1_child" style="height:44%;">
+                        <div class="row1_child" style="height:47%;">
                             <br>
                             <center>
                                 <font class="row1_child_font1"> Allot admin roles</font><br><br>
                                 <font class="row1_child_font1"
-                                    style="border:1px solid grey;border-radius:7px;padding:10px;"> 295 roles alloted
+                                    style="border:1px solid grey;border-radius:7px;padding:10px;"> 295 roles
+                                    alloted
                                 </font>
-                                <form action="http://localhost:3000/superAdmin/schools" method=" get">
+                                <form action="http://localhost:3000/superAdmin/assignAdmin" method=" get">
 
                                     <button type="submit" class="row1_child_font1"
                                         style="background:#6853F8;color:white;border:none;border-radius:5px;padding:12px;font-size:min(2vw,1.7rem);">
-                                        View school summary</button>
-                                </form>
+                                        Allot admin roles</button>
                             </center>
+                            <br>
                         </div>
                         <br>
-                        <div class="row1_child" style="height:46%;">
+                        <div class="row1_child" style="height:47%;">
                             <center>
-                                <font class="row1_child_font1"> push updates </font>
+                                <font class="row1_child_font1"> Push Updates </font>
 
                                 <form action="http://localhost:3000/superAdmin/pushUpdates">
 
@@ -350,7 +351,7 @@
                         </div>
                     </span>
                     <span class="col-md-8">
-                        <div class="row1_child" style="height:44%;overflow:auto;">
+                        <div class="row1_child" style="height:47%;overflow:auto;">
                             <br>
                             <font class="row1_child_font1"> Schedule Trainings </font>
                             <font style="color:#6853F8;font-size:min(3vw,3rem); ">
@@ -376,14 +377,17 @@
                                                 <a class="btn btn-primary" href="<%= training[i].training_pdf %>"
                                                     style="border:none;border-radius:5px;padding:5px;font-size:min(2vw,1.3rem);"
                                                     role="button">
-                                                    Training Doc
+                                                    View here
                                                 </a>
                                             </font>
                                             <br>
                                             <font style="color:lightgrey;margin-left:12%;">
                                                 <%= training[i].dataFrom %>
                                             </font>
-                                            <font style="color:lightgrey;margin-left:12%;">
+                                            <font style="color:lightgrey;margin-left:0%;">
+                                                <%= training[i].dateTo %>
+                                            </font>
+                                            <font style="color:lightgrey;margin-left:10%;">
                                                 <%= training[i].dateTo %>
                                             </font>
                                         </div>
@@ -392,10 +396,11 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row1_child" style="height:46%;" id="transfer_request">
+                        <div class="row1_child" style="height:47%;" id="transfer_request">
                             <br>
                             <center>
-                                <font class="row1_child_font1">Manage teacher’s transfer requests </font><br><br>
+                                <font class="row1_child_font1">Manage teacher’s transfer requests </font>
+                                <br><br>
                                 <font class="row1_child_font1"
                                     style="border:1px solid grey;border-radius:7px;padding:10px;"> 27 pending
                                 </font>
@@ -460,7 +465,7 @@
         var manageapplication_col = document.getElementById("manageapplication_col");
         var transfer_request = document.getElementById("transfer_request");
         console.log(transfer_request.offsetHeight + transfer_request.offsetTop);
-        row3.style.top = transfer_request.offsetHeight * 3 + transfer_request.offsetTop + "px";
+        row3.style.top = transfer_request.offsetHeight * 2.8 + transfer_request.offsetTop + "px";
         manageapplication_col.style.height = transfer_request.offsetHeight * 2.1 + "px";
     </script>
 </body>

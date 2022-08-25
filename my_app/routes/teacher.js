@@ -84,7 +84,7 @@ router.post(
   ],
   async (req, res, next) => {
     const { username, password, email } = req.body;
-    const errors = validatorResult(req);
+    const errors = validationResult(req);
     try {
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
@@ -311,7 +311,7 @@ router.get("/calendar", (req, res) => {
   res.render("teacher/calendar");
 });
 router.get("/view-portfolio", (req, res) => {
-  res.render("teacher/portfolio");
+  res.render("portfolio");
 });
 router.get("/dailyUpdates", async (req, res, next) => {
   try {
