@@ -14,7 +14,7 @@ const transferDB = require("../transferDB");
 const application = require("../applicationSuperAdminDB");
 const trainingDB = require("../trainingDB");
 const assignAdmin = require("../adminApply");
-
+const teacherTransfer = require("../transferDB");
 router.get("/", async (req, res, next) => {
   try {
     // const countOfTeachers = await Teacher.find({}).count();
@@ -110,7 +110,7 @@ router.get("/schools", (req, res) => {
 });
 
 router.get("/teacherTransfer", (req, res) => {
-  res.render("superAdmin/teacherTransfer");
+  res.render("superAdmin/teacherTransfer", { teacherTransfer });
 });
 
 router.get("/teacherTransfer/:id", (req, res) => {
