@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+
+body{
+    font-family: 'Alumni Sans Pinstripe', sans-serif !important ;
+}
+
 .main_row {
     margin-left: 30px !important;
     display: flex;
