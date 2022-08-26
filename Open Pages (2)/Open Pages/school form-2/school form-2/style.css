@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
-body {
+
+body{
     font-family: 'Poppins', sans-serif;
 }
 
-.main-row {
+.main-row{
     display: flex;
     background-color: #fff;
     width: 60%;
@@ -11,27 +12,26 @@ body {
     padding: 20px;
 }
 
-.all {
+.all{
     display: flex;
     gap: 10px;
 }
 
-.main-cont {
+.main-cont{
     background-color: #F4F7FE;
     height: 100%;
 }
 
-.radio-a {
+.radio-a{
     font-weight: 600;
 }
 
-.eye {
+.eye{
     position: relative;
     left: 23px;
     top: 30px;
 }
-
-.file {
+.file{
     border: solid 1px;
     width: 250px;
     height: 40px;
@@ -39,82 +39,75 @@ body {
     border-radius: 10px;
 }
 
-.adhar-comman {
+.adhar-comman{
+    margin-top: 10px;
+}
+  
+.district-comman{
+    margin-top: 10px;
+}
+.present-comman{
+    margin-top: 10px;
+}
+.nature{
     margin-top: 10px;
 }
 
-.district-comman {
+.mail-comman{
     margin-top: 10px;
 }
 
-.present-comman {
+.dob-comman{
     margin-top: 10px;
 }
 
-.nature {
+.mobile-comman{
     margin-top: 10px;
 }
 
-.mail-comman {
+.states-comman{
     margin-top: 10px;
 }
-
-.dob-comman {
-    margin-top: 10px;
-}
-
-.mobile-comman {
-    margin-top: 10px;
-}
-
-.states-comman {
-    margin-top: 10px;
-}
-
-.left-col {
+.left-col{
     font-size: 1rem;
 }
-
-.tems {
+.tems{
     display: flex;
     margin-top: 5px;
 }
-
-.mstat-comman {
+.mstat-comman{
     margin-top: 10px;
 }
 
-.btnss {
+.btnss{
     margin-top: 20px;
 }
 
-.bdob-comman {
+.bdob-comman{
     margin-top: 10px;
 }
 
-.curdes-comman {
+.curdes-comman{
     margin-top: 10px;
 }
-
-.teachsub-comman {
+.teachsub-comman{
     margin-top: 10px;
 }
-
-.title {
+.title{
     background-color: #fff;
-    padding-bottom: 10px;
-    padding-left: 10;
-    padding: 10px;
-    width: 60%;
+padding-bottom: 10px;
+
+padding: 10px;
+width: 60%;
     margin-left: 22%;
     font-weight: 600;
 }
 
-.right-col {
+.right-col{
     margin-left: 40px;
 }
 
-.cheak-main {
+.cheak-main{
     margin-top: 10px;
 }
 
@@ -122,25 +115,25 @@ body {
     width: 1.9em;
     height: 1.9em;
 }
-
-.largerCheckbox {
+.largerCheckbox{
     margin-right: 6px;
     background-color: #F5365C;
 }
 
-.title-a {
+.title-a{
     font-weight: 600;
+    
 }
 
-.next {
-    background-color: #1E22C5;
+.next{
+    background-color:#1E22C5 ;
     color: #fff;
     border: none;
     height: 40px;
     padding: 4px;
+    
 }
-
-.cancel {
+.cancel{
     margin-left: 5px;
     border: none;
     height: 40px;
@@ -148,28 +141,27 @@ body {
     width: 70px;
 }
 
-.img-foot {
+.img-foot{
     margin-left: 30px;
 }
 
+
 @media screen and (max-width: 736px) {
-    .main-row {
+    .main-row{
         display: inline-block;
         width: 100%;
         margin-left: 0%;
-        text-align: center;
     }
-    .title {
+    .title{
         width: 100%;
+       
         margin-left: 0%;
     }
     .right-col {
         margin-left: 10px;
     }
-    .eye {
-        left: 7px;
-    }
-    .stream {
+    
+    .stream{
         width: 100px;
     }
 }
