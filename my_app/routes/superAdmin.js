@@ -24,7 +24,7 @@ router.get("/", async (req, res, next) => {
       countOfSchools,
       application,
       training: trainingDB,
-      schoolList
+      schoolList,
     });
   } catch (error) {
     next(error);
@@ -108,6 +108,14 @@ router.delete("/scheduleMettings/:id", (req, res) => {
 
 router.get("/schools", (req, res) => {
   res.render("superAdmin/school", { school });
+});
+
+router.get("/recruitmentStats", (req, res) => {
+  res.render("superAdmin/recruitmentStats");
+});
+
+router.get("/transferStats", (req, res) => {
+  res.render("superAdmin/transferStats");
 });
 
 router.get("/teacherTransfer", (req, res) => {
