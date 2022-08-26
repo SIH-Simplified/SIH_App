@@ -74,6 +74,6 @@ router.get("/dashboard", (req, res) => {
 });
 
 router.get("/introduction", (req, res) => {
-  res.render("/recruitment/intro");
+  res.render("recruitment/intro");
 });
 module.exports = router;
