@@ -34,6 +34,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.AUTH_SECRET,
+  baseURL: "http://localhost:3000",
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.DOMAIN_ID,
+}
+app.use(auth(config));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
@@ -41,18 +50,6 @@ app.use("/client", clientRouter);
 app.use("/superAdmin", superAdminRouter);
 app.use("/recruit", recruitRouter);
 // catch 404 and forward to error handler
-const config = {
-  authRequired: true,
-  auth0Logout: true,
-  secret: process.env.AUTH_SECRET,
-  baseURL: "http://localhost:3000",
-  clientID: process.env.CLIENT_ID,
-  issuerBaseURL: process.env.DOMAIN_ID
-}
-app.use(auth(config));
-app.get("/", (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? "Logged In" : "Logged Out");
-})
 
 app.use(function (req, res, next) {
   next(createError(404));
@@ -70,4 +67,3 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
- 

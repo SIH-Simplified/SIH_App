@@ -20,10 +20,11 @@ const checkAuthMiddleWare = async (req, res, next) => {
 }
 
 router.get('/', function (req, res, next) {
+  // res.send(req.oidc.isAuthenticated() ? "Logged In" : "Logged Out");
   res.render('index', { title: 'Express' });
 });
 
-router.get('/index/login', (req,res)=>{
+router.get('/index/login', (req, res) => {
   res.render('teacher/login')
 })
 
@@ -56,7 +57,7 @@ router.post("/login/send", async (req, res, next) => {
   }
 })
 
-router.get('/register', (req,res)=>{
+router.get('/register', (req, res) => {
   res.render('teacher/register')
 })
 
