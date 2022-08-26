@@ -15,7 +15,7 @@
     EduRecruit - Manage Your Data Here - Teacher Management System of
     Government Of Maharashtra
   </title>
- 
+
 </head>
 
 <body class="light">
@@ -561,20 +561,18 @@
                   <div class="group ten" style="overflow: hidden">
                     <img src="images/image 38.jpg" alt="" style="width: 100%" />
                     <div style="width: 100%" id="div11">
-                      <ul>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                        <td class="td-mar"> No more updates</td> <br>
-                      </ul>
+                      <marquee scrollamount="5" direction="up" id="marque">
+                        <ul id="marqueecontent">
+
+
+
+
+
+                        </ul>
+
+
+
+                      </marquee>
                     </div>
                   </div>
                 </div>
@@ -587,6 +585,23 @@
   <br />
   <br />
   <script>
+
+
+
+    var marqueecontent = document.getElementById("marqueecontent");
+    var application = document.getElementById("application");
+    var marque = document.getElementById("marque");
+    marque.style.height = application.offsetHeight + "px";
+    for (i = 1; i <= 100; i++) {
+      var list = document.createElement("li");
+      marqueecontent.appendChild(list);
+      var text = document.createTextNode(" MAHA TET 2021 -22 RESULT WILL ANNOUNSED SOON BY THE MSCE");
+      var font = document.createElement("font");
+      font.appendChild(text);
+      list.appendChild(font);
+
+    }
+
 
 
     var width = window.screen.availWidth;
