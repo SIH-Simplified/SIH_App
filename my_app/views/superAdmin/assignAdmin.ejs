@@ -36,7 +36,7 @@
 
             <font
                 style="font-weight:bold;font-size:min(3.5vw,2rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;margin-left:60px;margin-top:20px;">
-                Departments</font>
+                Allot admin roles</font>
             <form style="border:none;background:white;width:20%;margin-left:30px;height:5rem;margin-top:0.5rem;">
                 <button type="submit" style="border:none;background:none;color:lightgrey"><span
                         class="glyphicon glyphicon-search"></span></button>
@@ -51,8 +51,8 @@
             <tr style="border-bottom:1px solid lightgrey;">
                 <td></td>
                 <th> School Name </th>
-                <th>Department Name</th>
-                <th>Head of Department</th>
+                <th>District</th>
+                <th>Principal</th>
                 <th>Phone</th>
                 <th>Email</th>
                 <th>Start Year</th>
@@ -87,7 +87,7 @@
                             <form action="http://localhost:3000/superAdmin/assignAdmin/<%= i %>?_method=PATCH"
                                 method="post">
                                 <button type="submit" class="btn btn-light">
-                                    <span class="glyphicon glyphicon-edit" style="color:blue;"></span>
+                                    <span class="glyphicon glyphicon-check" style="color:blue;"></span>
                                 </button>
                             </form>
                             <form action="http://localhost:3000/superAdmin/assignAdmin/<%= i %>?_method=DELETE"

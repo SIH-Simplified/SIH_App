@@ -387,8 +387,7 @@ router.post(
     const { post } = req.body;
     try {
       const token = req.cookies["adminToken"];
-      try {
-        const payload = JWT.verify(token, process.env.AUTH_SECRET);
+      try {        const payload = JWT.verify(token, process.env.AUTH_SECRET);
       } catch (error) {
         next(new Error("Invalid token"));
       }

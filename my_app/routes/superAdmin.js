@@ -15,6 +15,9 @@ const application = require("../applicationSuperAdminDB");
 const trainingDB = require("../trainingDB");
 const assignAdmin = require("../adminApply");
 const teacherTransfer = require("../transferDB");
+const schoolList = require("../schoolList");
+const teacherSuperAdmin = require("../teacherSuperAdmin");
+// No. of Posts	
 router.get("/", async (req, res, next) => {
   try {
     const countOfSchools = school.length;
@@ -23,6 +26,8 @@ router.get("/", async (req, res, next) => {
       countOfSchools,
       application,
       training: trainingDB,
+      schoolList: schoolList.length,
+      teacherSuperAdmin
     });
   } catch (error) {
     next(error);
@@ -108,6 +113,14 @@ router.get("/schools", (req, res) => {
   res.render("superAdmin/school", { school });
 });
 
+router.get("/recruitmentStats", (req, res) => {
+  res.render("superAdmin/recruitmentStats");
+});
+
+router.get("/transferStats", (req, res) => {
+  res.render("superAdmin/transferStats");
+});
+
 router.get("/teacherTransfer", (req, res) => {
   res.render("superAdmin/teacherTransfer", { teacherTransfer });
 });
@@ -158,7 +171,7 @@ router.get("/exams", (req, res) => {
 });
 
 router.get("/schoolList", (req, res) => {
-  res.render("superAdmin/schoolList");
+  res.render("superAdmin/schoolList", { schoolList });
 });
 
 router.get("/applicants", (req, res) => {
