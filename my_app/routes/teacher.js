@@ -157,7 +157,7 @@ router.post(
   ],
   async (req, res, next) => {
     const { subject, message } = req.body;
-    const error = validatorResult(req);
+    const error = validationResult(req);
 
     if (!error) {
       return res.status(400).json({
@@ -325,6 +325,7 @@ router.post("/leaves", (req, res, next) => {
   const { leaveType, dayType, from, to, department, supervisor, reason } =
     req.body;
   leaveDB.push(leaveType, dayType, from, to, department, supervisor, reason);
+  console.log(leaveDB);
   res.redirect("/client");
 });
 

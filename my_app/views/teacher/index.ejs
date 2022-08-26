@@ -374,7 +374,7 @@
                                   </div>
                                   <div class="seven-flex-a">
                                     <div class="seven-square-b"></div>
-                                    <div class="facebook">Overtime</div>
+                                    <div class="facebook">Medical Leaves</div>
                                   </div>
                                   <div class="seven-flex-a">
                                     <div class="seven-square-c"></div>
@@ -428,6 +428,8 @@
                                 TEACHER'S TRANSFER REQUEST PORTAL
                               </p>
                             </div>
+                            <div class="eight-butt-main">
+                              <br>
                             <button class="eight-button-a" id="transferbt1">
                               <a href="/client/email">NOTIFICATIONS</a>
                               <i class="fa-regular fa-bell"></i></button><br />
@@ -438,6 +440,7 @@
                               <a href="/client/transfer/form">REGISTER FOR TRANSFER</a>
                               <i class="fa-regular fa-paper-plane"></i>
                             </button>
+                          </div>
                           </div>
                         </div>
                       </div>
@@ -484,12 +487,12 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="row">
+              <div class="row">
                 <div class="col-sm-6">
-                  <!-- <%- include('./leave.ejs') %> -->
-            </div> -->
-            <!-- <div class="col-sm-3"> -->
-            <!-- <div class="group eleven" id="application">
+                  <%- include('./leave.ejs') %>
+                </div>
+                <div class="col-sm-3"> 
+                  <div class="group eleven" id="application">
                     <div class="eleven-title">YOUR APPLICATIONS</div>
 
                     <div class="eleven-main" id="div12">
@@ -549,42 +552,39 @@
                         </div>
                       </div>
                     </div>
-                  </div> -->
-            <!-- </div> -->
-            <!-- <div class="col-sm-3"> -->
-            <!-- <div class="group ten" style="overflow: hidden">
+                  </div> 
+                </div>
+                <div class="col-sm-3">
+                  <div class="group ten" style="overflow: hidden">
                     <img src="images/image 38.jpg" alt="" style="width: 100%" />
                     <div style="width: 100%" id="div11">
-                      <marquee scrollamount="5" direction="up" id="marque">
-                        <ul id="marqueecontent"></ul>
-                      </marquee>
-                    </div> -->
-            <!-- </div> -->
+                      <ul>
+                        <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                         <td class="td-mar"> No more updates</td> <br>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
     </div>
   </div>
-  </div>
-  </div>
-  </div>
   <br />
   <br />
   <script>
-    var marqueecontent = document.getElementById("marqueecontent");
-    var application = document.getElementById("application");
-    var marque = document.getElementById("marque");
-    marque.style.height = application.offsetHeight + "px";
-    for (i = 1; i <= 100; i++) {
-      var list = document.createElement("li");
-      marqueecontent.appendChild(list);
-      var text = document.createTextNode(
-        " No updates What you PPL are actually doing Need to work hard"
-      );
-      var font = document.createElement("font");
-      font.id = "update" + i;
-      font.appendChild(text);
-      list.appendChild(font);
-    }
+
 
     var width = window.screen.availWidth;
     var navbar = document.getElementById("navbar");
