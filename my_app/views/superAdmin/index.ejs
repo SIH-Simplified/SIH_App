@@ -25,6 +25,14 @@
             background: #f5f5f5;
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
         .navigation-bt {
             font-size: min(1.2vw, 1.5rem);
             color: black;
@@ -221,39 +229,43 @@
                 </a>
             </span>
             <span class="col-md-3">
-                <div class="row1_child">
-                    <br>
-                    <a href="/superAdmin/teachers">
-                    <font class="row1_child_font1"> Total recruited
+                <a href="/superAdmin/teachers">
+                    <div class="row1_child">
                         <br>
-                    </font>
-                    <font class="row1_child_font1"> teachers</font>
-                    <br><br>
-                    <font class="row1_child_font2"> 295</font>
-                    </a>
-                </div>
+                        <font class="row1_child_font1"> Total recruited
+                            <br>
+                        </font>
+                        <font class="row1_child_font1"> teachers</font>
+                        <br><br>
+                        <font class="row1_child_font2"> 295</font>
+                    </div>
+                </a>
             </span>
             <span class="col-md-3">
-                <div class="row1_child">
-                    <br>
-                    <font class="row1_child_font1"> Total examinations
+                <a href="/superAdmin/exams">
+                    <div class="row1_child">
                         <br>
-                    </font>
-                    <font class="row1_child_font1"> offerred</font>
-                    <br><br>
-                    <font class="row1_child_font2"> 295</font>
-                </div>
+                        <font class="row1_child_font1"> Total examinations
+                            <br>
+                        </font>
+                        <font class="row1_child_font1"> offerred</font>
+                        <br><br>
+                        <font class="row1_child_font2"> 295</font>
+                    </div>
+                </a>
             </span>
             <span class="col-md-3">
-                <div class="row1_child">
-                    <br>
-                    <font class="row1_child_font1"> Total applicants
+                <a href="/superAdmin/applicants">
+                    <div class="row1_child">
                         <br>
-                    </font>
-                    <font class="row1_child_font1"> 2022 </font>
-                    <br><br>
-                    <font class="row1_child_font2"> 295</font>
-                </div>
+                        <font class="row1_child_font1"> Total applicants
+                            <br>
+                        </font>
+                        <font class="row1_child_font1"> 2022 </font>
+                        <br><br>
+                        <font class="row1_child_font2"> 295</font>
+                    </div>
+                </a>
             </span>
         </span>
 
@@ -386,7 +398,7 @@
                                             <font style="color:grey;margin-left:0%;">
                                                 <%= training[i].dateTo %>
                                             </font>
-                                            
+
                                         </div>
                                         <% } %>
                                             <% } %>
