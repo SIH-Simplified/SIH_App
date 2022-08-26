@@ -151,6 +151,11 @@
               <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
               background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins', 
               sans-serif;" href="http://localhost:3000/superAdmin" role="button">Super Admin</a>
+              <% if(isAuthenticated===true ) {%>
+                <a class="btn btn-primary" href="http://localhost:3000/logout" role="button">
+                  LogOut</a>
+                <% } %>
+
             </span>
 
           </span>
@@ -581,7 +586,7 @@
             </font><br>
             <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(8vw,4rem);" id="text33"><b>Meet
                 Our Team</b></font><br>
-           <font id = "text34"></font>
+            <font id="text34"></font>
           </span>
         </span>
         <br><br><br><br>
@@ -681,7 +686,7 @@
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
-<Br>
+          <Br>
         </div>
       </div>
       <p></p>
@@ -699,7 +704,7 @@
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
-<br>
+          <br>
         </div>
       </div>
       <p></p>
@@ -716,7 +721,7 @@
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
-            <br>
+          <br>
         </div>
       </div>
 
@@ -734,7 +739,7 @@
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
-<br>
+          <br>
         </div>
 
       </div>
