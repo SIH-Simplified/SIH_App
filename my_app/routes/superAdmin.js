@@ -113,6 +113,14 @@ router.get("/schools", (req, res) => {
   res.render("superAdmin/school", { school });
 });
 
+router.get("/recruitmentStats", (req, res) => {
+  res.render("superAdmin/recruitmentStats");
+});
+
+router.get("/transferStats", (req, res) => {
+  res.render("superAdmin/transferStats");
+});
+
 router.get("/teacherTransfer", (req, res) => {
   res.render("superAdmin/teacherTransfer", { teacherTransfer });
 });
