@@ -151,8 +151,11 @@
               <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
               background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins', 
               sans-serif;" href="http://localhost:3000/superAdmin" role="button">Super Admin</a>
-              <a class="btn btn-primary" href="http://localhost:3000/login" role="button">login</a>
-              <a class="btn btn-primary" href="http://localhost:3000/logout" rol</Label>Logout</a>
+              <% if(isAuthenticated===true ) {%>
+                <a class="btn btn-primary" href="http://localhost:3000/logout" role="button">
+                  LogOut</a>
+                <% } %>
+
             </span>
 
           </span>
