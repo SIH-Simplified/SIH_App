@@ -16,6 +16,8 @@ const trainingDB = require("../trainingDB");
 const assignAdmin = require("../adminApply");
 const teacherTransfer = require("../transferDB");
 const schoolList = require("../schoolList");
+const teacherSuperAdmin = require("../teacherSuperAdmin");
+// No. of Posts	
 router.get("/", async (req, res, next) => {
   try {
     const countOfSchools = school.length;
@@ -24,7 +26,8 @@ router.get("/", async (req, res, next) => {
       countOfSchools,
       application,
       training: trainingDB,
-      schoolList
+      schoolList: schoolList.length,
+      teacherSuperAdmin
     });
   } catch (error) {
     next(error);

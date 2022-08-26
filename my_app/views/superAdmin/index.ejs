@@ -214,67 +214,65 @@
                 </span>
             </span>
         </div>
-        <br>
-        <span class="row" id="row1">
-            <span class="col-md-3">
-                <a href="http://localhost:3000/superAdmin/schoolList" style="width: 100%; text-decoration: none;"
-                    role="button">
-                    <div class="row1_child">
+        <br <span class="row" id="row1">
+        <span class="col-md-3">
+            <a href="http://localhost:3000/superAdmin/schoolList" style="width: 100%; text-decoration: none;"
+                role="button">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total affiliated<br></font>
+                    <font class="row1_child_font1"> schools</font>
+                    <br><br>
+                    <font class="row1_child_font2">
+                        <%= schoolList %>
+                    </font>
+                </div>
+            </a>
+        </span>
+        <span class="col-md-3">
+            <a href="/superAdmin/teachers">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total recruited
                         <br>
-                        <font class="row1_child_font1"> Total affiliated<br></font>
-                        <font class="row1_child_font1"> schools</font>
-                        <br><br>
-                        <font class="row1_child_font2">
-                            <% { %>
-                                <% let sum=0; %>
-                                    <% for(let i=0;i<schoolList.length;i++){ %>
-                                        <% sum+=schoolList[i].No_of_Schools %>
-                                            <% } %>
-                                                <%= sum %>
-                                                    <% } %>
-                        </font>
-                    </div>
-                </a>
-            </span>
-            <span class="col-md-3">
-                <a href="/superAdmin/teachers">
-                    <div class="row1_child">
+                    </font>
+                    <font class="row1_child_font1"> teachers</font>
+                    <br><br>
+                    <font class="row1_child_font2">
+                        <%= teacherSuperAdmin.length %>
+                    </font>
+                </div>
+            </a>
+        </span>
+        <span class="col-md-3">
+            <a href="/superAdmin/exams">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total examinations
                         <br>
-                        <font class="row1_child_font1"> Total recruited
-                            <br>
-                        </font>
-                        <font class="row1_child_font1"> teachers</font>
-                        <br><br>
-                        <font class="row1_child_font2"> 295</font>
-                    </div>
-                </a>
-            </span>
-            <span class="col-md-3">
-                <a href="/superAdmin/exams">
-                    <div class="row1_child">
+                    </font>
+                    <font class="row1_child_font1"> offerred</font>
+                    <br><br>
+                    <font class="row1_child_font2">
+
+                        <%= teacherSuperAdmin.length %>
+                    </font>
+                </div>
+            </a>
+        </span>
+        <span class="col-md-3">
+            <a href="/superAdmin/applicants">
+                <div class="row1_child">
+                    <br>
+                    <font class="row1_child_font1"> Total applicants
                         <br>
-                        <font class="row1_child_font1"> Total examinations
-                            <br>
-                        </font>
-                        <font class="row1_child_font1"> offerred</font>
-                        <br><br>
-                        <font class="row1_child_font2"> 295</font>
-                    </div>
-                </a>
-            </span>
-            <span class="col-md-3">
-                <a href="/superAdmin/applicants">
-                    <div class="row1_child">
-                        <br>
-                        <font class="row1_child_font1"> Total applicants
-                            <br>
-                        </font>
-                        <font class="row1_child_font1"> 2022 </font>
-                        <br><br>
-                        <font class="row1_child_font2"> 295</font>
-                    </div>
-                </a>
-            </span>
+                    </font>
+                    <font class="row1_child_font1"> 2022 </font>
+                    <br><br>
+                    <font class="row1_child_font2"> 295</font>
+                </div>
+            </a>
+        </span>
         </span>
 
         <br>
