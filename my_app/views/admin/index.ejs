@@ -58,21 +58,18 @@
                         style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;">
                         <span class="glyphicon glyphicon-briefcase" id="send"></span>&nbsp&nbsp&nbsp&nbspTeachers
                     </font></a><br><br>
-                    <a href = "/client/email">
-                    <font
-                        style="font-size:min(1vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
-                        <span class="glyphicon glyphicon-pencil"></span>&nbsp&nbsp&nbsp&nbspDepartments
-                    </font></a><br><br>
+                    
+                    
                     <a href = "/client/calendar">
                     <font
                         style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
                         <span class="glyphicon glyphicon-calendar"></span>&nbsp&nbsp&nbsp&nbspCalendar
                     </font></a><br><br>
-<a href = "/client/email">
+
                     <font
                         style="font-size:min(1.2vw,1.5rem);color:black;font-family:'Poppins', sans-serif;border:none;border-radius:7px;float:left;margin-left:20%;;">
                         <span class="	glyphicon glyphicon-log-out"></span>&nbsp&nbsp&nbsp&nbspLogout
-                    </font></a><br>
+                    </font><br>
                 </center>
             </div>
             <div style="position:absolute;left:13%;width:87%;height:93%;top:0%;" id="maindiv">
@@ -101,13 +98,13 @@
                 </div>
 
                 <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;height:40%;" id="row1">
-                    <span class="col-md-4" id="institute">
+                    <span class="col-md-2" id="institute">
                         <div style="border-radius:7px;">
-                            <img src="images/institute.svg" id="institute_child" style="width:105%;">
+                            <img src="images/avensis.jpg" id="institute_child" style="width:105%;height:100%;">
                         </div>
                     </span>
 
-                    <span class="col-md-8" style="overflow:auto;height:100%;" id="teacherlistcont">
+                    <span class="col-md-10" style="overflow:auto;height:100%;" id="teacherlistcont">
                         <div style="background:white;border-radius:7px;;color:#202020;font-family:'Poppins', sans-serif;width:100%;height:auto;"
                             id="container2">
                             <font
@@ -123,8 +120,8 @@
                                     <th>Email</th>
                                     <th>Class</th>
                                     <th>Subject</th>
-                                    <th>Rating</th>
-                                    <th>Action</th>
+                                    <th>Prev School Eval</th>
+                                    <th>Portfolio</th>
                                 </tr>
                                 <tr>
                                     <td style="padding: 10px;">
@@ -224,7 +221,7 @@
                                         <img src="images/emailusr.png" style="border-radius:50%;width:40px;margin:0;">
                                     </td>
                                     <td>
-                                        <font style="font-size:min(1vw,1.5rem)">Danny Scoff</font>
+                                        <font style="font-size:min(1vw,1.5rem)"> Danny Scoff</font>
                                     </td style="padding: 10px;">
                                     <td style="padding: 10px;">
                                         <font style="font-size:min(1vw,1.5rem)">Science</font>
@@ -278,6 +275,7 @@
 
                 <span class="row " style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row2">
                     <span class="col-md-6">
+                        <a href = "/admin/attendence">
                         <div style="background:white;border-radius:7px;;color:silver;font-family:'Poppins', sans-serif;width:100%;height:100%;"
                             id="container3">
                             <span class="row" style="height:100%;">
@@ -286,7 +284,7 @@
                                     <font
                                         style="font-family:'Poppins', sans-serif;font-size:min(1vw,2rem);color:#202020;border:none;padding-left:20%;border-radius:7px;"
                                         id="attendencestats"> Attendence Stats</font>
-                                    <div style="height:70%;width:100%;background:white;margin-top:10%;display:flex;"
+                                    <div style="height:50%;width:100%;background:white;margin-top:10%;display:flex;"
                                         id="attendencegraph">
                                         <div
                                             style="height:100%;width:4%;background:#aed8f0;border-radius:10px;margin-left:30%;">
@@ -296,6 +294,7 @@
 
 
                                         </div>
+                                        
 
                                         
 
@@ -307,14 +306,21 @@
                                             </div>
                                         </div>
 
+                                        <div
+                                        style="height:100%;width:4%;background:#2f01fd;border-radius:10px;margin-left:15%;">
+                                        <div
+                                            style="height:80%;width:100%;background:lightgrey;border-top-right-radius:10px;border-top-left-radius:10px;position:relative;bottom:0;">
+                                        </div>
 
+
+                                    </div>
                                     </div>
 
 
                                 </span>
 
                                 <span class="col-md-8 " id="attendencecontmain">
-                                    <a href = "/admin/attendence">
+                                    
                                        <div style="background:white;border-radius:7px;color:silver;font-family:'Poppins', sans-serif;width:100%;height:auto;"
                                         id="container3_child1">
                                         <div style="width:100%;background:white;margin-top:10%;" id="attendencecontent">
@@ -326,7 +332,7 @@
                                                         <center>
                                                             <font
                                                                 style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
-                                                                <b>2431</b>
+                                                                <b>256</b>
                                                             </font>
                                                         </center>
                                                     </td>
@@ -334,7 +340,7 @@
                                                         <center>
                                                             <font
                                                                 style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
-                                                                <b>892</b>
+                                                                <b>89</b>
                                                             </font>
                                                         </center>
                                                     </td>
@@ -342,7 +348,7 @@
                                                         <center>
                                                             <font
                                                                 style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;border-radius:7px;">
-                                                                <b> 209</b>
+                                                                <b> 20</b>
                                                             </font>
                                                         </center>
                                                     </td>
@@ -355,21 +361,21 @@
                                                         <center>
                                                             <font
                                                                 style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
-                                                                18-35</font>
+                                                                Days Attended</font>
                                                         </center>
                                                     </td>
                                                     <td>
                                                         <center>
                                                             <font
                                                                 style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
-                                                                36-55</font>
+                                                                Paid Leaves</font>
                                                         </center>
                                                     </td>
                                                     <td>
                                                         <center>
                                                             <font
                                                                 style="font-family:'Poppins', sans-serif;font-size:min(2vw,1.5rem);color:#202020;border:none;border-radius:7px;">
-                                                                55 </font>
+                                                                Unpaid Leaves </font>
                                                         </center>
                                                     </td>
                                                 </tr>
@@ -428,20 +434,42 @@
                                                     <td>
                                                         <font
                                                             style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            <font style="color:#f7726f;">o</font> Leaves Taken
+                                                            <font style="color:#f7726f;">o</font> Paid Leaves
 
                                                         </font>
                                                     </td>
                                                     <td>
                                                         <font
                                                             style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
-                                                            64% -> 26%</font>
+                                                            8% -> 26%</font>
                                                     </td>
                                                     <td>
                                                         <center>
                                                             <font
                                                                 style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
                                                                 30% </font>
+                                                        </center>
+                                                    </td>
+                                                </tr>
+
+                                                <tr style="font-size:min(1vw,1.5rem);" id="attendencerow3">
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            <font style="color:#2f01fd;">o</font> Unpaid Leaves
+
+                                                        </font>
+                                                    </td>
+                                                    <td>
+                                                        <font
+                                                            style="font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                            34% -> 20%</font>
+                                                    </td>
+                                                    <td>
+                                                        <center>
+                                                            <font
+                                                                style="float:right;font-family:'Poppins', sans-serif;color:#202020;border:none;border-radius:7px;">
+                                                                14% </font>
                                                         </center>
                                                     </td>
                                                 </tr>
@@ -492,10 +520,7 @@
                                         <div style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;"
                                             id="summary_sub_child1">
                                             <br>
-                                            <font
-                                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
-                                                <center>13 applications need review</center>
-                                            </font>
+                                           
                                         </div>
                                     </div>
                                 </span>
@@ -506,17 +531,14 @@
                                         id="summary_child2"><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                            Overtimes</font><br>
+                                            Total working </font><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             1,409</font><br>
                                         <div style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;"
                                             id="summary_sub_child2">
                                             <br>
-                                            <font
-                                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
-                                                <center>13 overtimes need review</center>
-                                            </font>
+                                            
                                         </div>
                                     </div>
 
@@ -527,17 +549,14 @@
                                         id="summary_child3"><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
-                                            Leaves</font><br>
+                                            Non-working</font><br>
                                         <font
                                             style="font-family:'Poppins', sans-serif;font-size:min(2vw,4rem);color:#202020;border:none;padding-left:10px;border-radius:7px;">
                                             1,409</font><br>
                                         <div style="background:#343a45;width:100%;border-bottom-left-radius:7px;border-bottom-right-radius:7px;"
                                             id="summary_sub_child3">
                                             <br>
-                                            <font
-                                                style="font-family:'Poppins', sans-serif;font-size:min(1.5vw,2rem);color:white;border:none;;border-radius:7px;">
-                                                <center>13 Leaves need review</center><br>
-                                            </font>
+                                           
                                         </div>
                                     </div>
 
@@ -568,25 +587,8 @@
 
                 <span class="row" style="margin-top:1%;width:98%;margin-left:0.5%;position:relative;" id="row3">
                     <span class="col-md-4" id="row3_child1">
-                        <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
-                            id="container5">
-                            <center><br>
-                                <div
-                                    style="background:#F4F7FE;font-size:min(1.5vw,2rem);border-radius:30px;padding:30px;width:80%;">
-                                    TEACHER’S TRANFER REQUEST
-                                    PORTAL</div>
-                                <br><br>
-                                <font style="font-size:min(1.5vw,2rem);color:#7363EA;">REQUESTED APPLICATIONS</font>
-                                <br><br><br>
-                                <font style="font-size:min(1.5vw,2rem);color:#7363EA;">MANAGE EMPLOYEES
-                                    <br><br>
-
-                                </font>
-
-                        </div>
-                        </center>
-                        <br>
-
+                        
+                        
                         <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
                             id="container6">
                             <center>
@@ -614,7 +616,7 @@
                             
                                 
 
-                           
+                           <br><br>
 
 
                         </div>
@@ -626,10 +628,10 @@
                             id="container7">
                             <br>
                             <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">
-                                <form action="http://localhost:3000/admin/tasks/create" method="get">
-                                    <button type="submit" style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;border:none;margin-left:20px;"
-                                    id="assign2">Assign Task</button>
-                                </form>
+                                
+                                    <font style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;border:none;margin-left:20px;"
+                                    id="assign2">Staff Progress Report</font>
+                                
                             </font>
                             
                             <hr>
@@ -637,46 +639,154 @@
 
                                 <tr style="font-size:min(2vw,1.5rem);border-bottom : 1px solid  #f5f5f5 ">
                                     <th>#</th>
-                                    <th>Task</th>
-                                    <th>Assigned Teachers</th>
-                                    <th>Status</th>
-                                    <th>Progress</th>
+                                    <th>Danny Scoff</th>
+                                    <th>Daniel Frank</th>
+                                    <th>Kristen Stewart</th>
+                                    <th>Vin Diesel</th>
+                                    <th>Dwyane Jhonson</th>
                                 </tr>
-                                <% if(typeof tasks !=="undefined" && tasks.length !==0) {%>
-                                    <% for(let i=0;i<tasks.length;i++) {%>
+                             
                                         <tr style="border-bottom :1px solid  #f5f5f5; ">
                                             <td style="padding-bottom :10px;padding-top:10px;">
                                                 <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
-                                                    <%= i+1 %>
+                                                  Education 
                                                 </font>
                                             </td>
                                             <td style="padding-bottom :10px;padding-top:10px;">
                                                 <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
-                                                    <%= tasks[i].task %>
+                                                   PHD in Computer Science
                                                 </font>
                                             </td>
                                             <td style="padding-bottom :10px;padding-top:10px;">
                                                 <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
-                                                    <%= tasks[i].assignedTeachers %>
+                                                    PHD in Computer Science 
                                                 </font>
                                             </td>
                                             <td style="padding-bottom :10px;padding-top:10px;">
-                                                <font
-                                                    style="font-size:min(2vw,1.5rem);font-family:Poppins;background:#12dcc0;
-                                                    border-radius:5px;color:white;padding-left:15px;padding-right:15px;">
-                                                    <%= tasks[i].status %>
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins; ">
+                                                    PHD in Computer Science
                                                 </font>
                                             </td>
                                             <td style="padding-bottom :10px;padding-top:10px;">
-                                                <form
-                                                    action="http://localhost:3000/admin/tasks/delete/<%= i %>?_method=DELETE"
-                                                    method="post">
-                                                    <button type="submit" class="btn btn-secondary"> Delete </button>
-                                                </form>
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    PHD in Computer Science
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    PHD in Computer Science
+                                                </font>
                                             </td>
                                         </tr>
-                                        <% } %>
-                                            <% } %>
+                                        
+
+                                        
+                                        <tr style="border-bottom :1px solid  #f5f5f5; ">
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                   Experience
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                   25+ EXP
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    25+ EXP
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins; ">
+                                                    25+ EXP
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    25+ EXP
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    25+ EXP
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        
+
+
+                                        
+                                        <tr style="border-bottom :1px solid  #f5f5f5; ">
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                   Researches
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.2rem);font-family:Poppins;">
+                                                    A Study of Product Sentiment Analysis based on Reviewers Comments, Jamshedpur Research Review, Vol. V Issue XXIV, P.83-87, ISSN No. (P) 2320-2750, NatIonal, (www.ijres.org).
+                                                     
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.2rem);font-family:Poppins;">
+                                                    A Study of Product Sentiment Analysis based on Reviewers Comments, Jamshedpur Research Review, Vol. V Issue XXIV, P.83-87, ISSN No. (P) 2320-2750, NatIonal, (www.ijres.org).   
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.2rem);font-family:Poppins; ">
+                                                    A Study of Product Sentiment Analysis based on Reviewers Comments, Jamshedpur Research Review, Vol. V Issue XXIV, P.83-87, ISSN No. (P) 2320-2750, NatIonal, (www.ijres.org).
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.2rem);font-family:Poppins;">
+                                                    A Study of Product Sentiment Analysis based on Reviewers Comments, Jamshedpur Research Review, Vol. V Issue XXIV, P.83-87, ISSN No. (P) 2320-2750, NatIonal, (www.ijres.org).
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.2rem);font-family:Poppins;">
+                                                    A Study of Product Sentiment Analysis based on Reviewers Comments, Jamshedpur Research Review, Vol. V Issue XXIV, P.83-87, ISSN No. (P) 2320-2750, NatIonal, (www.ijres.org).
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        
+
+
+                                        
+                                        <tr style="border-bottom :1px solid  #f5f5f5; ">
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                   Projects
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    Rule-Base Optimisation using genetic Algorithm for Mobile Web Page Adaptation
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    Rule-Base Optimisation using genetic Algorithm for Mobile Web Page Adaptation
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins; ">
+                                                    Rule-Base Optimisation using genetic Algorithm for Mobile Web Page Adaptation
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    Rule-Base Optimisation using genetic Algorithm for Mobile Web Page Adaptation
+                                                </font>
+                                            </td>
+                                            <td style="padding-bottom :10px;padding-top:10px;">
+                                                <font style="font-size:min(2vw,1.5rem);font-family:Poppins;">
+                                                    Rule-Base Optimisation using genetic Algorithm for Mobile Web Page Adaptation
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        
                             </table>
                             <script>
                                 var summary = document.getElementById("summary");
