@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 const { check, validationResult, checkSchema } = require("express-validator");
 const Email = require("../models/admin/email");
 const Teacher = require("../models/teacher");
-const cloudinary = require("../cloudinary/index");
+const cloudinary = require("../middlewares/cloudinary/index");
 const DailyUpdates = require("../models/admin/dailyUpdates");
 const adminEmail = require("../fakeDB");
 const teachers = require("../teacherDB");
@@ -387,8 +387,7 @@ router.post(
     const { post } = req.body;
     try {
       const token = req.cookies["adminToken"];
-      try {
-        const payload = JWT.verify(token, process.env.AUTH_SECRET);
+      try {        const payload = JWT.verify(token, process.env.AUTH_SECRET);
       } catch (error) {
         next(new Error("Invalid token"));
       }
