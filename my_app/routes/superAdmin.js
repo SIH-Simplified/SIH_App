@@ -153,9 +153,16 @@ router.get("/manageApplication/:id", (req, res) => {
   res.render("superAdmin/application", { application: application[id] });
 });
 
+router.get("/exams", (req, res) => {
+  res.render("superAdmin/applications");
+});
 
 router.get("/schoolList", (req, res) => {
   res.render("superAdmin/schoolList");
-})
+});
+
+router.get("/applicants", (req, res) => {
+  res.render("superAdmin/applicants");
+});
 
 module.exports = router;
