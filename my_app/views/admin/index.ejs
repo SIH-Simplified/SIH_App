@@ -262,12 +262,7 @@
 
                         </div>
 
-                        <center>
-                            <span class="glyphicon glyphicon-menu-down"
-                                style="font-size:min(2vw,3rem);color:#202020;position:absolute;top:90%;"
-                                id="arrow"></span>
-                        </center>
-
+                        
 
                     </span>
                 </span>
@@ -617,11 +612,7 @@
                             </div>
 
                             
-                                <center>
-                                    <span class="glyphicon glyphicon-menu-right"
-                                        style="font-size:min(3vw,6rem);color:#202020;position:absolute;top:90%;"
-                                        id="arrow2"></span>
-                                </center>
+                                
 
                            
 
@@ -631,17 +622,16 @@
                     </span>
 
                     <span class="col-md-8" style="height:100%;overflow:auto;" id="row3_child2">
-                        <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:auto;"
+                        <div style="background:white;border-radius:7px;font-family:'Poppins', sans-serif;width:100%;height:100%;"
                             id="container7">
                             <br>
                             <font style="font-size:min(2vw,2rem);padding-left:40px;" id="assign1">
                                 <form action="http://localhost:3000/admin/tasks/create" method="get">
-                                    <button type="submit" class="btn btn-primary">Assign Task</button>
+                                    <button type="submit" style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;border:none;margin-left:20px;"
+                                    id="assign2">Assign Task</button>
                                 </form>
                             </font>
-                            <font
-                                style="font-size:min(2vw,2rem);padding-right:20px;padding-left:20px;background: #7363EA;color:white;border-radius:5px;float:right;margin-right:40px;"
-                                id="assign2">Assign Now<br></font>
+                            
                             <hr>
                             <table style="width:90%;margin-left:5%;" id="tasks">
 
@@ -1305,8 +1295,8 @@
                 var generateemployees = document.getElementById("generateemployees");
 
                 var extendedteacherlist = document.getElementById("extendedteacherlist");
-                var arrow = document.getElementById("arrow");
-                arrow.addEventListener("click", () => {
+                var container2 = document.getElementById("container2");
+                container2.addEventListener("click", () => {
 
                     maindiv.style.visibility = "hidden";
                     extendedteacherlist.style.visibility = "visible";
@@ -1394,7 +1384,7 @@
                                         method="post">
                                         <button type="submit" class="btn btn-info">Approve</button>
                                     </form>
-                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                    
                                 </td>
                                 <% } %>
                                     <% } %>
@@ -1404,13 +1394,13 @@
             </div>
             <script>
                 var leaveapplication = document.getElementById("leaveapplication");
-                var arrow2 = document.getElementById("arrow2");
-                arrow2.addEventListener("click", () => {
+                var container6 = document.getElementById("container6");
+                container6.addEventListener("click", () => {
 
 
                     maindiv.style.visibility = "hidden";
                     leaveapplication.style.visibility = "visible";
-
+                    leave.style.visibility = "visible";
 
 
                 })
