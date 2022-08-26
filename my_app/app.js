@@ -14,16 +14,16 @@ const methodOverride = require("method-override");
 const recruitRouter = require("./routes/recruit");
 const { auth } = require("express-openid-connect");
 var app = express();
-const mongo_connection_url =
-  process.env.MONGO_DB_ATLAS_URL || "mongodb://localhost:27017/Edu";
-mongoose
-  .connect(mongo_connection_url)
-  .then(() => {
-    console.log("Connected to the mongo DB database");
-  })
-  .catch((err) => {
-    console.log("Error occured while connected to the database = ", err);
-  });
+// const mongo_connection_url =
+//   process.env.MONGO_DB_ATLAS_URL || "mongodb://localhost:27017/Edu";
+// mongoose
+//   .connect(mongo_connection_url)
+//   .then(() => {
+//     console.log("Connected to the mongo DB database");
+//   })
+//   .catch((err) => {
+//     console.log("Error occured while connected to the database = ", err);
+//   });
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -70,3 +70,4 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+ 

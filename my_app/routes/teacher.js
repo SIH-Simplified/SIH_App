@@ -325,6 +325,7 @@ router.post("/leaves", (req, res, next) => {
   const { leaveType, dayType, from, to, department, supervisor, reason } =
     req.body;
   leaveDB.push(leaveType, dayType, from, to, department, supervisor, reason);
+  console.log(leaveDB);
   res.redirect("/client");
 });
 
