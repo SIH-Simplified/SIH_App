@@ -17,7 +17,6 @@ const assignAdmin = require("../adminApply");
 const teacherTransfer = require("../transferDB");
 router.get("/", async (req, res, next) => {
   try {
-    // const countOfTeachers = await Teacher.find({}).count();
     const countOfSchools = school.length;
     res.render("superAdmin/index", {
       countOfTeachers: 1,

@@ -15,9 +15,9 @@ const teachers = require("../teacherDB");
 const tasks = require("../tasksDB");
 const leaveDB = require("../leaveDB");
 router.get("/", async (req, res) => {
-  const countTeachers = await Teacher.find({}).count();
+  // const countTeachers = await Teacher.find({}).count();
   res.render("admin/index", {
-    countTeachers,
+    countTeachers: 2,
     leaves: 0,
     overtimes: 0,
     teachers,
@@ -29,7 +29,9 @@ router.get("/", async (req, res) => {
 router.get("/login", (req, res) => {
   res.render("admin/login");
 });
-
+router.get("/attendence", (req, res) => {
+  res.render("admin/attendence");
+});
 router.get("/register", (req, res) => {
   res.render("admin/register");
 });
