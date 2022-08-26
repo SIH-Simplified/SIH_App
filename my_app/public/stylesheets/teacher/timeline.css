@@ -112,6 +112,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 8px;
 }
 
 .row section .details .title {
@@ -136,6 +137,36 @@ body {
 
 .row section .bottom a:hover {
   transform: scale(0.97);
+}
+
+.foot{
+  text-align: right;
+}
+
+.mid-school{
+  display: flex;
+  gap: 20px;
+}
+
+.pune-color{
+  color: red;
+}
+
+.foot-title{
+  font-weight: 600;
+}
+
+#butt{
+  padding-left: 22px;
+}
+
+.main-title{
+  margin-left: 41.5%;
+  color: #fff;
+  font-size: 2.75rem;
+  font-weight: 600;
+  padding: 10px;
+  
 }
 
 @media (max-width: 790px) {
