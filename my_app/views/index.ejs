@@ -64,10 +64,20 @@
                 style="font-family:'Poppins', sans-serif; color:black;font-size:min(3vw,2rem);padding-left:10%;"> <span
                   class="	glyphicon glyphicon-adjust" style="font-size:min(5vw,3rem);" id="theme"></span></a>
           </div>
-          <font
-            style="font-family:'Poppins', sans-serif; color:black;font-size:min(3vw,2rem);padding-left:2%;border:1px solid black;border-radius:40px;margin-left:1%;padding-right:2%;padding-top:0.5%;padding-bottom:0.5%;float:right"
-            id="home6">
-            <center><a href='index/login'>Sign in</a></center>
+          <font style="font-family:'Poppins', sans-serif; margin-left:1%;padding-right:2%;float:right" id="home6">
+            <center>
+              <% if(isAuthenticated) {%>
+                <a class="btn btn-danger" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
+            color:white;font-size:min(3vw,2rem);font-family:'Poppins',
+            sans-serif;" href="http://localhost:3000/logout" role="button">
+                  LogOut</a>
+                <% }else { %>
+                  <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
+            background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins',
+            sans-serif;" href="http://localhost:3000/login" role="button">
+                    Login</a>
+                  <% } %>
+            </center>
           </font>
           <!---------switch start--------->
 
@@ -151,17 +161,6 @@
               <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
               background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins', 
               sans-serif;" href="http://localhost:3000/superAdmin" role="button">Super Admin</a>
-              <% if(isAuthenticated) {%>
-                <a class="btn btn-danger" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
-              color:white;font-size:min(3vw,2rem);font-family:'Poppins', 
-              sans-serif;" href="http://localhost:3000/logout" role="button">
-                  LogOut</a>
-                <% }else { %>
-                  <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
-              background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins', 
-              sans-serif;" href="http://localhost:3000/login" role="button">
-                    Login</a>
-                  <% } %>
             </span>
 
           </span>
