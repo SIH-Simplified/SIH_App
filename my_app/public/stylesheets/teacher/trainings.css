@@ -69,12 +69,14 @@ a {
 }
 
 .five {
-  height: 260px;
+  height: 400px;
+  top: 0%;
+  overflow: auto;
 }
 
 .six {
   height: 260px;
-  width: 40% !important;
+  width: 70% !important;
 }
 
 /* Main nav  */
@@ -286,8 +288,8 @@ a {
 
 .four-training-cont {
   margin-top: 5px;
-  /* border: solid 5px; */
-  width: 410px;
+  /* border: solid 1px; */
+  width: 605px;
   height: 60px;
   border-radius: 10px;
   background-color: #fff;
@@ -306,7 +308,8 @@ a {
 }
 
 .four-mid {
-  width: 240px;
+  width: 390px;
+  padding-left: 50px;
 }
 
 .four-mid-text {
