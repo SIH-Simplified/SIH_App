@@ -12,6 +12,7 @@ const clientRouter = require("./routes/teacher");
 const superAdminRouter = require("./routes/superAdmin");
 const methodOverride = require("method-override");
 const recruitRouter = require("./routes/recruit");
+const { auth } = require("express-openid-connect");
 var app = express();
 const mongo_connection_url =
   process.env.MONGO_DB_ATLAS_URL || "mongodb://localhost:27017/Edu";
@@ -40,6 +41,19 @@ app.use("/client", clientRouter);
 app.use("/superAdmin", superAdminRouter);
 app.use("/recruit", recruitRouter);
 // catch 404 and forward to error handler
+const config = {
+  authRequired: true,
+  auth0Logout: true,
+  secret: process.env.AUTH_SECRET,
+  baseURL: "http://localhost:3000",
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.DOMAIN_ID
+}
+app.use(auth(config));
+app.get("/", (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? "Logged In" : "Logged Out");
+})
+
 app.use(function (req, res, next) {
   next(createError(404));
 });
