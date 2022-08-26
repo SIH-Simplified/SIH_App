@@ -32,6 +32,9 @@ router.get("/login", (req, res) => {
 router.get("/attendence", (req, res) => {
   res.render("admin/attendence");
 });
+router.get("/attendence_extended", (req, res) => {
+  res.render("admin/attendence_extended");
+});
 router.get("/register", (req, res) => {
   res.render("admin/register");
 });

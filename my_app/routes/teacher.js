@@ -321,6 +321,11 @@ router.get("/dailyUpdates", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/timeline", (req, res) => {
+  res.render("teacher/timeline");
+});
+
 router.post("/leaves", (req, res, next) => {
   const { leaveType, dayType, from, to, department, supervisor, reason } =
     req.body;
