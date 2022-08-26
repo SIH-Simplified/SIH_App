@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/577ae30e95.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main-cont">
+
+        <div class="title">
+            <h2 class="title-a">Enter present school type</h2>
+        </div>
+        <div class="main-row">
+            <div class="left-col">
+                <div class="container">
+                    <div class="container-left">
+
+                        <!-- school -->
+
+                        <div class="school comman">
+
+                            <div id="one">
+                                <label>
+                                    <input type="radio" class="radio-a" id="input" name="school" value="">
+                                    Elementory
+                                </label>
+                                &nbsp;
+                                <label>
+                                    <input type="radio" class="radio-a" name="school" id="input" value="">
+                                    Secondary
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- state info -->
+                        <div class="states-comman">
+                            <div class="all">
+                                <div class="state">
+                                    <div class="namess">State</div>
+                                    <select name="stream" class="stream">
+                                        <option>delhi</option>
+                                        <option>mumbai</option>
+                                        <option>jammu and kashmir</option>
+                                        <option>punjab</option>
+                                        <!-- add more states -->
+                                    </select>
+
+                                </div>
+                                <div class="City">
+                                    <div class="namess">City</div>
+                                    <select name="stream" class="stream">
+                                        <option value="+91">east</option>
+                                        <option value="+92">west</option>
+                                        <option value="+93">north</option>
+                                        <option value="+94">south</option>
+                                    </select>
+                                </div>
+                                <div class="gender">
+                                    <div class="namess">Gender</div>
+                                    <select name="stream" class="stream">
+                                        <option>male</option>
+                                        <option>female</option>
+                                        <option>binary</option>
+                                        <option>not to say</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- mobile number -->
+                        <div class="mobile-comman">
+                            <div class="mob">Mobile No.</div>
+                            <input type=" tel" class="file">
+                        </div>
+
+                        <!-- date of birth  -->
+                        <div class="dob-comman">
+                            <div class="date"> Date of Birth</div>
+                            <input type="date" class="file">
+                        </div>
+
+                        <!--  email  -->
+                        <div class="mail-comman">
+                            <div class="email"> Registered Email</div>
+                            <input type="email" required class="file">
+                        </div>
+
+                        <div class="nature">
+                            NATURE OF APPOINTMENT <span class="eye"> <i class="fa-regular fa-eye"></i></span><br>
+                            <input type="text" class="file">
+                        </div>
+
+                        <!--  Select present school  -->
+                        <div class="present-comman">
+                            <div class="scl">Select present school</div>
+                            <select name="stream" class="file">
+                                <option value="+91">east</option>
+                                <option value="+92">west</option>
+                                <option value="+93">north</option>
+                                <option value="+94">south</option>
+                            </select>
+                        </div>
+
+                        <!--  Select District of present school  -->
+                        <div class="district-comman">
+                            <div class="scl">Select District of present school</div>
+                            <select name="stream" class="file">
+                                <option value="+91">east</option>
+                                <option value="+92">west</option>
+                                <option value="+93">north</option>
+                                <option value="+94">south</option>
+                            </select>
+                        </div>
+
+                        <!-- AADHAR ID -->
+                        <div class="adhar-comman">
+                            <label for="myfile">AADHAR ID</label> <br>
+                            <input type="file" id="myfile" name="myfile" placeholder="select the file" class="file">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right  -->
+
+            <div class="right-col">
+                <!--  SUBJECT IN TEACHING  -->
+                <div class="teachsub-comman">
+                    <div class="subs">SUBJECT IN TEACHING</div>
+                    <select name="stream" class="file">
+                        <option value="+91">east</option>
+                        <option value="+92">west</option>
+                        <option value="+93">north</option>
+                        <option value="+94">south</option>
+                    </select>
+                </div>
+
+                <!--  current designation  -->
+                <div class="curdes-comman">
+                    <div class="cur">current designation</div>
+                    <select name="stream" class="file">
+                        <option value="+91">east</option>
+                        <option value="+92">west</option>
+                        <option value="+93">north</option>
+                        <option value="+94">south</option>
+                    </select>
+                </div>
+
+                <!-- select date of joining present school  -->
+                <div class="bdob-comman">
+                    <div class="bdob">select date of joining present school</div>
+                    <input type="date" class="file">
+                </div>
+
+                <!--  select martial status  -->
+                <div class="mstat-comman">
+                    <div class="mstat">select martial status</div>
+                    <select name="stream" class="file">
+                        <option>Married</option>
+                        <option>Non Married</option>
+                    </select>
+                </div>
+
+                <!-- terms and condition -->
+                <div class="cheak-main">
+                    <div class="tems">
+                        <div> <input type="checkbox" name="terms" class="largerCheckbox"></div>
+                        <div> <label>I declare teh data entered is correct.</label></div>
+                    </div>
+
+                    <div class="tems">
+                        <input type="checkbox" name="terms" class="largerCheckbox">
+                        <label>I agree with our <span> Privacy Policy </span></label>
+                    </div>
+                </div>
+                <div class="btnss">
+                    <button class="next" type="submit">Next</button>
+                    <button class="cancel" type="submit">Cancel</button>
+                </div>
+
+                <img src="image 20.png" class="img-foot" height="200px">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="pro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
