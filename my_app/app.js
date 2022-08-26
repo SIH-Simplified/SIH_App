@@ -41,7 +41,7 @@ const config = {
   baseURL: "http://localhost:3000",
   clientID: process.env.CLIENT_ID,
   issuerBaseURL: process.env.DOMAIN_ID,
-}
+};
 app.use(auth(config));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
