@@ -64,10 +64,20 @@
                 style="font-family:'Poppins', sans-serif; color:black;font-size:min(3vw,2rem);padding-left:10%;"> <span
                   class="	glyphicon glyphicon-adjust" style="font-size:min(5vw,3rem);" id="theme"></span></a>
           </div>
-          <font
-            style="font-family:'Poppins', sans-serif; color:black;font-size:min(3vw,2rem);padding-left:2%;border:1px solid black;border-radius:40px;margin-left:1%;padding-right:2%;padding-top:0.5%;padding-bottom:0.5%;float:right"
-            id="home6">
-            <center><a href='index/login'>Sign in</a></center>
+          <font style="font-family:'Poppins', sans-serif; margin-left:1%;padding-right:2%;float:right" id="home6">
+            <center>
+              <% if(isAuthenticated) {%>
+                <a class="btn btn-danger" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
+            color:white;font-size:min(3vw,2rem);font-family:'Poppins',
+            sans-serif;" href="http://localhost:3000/logout" role="button">
+                  LogOut</a>
+                <% }else { %>
+                  <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
+            background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins',
+            sans-serif;" href="http://localhost:3000/login" role="button">
+                    Login</a>
+                  <% } %>
+            </center>
           </font>
           <!---------switch start--------->
 
@@ -151,11 +161,6 @@
               <a class="btn btn-primary" style="border:none;padding:2%;border-radius:30px;padding-left:4%;padding-right:4%;
               background:rgb(62 125 255);color:white;font-size:min(3vw,2rem);font-family:'Poppins', 
               sans-serif;" href="http://localhost:3000/superAdmin" role="button">Super Admin</a>
-              <a class="btn btn-primary" href="http://localhost:3000/logout" role="button">
-                LogOut</a>
-              <a class="btn btn-primary" href="http://localhost:3000/login" role="button">
-                Login</a>
-
             </span>
 
           </span>
@@ -677,17 +682,19 @@
       <div style="height:50px;overflow:hidden;" id="faq1">
         <div style="background:white;border-radius:5px;width:100%;position:relative;" id="faq_child1">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text49"><b>How
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;"
+            id="text49"><b>How
               can I turn on my Email notifications?</b> </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow1"></span>
           <br><br>
-<span class = "row" style = "width:90%;margin-left:5%;">
-  <span class = "col-md-12">
-          <font style="font-family:'Poppins', sans-serif; color:black;" id="text50">There are many variations of
-            passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
-            Lorem Ipsum, you need to be sure there isn't anything.</font>
-          </span>
+          <span class="row" style="width:90%;margin-left:5%;">
+            <span class="col-md-12">
+              <font style="font-family:'Poppins', sans-serif; color:black;" id="text50">There are many variations of
+                passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                of
+                Lorem Ipsum, you need to be sure there isn't anything.</font>
+            </span>
           </span>
           <Br>
         </div>
@@ -697,17 +704,19 @@
       <div style="height:50px;overflow:hidden;" id="faq2">
         <div style="background:white;border-radius:5px;width:100%;" id="faq_child2">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text51">
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;"
+            id="text51">
             <b>Facing login technicalities?</b>
           </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow2"></span>
           <br><br>
-          <span class = "row" style = "width:90%;margin-left:5%;">
-            <span class = "col-md-12">
-          <font style="font-family:'Poppins', sans-serif; color:black;" id="text52"> There are many variations of
-            passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
-            Lorem Ipsum, you need to be sure there isn't anything.</font>
+          <span class="row" style="width:90%;margin-left:5%;">
+            <span class="col-md-12">
+              <font style="font-family:'Poppins', sans-serif; color:black;" id="text52"> There are many variations of
+                passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                of
+                Lorem Ipsum, you need to be sure there isn't anything.</font>
             </span></span>
           <br>
         </div>
@@ -717,16 +726,18 @@
       <div style="height:50px;overflow:hidden;" id="faq3">
         <div style="background:white;border-radius:5px;width:100%;" id="faq_child3">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text53"><b>
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;"
+            id="text53"><b>
               How realtime recruitment works?</b> </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow3"></span>
           <br><br>
-          <span class = "row" style = "width:90%;margin-left:5%;">
-            <span class = "col-md-12">
-          <font style="font-family:'Poppins', sans-serif; color:black;" id="text54">There are many variations of
-            passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
-            Lorem Ipsum, you need to be sure there isn't anything.</font>
+          <span class="row" style="width:90%;margin-left:5%;">
+            <span class="col-md-12">
+              <font style="font-family:'Poppins', sans-serif; color:black;" id="text54">There are many variations of
+                passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                of
+                Lorem Ipsum, you need to be sure there isn't anything.</font>
             </span></span>
           <br>
         </div>
@@ -737,16 +748,18 @@
       <div style="height:50px;overflow:hidden;" id="faq4">
         <div style="background:white;border-radius:5px;width:100%;" id="faq_child4">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text55"><b>
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;"
+            id="text55"><b>
               Whats Email automation?</b> </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow4"></span>
           <br><br>
-          <span class = "row" style = "width:90%;margin-left:5%;">
-            <span class = "col-md-12">
-          <font style="font-family:'Poppins', sans-serif; color:black;" id="text56"> There are many variations of
-            passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
-            Lorem Ipsum, you need to be sure there isn't anything.</font>
+          <span class="row" style="width:90%;margin-left:5%;">
+            <span class="col-md-12">
+              <font style="font-family:'Poppins', sans-serif; color:black;" id="text56"> There are many variations of
+                passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                humour, or randomised words which don't look even slightly believable. If you are going to use a passage
+                of
+                Lorem Ipsum, you need to be sure there isn't anything.</font>
             </span></span>
           <br>
         </div>
