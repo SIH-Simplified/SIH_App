@@ -30,7 +30,7 @@
 <body>
   <!----------------------------- navbar start------------------>
   <nav class="navbar navbar-expand-lg navbar-light"
-    style="width:100%;background:rgb(255,255,255,0.3);display:flex;position:fixed;z-index:5;left:0;height:10rem;"
+    style="width:100%;background:rgb(255,255,255,0.7);display:flex;position:fixed;z-index:5;left:0;height:10rem;"
     id="navbarmain">
     <span class="row" style="width:70%;position:relative;left:15%;z-index:5;" id="navbar">
       <span class="col-md-12">
@@ -682,15 +682,18 @@
       <div style="height:50px;overflow:hidden;" id="faq1">
         <div style="background:white;border-radius:5px;width:100%;position:relative;" id="faq_child1">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);" id="text49"><b>How
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text49"><b>How
               can I turn on my Email notifications?</b> </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow1"></span>
           <br><br>
-
+<span class = "row" style = "width:90%;margin-left:5%;">
+  <span class = "col-md-12">
           <font style="font-family:'Poppins', sans-serif; color:black;" id="text50">There are many variations of
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
+          </span>
+          </span>
           <Br>
         </div>
       </div>
@@ -699,16 +702,18 @@
       <div style="height:50px;overflow:hidden;" id="faq2">
         <div style="background:white;border-radius:5px;width:100%;" id="faq_child2">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);" id="text51">
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text51">
             <b>Facing login technicalities?</b>
           </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow2"></span>
           <br><br>
-
+          <span class = "row" style = "width:90%;margin-left:5%;">
+            <span class = "col-md-12">
           <font style="font-family:'Poppins', sans-serif; color:black;" id="text52"> There are many variations of
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
+            </span></span>
           <br>
         </div>
       </div>
@@ -717,15 +722,17 @@
       <div style="height:50px;overflow:hidden;" id="faq3">
         <div style="background:white;border-radius:5px;width:100%;" id="faq_child3">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);" id="text53"><b>
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text53"><b>
               How realtime recruitment works?</b> </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow3"></span>
           <br><br>
-
+          <span class = "row" style = "width:90%;margin-left:5%;">
+            <span class = "col-md-12">
           <font style="font-family:'Poppins', sans-serif; color:black;" id="text54">There are many variations of
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
+            </span></span>
           <br>
         </div>
       </div>
@@ -735,15 +742,17 @@
       <div style="height:50px;overflow:hidden;" id="faq4">
         <div style="background:white;border-radius:5px;width:100%;" id="faq_child4">
           <br>
-          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);" id="text55"><b>
+          <font style="font-family:'Poppins', sans-serif; color:black;font-size:min(2.5vw,1.6rem);padding-left:5%;" id="text55"><b>
               Whats Email automation?</b> </font>
           <span class="glyphicon glyphicon-menu-down" style="float:right;padding-right:20px;" id="arrow4"></span>
           <br><br>
-
+          <span class = "row" style = "width:90%;margin-left:5%;">
+            <span class = "col-md-12">
           <font style="font-family:'Poppins', sans-serif; color:black;" id="text56"> There are many variations of
             passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't look even slightly believable. If you are going to use a passage of
             Lorem Ipsum, you need to be sure there isn't anything.</font>
+            </span></span>
           <br>
         </div>
 
@@ -772,7 +781,11 @@
     var faq2 = document.getElementById("faq2");
     var faq3 = document.getElementById("faq3");
     var faq4 = document.getElementById("faq4");
-    arrow1.addEventListener("click", () => {
+    var faq_child1 = document.getElementById("faq_child1");
+    var faq_child2 = document.getElementById("faq_child2");
+    var faq_child3 = document.getElementById("faq_child3");
+    var faq_child4 = document.getElementById("faq_child4");
+    faq_child1.addEventListener("click", () => {
       if (faq1.style.overflow == "hidden") {
         faq1.style.overflow = "visible";
         arrow1.style.transform = "rotate(180deg)";
@@ -788,7 +801,7 @@
       }
     })
 
-    arrow2.addEventListener("click", () => {
+    faq_child2.addEventListener("click", () => {
       if (faq2.style.overflow == "hidden") {
         faq2.style.overflow = "visible";
         arrow2.style.transform = "rotate(180deg)";
@@ -804,7 +817,7 @@
       }
     })
 
-    arrow3.addEventListener("click", () => {
+    faq_child3.addEventListener("click", () => {
       if (faq3.style.overflow == "hidden") {
         faq3.style.overflow = "visible";
         arrow3.style.transform = "rotate(180deg)";
@@ -821,7 +834,7 @@
     })
 
 
-    arrow4.addEventListener("click", () => {
+    faq_child4.addEventListener("click", () => {
       if (faq4.style.overflow == "hidden") {
         faq4.style.overflow = "visible";
         arrow4.style.transform = "rotate(180deg)";
