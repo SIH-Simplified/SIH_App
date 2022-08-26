@@ -326,9 +326,13 @@ router.get("/timeline", (req, res) => {
   res.render("teacher/timeline");
 });
 
-router.get("/attendance", (req, res) => {
-  res.render("teacher/attendance");
-});
+router.get('/attendance',(req,res)=>{
+  res.render('teacher/attendance')
+})
+
+router.get('/akk',(req,res)=>{
+  res.render('teacher/attendence_extended')
+})
 
 router.post("/leaves", (req, res, next) => {
   const { leaveType, dayType, from, to, department, supervisor, reason } =
