@@ -39,9 +39,11 @@ We are developing a centralized recruitment system for teachers to keep full tra
 ### Authors
 
 ---
-Jatin Sharma
 
-- GitHub: [jatin20037](https://github.com/jatin20037)
+Lakshya
+
+- GitHub: [lakshyarawat1](https://github.com/lakshyarawat1)
+
 
 Simarpreet Singh
 
@@ -59,6 +61,3 @@ Nishtha Arora
 
 - GitHub: [nishtha0608](https://github.com/nishtha0608)
 
-Lakshya
-
-- GitHub: [lakshyarawat1](https://github.com/lakshyarawat1)
